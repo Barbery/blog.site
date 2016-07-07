@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分级基金 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E5%88%86%E7%BA%A7%E5%9F%BA%E9%87%91/</link>
+    <description>Recent content in 分级基金 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 06 Jul 2013 17:55:56 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E5%88%86%E7%BA%A7%E5%9F%BA%E9%87%91/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>国证地产行业指数分级存在套利空间</title>
+      <link>http://barbery.me/post/2013-07-06-%E5%9B%BD%E8%AF%81%E5%9C%B0%E4%BA%A7%E8%A1%8C%E4%B8%9A%E6%8C%87%E6%95%B0%E5%88%86%E7%BA%A7%E5%AD%98%E5%9C%A8%E5%A5%97%E5%88%A9%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Sat, 06 Jul 2013 17:55:56 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-07-06-%E5%9B%BD%E8%AF%81%E5%9C%B0%E4%BA%A7%E8%A1%8C%E4%B8%9A%E6%8C%87%E6%95%B0%E5%88%86%E7%BA%A7%E5%AD%98%E5%9C%A8%E5%A5%97%E5%88%A9%E7%A9%BA%E9%97%B4/</guid>
+      <description>&lt;p&gt;今天看了下, 房地产B的价格是0.992, 房地产A的价格是1.07, 而国证地产的净值才是1元, A:B的份额是1:1, 所以只要申购母基, 然后申请拆分成A,B分级基金卖出实现套利, 套利的空间为(0.992+1.07)/2 - 1 = 0.03, 也就是3%的套利空间….&lt;/p&gt;
+
+&lt;p&gt;别高兴的太早, 后来又查了下, 分拆套利的时间需要T+3日才能抛出, T日申购, T+1日才能申购导致, T+2 日才能申请分拆, T+3 日才能到账卖出….&lt;/p&gt;
+
+&lt;p&gt;具体看这里:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;1、 分级基金场内分拆的套利过程：
+投资者T日在场内申购母基金份额，成交价格是当日基金份额净值；T+1日确认母基金份额到账；T+2日投资者可以在场内申请分拆基金份额；T+3日确认子基金份额，投资者T+3日可以在二级市场卖出子基金份额，实现套利。&lt;/p&gt;
+
+&lt;p&gt;2、 分级基金场内合并的套利过程：
+投资者T日在二级市场按比例买入子基金份额；T+1日可以将子基金份额申请配对交易为场内母基金份额；T+2日母基金份额确认到账，投资者T+2日可以申请赎回基金份额，实现套利。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;由于时间太长, 这个套利的风险也不言而喻….反倒有点赌的成分了….&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

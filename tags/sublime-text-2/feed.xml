@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime Text 2 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/sublime-text-2/</link>
+    <description>Recent content in Sublime Text 2 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 13 May 2013 21:45:20 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/sublime-text-2/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>教你怎么在mac下为你的sublime text2 配置svn快捷提交</title>
+      <link>http://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Mon, 13 May 2013 21:45:20 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</guid>
+      <description>&lt;p&gt;如果你是windows系统，你应该看这篇文章：&lt;a href=&#34;http://www.stutostu.com/966.html&#34;&gt;http://www.stutostu.com/966.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ok，言归正传。。。&lt;/p&gt;
+
+&lt;p&gt;首先，你应该先在你的sublime text2中安装package controll (不懂的话，传送门：&lt;a href=&#34;http://wbond.net/sublime_packages/package_control/installation&#34;&gt;http://wbond.net/sublime_packages/package_control/installation&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;如果你已经安装好了，go head。。。&lt;/p&gt;
+
+&lt;p&gt;按command+shift+P  输入install package   再输入  svn，搜索出来第一位就是svn的，就安装那个。。。&lt;/p&gt;
+
+&lt;p&gt;安装完后，选择 sublime text2 -&amp;gt; Preferences -&amp;gt; Package Settings -&amp;gt; SVN -&amp;gt; Setting - Default     如下图所示。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/95934850@N02/9190975011&#34; title=&#34;View &#39;NewImage&#39; on Flickr.com&#34;&gt;&lt;img title=&#34;NewImage&#34; src=&#34;http://farm3.staticflickr.com/2816/9190975011_bc053a0fd1.jpg&#34; alt=&#34;NewImage&#34; width=&#34;500&#34; height=&#34;237&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;在最后去掉注释，或者输入&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;svn_binary_path&amp;rdquo;: &amp;ldquo;/usr/bin/svn&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;然后保存关闭。。。点下左边的文件夹，如果出现下图这样的菜单，就证明可以了。。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/95934850@N02/9193773264&#34; title=&#34;View &#39;NewImage1&#39; on Flickr.com&#34;&gt;&lt;img title=&#34;NewImage1&#34; src=&#34;http://farm3.staticflickr.com/2880/9193773264_8e5e446b0e.jpg&#34; alt=&#34;NewImage1&#34; width=&#34;500&#34; height=&#34;205&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;要是没有的话，那可能是你mac下的svn地址问题，你检查下你svn的路径下是否存在svn的应用，或者你可以用homebrew安装一个  输入brew install svn就可以了。。。路径会在安装完成的时候输出在终端那里。。。。&lt;/p&gt;
+
+&lt;p&gt;最后再说一下，这个sublime text 的svn提交，这个和windows那篇文章的svn提交方式有所不同。。。你选择commit后，会出现下图这样的情况，&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/95934850@N02/9193773808&#34; title=&#34;View &#39;NewImage2&#39; on Flickr.com&#34;&gt;&lt;img title=&#34;NewImage2&#34; src=&#34;http://farm3.staticflickr.com/2814/9193773808_84c9d25bb2.jpg&#34; alt=&#34;NewImage2&#34; width=&#34;500&#34; height=&#34;222&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;第一行的意思是，输入你这次提交的备注信息。。。然后16 17行是这次要提交的内容，红色的M是只内容被修改过了。。那个 [x] 是指被选中提交，默认是全选的，你要是不想提交某一个文件，你把光标移动到指定的行数，按键盘N，里面的x就会消失了，就代表这次提交不提交该文件。。。搞掂好按command+s 保存即可。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>为你的sublime text 2 配置SVN</title>
+      <link>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</link>
+      <pubDate>Wed, 28 Nov 2012 13:26:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</guid>
+      <description>&lt;p&gt;如题所示，在coding的时候，每次都需要点出去commit是灰常浪费时间和麻烦的事情。。。所以就抱着试试的心态去在package install 里搜索下SVN，嘿，还不错，有2个SVN的相关插件。。。我建议大家装TortoiseSVN 这个，功能和SVN那个一样，而且TortoiseSVN这个是免费的，SVN那个还要收费授权。。。擦。。。&lt;/p&gt;
+
+&lt;p&gt;安装完之后还要配置一下才能使用，因为编辑器不知道你电脑的SVN程序地址在哪里（ps：这个问题浪费了好长时间去搜索，竟然没有人提？）&lt;/p&gt;
+
+&lt;p&gt;ok，言归正传，打开 preference –&amp;gt; Browse package  然后找到文件夹名称为 TortoiseSVN 的，点进去，用sublime text 2 或者其他文本编辑器打开 TortoiseSVN.sublime-settings 这个文件。。。把这个地址改成你的SVN地址就可以了。。。什么？你不知道你的SVN地址是什么？那你就逐个硬盘搜索一下 TortoiseProc.exe 这个文件。。。找个文件的地址就是你的SVN程序地址。。。&lt;/p&gt;
+
+&lt;p&gt;上图&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/6c7e831e3b62c476eaf8/2000&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

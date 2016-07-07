@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>断开 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E6%96%AD%E5%BC%80/</link>
+    <description>Recent content in 断开 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 25 Sep 2015 09:35:01 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E6%96%AD%E5%BC%80/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>mosh - 妈妈再也不用担心我ssh连接断开了</title>
+      <link>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
+      <pubDate>Fri, 25 Sep 2015 09:35:01 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
+      <description>
+
+&lt;h2 id=&#34;mosh是什么&#34;&gt;mosh是什么&lt;/h2&gt;
+
+&lt;p&gt;最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。&lt;/p&gt;
+
+&lt;p&gt;你可能会问，说了那么多，用mosh究竟有什么好处？&lt;/p&gt;
+
+&lt;p&gt;像我这样，blog搭在国外服务器上，常常需要ssh登陆国外的服务器，然而这速度，你懂的，非常不稳定，在事情做到一半的时候连接断掉了，真的想死有木有。。。mosh是基于UDP协议的，断开后都可以自动重连，重连还是连接回上次的session哦，不是新的session，也就是看起来和没断开过连接一样，像MacBook这样，合起来待机再也不用担心断开连接了。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&#34;如何安装&#34;&gt;如何安装&lt;/h2&gt;
+
+&lt;p&gt;好了好了，说说怎么用吧，使用mosh的话，需要装mosh的客户端和mosh的服务端。。。&lt;/p&gt;
+
+&lt;p&gt;服务端的话很简单，直接源安装就好了，ubuntu/debian系列直接&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install mosh&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;客户端的话，目前官方还不支持windows，目前只支持linux和mac os，不过有个chrome的mosh插件，windows下安装可以曲线救国&lt;a href=&#34;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&#34;&gt;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&lt;/a&gt;。另外，可以从&lt;a href=&#34;https://mosh.mit.edu/#getting&#34;&gt;https://mosh.mit.edu/#getting&lt;/a&gt; 这里面下载客户端，和查看怎么安装服务端。&lt;/p&gt;
+
+&lt;h2 id=&#34;如何使用&#34;&gt;如何使用 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mosh USERNAME@HOST [&amp;ndash;ssh=&amp;ldquo;ssh -p 2222&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果端口非22的话，可以使用后面中括号的参数来指定端口。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

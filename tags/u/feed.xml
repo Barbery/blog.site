@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>U on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/u/</link>
+    <description>Recent content in U on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 16 Nov 2012 22:21:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/u/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>关于正则表达式中的小写u修正符深刻理解</title>
+      <link>http://barbery.me/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Fri, 16 Nov 2012 22:21:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+    $str = &#39;【宏碁E1-471G-53214G50Mnks】宏碁（acer）E1-471G-53214G50Mnks 14英寸笔记本电脑（i5-3210M 4G 500G  GT630M 1G独显 USB3.0 )黑色【行情 报价 价格 评测】&#39;;
+    $str2 = &#39;维他奶 原味豆奶250ml x6 X 3 组合装【品牌 产地 促销 价格 评论】&#39;;
+    $str3 = &#39;维他奶 原味豆奶250ml x6 X 3 组合装【行情 报价 价格 评测】&#39;;
+    echo preg_replace(&#39;/(【[^】]*】)/&#39;, &#39;&#39;, $str),&#39;&amp;lt;hr&amp;gt;&#39;;
+    echo preg_replace(&#39;/(【[^】]*】)/&#39;, &#39;&#39;, $str2),&#39;&amp;lt;hr&amp;gt;&#39;;
+    echo preg_replace(&#39;/(【[^】]*】)/&#39;, &#39;&#39;, $str3);
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;各位看官，把上面代码跑下看看结果。。。&lt;/p&gt;
+
+&lt;p&gt;是不是觉得很奇怪，为什么1,3都能匹配到，就是$str2匹配不了。。。&lt;/p&gt;
+
+&lt;p&gt;在测试的时候，我就发现一个问题，就是你把$str2【】里的内容换成子母或者数字，就可以匹配到。。。当时我就想是不是字符的问题。。。但是还没有一个深刻的认识，今天在论坛请教一下，有一位高手解开了这个谜底。。。&lt;/p&gt;
+
+&lt;p&gt;你不在pattern后面加u修饰的话，正则表达式似乎是按单字节字符解释的，这样的话
+&lt;code&gt;[^】]&lt;/code&gt;的意思就是匹配&lt;code&gt;\xe3&lt;/code&gt;，&lt;code&gt;\x80&lt;/code&gt;，&lt;code&gt;\x91&lt;/code&gt;以外的字符，而第二组中间刚好有个&lt;code&gt;\x80&lt;/code&gt;，就不能匹配了&lt;/p&gt;
+
+&lt;p&gt;以下是$str2的编码情况。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;\xe7\xbb\xb4\xe4\xbb\x96\xe5\xa5\xb6 \xe5\x8e\x9f\xe5\x91\xb3\xe8\xb1\x86\xe5\x
+a5\xb6250ml x6 X 3 \xe7\xbb\x84\xe5\x90\x88\xe8\xa3\x85&lt;strong&gt;\xe3\x80\x90&lt;/strong&gt;\xe5\x93\x81&lt;br /&gt;
+xe7\x89\x8c \xe4\xba\xa7\xe5\x9c\xb0 \xe4\xbf\x83\xe9\x94&lt;b style=&#34;color:red&#34;&gt;\x80&lt;/b&gt;\xe4\xbb\xb7\xe6\x
+a0\xbc \xe8\xaf\x84\xe8\xae\xba&lt;strong&gt;\xe3\x80\x91&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我们再来对比下$str3的编码情况。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;\xe7\xbb\xb4\xe4\xbb\x96\xe5\xa5\xb6 \xe5\x8e\x9f\xe5\x91\xb3\xe8\xb1\x86\xe5\x
+a5\xb6250ml x6 X 3 \xe7\xbb\x84\xe5\x90\x88\xe8\xa3\x85&lt;strong&gt;\xe3\x80\x90&lt;/strong&gt;\xe8\xa1\x8c&lt;br /&gt;
+xe6\x83\x85 \xe6\x8a\xa5\xe4\xbb\xb7 \xe4\xbb\xb7\xe6\xa0\xbc \xe8\xaf\x84\xe6\x
+b5\x8b&lt;strong&gt;\xe3\x80\x91&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

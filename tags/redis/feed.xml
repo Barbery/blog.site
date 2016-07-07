@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/redis/</link>
+    <description>Recent content in Redis on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 05 Jul 2014 14:38:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/redis/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>php redis subscribe超时的问题</title>
+      <link>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 05 Jul 2014 14:38:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issue上找找看，发现也有不少朋友遇到这个问题。&lt;/p&gt;
+
+&lt;p&gt;原因处在于，php的redis库使用的subscribe是使用PHP内置的socket，而php.ini默认是设置了socket的超时时间是60秒，所以大家只要找到default_socket_timeout 这个配置项，把时间改长点就可以了。。。这里注意哦，我看了下官方的说明，似乎没有不限时间的选项，也就是不能填0，你如果填0，那么socket就会立即返回失败，而不是你预想中的不设超时。。。所以目前只能暂且填个很大的数，例如 1000000&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

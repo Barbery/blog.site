@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>加速 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E5%8A%A0%E9%80%9F/</link>
+    <description>Recent content in 加速 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Dec 2014 22:36:26 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E5%8A%A0%E9%80%9F/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>为gist加速！</title>
+      <link>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
+      <description>&lt;p&gt;github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。&lt;/p&gt;
+
+&lt;p&gt;不过比较悲剧的是，国内访问gist.github.com貌似被墙了，这样会导致嵌入的代码没办法展示，而大部分的用户都没有具备翻墙环境，so。。。&lt;/p&gt;
+
+&lt;p&gt;最好的办法是，为gist加速，利用nginx做一个反向代理，因为我这是海外的服务器，访问gist没压力，速度很快，对国内速度也不慢，所以非常适合用来对gist加速。。。&lt;/p&gt;
+
+&lt;p&gt;贴下nginx配置（&lt;a href=&#34;https://gist.github.com/Barbery/927ae66c70c581586800&#34;&gt;https://gist.github.com/Barbery/927ae66c70c581586800&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;p&gt;从此，引入gist的时候，只要把前面的host改一下，改为&lt;a href=&#34;http://gist.stutostu.com/xxx/xxxx.js&#34;&gt;http://gist.stutostu.com/xxx/xxxx.js&lt;/a&gt; 就可以了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说sae上加快wordpress加载速度~</title>
+      <link>http://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
+      <pubDate>Fri, 14 Jun 2013 20:03:25 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
+      <description>&lt;p&gt;因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;优化的重点是放在静态资源的加载速度上, 虽然域名没备案, 走的是日本节点反向代理国内的节点, 但是加载页面的html再慢, 也就2~3s加载完了… 但是其他的静态资源 例如css js 和图片那些, 要是把这些优化好了, 页面加载的速度也就非常可观了&amp;hellip;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;静态资源不要用绑定的域名, 用sae自带的二级域名, 因为这样就不用走海外节点, 加载速度快很多,至少快1倍左右&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一些大的类库, 不要用自己服务器加载, 像jquery, boostrap, jquery-ui 等等这些类库 有100k那么大, 应该用一些共用CDN资源来加载, 例如百度这个:&lt;a href=&#34;http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs#jQuery&#34;&gt;http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs#jQuery&lt;/a&gt;  或者 新浪这个:&lt;a href=&#34;http://sae.sina.com.cn/?m=devcenter&amp;amp;catId=147&#34;&gt;http://sae.sina.com.cn/?m=devcenter&amp;amp;catId=147&lt;/a&gt;  都是非常不错的外链资源…. 起码比链接到自己服务器的类库加载速度快1倍以上&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;图片, 特别是背景图等大图, 可以考虑外链, 你也许会问, 现在哪里有那么好的地方给你外链图片? 嘿,还别说, 还真有一个….就是微博, 当然, 这里我推荐使用 围脖是个好图床: &lt;a href=&#34;http://weibotuchuang.sinaapp.com/bookmark.html&#34;&gt;http://weibotuchuang.sinaapp.com/bookmark.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;打开SAE appconfig的 GZIP压缩 以及 设置好静态资源缓存时间&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;以上都做好了….. 速度就能明显上来了~~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>海外站长福音之cloundflare 免费 DNS 加速</title>
+      <link>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Tue, 20 Dec 2011 21:19:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
+      <description>&lt;p&gt;如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是国外知名的DNS加速器，平时我们被墙就是因为DNS污染的问题，用了DNS加速后大大可以减少被墙的概率，而且，cloundflare还可以免费进行分布式缓存，在全球各节点缓存静态文件进行加速。。总之功能多多，最重要是免费。。。嘎嘎！&lt;/p&gt;
+
+&lt;p&gt;OK，言归正传，首先，先去cloundflare注册个账号先：&lt;a title=&#34;www.cloundflare.com&#34; href=&#34;http://www.cloundflare.com&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34; &gt;www.cloundflare.com&lt;/a&gt; ，注册完后回到首页。&lt;/p&gt;
+
+&lt;p&gt;下面看图：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image12.png&#34;&gt;&lt;img style=&#34;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb12.png&#34; alt=&#34;image&#34; width=&#34;644&#34; height=&#34;377&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;很多人都不知道可以选中文，，，汗，不过也没关系，比较简单，大家都能看的懂。。。。至于怎么添加域名和设置DNS那些我就不啰嗦了，网上教程一大把。。。这里主要说的是教大家添加后，怎么利用cloundflare 加速网站加载速度。。。&lt;/p&gt;
+
+&lt;p&gt;事不宜迟，再你添加完域名，设置好MX记录后，等1~2个小时生效，生效后在首页添加域名的下方有你的域名记录，像我上面那个图，下面就有我stutostu.com的域名，记录的右边有设置，选择第二个。&lt;/p&gt;
+
+&lt;p&gt;如图：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image13.png&#34;&gt;&lt;img style=&#34;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb13.png&#34; alt=&#34;image&#34; width=&#34;299&#34; height=&#34;195&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;点击后，就进入了一个设置的页面。。。这里我建议大家还是选中文，否则多少有些看不懂。。。&lt;/p&gt;
+
+&lt;p&gt;这里cloundflare默认的选项几乎不用改动，很多的选择都是最佳的了，这里我说说默认没选，但是选了更佳的选项。&lt;/p&gt;
+
+&lt;p&gt;第一个要开的是IPV6，虽然是测试版，但是百利而无一害的功能，当然要开启啦。。。如果你的网站多是在校学生浏览，那么开这个功能简直提速几倍，因为教育网的IPV6速度极快。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image14.png&#34;&gt;&lt;img style=&#34;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb14.png&#34; alt=&#34;image&#34; width=&#34;644&#34; height=&#34;76&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;第二个要开的是mini功能，自动压缩js，css，html  大大加快传输的速度，你懂的。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image15.png&#34;&gt;&lt;img style=&#34;background-image: none; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb15.png&#34; alt=&#34;image&#34; width=&#34;644&#34; height=&#34;76&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;剩下的功能，像防盗链，数据分析那些，都是可开可不开，大家自行把握吧。对我而言，也对大多数海外主机的同志们而言，最大的功能是防止抽风，拒绝电信的DNS污染。。。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

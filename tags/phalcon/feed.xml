@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phalcon on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/phalcon/</link>
+    <description>Recent content in Phalcon on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 18 Jul 2014 11:11:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/phalcon/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>说说phalcon怎么连接mysqld.sock</title>
+      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <description>&lt;p&gt;phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phalcon的PDO支持DSN模式的。。。汗~~ 官方文档也没有说明一下。。。&lt;/p&gt;
+
+&lt;p&gt;查了下php官方的PDO是怎么连socket的，折腾了一下，终于搞掂。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$db = new Phalcon\Db\Adapter\Pdo\Mysql([
+    &#39;dsn&#39; =&amp;gt; &#39;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test;charset=utf8;&#39;,
+    &#39;username&#39; =&amp;gt; &#39;root&#39;,
+    &#39;password&#39; =&amp;gt; &#39;****&#39;,
+]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意哦，这个dsn，一定unix_socket放前面，如果你是&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mysql:dbname=test;unix_socket=/var/run/mysqld/mysqld.sock;&amp;nbsp; //错误&lt;/p&gt;
+
+&lt;p&gt;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test; //正确&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>大爱phalcon啊</title>
+      <link>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
+      <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
+      <description>&lt;p&gt;最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设计理念非常优雅，不愧是PHP5.4时代的新框架。。。现在的感觉就像当年PHP5.0时代的时候使用codeigniter，觉得太赞了。。。&lt;/p&gt;
+
+&lt;p&gt;工作之后一直，公司为了快速开发，不得不忍受quick-and-dirty 的thinkPHP。。。只有做自己的项目的时候，才能真正感受到，尼玛啊，这才是真正的「框架」啊！&lt;/p&gt;
+
+&lt;p&gt;phalcon的耦合非常低，作者预留了大量接口和基类，可供用户随意DIY，框架集成测试、ORM等，是一个fullstack高性能框架，这里严重推荐大家使用phalcon！&lt;/p&gt;
+
+&lt;p&gt;作者更是放出了zephir（一个很容易上手写C-extension的东西）相信未来不远，PHP的性能瓶颈将不是问题，不过目前zephir还只是beta版本，bug还比较多，不过我也正式开始关注这个项目，这个项目真能做起来，绝对是全体PHPer的福音!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cario Dock on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/cario-dock/</link>
+    <description>Recent content in Cario Dock on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 Sep 2013 13:28:07 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/cario-dock/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ubuntu下推荐一个类似mac的luncher tool bar - Cario-Dock</title>
+      <link>http://barbery.me/post/2013-09-28-ubuntu%E4%B8%8B%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCmac%E7%9A%84lunchertoolbar-Cario-Dock/</link>
+      <pubDate>Sat, 28 Sep 2013 13:28:07 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-09-28-ubuntu%E4%B8%8B%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCmac%E7%9A%84lunchertoolbar-Cario-Dock/</guid>
+      <description>&lt;p&gt;习惯了用mac的luncher，现在在ubuntu下，老是习惯移动鼠标到下面去找快捷方法。。。上网找了一下，貌似木有办法把ubuntu的luncher移动到底部， 不过倒意外的给我发现了Cario-Dock这个工具～～ 真的不错。。。&lt;/p&gt;
+
+&lt;p&gt;效果图如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/large/6915c7dcgw1e9252tkxbej21hc0u0n11.jpg&#34; alt=&#34;效果图&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;怎么样。。。 我这里使用起来非常流畅，哈哈～～&lt;/p&gt;
+
+&lt;p&gt;关于安装， 还是建议看官方的教程：&lt;a href=&#34;http://glx-dock.org/ww_page.php?p=By%20distributions&amp;amp;lang=en&#34;&gt;http://glx-dock.org/ww_page.php?p=By%20distributions&amp;amp;lang=en&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安装完后，会生成一个快捷方式在/usr/share/applications 里面，双击打开就可以启动这个tool bar 了～～&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

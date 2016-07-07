@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openresty on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/openresty/</link>
+    <description>Recent content in Openresty on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 30 Nov 2013 17:35:22 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/openresty/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>为openresty的luajit安装luarocks</title>
+      <link>http://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</link>
+      <pubDate>Sat, 30 Nov 2013 17:35:22 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://luarocks.org/&#34;&gt;lualocks&lt;/a&gt;是一个包管理器，类似nodejs的npm那样。。。总之装了以后安装第三方包就很方便，路径什么的，人家都帮你搞掂，不用自己每次都要&amp;ndash;prefix。。。&lt;/p&gt;
+
+&lt;p&gt;因为openresty已经装了luajit，所以就不需要装luajit了，下载好&lt;a href=&#34;http://luarocks.org/&#34;&gt;luarocks&lt;/a&gt;，解压，用命令行进入刚刚解压出来的文件夹，输入以下代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo ./configure --with-lua=&amp;quot;/usr/local/openresty/luajit&amp;quot; --lua-suffix=&amp;quot;jit&amp;quot; --with-lua-include=&amp;quot;/usr/local/openresty/luajit/include/luajit-2.0&amp;quot;
+make
+sudo make install
+sudo ln -s /usr/local/openresty/luajit/bin/luajit-2.0.2 /usr/local/bin/luajit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后一句是把openresty的luajit，软连接到系统路径下，这样想要在命令行下玩luajit就可以随时随地了。。。&lt;/p&gt;
+
+&lt;h4 id=&#34;ok-enjoy-luajit&#34;&gt;ok, enjoy luajit!&lt;/h4&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>分享一个openresty的service脚本</title>
+      <link>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty，今天不巧在社区里发现一个不错的脚本，经过测试，确实可用。。。本来代码是放在google code 的，为了方便大家配置，我把它移到我blog的，七牛云储存里面。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 下载脚本并把脚本放置到init.d里面
+sudo wget http://stutostu.qiniudn.com/openresty.init.d.script -O /etc/init.d/nginx;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;操作的话，只需要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx [start|stop|restart|reload|info]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果提示nginx: unrecognized service 只需要赋予执行权限即可，如下所示&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo chmod +x /etc/init.d/nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果需要把nginx 添加为开机启动，只需要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo update-rc.d -f nginx defaults
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>用ngx_drizzle时遇到一个坑，记录下。。。</title>
+      <link>http://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%EF%BC%8C%E8%AE%B0%E5%BD%95%E4%B8%8B%E3%80%82%E3%80%82%E3%80%82/</link>
+      <pubDate>Wed, 08 May 2013 22:11:38 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%EF%BC%8C%E8%AE%B0%E5%BD%95%E4%B8%8B%E3%80%82%E3%80%82%E3%80%82/</guid>
+      <description>&lt;p&gt;刚刚装好ngx_drizzle的时候，老是连接不上，代码都是安装官方demo来写的，竟然都不行。。。看了文档，报错如下：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;failed to connect: 23: Access denied for user &amp;lsquo;root&amp;rsquo;@&amp;lsquo;localhost&amp;rsquo; (using password: YES) while connecting to drizzle upstream, client: 127.0.0.1, server: localhost, request: &amp;ldquo;GET /users HTTP/1.1&amp;rdquo;, upstream: &amp;ldquo;drizzle://127.0.0.1:3306&amp;rdquo;, host: &amp;ldquo;localhost:8080&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;上网google一下，我擦，内容少得可怜，我看除了我这世界上没几个人遇到这个错误了。。。&lt;/p&gt;
+
+&lt;p&gt;后来我看到有个using password：YES，而我的配置是&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;drizzle_server 127.0.0.1:3306 dbname=aicaike user=root password=‘’ protocol=mysql;
+drizzle_keepalive max=100 mode=single overflow=reject;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我擦，不会是把‘’当成密码了吧。。。果断把password整个关键词都删掉。。。curl看下，哟西。。。果然是这个问题。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>简单测试下ngx_drizzle_module</title>
+      <link>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
+      <pubDate>Wed, 08 May 2013 22:02:29 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
+      <description>
+
+&lt;p&gt;webbench -c 500 -t 30  测试结果&lt;/p&gt;
+
+&lt;h2 id=&#34;tp框架&#34;&gt;TP框架&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Speed=19198 pages/min, 112866 bytes/sec.
+Requests: 6635 susceed, 2964 failed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&#34;原生&#34;&gt;原生&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Speed=16602 pages/min, 89106 bytes/sec.
+Requests: 6027 susceed, 2274 failed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&#34;nginx-with-drizzle&#34;&gt;nginx with drizzle&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Speed=34116 pages/min, 212853 bytes/sec.
+Requests: 14347 susceed, 2711 failed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;毫无疑问的，nginx drizzle下速度是最快的。。。效果提升1倍。。。不过令人惊讶的是原生php连接速度竟然不够thinkphp框架下链接的效果好。。。这个疑问有待解决。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

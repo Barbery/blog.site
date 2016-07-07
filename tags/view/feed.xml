@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>View on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/view/</link>
+    <description>Recent content in View on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 18 Mar 2013 15:11:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/view/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>学习如何写PHP MVC框架（3） — 视图</title>
+      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/</link>
+      <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/</guid>
+      <description>&lt;p&gt;今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。&lt;/p&gt;
+
+&lt;p&gt;对于模板引擎而言，它的原理一般是这样，把模板引擎的语言替换成可执行的语言，然后把变量输出。。。&lt;/p&gt;
+
+&lt;p&gt;因为PHP本身就是一个良好了模板引擎，所以用原生的模板引擎是灰常方便和容易做到的。。。&lt;/p&gt;
+
+&lt;p&gt;index.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;&amp;lt;?php echo $title ?&amp;gt;&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;&amp;lt;?php echo $content ?&amp;gt;&amp;lt;/h1&amp;gt;
+
+&amp;lt;?php if( ! empty($arr)) { ?&amp;gt;
+&amp;lt;ul&amp;gt;
+    &amp;lt;?php foreach($arr as $value) { ?&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;?php echo $value ?&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;?php } ?&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;?php } ?&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;想上面这样一个html页面，采用的就是原生的php模板引擎，服务器在你include这个页面时，会处理html中的PHP代码。&lt;/p&gt;
+
+&lt;p&gt;你也许会问，要是我想定制模板语言可以吗？答案当然是可以的，像我上面说的，用模板引擎的语言，只需要多做一步，就是把模板引擎的语言替换成标准的PHP语言。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;index_2.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;&amp;lt;?php echo $title ?&amp;gt;&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;&amp;lt;?php echo $content ?&amp;gt;&amp;lt;/h1&amp;gt;
+
+&amp;lt;ifexist arr&amp;gt;
+&amp;lt;ul&amp;gt;
+    &amp;lt;for value = arr&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;echo value&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;endfor&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;endexist&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看看这个页面，发现和index.html 有什么不同吗，没错，就是在循环那里，我们用的不是标准的php语言，而是，按照自己的喜好，定义了几个模板语言，一个是&lt;ifexist xxx&gt;这个是判断xxx变量是否存在，而且不为空，后面那个&lt;for xx1=xx2&gt;是循环迭代xx2变量，中间的&lt;echo xx&gt; 是输出xx变量&lt;/p&gt;
+
+&lt;p&gt;怎么替换成标准语言呢？这个可以使用正则替换，因为字符串替换无法满足我们需求了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$pattern = array(
+    &#39;/&amp;lt;ifexist\s+(\w+)&amp;gt;/i&#39;,
+    &#39;/&amp;lt;for\s+(\w+)\s=\s(\w+)&amp;gt;/&#39;,
+    &#39;/&amp;lt;echo\s+(\w+)&amp;gt;/&#39;
+);
+
+$replacement = array(
+    &#39;&amp;lt;?php if( ! empty($\\1)){ ?&amp;gt;&#39;,
+    &#39;&amp;lt;?php foreach($\\2 as $\\1){ ?&amp;gt;&#39;,
+    &#39;&amp;lt;?php echo $\\1 ?&amp;gt;&#39;
+);
+
+$content = preg_replace($pattern, $replacement, $content);
+
+$search = array(&#39;&amp;lt;endexist&amp;gt;&#39;, &#39;&amp;lt;endfor&amp;gt;&#39;);
+
+
+$content = str_replace($search, &#39;&amp;lt;?php } ?&amp;gt;&#39;, $content);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;上面的正则就可以帮我们把刚刚定义的标签，转换成标准p hp语言。。。&lt;/p&gt;
+
+&lt;p&gt;转换之后是这样，请看图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/f91723ad9e9641cf3804/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;转换之后可以输出了吗？答案是不行的，因为你获取到html文件的内容的时候，php就已经解释了，那时候你还没替换成标准的php语言，所以，你现在输出的话，其中的php代码就没有执行。。。不过我们可以利用 php eval 这个函数，来强制要求执行其中的代码。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$content = eval(&#39;?&amp;gt;&#39;.$content);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意哦，要 ?&amp;gt;.$content 要不，php会把其中的html当成是php代码的执行，这样就会出错了。。。&lt;/p&gt;
+
+&lt;p&gt;刷新一下，ok，已经可以执行了~~~ &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;具体代码，请点下面的链接，在lesson3的文件夹里&lt;/p&gt;
+
+&lt;p&gt;代码托管在：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;github 欢迎fork&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

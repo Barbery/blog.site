@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gd on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/gd/</link>
+    <description>Recent content in Gd on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 13 Dec 2012 09:31:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/gd/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PHP 图片库效率测试 GD Vs. Image Magick 【译】</title>
+      <link>http://barbery.me/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E3%80%90%E8%AF%91%E3%80%91/</link>
+      <pubDate>Thu, 13 Dec 2012 09:31:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E3%80%90%E8%AF%91%E3%80%91/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;After doing some research, I found plenty of claims that GD is faster than Image Magick. But how much faster? I was on a quest to find out. I took a rather large jpeg image (3504 x 2336 pixels) and converted it to three other popular formats, png, gif, and bitmap. I then wrote a script that resizes each one to 300 x 200 pixels (png shown below) using both GD and Image Magick. The script performs each resize 100 times and prints out the averages. I wanted to provide a working link to each format&amp;rsquo;s resize code in action, but GoDaddy does not support Image Magick. The benchmark results were quite interesting, as seen below (results are in seconds).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;译：据说GD库比Image Magick这个图库处理图片要快，但是实际上真的是这样吗，能快多少呢？我们来测试一下。我把1个大的JPG的图片（3504x2336像素），分别用GD库和 Image Magick 库来转换成 300x200像素的 png，gif，和 bitmap 3种格式。。。测试100次，取平均值。。。以下是测试结果（单位：秒）：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://jamesarmes.com/sites/default/files/blog/imagebenchmark/tugofwar_thumb.png&#34; alt=&#34;Resized PNG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PNG&lt;/strong&gt;
+    GD: 0.572078313828
+    Image Magick: 0.851119382381&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;JPEG&lt;/strong&gt;
+    GD: 0.524123055935
+    Image Magick: 0.873931562901&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GIF&lt;/strong&gt;
+    GD: 0.497557456493
+    Image Magick: 1.15288033009&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bitmap&lt;/strong&gt;
+    GD: 0.00230557203293 &lt;em&gt;(Image Corrupted 图像损坏)&lt;/em&gt;
+    Image Magick: 0.523070528507&lt;/p&gt;
+
+&lt;p&gt;As you can see, GD out performed Image Magick by 48-131%, not including the bitmap results. So it looks like we&amp;rsquo;ll be sticking with GD for now, with the exception of bitmaps.&lt;/p&gt;
+
+&lt;p&gt;译：你可以看到。。。不包括bitmap这个格式的话，GD库比Image Magic的效率要高48-131%，现在我们坚持用GD库来处理图像，除了bitmap这种格式。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/nginx/</link>
+    <description>Recent content in Nginx on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 23 Nov 2013 14:48:39 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/nginx/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>分享一个openresty的service脚本</title>
+      <link>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty，今天不巧在社区里发现一个不错的脚本，经过测试，确实可用。。。本来代码是放在google code 的，为了方便大家配置，我把它移到我blog的，七牛云储存里面。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 下载脚本并把脚本放置到init.d里面
+sudo wget http://stutostu.qiniudn.com/openresty.init.d.script -O /etc/init.d/nginx;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;操作的话，只需要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx [start|stop|restart|reload|info]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果提示nginx: unrecognized service 只需要赋予执行权限即可，如下所示&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo chmod +x /etc/init.d/nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果需要把nginx 添加为开机启动，只需要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo update-rc.d -f nginx defaults
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
+      <link>http://barbery.me/post/2013-10-03-NGINX&#43;PHP-FPM&#43;SOCKETVSNGINX&#43;PHP-FPM&#43;TCPVSNGINX&#43;APACHE&#43;MOD_PHP/</link>
+      <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-10-03-NGINX&#43;PHP-FPM&#43;SOCKETVSNGINX&#43;PHP-FPM&#43;TCPVSNGINX&#43;APACHE&#43;MOD_PHP/</guid>
+      <description>
+
+&lt;p&gt;上一篇&lt;a href=&#34;http://www.stutostu.com/?p=1225&#34;&gt;果然nginx使用socket来与php-fpm通讯是更高效率&lt;/a&gt;中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。。。&lt;/p&gt;
+
+&lt;p&gt;今天把apache给搞点了，正好验证下，究竟是NGINX+PHP-FPM效率好还是NGINX+APACHE+mod_php 效率好。。。&lt;/p&gt;
+
+&lt;p&gt;立即开搞，看ab测试记录。。。&lt;/p&gt;
+
+&lt;h2 id=&#34;for-1000次累加测试&#34;&gt;for 1000次累加测试&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php
+This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/foreach_test.php
+Document Length:        8 bytes
+Concurrency Level:      500
+Time taken for tests:   18.643 seconds
+Complete requests:      10000
+Failed requests:        218
+   (Connect: 0, Receive: 0, Length: 218, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      218
+Total transferred:      2187686 bytes
+HTML transferred:       117932 bytes
+Requests per second:    536.38 [#/sec] (mean)
+Time per request:       932.173 [ms] (mean)
+Time per request:       1.864 [ms] (mean, across all concurrent requests)
+Transfer rate:          114.59 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    3  42.4      0    1000
+Processing:    48  486 1895.6     99   14013
+Waiting:       30  486 1895.6     99   14013
+Total:         66  489 1899.5    100   14013
+Percentage of the requests served within a certain time (ms)
+  50%    100
+  66%    107
+  75%    113
+  80%    120
+  90%    153
+  95%   1106
+  98%   8848
+  99%  12481
+ 100%  14013 (longest request)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mysql-select数据测试&#34;&gt;mysql select数据测试&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/mysql_test.php
+This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/mysql_test.php
+Document Length:        462 bytes
+Concurrency Level:      500
+Time taken for tests:   14.451 seconds
+Complete requests:      10000
+Failed requests:        229
+   (Connect: 0, Receive: 0, Length: 229, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      229
+Total transferred:      6644659 bytes
+HTML transferred:       4555880 bytes
+Requests per second:    691.98 [#/sec] (mean)
+Time per request:       722.565 [ms] (mean)
+Time per request:       1.445 [ms] (mean, across all concurrent requests)
+Transfer rate:          449.02 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   3.1      0      22
+Processing:    84  600 2459.8    112   14425
+Waiting:       84  600 2459.8    112   14425
+Total:         84  601 2461.9    112   14439
+Percentage of the requests served within a certain time (ms)
+  50%    112
+  66%    119
+  75%    124
+  80%    129
+  90%    147
+  95%   1105
+  98%  14385
+  99%  14390
+ 100%  14439 (longest request)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;为了更好的对比结果，我做了一个表格，成绩对比如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1e983aheg9lj20la07sjsl.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;使用NGINX+PHP-FPM+TCP 和 NGINX+APACHE+MOD_PHP的测试结果不相上下。。。这个和网上各位博主测出来的结果相差不大。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/&#34;&gt;http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/&lt;/a&gt;这个博主就测出来，在关闭APACHE AllowOverride 可以获得性能上的提升，可以比NGINX+PHP-FPM+TCP高10～15%这样。。。比较可惜的是，该博主没有测使用NGINX+PHP-FPM+SOCKET的模式，也没有使用NIGNX+APACHE做方向代理的模式。。。&lt;/p&gt;
+
+&lt;p&gt;最后，这次的测试都在默认配置下进行，不排除NIGNX和APACHE在默认配置上的差异，导致结果悬殊。。但是，即便存在上述可能，NGINX+PHP-FPM+SOCKET的模式比NGINX+APACHE的测试结果高出10倍之多。。。差距如此之大也可以说明，NGINX+PHP-FPM+SOCKET才是王道。。。&lt;/p&gt;
+
+&lt;p&gt;如果你有不同的意见，欢迎交流。。。&lt;/p&gt;
+
+&lt;p&gt;PHP测试脚本：&lt;a href=&#34;https://github.com/Barbery/blog/tree/master/bench&#34;&gt;https://github.com/Barbery/blog/tree/master/bench&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>果然nginx使用socket来与php-fpm通讯是更高效率的</title>
+      <link>http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
+      <pubDate>Thu, 03 Oct 2013 00:28:32 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
+      <description>
+
+&lt;h2 id=&#34;1000次累加测试&#34;&gt;1000次累加测试&lt;/h2&gt;
+
+&lt;h3 id=&#34;php5-fpm-sock下的测试结果&#34;&gt;php5-fpm.sock下的测试结果&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php
+This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/foreach_test.php
+Document Length:        8 bytes
+Concurrency Level:      500
+Time taken for tests:   1.773 seconds
+Complete requests:      10000
+Failed requests:        8603
+   (Connect: 0, Receive: 0, Length: 8603, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      8603
+Total transferred:      3196701 bytes
+HTML transferred:       1576922 bytes
+Requests per second:    5639.07 [#/sec] (mean)
+Time per request:       88.667 [ms] (mean)
+Time per request:       0.177 [ms] (mean, across all concurrent requests)
+Transfer rate:          1760.39 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   22 130.2      2    1009
+Processing:     2   46  71.0     22     703
+Waiting:        1   44  71.2     20     703
+Total:          5   68 172.6     25    1701
+Percentage of the requests served within a certain time (ms)
+  50%     25
+  66%     28
+  75%     36
+  80%     44
+  90%    178
+  95%    222
+  98%    255
+  99%   1241
+ 100%   1701 (longest request)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用tcp方式下&#34;&gt;使用TCP方式下：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php
+This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/foreach_test.php
+Document Length:        8 bytes
+Concurrency Level:      500
+Time taken for tests:   10.283 seconds
+Complete requests:      10000
+Failed requests:        195
+   (Connect: 0, Receive: 0, Length: 195, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      195
+Total transferred:      1792565 bytes
+HTML transferred:       113930 bytes
+Requests per second:    972.44 [#/sec] (mean)
+Time per request:       514.170 [ms] (mean)
+Time per request:       1.028 [ms] (mean, across all concurrent requests)
+Transfer rate:          170.23 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   6.1      0      35
+Processing:    15  401 1389.5     91    8794
+Waiting:       13  401 1389.4     91    8794
+Total:         48  402 1393.7     91    8820
+Percentage of the requests served within a certain time (ms)
+  50%     91
+  66%     94
+  75%     97
+  80%    101
+  90%    130
+  95%   1136
+  98%   8735
+  99%   8757
+ 100%   8820 (longest request)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mysql-select数据测试&#34;&gt;mysql select数据测试&lt;/h2&gt;
+
+&lt;h3 id=&#34;php5-fpm-sock下的测试结果-1&#34;&gt;php5-fpm.sock下的测试结果&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/mysql_test.php
+This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/mysql_test.php
+Document Length:        462 bytes
+Concurrency Level:      500
+Time taken for tests:   2.259 seconds
+Complete requests:      10000
+Failed requests:        8276
+   (Connect: 0, Receive: 0, Length: 8276, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      8276
+Total transferred:      3924788 bytes
+HTML transferred:       2302720 bytes
+Requests per second:    4426.98 [#/sec] (mean)
+Time per request:       112.944 [ms] (mean)
+Time per request:       0.226 [ms] (mean, across all concurrent requests)
+Transfer rate:          1696.77 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   23 131.5      3    1005
+Processing:     2   43  70.9     19    2199
+Waiting:        1   41  71.1     17    2199
+Total:          4   66 163.2     23    2199
+Percentage of the requests served within a certain time (ms)
+  50%     23
+  66%     27
+  75%     36
+  80%     48
+  90%    163
+  95%    176
+  98%    197
+  99%   1023
+ 100%   2199 (longest request)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用tcp方式下-1&#34;&gt;使用TCP方式下：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/mysql_test.php
+This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/mysql_test.php
+Document Length:        462 bytes
+Concurrency Level:      500
+Time taken for tests:   14.971 seconds
+Complete requests:      10000
+Failed requests:        68
+   (Connect: 0, Receive: 0, Length: 68, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      68
+Total transferred:      6280484 bytes
+HTML transferred:       4600960 bytes
+Requests per second:    667.96 [#/sec] (mean)
+Time per request:       748.548 [ms] (mean)
+Time per request:       1.497 [ms] (mean, across all concurrent requests)
+Transfer rate:          409.68 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   6.2      0      39
+Processing:    10  376 1497.2     79   14927
+Waiting:       10  376 1497.2     79   14927
+Total:         48  378 1501.3     79   14954
+Percentage of the requests served within a certain time (ms)
+  50%     79
+  66%     82
+  75%     84
+  80%     87
+  90%     95
+  95%   1081
+  98%   7877
+  99%   7910
+ 100%  14954 (longest request)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;果然nginx使用socket来与php-fpm通讯是更高效率的。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mac下配置nginx&#43;php&#43;mysql小记</title>
+      <link>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。&lt;/p&gt;
+
+&lt;p&gt;后来使用了大家都推荐的homebrew来安装。。。具体教程大家可以上网搜，都不算太难。。。&lt;/p&gt;
+
+&lt;p&gt;这里具体要说说的是，安装nginx的问题。。。如果是用homebrew安装nginx的话，是没办法添加第三方module的。。。至少我找了好久，也上stackoverflow问了  都没有找到解决方法。。。&lt;/p&gt;
+
+&lt;p&gt;最后木办法，只能手动编译安装nginx，php和mysql 以及pecl的话就通过homebrew来安装。。。&lt;/p&gt;
+
+&lt;p&gt;大概记录下我的安装步骤：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;先到官网下载nginx源码，解压出来。&lt;/li&gt;
+&lt;li&gt;cd进去解压出来的文件夹里面&lt;/li&gt;
+&lt;li&gt;执行./configure &amp;ndash;prefix=/usr/local/Cellar/nginx-1.4.0 &amp;ndash;add-module=/path/to/your/modules&lt;/li&gt;
+&lt;li&gt;make &amp;amp; make install&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最后安装成功后，进入/usr/local/Cellar/nginx-1.4.0/sbin 下面 sudo nginx 就可以启动nginx服务了。。。要是不想那么麻烦，就要把 /usr/local/Cellar/nginx-1.4.0/sbin这个路径添加进PATH里面去，可以用命令 vi /etc/paths 打开把路径添加进去即可，这样就可以在任何路径下直接sudo nginx启动服务。。&lt;/p&gt;
+
+&lt;p&gt;大致就这样。。。&lt;/p&gt;
+
+&lt;p&gt;这次配置的过程中常常遇到error_log 报错，说没这个目录，一般这个问题的解决方法都是找到conf文件，把error_log的路径改过来就行了，要不就是木有写权限的问题。。。如果遇到报错说has no permission 就在执行命令的前面加上sudo 用管理员权限操作。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

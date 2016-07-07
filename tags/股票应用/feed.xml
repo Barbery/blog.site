@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>股票应用 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E8%82%A1%E7%A5%A8%E5%BA%94%E7%94%A8/</link>
+    <description>Recent content in 股票应用 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 29 Aug 2012 11:09:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E8%82%A1%E7%A5%A8%E5%BA%94%E7%94%A8/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>flex中慎用百分比布局</title>
+      <link>http://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Wed, 29 Aug 2012 11:09:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</guid>
+      <description>&lt;p&gt;困扰已久我的问题，没想到今天终于给我找出了原因。。。这个问题就是，我做的股票应用里面，因为股票信息更新频繁，会出现部分label内容不显示出来这个的BUG，情况如图所示：&lt;/p&gt;
+
+&lt;p&gt;做过股票的都知道，股票应用里面，几乎所有的数据都是更新的，包括左边的K线，指标，右边的交易数据等等。。。我一直以为，是左边的图像更新，导致了整个页面重绘，导致了出现这个问题。。。但是，今天忽然想起了debug版的 adobe player 有个打开重绘区域这样的功能。。。然后立即打开来看，经过10几分钟的观察和自己的修改调试。。。发现原来问题出现在百分比布局这里。&lt;/p&gt;
+
+&lt;p&gt;因为，当label的内部数据发送变化时（内容长度变化），会触发label内部的measure大小的函数，因为是百分比布局，所以，label的区域重绘会导致label容器所在的区域重绘，就会导致出现这个问题。我个人的猜想是重绘的时候与更新数据时发生冲突，导致了部分内容不可见。。。&lt;/p&gt;
+
+&lt;p&gt;最终，通过修改，把百分比布局，改成绝对值布局，终于把这个问题解决了！或者，你也可以改成minWidth 这种，限制它的最小值，也似乎可以解决这个问题。&lt;/p&gt;
+
+&lt;p&gt;根据我之前做list的组件时，遇到的问题，就是resize卡死的问题，也是百分比布局导致的。。。所以，建议大家，慎用百分比布局，用也可以，注意写好minWidth 和 minHigh。。。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

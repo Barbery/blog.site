@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/post/</link>
+    <description>Recent content in Posts on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 20 Apr 2016 11:18:13 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>说说用docker-swarm部署集群的一些问题</title>
+      <link>http://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 20 Apr 2016 11:18:13 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;部署比较简单，这点官网文档说的非常详细，这里我就不重复叙述了，大家可以去看看&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/swarm/install-manual/&#34;&gt;https://docs.docker.com/swarm/install-manual/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;说说过程中遇到的问题，也希望后来者可以少踩坑。。。&lt;/p&gt;
+
+&lt;p&gt;首先就是部署前，要把docker engine配置到监听swarm的端口&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo vim /etc/default/docker&lt;/p&gt;
+
+&lt;p&gt;#追加配置到DOCKER_OPTS配置项&lt;/p&gt;
+
+&lt;p&gt;DOCKER_OPTS=&amp;ldquo;-H 0.0.0.0:2375 -H unix:///var/run/docker.sock&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;docker的id冲突时需要删掉key文件，重启service就可以重新生成&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt; rm /etc/docker/key.json&lt;/p&gt;
+
+&lt;p&gt;sudo service docker restart&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;还有一个就是discovery服务的话，consul目前还不支持多个节点ip，所以如果你有多个manage的节点也只能连一个consul的节点。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>迟到的2015总结</title>
+      <link>http://barbery.me/post/2016-02-15-%E8%BF%9F%E5%88%B0%E7%9A%842015%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 15 Feb 2016 17:47:48 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2016-02-15-%E8%BF%9F%E5%88%B0%E7%9A%842015%E6%80%BB%E7%BB%93/</guid>
+      <description>
+
+&lt;h2 id=&#34;工作&#34;&gt;工作&lt;/h2&gt;
+
+&lt;p&gt;今年在工作上真是折腾不少，回顾今年，主要做了以下几点值得一谈的事情&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基本完成了微信活动开发的框架，可以大部分的复用活动逻辑，这个框架的建成，提高了活动开发效率，可以应对公司大促时带来的活动开发的压力。&lt;/li&gt;
+&lt;li&gt;在部门推广vagrant统一团队开发环境，统一我们微信组的开发环境&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;进入8月份后，部门整合，微信组要被拆分成2部分合并到其他组里面去，导致多名同事出走，考虑到晋升的不稳定因素太多，我也决定出走，并于11月从VIP离职。今年在VIP的时光真的很开心，可以说是我目前为止职业生涯中最快乐的一段时光。我记得15年过完春节回来上班不久，我们组的工位就从移动楼2楼搬迁到图书馆的小房间里面，大家在小房间内一起加班，一起开黑，一起吃下午茶，我真的很享受小团队这种感觉。。。&lt;/p&gt;
+
+&lt;p&gt;离开VIP后，我加盟一家remote的小公司。自从看了《rework2》之后，就一直对remote这种工作方式很憧憬，很想尝试一下。距离目前为止，我已从事remote的工作3个月了，刚开始的时候还是挺不适应的，觉得好累，因为没有客观的上下班时间，虽然自己规定了工作时间，但是人就是懒惰，总想着把工作往后推，这就导致了工作时间效率不高，本该休息的时间，却被拿来赶工作，所以感觉就好累，好像创业一样，感觉一直都在上班。。。&lt;/p&gt;
+
+&lt;p&gt;回顾去年的工作总结中的期望，今年没能完成一个100 star的开源项目，所以今年继续继承这个期望，希望能做出些有价值的开源项目。。。&lt;/p&gt;
+
+&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
+
+&lt;p&gt;今年在生活上比较顺利，去了马来西亚和越南旅游，在VIP的时候，常常和同事去跑步，游泳。不过最近加入remote后，有更宅的倾向，所以今年的目标是多运动，多出去外面走走，多社交朋友。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2 id=&#34;投资&#34;&gt;投资&lt;/h2&gt;
+
+&lt;p&gt;今年上半年，走了一波小牛市，可惜活生生坐了一次过山车，『会买是徒弟，会卖才是师傅』终于体会到这句话的涵义了。&lt;/p&gt;
+
+&lt;p&gt;2015年的投资收益率为25%，虽然不高，但是我对这个收益率还是挺满意的。&lt;/p&gt;
+
+&lt;p&gt;对于明年的期望，策略主要以谨慎为主，被动补仓。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说怎么给virtualbox扩容</title>
+      <link>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</link>
+      <pubDate>Thu, 19 Nov 2015 16:39:13 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
+      <description>&lt;p&gt;前几天用vagrant+virtualbox+docker 来搭建本地开发环境，由于要导入的SQL太大，virtualbox的容量被挤爆了，而vagrant创建时似乎是不能指定容量大小的，系统默认分配的16G明显不够用。。。上网找了下，有些教程操作过程中报错，没法进行下去，有些教程又很长，看起来很复杂。。。自己折腾了下，其实非常简单。&lt;/p&gt;
+
+&lt;p&gt;首先找到自己box的安装位置，默认应该都是安装在 ~/VirtualBox VMs/default-xxxxxxx/ 下的，打开命令行终端，进入目录下。。。如果你发现你的xxxx.vdi格式的话，那么恭喜你，这个格式扩容很简单，直接执行&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$&amp;gt; VBoxManage modifyhd xxxx.vdi  &amp;ndash;resize 30000&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;后面30000代表30000MB约等于30G，根据自己的实际需要调整。&lt;/p&gt;
+
+&lt;p&gt;实际上，我们看到的文件格式很大概率是xxxxxx.vmdk，不用怕，也很简单。。。&lt;/p&gt;
+
+&lt;p&gt;首先，先利用virtualbox提供的工具，将其格式转换成vdi。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$&amp;gt; VBoxManage clonehd xxxx.vmdk xxxx.vdi &amp;ndash;format=vdi&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;等待一会儿，转换完成后，就会在目录上出现一个xxxx.vdi的文件，这个文件就是克隆自你原来的那个文件，只是把格式换成了vdi，再执行上面我说的扩容的命令，就可以实现这个vdi的容量扩容。&lt;/p&gt;
+
+&lt;p&gt;扩容完成后，打开virtualbox GUI程序（就是点击virtualbox图标运行界面程序），找到你刚刚扩容的那个box，右键设置-&amp;gt;储存，在储存器 IDE Controller那里点击添加磁盘&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/large/6915c7dcgw1ey6dbhb450j207x067mxg.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后选择”选择现有虚拟盘”选项，找到刚刚生成的vdi文件，添加进去，然后点击之前的盘符，点击下方的删除磁盘的ico删掉即可（请先自行备份之前的文件）&lt;/p&gt;
+
+&lt;p&gt;还有一点，就是要保证添加进来的vdi磁盘设置如下所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1ey6dfr4ckfj207x0650t4.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mosh - 妈妈再也不用担心我ssh连接断开了</title>
+      <link>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
+      <pubDate>Fri, 25 Sep 2015 09:35:01 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
+      <description>
+
+&lt;h2 id=&#34;mosh是什么&#34;&gt;mosh是什么&lt;/h2&gt;
+
+&lt;p&gt;最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。&lt;/p&gt;
+
+&lt;p&gt;你可能会问，说了那么多，用mosh究竟有什么好处？&lt;/p&gt;
+
+&lt;p&gt;像我这样，blog搭在国外服务器上，常常需要ssh登陆国外的服务器，然而这速度，你懂的，非常不稳定，在事情做到一半的时候连接断掉了，真的想死有木有。。。mosh是基于UDP协议的，断开后都可以自动重连，重连还是连接回上次的session哦，不是新的session，也就是看起来和没断开过连接一样，像MacBook这样，合起来待机再也不用担心断开连接了。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&#34;如何安装&#34;&gt;如何安装&lt;/h2&gt;
+
+&lt;p&gt;好了好了，说说怎么用吧，使用mosh的话，需要装mosh的客户端和mosh的服务端。。。&lt;/p&gt;
+
+&lt;p&gt;服务端的话很简单，直接源安装就好了，ubuntu/debian系列直接&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install mosh&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;客户端的话，目前官方还不支持windows，目前只支持linux和mac os，不过有个chrome的mosh插件，windows下安装可以曲线救国&lt;a href=&#34;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&#34;&gt;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&lt;/a&gt;。另外，可以从&lt;a href=&#34;https://mosh.mit.edu/#getting&#34;&gt;https://mosh.mit.edu/#getting&lt;/a&gt; 这里面下载客户端，和查看怎么安装服务端。&lt;/p&gt;
+
+&lt;h2 id=&#34;如何使用&#34;&gt;如何使用 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mosh USERNAME@HOST [&amp;ndash;ssh=&amp;ldquo;ssh -p 2222&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果端口非22的话，可以使用后面中括号的参数来指定端口。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用sublime text3 打造最佳PHP开发工具</title>
+      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 18 Jul 2015 18:28:22 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <description>&lt;p&gt;我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配上GIF动画，大家应该能大致看懂，我就懒得翻译了。。。有什么不懂的可以留言。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&#34;&gt;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>golang有没有必要传递map指针？</title>
+      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</link>
+      <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</guid>
+      <description>&lt;p&gt;好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答是，因为传递指针的好处就是速度快，占用内存少。但是，我隐隐约约记得，GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝。。。&lt;/p&gt;
+
+&lt;p&gt;晚上回来的路上就一直在想这个问题。。。觉得模模糊糊，不太确定。回到家立即写个demo来证明一下，直接贴代码：&lt;/p&gt;
+
+&lt;p&gt;也可以到这里在线运行：&lt;a href=&#34;http://play.golang.org/p/0VHB4e9BJY&#34;&gt;http://play.golang.org/p/0VHB4e9BJY&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;输出结果是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;map[xxx:123 xxx222:xxx xxx333:xxx]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;结果说明了“GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝”同时使用这些引用类型的变量也需要小心副作用，因为一修改，就会影响所有使用这个参数的代码。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用vagrnat打造团队跨平台开发环境</title>
+      <link>http://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sun, 17 May 2015 18:34:30 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;p&gt;额，本来这个PPT是做来在公司内部分享的，但是由于某些原因，可能没法在公司内部分享了。分享上来，权当留个纪念~~~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ssuser773636/vagrant-48243103&#34;&gt;http://www.slideshare.net/ssuser773636/vagrant-48243103&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;需要翻墙才能看到。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修改mysql配置衍生的一系列问题</title>
+      <link>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原来的配置，就直接cp -f过去了，后来发现没法启动。。。幸亏本地还有一份，对比了下，发现my-innodb-heavy-4G.cnf的配置少了一部分内容。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[mysqld]&lt;/p&gt;
+
+&lt;p&gt;user = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+port = 3306
+basedir = /usr
+datadir = /var/lib/mysql
+tmpdir = /tmp
+lc-messages-dir = /usr/share/mysql
+skip-external-locking&lt;/p&gt;
+
+&lt;p&gt;bind-address            = 127.0.0.1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;补上成功启动mysql，但是连接时，发现报错：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SQLSTATE[42000]: Syntax error or access violation: 1286 Unknown storage engine &amp;lsquo;InnoDB&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;google了下，原来是需要重新做ib_logfile。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo service mysql stop&lt;/p&gt;
+
+&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile0 /var/lib/mysql/ib_logfile0.bak&lt;/p&gt;
+
+&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile1 /var/lib/mysql/ib_logfile1.bak&lt;/p&gt;
+
+&lt;p&gt;sudo service mysql start&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;稍等10几秒，重做完启动后就一切正常了。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;最后吐槽下，这不是官方的配置嘛，为什么尼玛就不能直接拿过来用。。。坑~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2014年总结</title>
+      <link>http://barbery.me/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 31 Dec 2014 22:25:46 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</guid>
+      <description>
+
+&lt;h2 id=&#34;工作&#34;&gt;工作&lt;/h2&gt;
+
+&lt;p&gt;先说说今年的工作情况吧。。年初激情四射，和几位好朋友，满腔热火，砸锅卖铁去创业，势必把O2O果汁店这个idea给做起来。年中，资金耗完，团队各种困难，股东退出，也没洽谈到融资，各种矛盾不如意，最终只能关掉项目，各种各路。回想这次“创业”，有太多不成熟的地方了，首先低估了营销的重要性和难度，其次O2O不是我们的专长，这种需要结合线下推广的业务，我们无一擅长，纯互联网的项目才是我们的主场。也许，我们应该先开果汁店，成功了再O2O，网络只是销售渠道的一个，而不是本末倒置，先做网络，再卖果汁。&lt;/p&gt;
+
+&lt;p&gt;项目失败后，我也一度失去了奋斗的方向，9月份开始，又重新踏上打工的道路，也顺利拿下了许多offer，经过考虑，最终选择了进入唯品会，一边工作积累技术，一边好好考虑，究竟自己想要什么，我憧憬的未来是怎么样的？&lt;/p&gt;
+
+&lt;p&gt;对于15年的展望，努力工作，多写代码，争取做出一个超100个star的开源项目。&lt;/p&gt;
+
+&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
+
+&lt;p&gt;工作之余，貌似我的生活也太枯燥无味了，平时也不喜欢出去逛，除了有同学/朋友聚会什么的。平时生活的最大乐趣就数去旅游了，每年一度的旅游计划，是属于我自己最盛大的节日了，2014年去了一趟泰国游，现在回想起来，真是爽爆了~。&lt;/p&gt;
+
+&lt;p&gt;自从来了唯品会，偶尔也跟同事跑跑步什么的，坚持运动，健康生活。对于15年的展望，我想说：猿的生命短暂，说不准何时就猝死了，不要浪费自己的时光，也不要只关注自己的工作，多关心朋友、亲人，以后要多点提高自己的生活质量，每天都快乐的活着。&lt;/p&gt;
+
+&lt;p&gt;写完这个计划，我又要开始策划我15年的年度旅游了，哈哈哈，太激动鸟~~&lt;/p&gt;
+
+&lt;h2 id=&#34;投资&#34;&gt;投资&lt;/h2&gt;
+
+&lt;p&gt;最后说说投资吧，真是对不起乡亲父老，今年的上半年都在和朋友创业，除了没收入，没钱继续买股票之前，还要变卖股票，套现一点钱出来维持生活费的开支，以至于后面大涨，我只能感叹再也没有便宜股买了。。。&lt;/p&gt;
+
+&lt;p&gt;今年的总收益率为53%左右，对比上证指数，跑输2%，对比上证50指数，跑输15%。收益竟然还不及我姐姐的账户，我姐姐的账户也是由我操作，风格上和我集中持股不同，比较分散，持有的行业比重最大为银行股，其次为建筑地产，最后为高速铁路，不同行业组合，加上轮涨，反倒成了不错的组合收益。&lt;/p&gt;
+
+&lt;p&gt;自己总结下跑输的原因：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下半年突然风格转为牛市，持仓上非常保守，都是高股息的银行股，并没有持有具有牛市大杀器证券股或者保险股；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;持仓过于集中于一个行业，对于上涨通常都是行业之间轮换的上涨，由于太集中，没办法像其他人那样通过换股操作提高收益率；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;没有融资，没上杠杆；&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;不管怎么样都好，永远不要忘了自己的出发点，融资这样高风险的事情必须谨慎再谨慎，我不是想通过股市发大财，只是希望可以好好理财，赚点小钱。&lt;/p&gt;
+
+&lt;p&gt;对于15年的投资展望，如果继续上涨，就不再追高买入，转为打新和分级套利操作，两股没有相差30%以上的差价，都不考虑换股的事情。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《邓普顿教你逆向投资》读后感</title>
+      <link>http://barbery.me/post/2014-12-28-%E3%80%8A%E9%82%93%E6%99%AE%E9%A1%BF%E6%95%99%E4%BD%A0%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Sun, 28 Dec 2014 23:05:52 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-28-%E3%80%8A%E9%82%93%E6%99%AE%E9%A1%BF%E6%95%99%E4%BD%A0%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <description>&lt;p&gt;最近股市大涨，人心惶惶~~ 除了叹息便宜的股票一去不复返，还有就是烦恼后续资金怎么买的问题。。。&lt;/p&gt;
+
+&lt;p&gt;周末有空在家，重新读了《邓普顿教你逆向投资》一书，上次阅读此书，已是大学的时候了，再次阅读，让我最近躁动不安的心一下安定了下来。。。&lt;/p&gt;
+
+&lt;p&gt;好记忆不如烂笔头，随便写写，权当是流水账吧~&lt;/p&gt;
+
+&lt;p&gt;这本书的主题思想，简单而言就是一句话：“别人贪婪，我恐惧；别人恐惧，我贪婪”，邓普顿老先生用自身的经历来告诉我们，在极度的悲观的时候坚定买入，买入那些价格和价值严重错误的“低价股”。邓普顿先生的观点和巴菲特、彼得林奇的观点不谋而合，都是通过选择少人关注的冷门股，等待严重低估的价格买入，待高估或者找到下一个更低估的股票时卖出。结合自身的情况，自己过去几年做得还不够好，往往加仓时都是反弹的时候，过多的预测未来的走势，而忽视了往往内心最恐惧的时候，觉得明天还会有更低的价格的时候，往往就是最佳的买点。不要忽视买入成本价的那10%，经过复利的常年累计，最终可以放大到很大的差距。&lt;/p&gt;
+
+&lt;p&gt;除此之外，作者还提到了应该全球化投资，一个好的投资国家，应该是高储蓄率，外贸顺差，赤字少/有盈余，负债低。邓普顿先生，用数据说明了全球国家的股市涨跌轮着大小年，今年指数涨得最好的国家，往往是后面几年涨得最差的，而涨得最差的，往往是后面几年涨得最好的，投资者应该有全球视野，在全球范围内狩猎错杀的“低价股”。&lt;/p&gt;
+
+&lt;p&gt;在谈到何时卖出时，邓普顿先生的回答是，等待价格回归价值时卖出，而不是等到价格严重高于价值时卖出，他认为这是赌博而不是投资，或者找到比持有的股票低估50%的股票时卖出换入更低估的股票。书中列举了邓普顿先生清仓日本股市时，东京指数PEG为2.1倍。&lt;/p&gt;
+
+&lt;p&gt;最后，书中谈到债券的问题，在2000年美国互联网泡沫的时候，他建议大家买入债券，理由是，当泡沫破裂，股市大跌会导致经济衰退，政府为了重振紧急，必定会降息，从而导致债券获得高于票面的收益率，此时再卖出债券，待最悲观的时刻到来，买入被严重错杀的“低价股”。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>为gist加速！</title>
+      <link>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
+      <description>&lt;p&gt;github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。&lt;/p&gt;
+
+&lt;p&gt;不过比较悲剧的是，国内访问gist.github.com貌似被墙了，这样会导致嵌入的代码没办法展示，而大部分的用户都没有具备翻墙环境，so。。。&lt;/p&gt;
+
+&lt;p&gt;最好的办法是，为gist加速，利用nginx做一个反向代理，因为我这是海外的服务器，访问gist没压力，速度很快，对国内速度也不慢，所以非常适合用来对gist加速。。。&lt;/p&gt;
+
+&lt;p&gt;贴下nginx配置（&lt;a href=&#34;https://gist.github.com/Barbery/927ae66c70c581586800&#34;&gt;https://gist.github.com/Barbery/927ae66c70c581586800&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;p&gt;从此，引入gist的时候，只要把前面的host改一下，改为&lt;a href=&#34;http://gist.stutostu.com/xxx/xxxx.js&#34;&gt;http://gist.stutostu.com/xxx/xxxx.js&lt;/a&gt; 就可以了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>日版MacBook Pro使用一周感受</title>
+      <link>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</link>
+      <pubDate>Mon, 01 Dec 2014 14:03:47 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</guid>
+      <description>&lt;p&gt;MacBook Pro 上周末到货，至今一周有余，说到日版MacBook，大家都会吐槽键盘什么的，我记得刚开始了解的时候，网上大部分人的意见是不支持买日版的，经过我一周的使用，我想说，没那么夸张啦~~，日版的键盘的符号问题基本上都可以通过改建软件解决，所以这根本不是问题。。&lt;/p&gt;
+
+&lt;p&gt;唯一有个是问题的，就是数字键1左边那个“~”号的按键移到了回车键的左边，然后字母P右边第三个“|”键移到了删除键的左边。。。&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;请看图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4f3yho0j20m70a2dht.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了这两个键是物理键位置不同，需要适应外，其他按键都可以通过改建软件进行修正。&lt;/p&gt;
+
+&lt;p&gt;这里我推荐大家使用 &lt;a href=&#34;https://pqrs.org/osx/karabiner/&#34;&gt;karabiner&lt;/a&gt; 这个软件，可以一键把键盘映射成美式键盘，对于我等码农绝对是盲打没压力。。&lt;/p&gt;
+
+&lt;p&gt;我的配置是这样，仅供大家参考哈，后面我会详细说下图中每个选项的意思&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/large/6915c7dcgw1emu4np564qj20ik0hutas.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;解释下上图的配置意思：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Control_L to Command_L 的意思是把左边的control键换成command键，后面的”_L”是指左边，如果是”_R&amp;rdquo;就是右边&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;EISUU to Control_L ，EISUU就是指日版键盘空格键左边那个“英数”键，把它换成Control键&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;KANA to Option_L, KANA是指空格键右边那个键，这里是把它换成Option键&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Yen(￥) to BackSlash() ，Yen(￥)是指delete键左边那个键，这里是指把Yen键换成输入“\”和“|”的按键（就是美式键盘字母P右边第三个键）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个选项更吊，直接把日版键盘整体映射成美式键盘，例如日本键盘的shift+数字2是双引号，选了这个之后就变成了美式键盘的“@”，除了我们上面改动的，其他的字符按键都会转成美式键盘按键。。。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;最后，这个改建软件不能修改功能键，例如，control 、command键等，如果你对日版键盘左边的caps和control位置不满，可以通过mac系统偏好-&amp;gt;键盘-&amp;gt;修饰键，互换后的设置如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4rqm024j20bl073dgd.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;结论：日版MacBook，键盘压根都不是问题，如果你是小白用户，没法盲打键盘，我建议你还是用日式键盘，不要用软件改，其实大部分字符都是正常的，只有小部分的符号换了位置而已；如果你是盲打高手，那更不是问题，直接修改映射，盲打无压力。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>减少mac上mysql的内存占用</title>
+      <link>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <description>&lt;p&gt;用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo vim /etc/my.cnf&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;然后把下面的设置贴进去&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt; 
+[mysqld]
+max_connections = 10&lt;/p&gt;
+
+&lt;p&gt;key_buffer_size = 16K
+max_allowed_packet = 1M
+table_open_cache = 4
+sort_buffer_size = 64K
+read_buffer_size = 256K
+read_rnd_buffer_size = 256K
+net_buffer_length = 2K&lt;/p&gt;
+
+&lt;p&gt;thread_stack = 128K&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;重启mysql，内存占用降到了70M&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>goRouter 一个轻量级和高性能的路由</title>
+      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <description>&lt;p&gt;公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/routes 这个库的，但是这库对url不能很好的支持，例如要匹配/user/1/userinfo.json这样的url，这个库就没办法支持。&lt;/p&gt;
+
+&lt;p&gt;所以自己就参考drone/routes 写了一个小router，主要是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;改善了url正则匹配的，使其匹配更多模式，更加可以自由定制&lt;/li&gt;
+&lt;li&gt;提高了匹配时查找的性能，使用路由的前缀和http方法做hashtable查找，路由再多，查找平均也是o(1)的时间复杂度&lt;/ul&gt;
+&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果觉得不错，欢迎star&lt;/p&gt;
+
+&lt;p&gt;源码：&lt;a href=&#34;https://github.com/Barbery/goRouter&#34; title=&#34;https://github.com/Barbery/goRouter&#34;&gt;https://github.com/Barbery/goRouter&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说最近写go的感悟</title>
+      <link>http://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Mon, 13 Oct 2014 22:02:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;第一个，先说说GO原子性操作的问题，直接上demo（&lt;a href=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34; title=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34;&gt;https://gist.github.com/Barbery/08973672e132d5edfe44&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;p&gt;从结果可以看出，在并发编程下，常规的i++运算是不能保证原子性执行的，i++ 这样的运算会被go编译成 i = i + 1来执行，就是先读取i的值然后再加1，而go没有对share memory的操作，没有做thread safe，所以导致运算过程中读取到的i不是最新的情况，要解决这个问题有：&lt;/p&gt;
+
+&lt;p&gt;1.加锁(可以去掉demo中的注释代码试试)&lt;/p&gt;
+
+&lt;p&gt;2.调用atomic包来保证操作的原子性&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;第二个，就是GO和PHP的不同，GO不但作为一门后端语言，还接管了服务器，可以理解为GO是PHP+NGINX的合体。。。这样性能可以得到非常好的提升，但是也会出现不少问题。。。由于GO是常驻后台运行的，不像PHP那样通过fastcgi协议来访问，这样的区别就导致了GO中的包内/全局变量不会因为每次请求结束而销毁，导致GO的包内/全局变量就像PHP的session那样，如果同时有2个请求进来，任意一个请求改变了包内/全局变量的值都会影响另外一个请求中的值（实际上他们访问的是一个地址中的值，这和PHP很不同）。。。&lt;/p&gt;
+
+&lt;p&gt;目前的解决办法是写成OOP的风格去做，这样做的优点是，代码上比较优雅，让每个线程调用包的时候都new一个struct对象，把全局变量包裹到struct里面，让过期是struct对象交给go的垃圾回收去处理。&lt;/p&gt;
+
+&lt;p&gt;demo：(&lt;a href=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34; title=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34;&gt;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;通过这样，在并发和不同线程的执行中的操作，都不会对其他线程的信息造成污染。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

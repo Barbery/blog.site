@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>指针 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 指针 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 May 2015 22:43:07 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E6%8C%87%E9%92%88/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>golang有没有必要传递map指针？</title>
+      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</link>
+      <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</guid>
+      <description>&lt;p&gt;好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答是，因为传递指针的好处就是速度快，占用内存少。但是，我隐隐约约记得，GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝。。。&lt;/p&gt;
+
+&lt;p&gt;晚上回来的路上就一直在想这个问题。。。觉得模模糊糊，不太确定。回到家立即写个demo来证明一下，直接贴代码：&lt;/p&gt;
+
+&lt;p&gt;也可以到这里在线运行：&lt;a href=&#34;http://play.golang.org/p/0VHB4e9BJY&#34;&gt;http://play.golang.org/p/0VHB4e9BJY&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;输出结果是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;map[xxx:123 xxx222:xxx xxx333:xxx]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;结果说明了“GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝”同时使用这些引用类型的变量也需要小心副作用，因为一修改，就会影响所有使用这个参数的代码。。。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flashbuider on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/flashbuider/</link>
+    <description>Recent content in Flashbuider on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 03 Nov 2012 16:36:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/flashbuider/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>擦~~终于搞定FlashBuider 自动关闭的问题了</title>
+      <link>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
+      <pubDate>Sat, 03 Nov 2012 16:36:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
+      <description>&lt;p&gt;FlashBuider 好卡有木有？设计模式自动关闭有木有？代码写着写着，FlashBuider 就自动关闭了有木有？？？？&lt;/p&gt;
+
+&lt;p&gt;擦，这个问题困扰我已久，google许久，得到的解决方法都是叫我改FlashBuider.ini，但是，我擦，完全没效果。。。今日竟然在我全身心投入写代码的时候，竟然又自动关闭了，擦，我再也忍受不了了。。。最终，在FlashBuiderC.exe中，我找到了这个问题的根源。。。就是 out of memory，当命令行出现这个错误时，Flashbuider就会在几s内就自动关闭了。。。抱着试试的心态，上网google一下，嘿，遇到这个问题的人还不少。。。比搜索 “FlashBuider 自动关闭”这个关键词的人多了。。。按照部分博客的介绍，设置完后，重启下Flashbuider，感觉速度快了，写代码也变快了，人也变聪明了。。。&lt;/p&gt;
+
+&lt;p&gt;好吧，言归正传，下面教你怎么设置Flashbuider来解决这个问题。。。作者这里的版本是Flashbuider 4.6 不过都大同小异，应该没有版本的差异问题。。。&lt;/p&gt;
+
+&lt;p&gt;打开你的Flashbuider –》 window（窗口）&amp;ndash;》preference（首选项）&amp;ndash;》Java—》Installed JREs&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ww2.sinaimg.cn/large/6915c7dcjw1e69w7xirpsj20mo0ivacs.jpg&#34;&gt;&lt;img style=&#34;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&#34; title=&#34;image&#34; border=&#34;0&#34; alt=&#34;image&#34; src=&#34;http://ww2.sinaimg.cn/large/6915c7dcjw1e69w7xirpsj20mo0ivacs.jpg&#34; width=&#34;640&#34; height=&#34;535&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;选择Edit（编辑）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ww2.sinaimg.cn/large/6915c7dcjw1e69w8rqknuj20hc0estbb.jpg&#34;&gt;&lt;img style=&#34;background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px&#34; title=&#34;image&#34; border=&#34;0&#34; alt=&#34;image&#34; src=&#34;http://ww2.sinaimg.cn/large/6915c7dcjw1e69w8rqknuj20hc0estbb.jpg&#34; width=&#34;545&#34; height=&#34;466&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;然后按照上图的位置所示，填入 –Xmx1024m&amp;nbsp; 别漏了前面那个半角减号。。。设置完成，重启下FlashBuider 即可解决这个问题了。。。&lt;/p&gt;
+
+&lt;p&gt;困扰那么久的问题，竟然在意料之外中解决了~~~&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

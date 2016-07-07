@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设置 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E8%AE%BE%E7%BD%AE/</link>
+    <description>Recent content in 设置 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 02 Mar 2014 12:20:03 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E8%AE%BE%E7%BD%AE/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>永久设置ubuntu ulimit</title>
+      <link>http://barbery.me/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</link>
+      <pubDate>Sun, 02 Mar 2014 12:20:03 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</guid>
+      <description>&lt;p&gt;之前是ulimit -n 65535那样设置，不过貌似只是当前环境有效果，重启服务器的话，又失效了。。。今天无意找到一个设置的方法，可以永久设置ulimit的参数，转过来权当备份。。。&lt;/p&gt;
+
+&lt;p&gt;打开/etc/security/limits.conf&lt;/p&gt;
+
+&lt;p&gt;添加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* hard nofile 65535
+* soft nofile 65535
+root hard nofile 65535
+root soft nofile 65535
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或者直接执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;* hard nofile 65535
+* soft nofile 65535
+root hard nofile 65535
+root soft nofile 65535&amp;quot;&amp;gt;&amp;gt;/etc/security/limits.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;vim /etc/pam.d/su&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;注释掉(默认已经是注释掉)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;session required pam_limits.so&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;搞定，重启即可。。。重启后可以查看ulimit -n是否显示为65535&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

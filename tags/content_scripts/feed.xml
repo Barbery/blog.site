@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content_scripts on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/content_scripts/</link>
+    <description>Recent content in Content_scripts on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 21 Jul 2013 22:54:19 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/content_scripts/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>绕过chrome插件content_scripts不能访问web定义的函数和变量</title>
+      <link>http://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sun, 21 Jul 2013 22:54:19 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</guid>
+      <description>&lt;p&gt;因为插件打算利用jsonp来调用远程服务器上的API接口…而尝试了很多次都发现报错说对象不存在, 查了下文档, 原来是chrome的安全机制限制了content_scripts&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;具体请看:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;不能使用除了chrome.extension之外的chrome.* 的接口
+不能访问它所在扩展中定义的函数和变量
+不能访问web页面或其它content script中定义的函数和变量
+不能做cross-site XMLHttpRequests&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;正是第三点导致了, 返回的jsonp无法调用content_scripts里面定义的全局函数&amp;hellip;但是好险, content_scripts是有DOM操作的权限的…这也为我们提供了一个解决方案, 就是利用DOM的操作权限, 往web页面里面注入script脚本&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;就像这样…创建一个script节点, 然后注入head或者body里面….&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var script= document.createElement(&amp;quot;script&amp;quot;);
+script.type = &amp;quot;text/javascript&amp;quot;;
+script.innerText=&#39;ISHGO = {go : function(url){console.log(url);}};&#39;;
+var Head = document.getElementsByTagName(&#39;body&#39;).item(0);
+Head.appendChild(script);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

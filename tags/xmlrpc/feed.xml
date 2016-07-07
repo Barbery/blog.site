@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xmlrpc on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/xmlrpc/</link>
+    <description>Recent content in Xmlrpc on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 03 Jul 2012 10:14:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/xmlrpc/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>利用XMLRPC 离线发布wordpress 文章</title>
+      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <description>&lt;p&gt;还是直接上demo吧～～这样可以让大家更容易理解。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+include(&amp;quot;xmlrpc.inc&amp;quot;);
+$GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;;
+$c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80);
+$c-&amp;gt;return_type = &#39;phpvals&#39;;
+$content[&#39;title&#39;]=&amp;quot;标题&amp;quot;; //标题
+$content[&#39;description&#39;]=&amp;quot;正文内容&amp;lt;img src=&#39;upload.jpg&#39; /&amp;gt;打死打伤阿斯顿&amp;quot;; //内容
+$content[&#39;mt_keywords&#39;]=&amp;quot;标签1,标签2&amp;quot;; //标签
+$content[&#39;wp_password&#39;]=&amp;quot;&amp;quot;; //文章密码，输入后显示加密
+$content[&#39;categories&#39;] = array(&amp;quot;老木头&amp;quot;); //分类名
+//如果需要查看是否存在此类，可以调用wp.getCategories来调用
+/*
+wp.getCategory demo
+$x = new xmlrpcmsg( &#39;wp.getCategories&#39; ,
+    array
+    (
+        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
+        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
+        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
+    )
+);
+$r =$c-&amp;gt;send($x);
+print_r($r);
+*/
+//新建分类
+$param = array(
+    &#39;name&#39; =&amp;gt; &#39;偶尔陶醉&#39;,
+    &#39;slug&#39; =&amp;gt; &#39;something&#39;,//别名
+    &#39;parent_id&#39; =&amp;gt; 3,//父类ID，如果填0则为顶级分类，如果填其他分类ID，则为该类的子类
+    &#39;description&#39; =&amp;gt; &#39;偶尔陶醉的分类&#39;
+);
+//调用接口
+$x = new xmlrpcmsg( &#39;wp.newCategory&#39; ,
+    array
+    (
+        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
+        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
+        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
+        php_xmlrpc_encode( $param )
+    )
+);
+$r =$c-&amp;gt;send($x);
+//匹配图片，如果有图片，需要在发表文章前调用上传接口 把图片上传上去
+$pattern = &amp;quot;/&amp;lt;img.+src=(&#39;|\&amp;quot;|)?(.*)(\\1)([\s].*)?&amp;gt;/ismUe&amp;quot;;
+preg_match_all ($pattern,$content[&#39;description&#39;],$matches);
+$img = array(
+    &#39;name&#39;=&amp;gt;$matches[2][0],
+    &#39;type&#39;=&amp;gt;mime_content_type( $matches[2][0] ),
+    &#39;bits&#39;=&amp;gt;base64_encode(file_get_contents($matches[2][0])) //这里注意一定要转为字符串
+);
+//如果你安装我上述的操作进行，记得修改wordpress wp-include/class-wp-xmlrpc-server.php 文件
+//找到4528行 或者 找到 function mw_newMediaObject 把 $bits = $data[&#39;bits&#39;]; 修改成 $bits = base64_decode($data[&#39;bits&#39;]);
+//调用上传接口
+$x = new xmlrpcmsg(
+    &#39;metaWeblog.newMediaObject&#39;,
+    array
+    (
+        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
+        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
+        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
+        php_xmlrpc_encode($img)
+    )
+);
+$c-&amp;gt;return_type = &#39;phpvals&#39;;
+$r =$c-&amp;gt;send($x);
+//把文章中的图片地址替换成上传后的
+$content[&#39;description&#39;] = str_replace( $matches[2][0] ,$r-&amp;gt;val[&#39;url&#39;] an&amp;gt;/* 返回上传后的图片地址 */ , $content[&#39;description&#39;] );
+$x = new xmlrpcmsg(
+    &amp;quot;metaWeblog.newPost&amp;quot;,
+    array(
+        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
+        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
+        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
+        php_xmlrpc_encode($content),
+        php_xmlrpc_encode(&amp;quot;1&amp;quot;)
+    )
+); //立即发表
+$r =$c-&amp;gt;send($x);
+if ($r-&amp;gt;errno==&amp;quot;0&amp;quot;)
+    echo &amp;quot;发表成功，文章ID为：&amp;quot;.$r-&amp;gt;val;
+else
+    echo &amp;quot;出错了&amp;quot;;
+
+print_r($r);
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

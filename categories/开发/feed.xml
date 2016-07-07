@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/categories/%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 开发 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 20 Apr 2016 11:18:13 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/categories/%E5%BC%80%E5%8F%91/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>说说用docker-swarm部署集群的一些问题</title>
+      <link>http://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 20 Apr 2016 11:18:13 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;部署比较简单，这点官网文档说的非常详细，这里我就不重复叙述了，大家可以去看看&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/swarm/install-manual/&#34;&gt;https://docs.docker.com/swarm/install-manual/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;说说过程中遇到的问题，也希望后来者可以少踩坑。。。&lt;/p&gt;
+
+&lt;p&gt;首先就是部署前，要把docker engine配置到监听swarm的端口&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo vim /etc/default/docker&lt;/p&gt;
+
+&lt;p&gt;#追加配置到DOCKER_OPTS配置项&lt;/p&gt;
+
+&lt;p&gt;DOCKER_OPTS=&amp;ldquo;-H 0.0.0.0:2375 -H unix:///var/run/docker.sock&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;docker的id冲突时需要删掉key文件，重启service就可以重新生成&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt; rm /etc/docker/key.json&lt;/p&gt;
+
+&lt;p&gt;sudo service docker restart&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;还有一个就是discovery服务的话，consul目前还不支持多个节点ip，所以如果你有多个manage的节点也只能连一个consul的节点。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说怎么给virtualbox扩容</title>
+      <link>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</link>
+      <pubDate>Thu, 19 Nov 2015 16:39:13 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
+      <description>&lt;p&gt;前几天用vagrant+virtualbox+docker 来搭建本地开发环境，由于要导入的SQL太大，virtualbox的容量被挤爆了，而vagrant创建时似乎是不能指定容量大小的，系统默认分配的16G明显不够用。。。上网找了下，有些教程操作过程中报错，没法进行下去，有些教程又很长，看起来很复杂。。。自己折腾了下，其实非常简单。&lt;/p&gt;
+
+&lt;p&gt;首先找到自己box的安装位置，默认应该都是安装在 ~/VirtualBox VMs/default-xxxxxxx/ 下的，打开命令行终端，进入目录下。。。如果你发现你的xxxx.vdi格式的话，那么恭喜你，这个格式扩容很简单，直接执行&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$&amp;gt; VBoxManage modifyhd xxxx.vdi  &amp;ndash;resize 30000&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;后面30000代表30000MB约等于30G，根据自己的实际需要调整。&lt;/p&gt;
+
+&lt;p&gt;实际上，我们看到的文件格式很大概率是xxxxxx.vmdk，不用怕，也很简单。。。&lt;/p&gt;
+
+&lt;p&gt;首先，先利用virtualbox提供的工具，将其格式转换成vdi。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$&amp;gt; VBoxManage clonehd xxxx.vmdk xxxx.vdi &amp;ndash;format=vdi&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;等待一会儿，转换完成后，就会在目录上出现一个xxxx.vdi的文件，这个文件就是克隆自你原来的那个文件，只是把格式换成了vdi，再执行上面我说的扩容的命令，就可以实现这个vdi的容量扩容。&lt;/p&gt;
+
+&lt;p&gt;扩容完成后，打开virtualbox GUI程序（就是点击virtualbox图标运行界面程序），找到你刚刚扩容的那个box，右键设置-&amp;gt;储存，在储存器 IDE Controller那里点击添加磁盘&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/large/6915c7dcgw1ey6dbhb450j207x067mxg.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后选择”选择现有虚拟盘”选项，找到刚刚生成的vdi文件，添加进去，然后点击之前的盘符，点击下方的删除磁盘的ico删掉即可（请先自行备份之前的文件）&lt;/p&gt;
+
+&lt;p&gt;还有一点，就是要保证添加进来的vdi磁盘设置如下所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1ey6dfr4ckfj207x0650t4.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mosh - 妈妈再也不用担心我ssh连接断开了</title>
+      <link>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
+      <pubDate>Fri, 25 Sep 2015 09:35:01 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
+      <description>
+
+&lt;h2 id=&#34;mosh是什么&#34;&gt;mosh是什么&lt;/h2&gt;
+
+&lt;p&gt;最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。&lt;/p&gt;
+
+&lt;p&gt;你可能会问，说了那么多，用mosh究竟有什么好处？&lt;/p&gt;
+
+&lt;p&gt;像我这样，blog搭在国外服务器上，常常需要ssh登陆国外的服务器，然而这速度，你懂的，非常不稳定，在事情做到一半的时候连接断掉了，真的想死有木有。。。mosh是基于UDP协议的，断开后都可以自动重连，重连还是连接回上次的session哦，不是新的session，也就是看起来和没断开过连接一样，像MacBook这样，合起来待机再也不用担心断开连接了。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h2 id=&#34;如何安装&#34;&gt;如何安装&lt;/h2&gt;
+
+&lt;p&gt;好了好了，说说怎么用吧，使用mosh的话，需要装mosh的客户端和mosh的服务端。。。&lt;/p&gt;
+
+&lt;p&gt;服务端的话很简单，直接源安装就好了，ubuntu/debian系列直接&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install mosh&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;客户端的话，目前官方还不支持windows，目前只支持linux和mac os，不过有个chrome的mosh插件，windows下安装可以曲线救国&lt;a href=&#34;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&#34;&gt;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&lt;/a&gt;。另外，可以从&lt;a href=&#34;https://mosh.mit.edu/#getting&#34;&gt;https://mosh.mit.edu/#getting&lt;/a&gt; 这里面下载客户端，和查看怎么安装服务端。&lt;/p&gt;
+
+&lt;h2 id=&#34;如何使用&#34;&gt;如何使用 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mosh USERNAME@HOST [&amp;ndash;ssh=&amp;ldquo;ssh -p 2222&amp;rdquo;]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果端口非22的话，可以使用后面中括号的参数来指定端口。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用sublime text3 打造最佳PHP开发工具</title>
+      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 18 Jul 2015 18:28:22 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <description>&lt;p&gt;我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配上GIF动画，大家应该能大致看懂，我就懒得翻译了。。。有什么不懂的可以留言。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&#34;&gt;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>golang有没有必要传递map指针？</title>
+      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</link>
+      <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</guid>
+      <description>&lt;p&gt;好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答是，因为传递指针的好处就是速度快，占用内存少。但是，我隐隐约约记得，GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝。。。&lt;/p&gt;
+
+&lt;p&gt;晚上回来的路上就一直在想这个问题。。。觉得模模糊糊，不太确定。回到家立即写个demo来证明一下，直接贴代码：&lt;/p&gt;
+
+&lt;p&gt;也可以到这里在线运行：&lt;a href=&#34;http://play.golang.org/p/0VHB4e9BJY&#34;&gt;http://play.golang.org/p/0VHB4e9BJY&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;输出结果是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;map[xxx:123 xxx222:xxx xxx333:xxx]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;结果说明了“GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝”同时使用这些引用类型的变量也需要小心副作用，因为一修改，就会影响所有使用这个参数的代码。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用vagrnat打造团队跨平台开发环境</title>
+      <link>http://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sun, 17 May 2015 18:34:30 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;p&gt;额，本来这个PPT是做来在公司内部分享的，但是由于某些原因，可能没法在公司内部分享了。分享上来，权当留个纪念~~~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ssuser773636/vagrant-48243103&#34;&gt;http://www.slideshare.net/ssuser773636/vagrant-48243103&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;需要翻墙才能看到。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修改mysql配置衍生的一系列问题</title>
+      <link>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原来的配置，就直接cp -f过去了，后来发现没法启动。。。幸亏本地还有一份，对比了下，发现my-innodb-heavy-4G.cnf的配置少了一部分内容。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[mysqld]&lt;/p&gt;
+
+&lt;p&gt;user = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+port = 3306
+basedir = /usr
+datadir = /var/lib/mysql
+tmpdir = /tmp
+lc-messages-dir = /usr/share/mysql
+skip-external-locking&lt;/p&gt;
+
+&lt;p&gt;bind-address            = 127.0.0.1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;补上成功启动mysql，但是连接时，发现报错：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SQLSTATE[42000]: Syntax error or access violation: 1286 Unknown storage engine &amp;lsquo;InnoDB&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;google了下，原来是需要重新做ib_logfile。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo service mysql stop&lt;/p&gt;
+
+&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile0 /var/lib/mysql/ib_logfile0.bak&lt;/p&gt;
+
+&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile1 /var/lib/mysql/ib_logfile1.bak&lt;/p&gt;
+
+&lt;p&gt;sudo service mysql start&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;稍等10几秒，重做完启动后就一切正常了。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;最后吐槽下，这不是官方的配置嘛，为什么尼玛就不能直接拿过来用。。。坑~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>为gist加速！</title>
+      <link>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
+      <description>&lt;p&gt;github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。&lt;/p&gt;
+
+&lt;p&gt;不过比较悲剧的是，国内访问gist.github.com貌似被墙了，这样会导致嵌入的代码没办法展示，而大部分的用户都没有具备翻墙环境，so。。。&lt;/p&gt;
+
+&lt;p&gt;最好的办法是，为gist加速，利用nginx做一个反向代理，因为我这是海外的服务器，访问gist没压力，速度很快，对国内速度也不慢，所以非常适合用来对gist加速。。。&lt;/p&gt;
+
+&lt;p&gt;贴下nginx配置（&lt;a href=&#34;https://gist.github.com/Barbery/927ae66c70c581586800&#34;&gt;https://gist.github.com/Barbery/927ae66c70c581586800&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;p&gt;从此，引入gist的时候，只要把前面的host改一下，改为&lt;a href=&#34;http://gist.stutostu.com/xxx/xxxx.js&#34;&gt;http://gist.stutostu.com/xxx/xxxx.js&lt;/a&gt; 就可以了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>减少mac上mysql的内存占用</title>
+      <link>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <description>&lt;p&gt;用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo vim /etc/my.cnf&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;然后把下面的设置贴进去&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt; 
+[mysqld]
+max_connections = 10&lt;/p&gt;
+
+&lt;p&gt;key_buffer_size = 16K
+max_allowed_packet = 1M
+table_open_cache = 4
+sort_buffer_size = 64K
+read_buffer_size = 256K
+read_rnd_buffer_size = 256K
+net_buffer_length = 2K&lt;/p&gt;
+
+&lt;p&gt;thread_stack = 128K&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;重启mysql，内存占用降到了70M&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>goRouter 一个轻量级和高性能的路由</title>
+      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <description>&lt;p&gt;公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/routes 这个库的，但是这库对url不能很好的支持，例如要匹配/user/1/userinfo.json这样的url，这个库就没办法支持。&lt;/p&gt;
+
+&lt;p&gt;所以自己就参考drone/routes 写了一个小router，主要是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;改善了url正则匹配的，使其匹配更多模式，更加可以自由定制&lt;/li&gt;
+&lt;li&gt;提高了匹配时查找的性能，使用路由的前缀和http方法做hashtable查找，路由再多，查找平均也是o(1)的时间复杂度&lt;/ul&gt;
+&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果觉得不错，欢迎star&lt;/p&gt;
+
+&lt;p&gt;源码：&lt;a href=&#34;https://github.com/Barbery/goRouter&#34; title=&#34;https://github.com/Barbery/goRouter&#34;&gt;https://github.com/Barbery/goRouter&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说最近写go的感悟</title>
+      <link>http://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Mon, 13 Oct 2014 22:02:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
+      <description>&lt;p&gt;第一个，先说说GO原子性操作的问题，直接上demo（&lt;a href=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34; title=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34;&gt;https://gist.github.com/Barbery/08973672e132d5edfe44&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;p&gt;从结果可以看出，在并发编程下，常规的i++运算是不能保证原子性执行的，i++ 这样的运算会被go编译成 i = i + 1来执行，就是先读取i的值然后再加1，而go没有对share memory的操作，没有做thread safe，所以导致运算过程中读取到的i不是最新的情况，要解决这个问题有：&lt;/p&gt;
+
+&lt;p&gt;1.加锁(可以去掉demo中的注释代码试试)&lt;/p&gt;
+
+&lt;p&gt;2.调用atomic包来保证操作的原子性&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;第二个，就是GO和PHP的不同，GO不但作为一门后端语言，还接管了服务器，可以理解为GO是PHP+NGINX的合体。。。这样性能可以得到非常好的提升，但是也会出现不少问题。。。由于GO是常驻后台运行的，不像PHP那样通过fastcgi协议来访问，这样的区别就导致了GO中的包内/全局变量不会因为每次请求结束而销毁，导致GO的包内/全局变量就像PHP的session那样，如果同时有2个请求进来，任意一个请求改变了包内/全局变量的值都会影响另外一个请求中的值（实际上他们访问的是一个地址中的值，这和PHP很不同）。。。&lt;/p&gt;
+
+&lt;p&gt;目前的解决办法是写成OOP的风格去做，这样做的优点是，代码上比较优雅，让每个线程调用包的时候都new一个struct对象，把全局变量包裹到struct里面，让过期是struct对象交给go的垃圾回收去处理。&lt;/p&gt;
+
+&lt;p&gt;demo：(&lt;a href=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34; title=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34;&gt;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;通过这样，在并发和不同线程的执行中的操作，都不会对其他线程的信息造成污染。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>go-chat 用go&#43;websocket写的一个html聊天组件</title>
+      <link>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
+      <description>
+
+&lt;p&gt;最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。。&lt;/p&gt;
+
+&lt;p&gt;经过几天的学习，我对go语言的评价是：快速，性能高效，goroutine很好用。go有着做大型项目的基因。。&lt;/p&gt;
+
+&lt;h3 id=&#34;怎么使用&#34;&gt;怎么使用？&lt;/h3&gt;
+
+&lt;p&gt;把下面的代码放到head标签中&lt;/p&gt;
+
+&lt;div class=&#34;dp-highlighter&#34;&gt;
+  &lt;div class=&#34;bar&#34;&gt;
+  &lt;/div&gt;
+
+&lt;p&gt;&lt;ol class=&#34;dp-xml&#34;&gt;
+    &lt;li class=&#34;alt&#34;&gt;
+      &lt;span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;tag-name&#34;&gt;script&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span class=&#34;attribute&#34;&gt;type&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;&amp;ldquo;text/javascript&amp;rdquo;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li&gt;
+        &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class=&#34;attribute&#34;&gt;window.onload&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;function&lt;/span&gt;&lt;span&gt;() {&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li class=&#34;alt&#34;&gt;
+          &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; var &lt;span class=&#34;attribute&#34;&gt;js&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;document&lt;/span&gt;&lt;span&gt;.createElement(&amp;ldquo;script&amp;rdquo;);&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li&gt;
+            &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class=&#34;attribute&#34;&gt;js.type&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;&amp;ldquo;text/javascript&amp;rdquo;&lt;/span&gt;&lt;span&gt;;&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li class=&#34;alt&#34;&gt;
+              &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class=&#34;attribute&#34;&gt;js.src&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;&amp;ldquo;&lt;a href=&#34;http://stutostu.qiniudn.com/app.js&amp;quot;&#34;&gt;http://stutostu.qiniudn.com/app.js&amp;quot;&lt;/a&gt;&lt;/span&gt;&lt;span&gt;;&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li&gt;
+                &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; document.getElementsByTagName(&amp;ldquo;body&amp;rdquo;)[0].appendChild(js);&amp;nbsp; &lt;/span&gt; &lt;li class=&#34;alt&#34;&gt;
+                  &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; };&amp;nbsp; &lt;/span&gt; &lt;li&gt;
+                    &lt;span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;tag-name&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;
+                  &lt;/li&gt;&lt;/ol&gt; &lt;/div&gt;
+                  &lt;p&gt;
+                    更多引入方式，请看：&lt;a title=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34; href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;&lt;a href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;https://gist.github.com/Barbery/8f36d999193da2a29ab3&lt;/a&gt;&lt;/a&gt;
+                  &lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;              &amp;lt;h3&amp;gt;
+                go-chat分为4个频道，分别为：
+              &amp;lt;/h3&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                &amp;lt;strong&amp;gt;本页面&amp;lt;/strong&amp;gt;：这个频道是根据用户所在页面的url来建立的，不包括url上的？参数和#参数，即&amp;lt;a href=&amp;quot;http://stutostu.com/page1&amp;quot;&amp;gt;http://stutostu.com/page1&amp;lt;/a&amp;gt; 和 &amp;lt;a href=&amp;quot;http://stutostu.com/page1?param1=value1#aa&amp;quot;&amp;gt;http://stutostu.com/page1?param1=value1#aa&amp;lt;/a&amp;gt; 为同一个页面。使用场景：当你只想和访问这个页面的人交流的时候。
+              &amp;lt;/p&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                &amp;lt;strong&amp;gt;本域名&amp;lt;/strong&amp;gt;：这个频道是根据用户所在页面的域名来建立的，即&amp;lt;a href=&amp;quot;http://www.stutostu.com/page1.html&amp;quot;&amp;gt;http://www.stutostu.com/page1.html&amp;lt;/a&amp;gt; 和 &amp;lt;a href=&amp;quot;http://www.stutostu.com/page2.html&amp;quot;&amp;gt;http://www.stutostu.com/page2.html&amp;lt;/a&amp;gt; 虽然所在页面不同，但是所在域名均为&amp;lt;a href=&amp;quot;http://www.stutostu.com&amp;quot;&amp;gt;www.stutostu.com&amp;lt;/a&amp;gt; ，都可以通过这个频道跨页面进行聊天。使用场景：想和同一个域名的用户交流的时候。
+              &amp;lt;/p&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                &amp;lt;strong&amp;gt;根域名&amp;lt;/strong&amp;gt;：这个频道是根据用户所在页面的根域名来建立的，即news.stutostu.com和blog.stutostu.com的根域名均为stutostu.com，所以均可通过这个频道进行交流。使用场景：如果你想和这个站的所有人交流的时候
+              &amp;lt;/p&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                &amp;lt;strong&amp;gt;世界&amp;lt;/strong&amp;gt;：这个范围最大。。。无论在什么页面和域名，均可通过这个频道进行交流。使用场景：如果你想和所有使用go-chat的人交流的时候
+              &amp;lt;/p&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                &amp;lt;strong&amp;gt;注意：目前只能加入和订阅1个频道，例如你加入了世界频道，那么只能和世界频道的人进行交流，无法接收到其他频道发送的消息，也无法发送消息到其他频道。&amp;lt;/strong&amp;gt;
+              &amp;lt;/p&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                &amp;amp;nbsp;
+              &amp;lt;/p&amp;gt;
+
+              &amp;lt;p&amp;gt;
+                源码: &amp;lt;a title=&amp;quot;https://github.com/Barbery/blog/tree/master/go-chat&amp;quot; href=&amp;quot;https://github.com/Barbery/blog/tree/master/go-chat&amp;quot;&amp;gt;https://github.com/Barbery/blog/tree/master/go-chat&amp;lt;/a&amp;gt;
+              &amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>go多维map读写操作的问题</title>
+      <link>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;p&gt;因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cannot take the address of xxx
+// or
+cannot assign to xxx&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这会很让人抓狂。。&lt;/p&gt;
+
+&lt;h3 id=&#34;关于cannot-assign-to-xxx错误&#34;&gt;关于cannot assign to xxx错误&lt;/h3&gt;
+
+&lt;p&gt;来看代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    m := make(map[int][2]int)
+    m[0] = [2]int{1, 3}
+    m[0][1] = 2 //错误
+    fmt.Println(m[0][1])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;打开这里运行: &lt;a href=&#34;http://play.golang.org/p/hMPk_N20XJ&#34;&gt;http://play.golang.org/p/hMPk_N20XJ&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;关于cannot-take-the-address-of-xxx&#34;&gt;关于cannot take the address of xxx&lt;/h3&gt;
+
+&lt;p&gt;这个错误的原因和前面的是一致的，原因都是无法寻址&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type user struct {
+    name string
+    age  int
+    school map[string]school
+}
+
+type school struct {
+    Teacher string
+    Name string
+}
+
+func main() {
+    s := map[string]school{&amp;quot;primarySchool&amp;quot;:{Teacher:&amp;quot;李老师&amp;quot;, Name:&amp;quot;XX小学&amp;quot;}, &amp;quot;highSchool&amp;quot;:{Teacher:&amp;quot;曹老师&amp;quot;, Name:&amp;quot;XX中学&amp;quot;}}
+    u := user{name:&amp;quot;张三&amp;quot;,age:12,school:s}
+    u.school[&amp;quot;highSchool&amp;quot;].Name = &amp;quot;XX第二中学&amp;quot;//错误
+    fmt.Println(u)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;打开这里运行：&lt;a href=&#34;http://play.golang.org/p/Jpz6ZlASTZ&#34;&gt;http://play.golang.org/p/Jpz6ZlASTZ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;原因出在user 中的 map[string]school  这里， u.school[&amp;ldquo;highSchool&amp;rdquo;] 访问到这里都没有问题，问题在于后面的 “ .Name ” ，因为map[string]school 中储存的school是数值拷贝，当要修改school里面的Name时，就发生了不可寻址的错误。&lt;/p&gt;
+
+&lt;p&gt;正确的做法有：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;重新覆盖，既然无法单独修改里面的某一项，那就全部都替换掉，u.school[&amp;ldquo;highSchool&amp;rdquo;] = school{Teacher:&amp;ldquo;曹老师&amp;rdquo;, Name:&amp;ldquo;XX第二中学&amp;rdquo;}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;改为储存指针，把map[string]school 改为 map[string]*school，把school的指针存进去，这样go就可以寻址，从而可以修改里面的值&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说phalcon怎么连接mysqld.sock</title>
+      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <description>&lt;p&gt;phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phalcon的PDO支持DSN模式的。。。汗~~ 官方文档也没有说明一下。。。&lt;/p&gt;
+
+&lt;p&gt;查了下php官方的PDO是怎么连socket的，折腾了一下，终于搞掂。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$db = new Phalcon\Db\Adapter\Pdo\Mysql([
+    &#39;dsn&#39; =&amp;gt; &#39;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test;charset=utf8;&#39;,
+    &#39;username&#39; =&amp;gt; &#39;root&#39;,
+    &#39;password&#39; =&amp;gt; &#39;****&#39;,
+]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意哦，这个dsn，一定unix_socket放前面，如果你是&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mysql:dbname=test;unix_socket=/var/run/mysqld/mysqld.sock;&amp;nbsp; //错误&lt;/p&gt;
+
+&lt;p&gt;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test; //正确&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>php redis subscribe超时的问题</title>
+      <link>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 05 Jul 2014 14:38:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issue上找找看，发现也有不少朋友遇到这个问题。&lt;/p&gt;
+
+&lt;p&gt;原因处在于，php的redis库使用的subscribe是使用PHP内置的socket，而php.ini默认是设置了socket的超时时间是60秒，所以大家只要找到default_socket_timeout 这个配置项，把时间改长点就可以了。。。这里注意哦，我看了下官方的说明，似乎没有不限时间的选项，也就是不能填0，你如果填0，那么socket就会立即返回失败，而不是你预想中的不设超时。。。所以目前只能暂且填个很大的数，例如 1000000&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

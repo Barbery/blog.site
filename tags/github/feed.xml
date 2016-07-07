@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/github/</link>
+    <description>Recent content in Github on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Dec 2014 22:36:26 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/github/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>为gist加速！</title>
+      <link>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
+      <description>&lt;p&gt;github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。&lt;/p&gt;
+
+&lt;p&gt;不过比较悲剧的是，国内访问gist.github.com貌似被墙了，这样会导致嵌入的代码没办法展示，而大部分的用户都没有具备翻墙环境，so。。。&lt;/p&gt;
+
+&lt;p&gt;最好的办法是，为gist加速，利用nginx做一个反向代理，因为我这是海外的服务器，访问gist没压力，速度很快，对国内速度也不慢，所以非常适合用来对gist加速。。。&lt;/p&gt;
+
+&lt;p&gt;贴下nginx配置（&lt;a href=&#34;https://gist.github.com/Barbery/927ae66c70c581586800&#34;&gt;https://gist.github.com/Barbery/927ae66c70c581586800&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;p&gt;从此，引入gist的时候，只要把前面的host改一下，改为&lt;a href=&#34;http://gist.stutostu.com/xxx/xxxx.js&#34;&gt;http://gist.stutostu.com/xxx/xxxx.js&lt;/a&gt; 就可以了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,541 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>果然nginx使用socket来与php-fpm通讯是更高效率的 - Barbery&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  
+  <meta name="description" content="1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000">
+  <meta name="author" content="barbery">
+  <meta itemprop="name" content="果然nginx使用socket来与php-fpm通讯是更高效率的 - Barbery&#39;s Blog">
+  <meta itemprop="description" content="1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000">
+  <meta itemprop="image" content="http://barbery.me/img/author.jpg">
+  
+  
+  <meta name="twitter:description" content="">
+  
+  <link rel="shortcut icon" href="http://barbery.me/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="http://barbery.me/apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="http://barbery.me/apple-touch-icon.png" />
+  <link rel="stylesheet" href="http://barbery.me/highlight/styles/github.css">
+  <script src="http://barbery.me/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="http://barbery.me/font/hack/css/hack.min.css">
+  <link rel="stylesheet" href="http://barbery.me/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+  
+  <div id="textlogo">
+    <h1 class="site-name"><a href="http://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a></h1>
+    <h2 class="blog-motto">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也</h2>
+  </div>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
+  <div class="social-font clearfix">
+  
+  <a href="http://weibo.com/stutostu" target="_blank" title="weibo"></a>
+  
+  
+  
+  <a href="https://github.com/Barbery" target="_blank" title="github"></a>
+  
+  
+  
+  <a href="https://www.linkedin.com/BarberyXie" target="_blank" title="linkedin"></a>
+  
+</div>
+  <nav class="animated">
+    <ul>
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about">about</a></li>
+      
+      <li><a href="/link">link</a></li>
+      
+      <li>
+        <form class="search" method="get" action="https://www.google.com/search">
+          <div>
+            <input type="text" id="search" name="q" placeholder="search">
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+  <div id="container">
+    <div id="main" class="post" itemscope itemprop="blogPost" style="width:100%;">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/" title="果然nginx使用socket来与php-fpm通讯是更高效率的" itemprop="url">果然nginx使用socket来与php-fpm通讯是更高效率的</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://barbery.me" title="barbery">barbery</a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2013-10-03 00:28:32 &#43;0000 &#43;0000" itemprop="datePublished">2013年10月03日</time>
+  </p>
+</header>
+
+	<div class="article-content">
+    
+    
+
+<h2 id="1000次累加测试">1000次累加测试</h2>
+
+<h3 id="php5-fpm-sock下的测试结果">php5-fpm.sock下的测试结果</h3>
+
+<pre><code>barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php
+This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/foreach_test.php
+Document Length:        8 bytes
+Concurrency Level:      500
+Time taken for tests:   1.773 seconds
+Complete requests:      10000
+Failed requests:        8603
+   (Connect: 0, Receive: 0, Length: 8603, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      8603
+Total transferred:      3196701 bytes
+HTML transferred:       1576922 bytes
+Requests per second:    5639.07 [#/sec] (mean)
+Time per request:       88.667 [ms] (mean)
+Time per request:       0.177 [ms] (mean, across all concurrent requests)
+Transfer rate:          1760.39 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   22 130.2      2    1009
+Processing:     2   46  71.0     22     703
+Waiting:        1   44  71.2     20     703
+Total:          5   68 172.6     25    1701
+Percentage of the requests served within a certain time (ms)
+  50%     25
+  66%     28
+  75%     36
+  80%     44
+  90%    178
+  95%    222
+  98%    255
+  99%   1241
+ 100%   1701 (longest request)
+</code></pre>
+
+<h3 id="使用tcp方式下">使用TCP方式下：</h3>
+
+<pre><code>barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php
+This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/foreach_test.php
+Document Length:        8 bytes
+Concurrency Level:      500
+Time taken for tests:   10.283 seconds
+Complete requests:      10000
+Failed requests:        195
+   (Connect: 0, Receive: 0, Length: 195, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      195
+Total transferred:      1792565 bytes
+HTML transferred:       113930 bytes
+Requests per second:    972.44 [#/sec] (mean)
+Time per request:       514.170 [ms] (mean)
+Time per request:       1.028 [ms] (mean, across all concurrent requests)
+Transfer rate:          170.23 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   6.1      0      35
+Processing:    15  401 1389.5     91    8794
+Waiting:       13  401 1389.4     91    8794
+Total:         48  402 1393.7     91    8820
+Percentage of the requests served within a certain time (ms)
+  50%     91
+  66%     94
+  75%     97
+  80%    101
+  90%    130
+  95%   1136
+  98%   8735
+  99%   8757
+ 100%   8820 (longest request)
+</code></pre>
+
+<h2 id="mysql-select数据测试">mysql select数据测试</h2>
+
+<h3 id="php5-fpm-sock下的测试结果-1">php5-fpm.sock下的测试结果</h3>
+
+<pre><code>barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/mysql_test.php
+This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/mysql_test.php
+Document Length:        462 bytes
+Concurrency Level:      500
+Time taken for tests:   2.259 seconds
+Complete requests:      10000
+Failed requests:        8276
+   (Connect: 0, Receive: 0, Length: 8276, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      8276
+Total transferred:      3924788 bytes
+HTML transferred:       2302720 bytes
+Requests per second:    4426.98 [#/sec] (mean)
+Time per request:       112.944 [ms] (mean)
+Time per request:       0.226 [ms] (mean, across all concurrent requests)
+Transfer rate:          1696.77 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   23 131.5      3    1005
+Processing:     2   43  70.9     19    2199
+Waiting:        1   41  71.1     17    2199
+Total:          4   66 163.2     23    2199
+Percentage of the requests served within a certain time (ms)
+  50%     23
+  66%     27
+  75%     36
+  80%     48
+  90%    163
+  95%    176
+  98%    197
+  99%   1023
+ 100%   2199 (longest request)
+</code></pre>
+
+<h3 id="使用tcp方式下-1">使用TCP方式下：</h3>
+
+<pre><code>barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/mysql_test.php
+This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+Server Software:        ngx_openresty/1.4.2.7
+Server Hostname:        localhost
+Server Port:            80
+Document Path:          /bench/mysql_test.php
+Document Length:        462 bytes
+Concurrency Level:      500
+Time taken for tests:   14.971 seconds
+Complete requests:      10000
+Failed requests:        68
+   (Connect: 0, Receive: 0, Length: 68, Exceptions: 0)
+Write errors:           0
+Non-2xx responses:      68
+Total transferred:      6280484 bytes
+HTML transferred:       4600960 bytes
+Requests per second:    667.96 [#/sec] (mean)
+Time per request:       748.548 [ms] (mean)
+Time per request:       1.497 [ms] (mean, across all concurrent requests)
+Transfer rate:          409.68 [Kbytes/sec] received
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   6.2      0      39
+Processing:    10  376 1497.2     79   14927
+Waiting:       10  376 1497.2     79   14927
+Total:         48  378 1501.3     79   14954
+Percentage of the requests served within a certain time (ms)
+  50%     79
+  66%     82
+  75%     84
+  80%     87
+  90%     95
+  95%   1081
+  98%   7877
+  99%   7910
+ 100%  14954 (longest request)
+</code></pre>
+
+<h2 id="总结">总结</h2>
+
+<p>果然nginx使用socket来与php-fpm通讯是更高效率的。。。</p>
+
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="http://barbery.me/tags/nginx">nginx</a>
+  
+  <a href="http://barbery.me/tags/php-fpm">PHP-FPM</a>
+  
+  <a href="http://barbery.me/tags/socket">socket</a>
+  
+  <a href="http://barbery.me/tags/%E9%80%9A%E8%AE%AF">通讯</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="http://barbery.me/categories/%E5%BC%80%E5%8F%91">开发</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/" data-title="果然nginx使用socket来与php-fpm通讯是更高效率的" data-tsina="" class="share clearfix">
+    </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+<section class="comment">
+<div id="disqus_thread"></div>
+</section>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/";
+this.page.identifier = "http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/";
+};
+(function() { 
+var d = document, s = d.createElement('script');
+
+s.src = '//barbery.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+  </div>
+  <footer><div id="footer" >
+  
+  
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2016
+    
+    <a href="http://barbery.me/" target="_blank" title="barbery">barbery</a>
+    
+  </p>
+</div>
+</footer>
+  <script src="http://barbery.me/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+done = false;
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http:\/\/barbery.me\/ ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+<link rel="stylesheet" href="http://barbery.me/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="http://barbery.me/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80280597-1', 'auto');
+  ga('send', 'pageview');
+  $('#messagesbsb').remove();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Json数据 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/json%E6%95%B0%E6%8D%AE/</link>
+    <description>Recent content in Json数据 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Apr 2012 15:18:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/json%E6%95%B0%E6%8D%AE/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>解决淘宝 API 返回的json数据无法用json_decode的问题</title>
+      <link>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 02 Apr 2012 15:18:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;如题，这个问题困扰我已久。。。经过自己的多次尝试，和到网上搜索，我已大概猜测到是字符的问题，论坛上的朋友说，PHP的json_decode对json数据要求非常严格，必须是{“key”：&amp;rdquo;value”}的双引号包围才行，而且，对一些特殊符号不兼容。。。例如UTF-8的 BOM头，或者是C++字符的结束符\0等等。。。&lt;/p&gt;
+
+&lt;p&gt;经过排查，我发现。。。淘宝API返回的json数据（特别是taobao.taobaoke.items.detail.get），之所以json_decode后，结果为null，原因就是返回的数据含有回车符。。。这可能是一些店主在装修时，或者填写店铺描述，商品描述不规范所留下的。。。所以用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$json = str_replace(array(&amp;quot;\r\n&amp;quot;,&amp;quot;\n&amp;quot;,&amp;quot;\r&amp;quot;,&amp;quot;\t&amp;quot;,chr(9),\\n),&#39;&#39;,$json );
+$json = json_decode($json,true);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样就可以解决这个问题了。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>静态 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E9%9D%99%E6%80%81/</link>
+    <description>Recent content in 静态 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 21 Jun 2013 15:21:24 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E9%9D%99%E6%80%81/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>说说wordpress页面静态化多说插件和admin bar的问题</title>
+      <link>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 21 Jun 2013 15:21:24 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了….&lt;/p&gt;
+
+&lt;p&gt;要想去掉admin-bar这个简单, 如果你的博客只有你1个人是管理员, 那你可以到用户设置里面把是否显示那个勾去掉就可以了…要是你是多管理员的情况下, 那这样做就不好了, 要每个人都改一下多麻烦… 你可以直接修改wp-include/admin-bar.php 文件  就在第一个函数 _wp_admin_bar_init 直接return false,&lt;/p&gt;
+
+&lt;p&gt;就像这样:
+&lt;img src=&#34;http://ww4.sinaimg.cn/large/6915c7dcjw1e5v0h0dujhj209m0393yj.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;让他初始化失败, 这样就不会加载admin bar了,也不会在页面那里留下20px的空白条….&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;多说自动登陆的话, 这个问题是由于把auth_key 也缓存进去了, 只要把wp-content/plugins/duoshuo/WordPress.php 这个文件的 buildQuery 这个方法里面的关键数组注释掉就可以了…&lt;/p&gt;
+
+&lt;p&gt;就像这样&amp;hellip;
+&lt;img src=&#34;http://ww2.sinaimg.cn/large/6915c7dcjw1e5v0mzy155j20jb06d0th.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

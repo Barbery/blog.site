@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/mysql/</link>
+    <description>Recent content in Mysql on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 27 Apr 2015 23:30:54 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/mysql/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>修改mysql配置衍生的一系列问题</title>
+      <link>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原来的配置，就直接cp -f过去了，后来发现没法启动。。。幸亏本地还有一份，对比了下，发现my-innodb-heavy-4G.cnf的配置少了一部分内容。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;[mysqld]&lt;/p&gt;
+
+&lt;p&gt;user = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+port = 3306
+basedir = /usr
+datadir = /var/lib/mysql
+tmpdir = /tmp
+lc-messages-dir = /usr/share/mysql
+skip-external-locking&lt;/p&gt;
+
+&lt;p&gt;bind-address            = 127.0.0.1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;补上成功启动mysql，但是连接时，发现报错：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SQLSTATE[42000]: Syntax error or access violation: 1286 Unknown storage engine &amp;lsquo;InnoDB&amp;rsquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;google了下，原来是需要重新做ib_logfile。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo service mysql stop&lt;/p&gt;
+
+&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile0 /var/lib/mysql/ib_logfile0.bak&lt;/p&gt;
+
+&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile1 /var/lib/mysql/ib_logfile1.bak&lt;/p&gt;
+
+&lt;p&gt;sudo service mysql start&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;稍等10几秒，重做完启动后就一切正常了。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;最后吐槽下，这不是官方的配置嘛，为什么尼玛就不能直接拿过来用。。。坑~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>减少mac上mysql的内存占用</title>
+      <link>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <description>&lt;p&gt;用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo vim /etc/my.cnf&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;然后把下面的设置贴进去&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt; 
+[mysqld]
+max_connections = 10&lt;/p&gt;
+
+&lt;p&gt;key_buffer_size = 16K
+max_allowed_packet = 1M
+table_open_cache = 4
+sort_buffer_size = 64K
+read_buffer_size = 256K
+read_rnd_buffer_size = 256K
+net_buffer_length = 2K&lt;/p&gt;
+
+&lt;p&gt;thread_stack = 128K&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;重启mysql，内存占用降到了70M&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说phalcon怎么连接mysqld.sock</title>
+      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <description>&lt;p&gt;phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phalcon的PDO支持DSN模式的。。。汗~~ 官方文档也没有说明一下。。。&lt;/p&gt;
+
+&lt;p&gt;查了下php官方的PDO是怎么连socket的，折腾了一下，终于搞掂。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$db = new Phalcon\Db\Adapter\Pdo\Mysql([
+    &#39;dsn&#39; =&amp;gt; &#39;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test;charset=utf8;&#39;,
+    &#39;username&#39; =&amp;gt; &#39;root&#39;,
+    &#39;password&#39; =&amp;gt; &#39;****&#39;,
+]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意哦，这个dsn，一定unix_socket放前面，如果你是&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mysql:dbname=test;unix_socket=/var/run/mysqld/mysqld.sock;&amp;nbsp; //错误&lt;/p&gt;
+
+&lt;p&gt;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test; //正确&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用mysqlnd代替mysql</title>
+      <link>http://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
+      <pubDate>Sun, 24 Nov 2013 12:02:47 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
+      <description>&lt;p&gt;mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前&lt;strong&gt;PHP官方推荐使用&lt;/strong&gt;的类库， 使用这个类库操作mysql， 可以支持多种最新的特征功能。 例如， 惰性连接（lazy connection），非阻塞异步查询等等。。装了这个类库， 以后还可以支持通过mysqlnd其他C拓展支持多mysql读写负债平衡（mysqlnd_ms）等的后续类库支持。。。。&lt;/p&gt;
+
+&lt;p&gt;有多少人还不知道这个类库的存在？ 你是不是还在默默使用PHP自带的mysql驱动类库？ 在php5.4之前， 默认的是mysql类库， 5.4之后， 源码编译安装的话， 默认使用mysqlnd类库。。。但是大多数人使用的apt or yum源安装的话是默认使用mysql的， 需要切换到mysqlnd， 还需要通过 apt-get install php5-mysqlnd 安装才行。。&lt;/p&gt;
+
+&lt;p&gt;拓展阅读： &lt;a href=&#34;http://www.php.net/manual/zh/mysqlinfo.library.choosing.php&#34;&gt;http://www.php.net/manual/zh/mysqlinfo.library.choosing.php&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何通过本地SSH隧道端口转发访问远程mysql服务</title>
+      <link>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Sat, 23 Nov 2013 15:36:44 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;注意：以下内容的前提是，你已经配好了SSH KEY登录远程服务器，且禁止了password登录，否则，以下做法很危险。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;假设：&lt;/p&gt;
+
+&lt;p&gt;远程mysql服务器地址为: 3.3.3.3&lt;/p&gt;
+
+&lt;p&gt;本机地址为:192.168.0.1&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;建立SSH隧道连接&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;原理是利用ssh命令在本机开个端口，这个端口为隧道的入口端口，通过SSH隧道转发端口达到访问远程mysql服务。简单来说，可以理解为本地端口到远程服务器端口的一个映射，而中间靠的就是SSH，利用SSH KEY验证登录可以使得用户可以安全连接远程服务。。废话少说，这里以本机3388端口为例子，请看：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 参数解释
+# -C    使用压缩功能，是可选的，加快速度。
+# -P    用一个非特权端口进行出去的连接。
+# -f    一旦SSH完成认证并建立port forwarding，则转入后台运行。
+# -N    不执行远程命令。该参数在只打开转发端口时很有用（V2版本SSH支持）
+ssh -NCPf root@3.3.3.3 -L 3388:192.168.0.1:3306
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里的root@3.3.3.3 是登陆mysql这个远程服务器的SSH用户名和IP地址-L 3388:192.168.0.1:3306 这个参数的意思是说在本机开放IP为192.168.0.1，端口为3388到 IP为3.3.3.3，端口为3306的映射，也就是说隧道的入口为3388出口为mysql服务器的3306。。。如果你的IP不是你设定的这个192.168.0.1就会被远程服务器拒绝。。你可能会问，我是拨号连接的，IP常常要变怎么办。。。放心，你可以设置为任意IP，只要把192.168.0.1这个IP写成0.0.0.0就可以了，系统就知道是任意ip都可以连接了。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;执行完后查看本地连接情况&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;netstat -tulnp | grep 3388
+tcp    0    0 127.0.0.1:3388    0.0.0.0:*    LISTEN    14273/ssh
+tcp    0    0 ::1:3388    :::*    LISTEN    14273/ssh&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;通过隧道连接MySQL服务器测试一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mysql -u dbname -P 3388 -h 127.0.0.1 -pdbpwd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果登录进去了，就说明成功了！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

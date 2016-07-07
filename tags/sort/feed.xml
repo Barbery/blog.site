@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sort on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/sort/</link>
+    <description>Recent content in Sort on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 15 Mar 2012 13:04:33 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/sort/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>js sort 二维数组排序用法〖转〗</title>
+      <link>http://barbery.me/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E3%80%96%E8%BD%AC%E3%80%97/</link>
+      <pubDate>Thu, 15 Mar 2012 13:04:33 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E3%80%96%E8%BD%AC%E3%80%97/</guid>
+      <description>&lt;p&gt;最近在搞js 排序的问题，因为数据库排序太耗资源，如果能转移到客户端去排序，能大大D减少服务器内存消耗。客户端的话，除了js,就是as了，可惜我as学得太烂，所以只能选择js来研究研究了。。。经过我的测试，js内置方法sort的效率非常高&lt;/p&gt;
+
+&lt;p&gt;我们知道在js中默认提供了sort函数，但是这个函数默认是按照数组内容的ascii码升序进行排列的，如果我们要对二维数组排序要如何做呢？在php中是有multi_sort函数可供调用的，但是在js中似乎没有这种函数，但是没关系 ，因为js的sort函数其实也提供了参数可以定义比较函数进行二维数组的排序。&lt;/p&gt;
+
+&lt;p&gt;1、按数值排序&lt;/p&gt;
+
+&lt;p&gt;假设有如下数组&lt;/p&gt;
+
+&lt;p&gt;var arr = [[1, 2, 3], [7, 2, 3], [3, 2, 3]];&lt;/p&gt;
+
+&lt;p&gt;这里如果我们要按每个子数组的第一列来排序要如何做呢，我们可以定义一个比较函数：&lt;/p&gt;
+
+&lt;p&gt;arr.sort(function(x, y){&lt;/p&gt;
+
+&lt;p&gt;  return x[0] - y[0];&lt;/p&gt;
+
+&lt;p&gt;});&lt;/p&gt;
+
+&lt;p&gt;这里的比较函数的作用是什么呢？其实是数组依次将数组元素复制给x,y，比如首先将arr[0]赋给x，arr[1]赋给y，然后用x[0] - y[0]，根据返回的值，如果返回的是大于0的数，那么就把数组中x放到y的后面，如果返回的是0则不变，小于0则将x放到y的前面，然后第一个排序好之后在进行下面两个的排序，直到整个数组排序完成。这是默认升序的比较函数，如果要降序排列则只需修改比较方式，改为 return y[0] - x[0] 即可，这里我们x[0]表示是按第一列进行排序，我们这里也可以按其他列进行排序。这里的排序默认就会修改arr的数组结构，所以排序完arr就是按第一列升序的数组了。&lt;/p&gt;
+
+&lt;p&gt;2、按字符串排序&lt;/p&gt;
+
+&lt;p&gt;按字符串排序的话呢，我们可以利用js提供的localeCompare方法，&lt;/p&gt;
+
+&lt;p&gt;localeCompare作用：用本地特定的顺序来比较两个字符串。&lt;/p&gt;
+
+&lt;p&gt;localeCompare方法的使用规则是stringObject.localeCompare(target)，如果 stringObject 小于 target，则 localeCompare() 返回小于 0 的数。如果 stringObject 大于 target，则该方法返回大于 0 的数。如果两个字符串相等，或根据本地排序规则没有区别，该方法返回 0，器比较使用的是本地的规则，本地规则意思就是使用操作系统底层对这些本地字符排序的规则进行排序，默认情况下比如使用大于号这样的比较只是纯粹比较两个字符的unicode的数大小，会与很多语言不符。&lt;/p&gt;
+
+&lt;p&gt;比如&lt;/p&gt;
+
+&lt;p&gt;var arr = [[&amp;lsquo;中&amp;rsquo;,&amp;lsquo;国&amp;rsquo;], [&amp;lsquo;啊&amp;rsquo;,&amp;lsquo;的&amp;rsquo;], [&amp;lsquo;哦&amp;rsquo;,&amp;lsquo;的&amp;rsquo;]];&lt;/p&gt;
+
+&lt;p&gt;arr.sort(function(x, y){&lt;/p&gt;
+
+&lt;p&gt;  return x[0].localeCompare(y[0]);&lt;/p&gt;
+
+&lt;p&gt;});&lt;/p&gt;
+
+&lt;p&gt;结果就会按第一列中文字的拼音排序，如果含有英文的话，默认是将英文放在前面，如果是纯英文的话，会按字母顺序来，大写排在小写的后面，这样就可以实现字符串的排序了，包括中文和中英混排。至于要降序排列的话，方法与上面相同，改成return y[0].localeCompare(x[0]); 即可。&lt;/p&gt;
+
+&lt;p&gt;这样排序的问题就实现了，js二维数组排序用到的地方还是很多的。希望能帮到些人的忙吧&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

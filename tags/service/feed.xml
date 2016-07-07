@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/service/</link>
+    <description>Recent content in Service on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 23 Nov 2013 14:48:39 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/service/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>分享一个openresty的service脚本</title>
+      <link>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty，今天不巧在社区里发现一个不错的脚本，经过测试，确实可用。。。本来代码是放在google code 的，为了方便大家配置，我把它移到我blog的，七牛云储存里面。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 下载脚本并把脚本放置到init.d里面
+sudo wget http://stutostu.qiniudn.com/openresty.init.d.script -O /etc/init.d/nginx;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;操作的话，只需要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx [start|stop|restart|reload|info]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果提示nginx: unrecognized service 只需要赋予执行权限即可，如下所示&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo chmod +x /etc/init.d/nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果需要把nginx 添加为开机启动，只需要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo update-rc.d -f nginx defaults
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

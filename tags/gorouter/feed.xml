@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gorouter on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/gorouter/</link>
+    <description>Recent content in Gorouter on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 16 Nov 2014 10:22:00 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/gorouter/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>goRouter 一个轻量级和高性能的路由</title>
+      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <description>&lt;p&gt;公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/routes 这个库的，但是这库对url不能很好的支持，例如要匹配/user/1/userinfo.json这样的url，这个库就没办法支持。&lt;/p&gt;
+
+&lt;p&gt;所以自己就参考drone/routes 写了一个小router，主要是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;改善了url正则匹配的，使其匹配更多模式，更加可以自由定制&lt;/li&gt;
+&lt;li&gt;提高了匹配时查找的性能，使用路由的前缀和http方法做hashtable查找，路由再多，查找平均也是o(1)的时间复杂度&lt;/ul&gt;
+&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果觉得不错，欢迎star&lt;/p&gt;
+
+&lt;p&gt;源码：&lt;a href=&#34;https://github.com/Barbery/goRouter&#34; title=&#34;https://github.com/Barbery/goRouter&#34;&gt;https://github.com/Barbery/goRouter&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

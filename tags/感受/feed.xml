@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>感受 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E6%84%9F%E5%8F%97/</link>
+    <description>Recent content in 感受 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 01 Dec 2014 14:03:47 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E6%84%9F%E5%8F%97/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>日版MacBook Pro使用一周感受</title>
+      <link>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</link>
+      <pubDate>Mon, 01 Dec 2014 14:03:47 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</guid>
+      <description>&lt;p&gt;MacBook Pro 上周末到货，至今一周有余，说到日版MacBook，大家都会吐槽键盘什么的，我记得刚开始了解的时候，网上大部分人的意见是不支持买日版的，经过我一周的使用，我想说，没那么夸张啦~~，日版的键盘的符号问题基本上都可以通过改建软件解决，所以这根本不是问题。。&lt;/p&gt;
+
+&lt;p&gt;唯一有个是问题的，就是数字键1左边那个“~”号的按键移到了回车键的左边，然后字母P右边第三个“|”键移到了删除键的左边。。。&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;请看图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4f3yho0j20m70a2dht.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了这两个键是物理键位置不同，需要适应外，其他按键都可以通过改建软件进行修正。&lt;/p&gt;
+
+&lt;p&gt;这里我推荐大家使用 &lt;a href=&#34;https://pqrs.org/osx/karabiner/&#34;&gt;karabiner&lt;/a&gt; 这个软件，可以一键把键盘映射成美式键盘，对于我等码农绝对是盲打没压力。。&lt;/p&gt;
+
+&lt;p&gt;我的配置是这样，仅供大家参考哈，后面我会详细说下图中每个选项的意思&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/large/6915c7dcgw1emu4np564qj20ik0hutas.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;解释下上图的配置意思：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Control_L to Command_L 的意思是把左边的control键换成command键，后面的”_L”是指左边，如果是”_R&amp;rdquo;就是右边&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;EISUU to Control_L ，EISUU就是指日版键盘空格键左边那个“英数”键，把它换成Control键&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;KANA to Option_L, KANA是指空格键右边那个键，这里是把它换成Option键&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Yen(￥) to BackSlash() ，Yen(￥)是指delete键左边那个键，这里是指把Yen键换成输入“\”和“|”的按键（就是美式键盘字母P右边第三个键）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个选项更吊，直接把日版键盘整体映射成美式键盘，例如日本键盘的shift+数字2是双引号，选了这个之后就变成了美式键盘的“@”，除了我们上面改动的，其他的字符按键都会转成美式键盘按键。。。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;最后，这个改建软件不能修改功能键，例如，control 、command键等，如果你对日版键盘左边的caps和control位置不满，可以通过mac系统偏好-&amp;gt;键盘-&amp;gt;修饰键，互换后的设置如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4rqm024j20bl073dgd.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;结论：日版MacBook，键盘压根都不是问题，如果你是小白用户，没法盲打键盘，我建议你还是用日式键盘，不要用软件改，其实大部分字符都是正常的，只有小部分的符号换了位置而已；如果你是盲打高手，那更不是问题，直接修改映射，盲打无压力。。。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

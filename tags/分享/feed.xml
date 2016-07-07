@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分享 on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/%E5%88%86%E4%BA%AB/</link>
+    <description>Recent content in 分享 on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 10 Feb 2012 15:10:35 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/%E5%88%86%E4%BA%AB/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>分享淘宝API辅助函数-适用CI框架</title>
+      <link>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Fri, 10 Feb 2012 15:10:35 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</guid>
+      <description>
+
+&lt;p&gt;最近在重写一个淘宝客的网站，考虑到以后的拓展性，所以把它整合进CI里面了，这就出现个问题了，淘宝的SDK怎么整合进类库呢？仔细阅读淘宝API文档后，发现一个非SDK调用方法，我在这基础上加以修改整合成CI的helper函数，现在把源码分享给大家，希望帮到有需要的同学。&lt;/p&gt;
+
+&lt;p&gt;调用方法很简单，传入一个数组参数，其中method是你打算调用的API接口，其余的参数根据API接口的实际需要填入。我这里给个调用例子给大家看下。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$paramArr = array(
+    &#39;method&#39;    =&amp;gt; &#39;taobao.taobaoke.items.get&#39;,  //API名称
+    &#39;fields&#39;    =&amp;gt;&#39;num_iid,title,nick,pic_url,price,click_url,seller_credit_score,
+commission,commission_rate,volume&#39;,
+    &#39;pid&#39;       =&amp;gt;YOUR PID,
+    &#39;page_size&#39; =&amp;gt;YOUR PAGE_SIZE,
+    &#39;sort&#39;      =&amp;gt;YOUR SORT,
+    &#39;keyword&#39;   =&amp;gt;your keyword,
+);
+$this-&amp;gt;load-&amp;gt;helper(&#39;taoapi&#39;);
+$result[&#39;item_list&#39;] = send($paramArr);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;源码下载&#34;&gt;源码下载&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/download/taoapi_helper.rar&#34; target=&#34;_blank&#34;&gt;taoapi_helper.rar&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

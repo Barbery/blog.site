@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gbk on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/gbk/</link>
+    <description>Recent content in Gbk on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 18 Feb 2012 20:32:40 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/gbk/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>巧用中转页解决js UTF-8传参到GBK页面问题</title>
+      <link>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 18 Feb 2012 20:32:40 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;这个方法不是我想出来的，是网上一位博主的idea，得益于这个想法，困扰我已久的js UTF-8传参到GBK页面问题也得以解决。我把思路和大家分享下，希望能帮到有需要的朋友。&lt;/p&gt;
+
+&lt;p&gt;js UTF-8传中文参数到GBK，之所以不行是因为其字符长度不同，1个中文在UTF-8中为3个字符，而GBK为2个字符，所以导致encodeURL后不同编码内容不一致。&lt;/p&gt;
+
+&lt;p&gt;要转换编码，怎么都离不开服务器，所以最佳办法是做一个中转页面，你可以提示“正在跳转到xxx”，但是这个页面的实质是处理中文参数问题，通过js，用URl传参到中转页面，中转页面再通过$_GET来判断是否有参数，有则用iconv转换编码，然后再组合转换好的URL参数，跳转到GBK页面。&lt;/p&gt;
+
+&lt;p&gt;下面是作者的一个简单的中转页，供不懂的同学参考&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot; xml:lang=&amp;quot;zh-CN&amp;quot; lang=&amp;quot;zh-CN&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=gbk&amp;quot; /&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;正在跳转到相应服务器........&amp;lt;/h1&amp;gt;
+
+&amp;lt;?php
+$url = array(
+    &#39;tmall&#39; =&amp;gt; &#39;http://s8.taobao.com/search?commend=all&amp;amp;style=grid&amp;amp;pid=mm_11039324_2536738_9491366&amp;amp;mode=66&amp;amp;viewIndex=10&amp;amp;user_type=1&amp;amp;q=&#39;,
+    &#39;360buy&#39;=&amp;gt; &#39;http://search.360buy.com/Search?utm_source=show.union.360buy.com&amp;amp;utm_medium=tuiguang&amp;amp;utm_campaign=t_19195_&amp;amp;keyword=&#39;,
+);
+if( $_GET[&#39;url&#39;] == &#39;&#39; &amp;amp;&amp;amp; $_GET[&#39;q&#39;] == &#39;&#39; )
+    echo &#39;&amp;lt;script&amp;gt;alert(&amp;quot;参数有误，点确定后将自动跳转回首页&amp;quot;);window.location.href=&amp;quot;http://&#39;,$_SERVER[&#39;HTTP_HOST&#39;],&#39;&amp;quot;&amp;lt;/script&amp;gt;&#39;;
+else
+{
+    echo &#39;&amp;lt;script&amp;gt;window.location.href=&amp;quot;&#39;,$url[$_GET[&#39;url&#39;]],iconv(&#39;UTF-8&#39;,&#39;GBK&#39;,$_GET[&#39;q&#39;]),&#39;&amp;quot;&amp;lt;/script&amp;gt;&#39;;
+}
+
+?&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

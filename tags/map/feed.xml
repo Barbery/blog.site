@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Map on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/map/</link>
+    <description>Recent content in Map on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 May 2015 22:43:07 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/map/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>golang有没有必要传递map指针？</title>
+      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</link>
+      <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</guid>
+      <description>&lt;p&gt;好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答是，因为传递指针的好处就是速度快，占用内存少。但是，我隐隐约约记得，GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝。。。&lt;/p&gt;
+
+&lt;p&gt;晚上回来的路上就一直在想这个问题。。。觉得模模糊糊，不太确定。回到家立即写个demo来证明一下，直接贴代码：&lt;/p&gt;
+
+&lt;p&gt;也可以到这里在线运行：&lt;a href=&#34;http://play.golang.org/p/0VHB4e9BJY&#34;&gt;http://play.golang.org/p/0VHB4e9BJY&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;输出结果是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;map[xxx:123 xxx222:xxx xxx333:xxx]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;结果说明了“GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝”同时使用这些引用类型的变量也需要小心副作用，因为一修改，就会影响所有使用这个参数的代码。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>go多维map读写操作的问题</title>
+      <link>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;p&gt;因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cannot take the address of xxx
+// or
+cannot assign to xxx&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这会很让人抓狂。。&lt;/p&gt;
+
+&lt;h3 id=&#34;关于cannot-assign-to-xxx错误&#34;&gt;关于cannot assign to xxx错误&lt;/h3&gt;
+
+&lt;p&gt;来看代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    m := make(map[int][2]int)
+    m[0] = [2]int{1, 3}
+    m[0][1] = 2 //错误
+    fmt.Println(m[0][1])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;打开这里运行: &lt;a href=&#34;http://play.golang.org/p/hMPk_N20XJ&#34;&gt;http://play.golang.org/p/hMPk_N20XJ&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;关于cannot-take-the-address-of-xxx&#34;&gt;关于cannot take the address of xxx&lt;/h3&gt;
+
+&lt;p&gt;这个错误的原因和前面的是一致的，原因都是无法寻址&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type user struct {
+    name string
+    age  int
+    school map[string]school
+}
+
+type school struct {
+    Teacher string
+    Name string
+}
+
+func main() {
+    s := map[string]school{&amp;quot;primarySchool&amp;quot;:{Teacher:&amp;quot;李老师&amp;quot;, Name:&amp;quot;XX小学&amp;quot;}, &amp;quot;highSchool&amp;quot;:{Teacher:&amp;quot;曹老师&amp;quot;, Name:&amp;quot;XX中学&amp;quot;}}
+    u := user{name:&amp;quot;张三&amp;quot;,age:12,school:s}
+    u.school[&amp;quot;highSchool&amp;quot;].Name = &amp;quot;XX第二中学&amp;quot;//错误
+    fmt.Println(u)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;打开这里运行：&lt;a href=&#34;http://play.golang.org/p/Jpz6ZlASTZ&#34;&gt;http://play.golang.org/p/Jpz6ZlASTZ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;原因出在user 中的 map[string]school  这里， u.school[&amp;ldquo;highSchool&amp;rdquo;] 访问到这里都没有问题，问题在于后面的 “ .Name ” ，因为map[string]school 中储存的school是数值拷贝，当要修改school里面的Name时，就发生了不可寻址的错误。&lt;/p&gt;
+
+&lt;p&gt;正确的做法有：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;重新覆盖，既然无法单独修改里面的某一项，那就全部都替换掉，u.school[&amp;ldquo;highSchool&amp;rdquo;] = school{Teacher:&amp;ldquo;曹老师&amp;rdquo;, Name:&amp;ldquo;XX第二中学&amp;rdquo;}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;改为储存指针，把map[string]school 改为 map[string]*school，把school的指针存进去，这样go就可以寻址，从而可以修改里面的值&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

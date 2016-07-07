@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vps on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/vps/</link>
+    <description>Recent content in Vps on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 05 Nov 2013 14:07:03 +0000</lastBuildDate>
+    <atom:link href="http://barbery.me/tags/vps/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>博客正式搬家到DigitalOcean。。</title>
+      <link>http://barbery.me/post/2013-11-05-%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E6%90%AC%E5%AE%B6%E5%88%B0DigitalOcean%E3%80%82%E3%80%82/</link>
+      <pubDate>Tue, 05 Nov 2013 14:07:03 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-05-%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E6%90%AC%E5%AE%B6%E5%88%B0DigitalOcean%E3%80%82%E3%80%82/</guid>
+      <description>&lt;p&gt;没备案的域名，在国内就是个悲剧。。。SAE的日本节点又常常有丢包的情况。。。木办法了，只有继续让我的blog流亡在海外吧～～&lt;/p&gt;
+
+&lt;p&gt;找了一下业界口碑靠谱點的VPS，linode太贵，BUYVM貌似没货，樱花日文无法沟通。。。最后找到&lt;a href=&#34;https://www.digitalocean.com/?refcode=e03153f7d489&#34;&gt;DigitalOcean&lt;/a&gt;，擦，一进去就被它的价格深深吸引住了。。。单核+512M+SSD（20G）=$5，靠，夫复何求啊！！！&lt;/p&gt;
+
+&lt;p&gt;从SAE迁移到VPS上还有个好处，就是好让自己熟悉VPS的运维操作，平时都是关注PHP代码层面，比较少接触服务器的操作，得学习下才行。&lt;/p&gt;
+
+&lt;p&gt;爆发你爱折腾的小宇宙吧，少年！！！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
