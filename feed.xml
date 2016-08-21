@@ -6,8 +6,37 @@
     <description>Recent content on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 10 Jul 2016 16:28:38 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Aug 2016 11:02:31 +0800</lastBuildDate>
     <atom:link href="http://barbery.me/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>分享一个ngrok的免费server</title>
+      <link>http://barbery.me/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</link>
+      <pubDate>Sun, 21 Aug 2016 11:02:31 +0800</pubDate>
+      
+      <guid>http://barbery.me/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</guid>
+      <description>&lt;p&gt;ngrok是一个开源的内网穿透的工具，简单点说就是解决外网访问内网的问题，你可以把外网的80端口随意绑定到
+内网的某个端口上，日常开发中多用于调试微信支付或者微信的测试公众号。&lt;/p&gt;
+
+&lt;p&gt;虽说ngrok是开源的，但是还是需要一个server端去做转发，如果自己搞就太麻烦了，这里推荐一个不错的免费ngrok server
+(&lt;a href=&#34;http://www.ngrok.cc/&#34;&gt;http://www.ngrok.cc/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;注册一个账号，登陆进去就可以创建一个穿透的隧道，把需要绑定的信息填写好，就会自动生成一个clientid，
+把客户端下载到本地解压出来，执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./sunny clientid {你的clientid}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;启动完毕后，你会看到有个&lt;a href=&#34;http://127.0.0.1:4040/http/in&#34;&gt;http://127.0.0.1:4040/http/in&lt;/a&gt; 的地址，这个是ngrok的web管理界面，
+可以看到所有的request和response，是不是很方便呐！&lt;/p&gt;
+
+&lt;p&gt;目前ngrok还没能设置以daemon的方式启动，不过我们可以用别的方法来实现在后台运行，只要把ngrok的日志输出重定向一下，
+就可以使用nohup命令来启动，例如这样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nohup ./sunny -log=stdout &amp;gt; /dev/null &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>推荐几个保险</title>
@@ -558,28 +587,6 @@ net_buffer_length = 2K&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;重启mysql，内存占用降到了70M&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>goRouter 一个轻量级和高性能的路由</title>
-      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
-      <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
-      
-      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
-      <description>&lt;p&gt;公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/routes 这个库的，但是这库对url不能很好的支持，例如要匹配/user/1/userinfo.json这样的url，这个库就没办法支持。&lt;/p&gt;
-
-&lt;p&gt;所以自己就参考drone/routes 写了一个小router，主要是：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;改善了url正则匹配的，使其匹配更多模式，更加可以自由定制&lt;/li&gt;
-&lt;li&gt;提高了匹配时查找的性能，使用路由的前缀和http方法做hashtable查找，路由再多，查找平均也是o(1)的时间复杂度&lt;/ul&gt;
-&amp;nbsp;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如果觉得不错，欢迎star&lt;/p&gt;
-
-&lt;p&gt;源码：&lt;a href=&#34;https://github.com/Barbery/goRouter&#34; title=&#34;https://github.com/Barbery/goRouter&#34;&gt;https://github.com/Barbery/goRouter&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
