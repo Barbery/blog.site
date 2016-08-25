@@ -69,57 +69,33 @@
 
 &lt;p&gt;把下面的代码放到head标签中&lt;/p&gt;
 
-&lt;div class=&#34;dp-highlighter&#34;&gt;
-  &lt;div class=&#34;bar&#34;&gt;
-  &lt;/div&gt;
-
-&lt;p&gt;&lt;ol class=&#34;dp-xml&#34;&gt;
-    &lt;li class=&#34;alt&#34;&gt;
-      &lt;span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;tag-name&#34;&gt;script&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span class=&#34;attribute&#34;&gt;type&lt;/span&gt;&lt;span&gt;=&lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;&amp;ldquo;text/javascript&amp;rdquo;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li&gt;
-        &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class=&#34;attribute&#34;&gt;window.onload&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;function&lt;/span&gt;&lt;span&gt;() {&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li class=&#34;alt&#34;&gt;
-          &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; var &lt;span class=&#34;attribute&#34;&gt;js&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;document&lt;/span&gt;&lt;span&gt;.createElement(&amp;ldquo;script&amp;rdquo;);&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li&gt;
-            &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class=&#34;attribute&#34;&gt;js.type&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;&amp;ldquo;text/javascript&amp;rdquo;&lt;/span&gt;&lt;span&gt;;&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li class=&#34;alt&#34;&gt;
-              &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;span class=&#34;attribute&#34;&gt;js.src&lt;/span&gt;&lt;span&gt; = &lt;/span&gt;&lt;span class=&#34;attribute-value&#34;&gt;&amp;ldquo;&lt;a href=&#34;http://stutostu.qiniudn.com/app.js&amp;quot;&#34;&gt;http://stutostu.qiniudn.com/app.js&amp;quot;&lt;/a&gt;&lt;/span&gt;&lt;span&gt;;&amp;nbsp; &lt;/span&gt;&lt;/span&gt; &lt;li&gt;
-                &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; document.getElementsByTagName(&amp;ldquo;body&amp;rdquo;)[0].appendChild(js);&amp;nbsp; &lt;/span&gt; &lt;li class=&#34;alt&#34;&gt;
-                  &lt;span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; };&amp;nbsp; &lt;/span&gt; &lt;li&gt;
-                    &lt;span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;tag-name&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; &lt;/span&gt;&lt;/span&gt;
-                  &lt;/li&gt;&lt;/ol&gt; &lt;/div&gt;
-                  &lt;p&gt;
-                    更多引入方式，请看：&lt;a title=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34; href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;&lt;a href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;https://gist.github.com/Barbery/8f36d999193da2a29ab3&lt;/a&gt;&lt;/a&gt;
-                  &lt;/p&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;              &amp;lt;h3&amp;gt;
-                go-chat分为4个频道，分别为：
-              &amp;lt;/h3&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                &amp;lt;strong&amp;gt;本页面&amp;lt;/strong&amp;gt;：这个频道是根据用户所在页面的url来建立的，不包括url上的？参数和#参数，即&amp;lt;a href=&amp;quot;http://stutostu.com/page1&amp;quot;&amp;gt;http://stutostu.com/page1&amp;lt;/a&amp;gt; 和 &amp;lt;a href=&amp;quot;http://stutostu.com/page1?param1=value1#aa&amp;quot;&amp;gt;http://stutostu.com/page1?param1=value1#aa&amp;lt;/a&amp;gt; 为同一个页面。使用场景：当你只想和访问这个页面的人交流的时候。
-              &amp;lt;/p&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                &amp;lt;strong&amp;gt;本域名&amp;lt;/strong&amp;gt;：这个频道是根据用户所在页面的域名来建立的，即&amp;lt;a href=&amp;quot;http://www.stutostu.com/page1.html&amp;quot;&amp;gt;http://www.stutostu.com/page1.html&amp;lt;/a&amp;gt; 和 &amp;lt;a href=&amp;quot;http://www.stutostu.com/page2.html&amp;quot;&amp;gt;http://www.stutostu.com/page2.html&amp;lt;/a&amp;gt; 虽然所在页面不同，但是所在域名均为&amp;lt;a href=&amp;quot;http://www.stutostu.com&amp;quot;&amp;gt;www.stutostu.com&amp;lt;/a&amp;gt; ，都可以通过这个频道跨页面进行聊天。使用场景：想和同一个域名的用户交流的时候。
-              &amp;lt;/p&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                &amp;lt;strong&amp;gt;根域名&amp;lt;/strong&amp;gt;：这个频道是根据用户所在页面的根域名来建立的，即news.stutostu.com和blog.stutostu.com的根域名均为stutostu.com，所以均可通过这个频道进行交流。使用场景：如果你想和这个站的所有人交流的时候
-              &amp;lt;/p&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                &amp;lt;strong&amp;gt;世界&amp;lt;/strong&amp;gt;：这个范围最大。。。无论在什么页面和域名，均可通过这个频道进行交流。使用场景：如果你想和所有使用go-chat的人交流的时候
-              &amp;lt;/p&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                &amp;lt;strong&amp;gt;注意：目前只能加入和订阅1个频道，例如你加入了世界频道，那么只能和世界频道的人进行交流，无法接收到其他频道发送的消息，也无法发送消息到其他频道。&amp;lt;/strong&amp;gt;
-              &amp;lt;/p&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                &amp;amp;nbsp;
-              &amp;lt;/p&amp;gt;
-
-              &amp;lt;p&amp;gt;
-                源码: &amp;lt;a title=&amp;quot;https://github.com/Barbery/blog/tree/master/go-chat&amp;quot; href=&amp;quot;https://github.com/Barbery/blog/tree/master/go-chat&amp;quot;&amp;gt;https://github.com/Barbery/blog/tree/master/go-chat&amp;lt;/a&amp;gt;
-              &amp;lt;/p&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=“text/javascript”&amp;gt;
+    window.onload = function() {
+        var js = document.createElement(“script”);
+        js.type = “text/javascript”;
+        js.src = “http://stutostu.qiniudn.com/app.js&amp;quot;;
+        document.getElementsByTagName(“body”)[0].appendChild(js);
+    };
+&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更多引入方式，请看：&lt;a href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;https://gist.github.com/Barbery/8f36d999193da2a29ab3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;go-chat分为4个频道，分别为：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;本页面：这个频道是根据用户所在页面的url来建立的，不包括url上的？参数和#参数，即&lt;a href=&#34;http://stutostu.com/page1&#34;&gt;http://stutostu.com/page1&lt;/a&gt; 和 &lt;a href=&#34;http://stutostu.com/page1?param1=value1#aa&#34;&gt;http://stutostu.com/page1?param1=value1#aa&lt;/a&gt; 为同一个页面。使用场景：当你只想和访问这个页面的人交流的时候。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;本域名：这个频道是根据用户所在页面的域名来建立的，即&lt;a href=&#34;http://www.stutostu.com/page1.html&#34;&gt;http://www.stutostu.com/page1.html&lt;/a&gt; 和 &lt;a href=&#34;http://www.stutostu.com/page2.html&#34;&gt;http://www.stutostu.com/page2.html&lt;/a&gt; 虽然所在页面不同，但是所在域名均为&lt;a href=&#34;http://www.stutostu.com&#34;&gt;www.stutostu.com&lt;/a&gt; ，都可以通过这个频道跨页面进行聊天。使用场景：想和同一个域名的用户交流的时候。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;根域名：这个频道是根据用户所在页面的根域名来建立的，即news.stutostu.com和blog.stutostu.com的根域名均为stutostu.com，所以均可通过这个频道进行交流。使用场景：如果你想和这个站的所有人交流的时候&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;世界：这个范围最大。。。无论在什么页面和域名，均可通过这个频道进行交流。使用场景：如果你想和所有使用go-chat的人交流的时候&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注意：目前只能加入和订阅1个频道，例如你加入了世界频道，那么只能和世界频道的人进行交流，无法接收到其他频道发送的消息，也无法发送消息到其他频道。&lt;/p&gt;
+
+&lt;p&gt;源码:  &lt;a href=&#34;https://github.com/Barbery/blog/tree/master/go-chat&#34;&gt;https://github.com/Barbery/blog/tree/master/go-chat&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
