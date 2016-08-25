@@ -9,3 +9,7 @@ git checkout gh-pages
 shopt -s extglob
 rm -rf !(CNAME)
 mv /tmp/public/* ./
+
+git add *
+git commit -m "publish"
+git push
