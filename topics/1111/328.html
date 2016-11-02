@@ -12,25 +12,6 @@
 <meta name="format-detection" content="email=no">
 <title>天天特价 - ishgo</title>
 <link rel="stylesheet" href="../index.css">
-<script src='../zepto.min.js'></script>
-<script>
-  var ua       = navigator.userAgent.toLowerCase();
-  var isWeChat = /micromessenger/.test(ua);
-
-  $(document).on('click', '[href]', function (event) {
-    if (isWeChat) {
-      event.preventDefault();
-
-      $('#modal').show();
-      return false;
-    }
-  });
-
-  $(document).on('click', '#modal', function (event) {
-    $(this).hide();
-  });
-</script>
-
 </head>
 <body>
 
@@ -440,12 +421,6 @@
     <ul class="pagination">
 <li><a role="button" href="326.html">326</a></li><li><a role="button" href="327.html">327</a></li><li><span>328</span></li><li><a role="button" href="329.html">329</a></li><li><a role="button" href="330.html">330</a></li>    </ul>
   </div>
-</div>
-
-<div id="modal" class="modal" role="button">
-  <div class="backdrop"></div>
-  <img class="arrow" src="data:image/png;base64,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">
-  <h1 class="title">请点击右上角<br>"在浏览器中打开"进行浏览</h1>
 </div>
 
 <script>
