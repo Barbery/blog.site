@@ -6,8 +6,106 @@
     <description>Recent content on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Jan 2017 22:24:44 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Feb 2017 16:34:55 +0800</lastBuildDate>
     <atom:link href="http://barbery.me/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>记一次redis被黑事件</title>
+      <link>http://barbery.me/post/2017-02-19-Redis-hacked/</link>
+      <pubDate>Sat, 18 Feb 2017 16:34:55 +0800</pubDate>
+      
+      <guid>http://barbery.me/post/2017-02-19-Redis-hacked/</guid>
+      <description>
+
+&lt;h2 id=&#34;事情的经过&#34;&gt;事情的经过&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法，
+返回是一个false的布尔类型，导致爆出了数据异常。当时深夜被报警叫醒，也没考虑太多，只是简单的做了个判断
+过滤掉错误的数据。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;早上9点，接到反馈，项目A微信授权出错。排查代码没有发现有问题，考虑到之前前端有出现上线时丢失文件的情况，
+重新部署代码，本地测试故障解除。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;早上10点，接到redis队列报警信息（Timed out attempting to find data in the correct node! ）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;早上11点，接到反馈，项目B无法登陆，开始排查是否是redis集群的问题，发现master01节点无法连接，
+slave节点也没有被选举成新的master节点，重启master01节点，服务恢复正常。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;复盘&#34;&gt;复盘&lt;/h2&gt;
+
+&lt;p&gt;事情发生后，一直有个点让我想不明白，流量不大的情况下master的一个节点为什么会挂掉？退一万步来讲，
+即是挂掉，为何slave节点没有“挺身而出”？&lt;/p&gt;
+
+&lt;p&gt;随即我对redis的日志进行排查，希望能得到什么信息，首先就先查看master01这个挂掉的节点日志，0点27分，
+有几条错误日志，这个错误的时间和事发当天0点多的报警时间吻合，而且这个错误的内容直接导致了slave节点失联。&lt;/p&gt;
+
+&lt;p&gt;master01日志&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;17989:M 18 Feb 00:26:49.431 # Failed opening the RDB file root (in server root dir /var/spool/cron) for saving: Permission denied
+17989:M 18 Feb 00:26:49.432 # Failed opening the RDB file root (in server root dir /var/spool/cron) for saving: Permission denied
+17989:M 18 Feb 00:27:49.906 # Disconnecting timedout slave: SLAVE01IP:PORT
+17989:M 18 Feb 00:27:49.906 # Connection with slave SLAVE01IP:PORT lost.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;slave01日志&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;4720:S 18 Feb 00:27:49.908 # Connection with master lost.
+4720:S 18 Feb 00:27:49.908 * Caching the disconnected master state.
+4720:S 18 Feb 00:27:50.144 * Connecting to MASTER MASTER01IP:PORT
+4720:S 18 Feb 00:27:50.144 * MASTER &amp;lt;-&amp;gt; SLAVE sync started
+4720:S 18 Feb 00:27:50.146 * Non blocking connect for SYNC fired the event.
+4720:S 18 Feb 00:27:50.147 * Master replied to PING, replication can continue...
+4720:S 18 Feb 00:27:50.149 * (Non critical) Master does not understand REPLCONF listening-port: -NOAUTH Authentication required.
+4720:S 18 Feb 00:27:50.150 * (Non critical) Master does not understand REPLCONF capa: -NOAUTH Authentication required.
+4720:S 18 Feb 00:27:50.150 * Trying a partial resynchronization (request 005a426e630acfa4a64a082b02bb97cb8a0256ad:3731868328).
+4720:S 18 Feb 00:27:50.151 # Unexpected reply to PSYNC from master: -NOAUTH Authentication required.
+4720:S 18 Feb 00:27:50.151 * Discarding previously cached master state.
+4720:S 18 Feb 00:27:50.151 * Retrying with SYNC...
+4720:S 18 Feb 00:27:50.153 # MASTER aborted replication with an error: NOAUTH Authentication required.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上网一查，原来是被攻击了，攻击者连上了redis，然后利用redis的config set dir的漏洞，尝试去注入恶意执行代码到系统的crontab中执行，
+幸亏我们是使用非root用户启动，攻击者的攻击被系统权限给阻止了。&lt;/p&gt;
+
+&lt;p&gt;redis的这个漏洞应该大家都知道，也包括我们，当初在部署redis集群的时候，就已经把服务器公网IP去掉，只允许应用在内网访问，
+没想到也竟然会出这样的事情，难道是受到阿里云同机房下的其他账户机器的攻击？&lt;/p&gt;
+
+&lt;p&gt;我带着疑问向阿里云提交了工单，回复是:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;您好 内网的默认策略是内网入方向 拒绝所有，出方向允许所有；&lt;/p&gt;
+
+&lt;p&gt;1 如果你是经典网络 您设置入方向允许0.0.0.0 的话 经典网络的内网都可以访问您的服务器了&lt;/p&gt;
+
+&lt;p&gt;2 同一安全组设置内网拒绝0.0.0.0  也是可以通的，请您知晓&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我一直以为阿里云会自动隔离不同账户下的内网网络，防火墙上设置的内网允许我还以为是针对自己的机器的，
+这下就栽了跟头，使用阿里云的其他同学要注意下了，看看自己的redis有没有限制好内网网络的权限了，
+不然的话，很容易被内网下的其他账户的机器攻击。&lt;/p&gt;
+
+&lt;h2 id=&#34;反思&#34;&gt;反思&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;事情本可在影响面没扩大之前得到处理，当天凌晨redis队列突然出现异常时，本应该发现能基础服务的不正常，但是却没引起关注。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;基础服务监控缺失，连redis接点不可用这么严重的事情都没能第一时间获取信息。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;redis安全措施没做好，虽然使用了非root用户启动，恶意代码也没能注入成功，但是明知redis这个高危的漏洞，却还是在防火墙配置上留下了漏洞。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;最后的疑问&#34;&gt;最后的疑问&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;为什么slave和master失联后没能被选举成新的master节点?&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;为什么事发时应用没有捕捉到redis的异常错误？我们在本地尝试复现攻击，一旦save失败，
+整个cluster立即不可用，所有依赖redis服务均会抛出异常，究竟攻击者对redis执行了什么命令，导致了这个情况？&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>2016年度总结</title>
@@ -552,60 +650,6 @@ skip-external-locking&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>日版MacBook Pro使用一周感受</title>
-      <link>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</link>
-      <pubDate>Mon, 01 Dec 2014 14:03:47 +0000</pubDate>
-      
-      <guid>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</guid>
-      <description>&lt;p&gt;MacBook Pro 上周末到货，至今一周有余，说到日版MacBook，大家都会吐槽键盘什么的，我记得刚开始了解的时候，网上大部分人的意见是不支持买日版的，经过我一周的使用，我想说，没那么夸张啦~~，日版的键盘的符号问题基本上都可以通过改建软件解决，所以这根本不是问题。。&lt;/p&gt;
-
-&lt;p&gt;唯一有个是问题的，就是数字键1左边那个“~”号的按键移到了回车键的左边，然后字母P右边第三个“|”键移到了删除键的左边。。。&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;请看图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4f3yho0j20m70a2dht.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;除了这两个键是物理键位置不同，需要适应外，其他按键都可以通过改建软件进行修正。&lt;/p&gt;
-
-&lt;p&gt;这里我推荐大家使用 &lt;a href=&#34;https://pqrs.org/osx/karabiner/&#34;&gt;karabiner&lt;/a&gt; 这个软件，可以一键把键盘映射成美式键盘，对于我等码农绝对是盲打没压力。。&lt;/p&gt;
-
-&lt;p&gt;我的配置是这样，仅供大家参考哈，后面我会详细说下图中每个选项的意思&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/large/6915c7dcgw1emu4np564qj20ik0hutas.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;解释下上图的配置意思：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Control_L to Command_L 的意思是把左边的control键换成command键，后面的”_L”是指左边，如果是”_R&amp;rdquo;就是右边&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;EISUU to Control_L ，EISUU就是指日版键盘空格键左边那个“英数”键，把它换成Control键&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;KANA to Option_L, KANA是指空格键右边那个键，这里是把它换成Option键&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Yen(￥) to BackSlash() ，Yen(￥)是指delete键左边那个键，这里是指把Yen键换成输入“\”和“|”的按键（就是美式键盘字母P右边第三个键）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;这个选项更吊，直接把日版键盘整体映射成美式键盘，例如日本键盘的shift+数字2是双引号，选了这个之后就变成了美式键盘的“@”，除了我们上面改动的，其他的字符按键都会转成美式键盘按键。。。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;最后，这个改建软件不能修改功能键，例如，control 、command键等，如果你对日版键盘左边的caps和control位置不满，可以通过mac系统偏好-&amp;gt;键盘-&amp;gt;修饰键，互换后的设置如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4rqm024j20bl073dgd.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;结论：日版MacBook，键盘压根都不是问题，如果你是小白用户，没法盲打键盘，我建议你还是用日式键盘，不要用软件改，其实大部分字符都是正常的，只有小部分的符号换了位置而已；如果你是盲打高手，那更不是问题，直接修改映射，盲打无压力。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
 </description>
     </item>
     
