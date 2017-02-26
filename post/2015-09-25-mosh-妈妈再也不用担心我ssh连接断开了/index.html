@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>mosh - 妈妈再也不用担心我ssh连接断开了 - Barbery&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  
+  <meta name="description" content="mosh是什么 最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。 你可能会问，说了">
+  <meta name="author" content="barbery">
+  <meta itemprop="name" content="mosh - 妈妈再也不用担心我ssh连接断开了 - Barbery&#39;s Blog">
+  <meta itemprop="description" content="mosh是什么 最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。 你可能会问，说了">
+  <meta itemprop="image" content="http://barbery.me/img/author.jpg">
+  
+  
+  <meta name="twitter:description" content="">
+  
+  <link rel="shortcut icon" href="http://barbery.me/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="http://barbery.me/apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="http://barbery.me/apple-touch-icon.png" />
+  <link rel="stylesheet" href="http://barbery.me/highlight/styles/github.css">
+  <script src="http://barbery.me/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="http://barbery.me/font/hack/css/hack.min.css">
+  <link rel="stylesheet" href="http://barbery.me/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+  
+  <div id="textlogo">
+    <h1 class="site-name"><a href="http://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a></h1>
+    <h2 class="blog-motto">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也</h2>
+  </div>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
+  <div class="social-font clearfix">
+  
+  <a href="http://weibo.com/stutostu" target="_blank" title="weibo"></a>
+  
+  
+  
+  <a href="https://github.com/Barbery" target="_blank" title="github"></a>
+  
+  
+  
+  <a href="https://cn.linkedin.com/in/BarberyXie" target="_blank" title="linkedin"></a>
+  
+</div>
+  <nav class="animated">
+    <ul>
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about">about</a></li>
+      
+      <li><a href="/link">link</a></li>
+      
+      <li>
+        <form class="search" method="get" action="https://www.google.com/search">
+          <div>
+            <input type="text" id="search" name="q" placeholder="search">
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+  <div id="container">
+    <div id="main" class="post" itemscope itemprop="blogPost" style="width:100%;">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/" title="mosh - 妈妈再也不用担心我ssh连接断开了" itemprop="url">mosh - 妈妈再也不用担心我ssh连接断开了</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://barbery.me" title="barbery">barbery</a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2015-09-25 09:35:01 &#43;0000 &#43;0000" itemprop="datePublished">2015年09月25日</time>
+  </p>
+</header>
+
+	<div class="article-content">
+    
+    
+
+<h2 id="mosh是什么">mosh是什么</h2>
+
+<p>最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。</p>
+
+<p>你可能会问，说了那么多，用mosh究竟有什么好处？</p>
+
+<p>像我这样，blog搭在国外服务器上，常常需要ssh登陆国外的服务器，然而这速度，你懂的，非常不稳定，在事情做到一半的时候连接断掉了，真的想死有木有。。。mosh是基于UDP协议的，断开后都可以自动重连，重连还是连接回上次的session哦，不是新的session，也就是看起来和没断开过连接一样，像MacBook这样，合起来待机再也不用担心断开连接了。。。</p>
+
+<p> </p>
+
+<h2 id="如何安装">如何安装</h2>
+
+<p>好了好了，说说怎么用吧，使用mosh的话，需要装mosh的客户端和mosh的服务端。。。</p>
+
+<p>服务端的话很简单，直接源安装就好了，ubuntu/debian系列直接</p>
+
+<blockquote>
+<p>sudo apt-get install mosh</p>
+</blockquote>
+
+<p>客户端的话，目前官方还不支持windows，目前只支持linux和mac os，不过有个chrome的mosh插件，windows下安装可以曲线救国<a href="https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj">https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj</a>。另外，可以从<a href="https://mosh.mit.edu/#getting">https://mosh.mit.edu/#getting</a> 这里面下载客户端，和查看怎么安装服务端。</p>
+
+<h2 id="如何使用">如何使用 </h2>
+
+<blockquote>
+<p>mosh USERNAME@HOST [&ndash;ssh=&ldquo;ssh -p 2222&rdquo;]</p>
+</blockquote>
+
+<p>如果端口非22的话，可以使用后面中括号的参数来指定端口。</p>
+
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="http://barbery.me/tags/mosh">mosh</a>
+  
+  <a href="http://barbery.me/tags/ssh">SSH</a>
+  
+  <a href="http://barbery.me/tags/udp">UDP</a>
+  
+  <a href="http://barbery.me/tags/%E6%96%AD%E5%BC%80">断开</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="http://barbery.me/categories/%E5%BC%80%E5%8F%91">开发</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/" data-title="mosh - 妈妈再也不用担心我ssh连接断开了" data-tsina="" class="share clearfix">
+    </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+<section class="comment">
+<div id="disqus_thread"></div>
+</section>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/";
+this.page.identifier = "http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/";
+};
+(function() { 
+var d = document, s = d.createElement('script');
+
+s.src = '//barbery.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+  </div>
+  <footer><div id="footer" >
+  
+  
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2017
+    
+    <a href="http://barbery.me/" target="_blank" title="barbery">barbery</a>
+    
+  </p>
+</div>
+</footer>
+  <script src="http://barbery.me/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+done = false;
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http:\/\/barbery.me\/ ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+<link rel="stylesheet" href="http://barbery.me/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="http://barbery.me/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80280597-1', 'auto');
+  ga('send', 'pageview');
+  $('#messagesbsb').remove();
+</script>
+
+
+
+</body>
+</html>

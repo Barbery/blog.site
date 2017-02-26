@@ -1,0 +1,2309 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Php - Barbery&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  
+  <meta name="description" content="Php">
+  <meta name="author" content="barbery">
+  <meta itemprop="name" content="Php - Barbery&#39;s Blog">
+  <meta itemprop="description" content="Php">
+  <meta itemprop="image" content="http://barbery.me/img/author.jpg">
+  
+  
+  <meta name="twitter:description" content="">
+  <link rel="alternate" href="http://barbery.me/feed.xml" title="Barbery&#39;s Blog" type="application/rss+xml"/>
+  <link rel="shortcut icon" href="http://barbery.me/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="http://barbery.me/apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="http://barbery.me/apple-touch-icon.png" />
+  <link rel="stylesheet" href="http://barbery.me/highlight/styles/github.css">
+  <script src="http://barbery.me/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="http://barbery.me/font/hack/css/hack.min.css">
+  <link rel="stylesheet" href="http://barbery.me/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+  
+  <div id="textlogo">
+    <h1 class="site-name"><a href="http://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a></h1>
+    <h2 class="blog-motto">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也</h2>
+  </div>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
+  <div class="social-font clearfix">
+  
+  <a href="http://weibo.com/stutostu" target="_blank" title="weibo"></a>
+  
+  
+  
+  <a href="https://github.com/Barbery" target="_blank" title="github"></a>
+  
+  
+  
+  <a href="https://cn.linkedin.com/in/BarberyXie" target="_blank" title="linkedin"></a>
+  
+</div>
+  <nav class="animated">
+    <ul>
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about">about</a></li>
+      
+      <li><a href="/link">link</a></li>
+      
+      <li>
+        <form class="search" method="get" action="https://www.google.com/search">
+          <div>
+            <input type="text" id="search" name="q" placeholder="search">
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+  <div id="container">
+    <div id="main" class="moveMain">
+      
+        
+        
+          <h2 class="list-date" id="2013年08月">2013年08月</h2>
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/" title="说说php自动加载类方法" itemprop="url">
+    <h1 itemprop="name">说说php自动加载类方法</h1>
+    <p itemprop="description">php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以</p>
+    <time datetime="2013-08-18 23:28:13 &#43;0000 &#43;0000" itemprop="datePublished">2013年08月18日</time>
+  </a>
+</section>
+
+          
+        
+          <h2 class="list-date" id="2013年06月">2013年06月</h2>
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/" title="php中慎用isset来判断数组是否存在key" itemprop="url">
+    <h1 itemprop="name">php中慎用isset来判断数组是否存在key</h1>
+    <p itemprop="description">直接上代码, 不知道是php5.4版本的问题, 还是本来就这样&hellip; $a['hello'] = '123'; $a['xx'] = NULL; var_dump(isset($a['hello'])); //bool(true) var_dump(isset($a['xx'])); //bool(false) # 应该使用这个来判断 var_dump(array_key_exists('xx', $a)); //bool(true)</p>
+    <time datetime="2013-06-04 14:57:13 &#43;0000 &#43;0000" itemprop="datePublished">2013年06月04日</time>
+  </a>
+</section>
+
+          
+        
+          <h2 class="list-date" id="2013年03月">2013年03月</h2>
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%884%EF%BC%89%E2%80%94%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/" title="学习如何写PHP MVC框架（4） — 错误捕捉" itemprop="url">
+    <h1 itemprop="name">学习如何写PHP MVC框架（4） — 错误捕捉</h1>
+    <p itemprop="description">前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，</p>
+    <time datetime="2013-03-20 11:41:16 &#43;0000 &#43;0000" itemprop="datePublished">2013年03月20日</time>
+  </a>
+</section>
+
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/" title="学习如何写PHP MVC框架（3） — 视图" itemprop="url">
+    <h1 itemprop="name">学习如何写PHP MVC框架（3） — 视图</h1>
+    <p itemprop="description">今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</p>
+    <time datetime="2013-03-18 15:11:00 &#43;0000 &#43;0000" itemprop="datePublished">2013年03月18日</time>
+  </a>
+</section>
+
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/" title="学习如何写PHP MVC框架（2）加载器" itemprop="url">
+    <h1 itemprop="name">学习如何写PHP MVC框架（2）加载器</h1>
+    <p itemprop="description">上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</p>
+    <time datetime="2013-03-13 17:33:00 &#43;0000 &#43;0000" itemprop="datePublished">2013年03月13日</time>
+  </a>
+</section>
+
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%881%EF%BC%89--%E8%B7%AF%E7%94%B1/" title="学习如何写PHP MVC框架（1）-- 路由" itemprop="url">
+    <h1 itemprop="name">学习如何写PHP MVC框架（1）-- 路由</h1>
+    <p itemprop="description">说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。 第一篇先来简单点的，说说MVC框</p>
+    <time datetime="2013-03-07 21:29:00 &#43;0000 &#43;0000" itemprop="datePublished">2013年03月07日</time>
+  </a>
+</section>
+
+          
+        
+          <h2 class="list-date" id="2012年12月">2012年12月</h2>
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/" title="慎用PHP内置的Math函数" itemprop="url">
+    <h1 itemprop="name">慎用PHP内置的Math函数</h1>
+    <p itemprop="description">如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</p>
+    <time datetime="2012-12-14 12:40:00 &#43;0000 &#43;0000" itemprop="datePublished">2012年12月14日</time>
+  </a>
+</section>
+
+          
+        
+          <h2 class="list-date" id="2012年03月">2012年03月</h2>
+          
+            <section class="post" itemscope itemprop="blogPost">
+    <a href="http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/" title="强大的XHProf" itemprop="url">
+    <h1 itemprop="name">强大的XHProf</h1>
+    <p itemprop="description">XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</p>
+    <time datetime="2012-03-19 13:30:59 &#43;0000 &#43;0000" itemprop="datePublished">2012年03月19日</time>
+  </a>
+</section>
+
+          
+        
+
+      <div><div class="pagination pagination-right" style="float: right;">
+  <ul>
+        
+            <li><a href="/tags/php/">Prev</a></li>
+        
+        <li class="active"><a href="/tags/php/page/2/">2</a></li>
+
+        
+  </ul>
+</div></div>
+    </div>
+    <div class="openaside fadeIn" style="display: block;"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+<div id="asidepart" class="fadeOut" style="display: none;">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+  
+
+<div class="categorieslist">
+  <p class="asidetitle">分类</p>
+  <ul>
+    
+    <li><a href="http://barbery.me/categories/%e5%bc%80%e5%8f%91" title="开发">开发<sup>77</sup></a></li>
+    
+    <li><a href="http://barbery.me/categories/%e5%bf%83%e6%83%85%e9%9a%8f%e7%ac%94" title="心情随笔">心情随笔<sup>22</sup></a></li>
+    
+    <li><a href="http://barbery.me/categories/%e6%88%91%e7%9a%84%e6%97%85%e9%80%94" title="我的旅途">我的旅途<sup>1</sup></a></li>
+    
+    <li><a href="http://barbery.me/categories/%e8%82%a1%e7%a5%a8" title="股票">股票<sup>92</sup></a></li>
+    
+  </ul>
+</div>
+
+
+
+  
+
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+      
+			<li><a href="http://barbery.me/tags/09%e5%bc%a0%e6%b1%9f%e5%80%ba" title="09张江债">09张江债<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/110017" title="110017">110017<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/113001" title="113001">113001<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/113002" title="113002">113002<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/122963" title="122963">122963<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/150018" title="150018">150018<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/2012" title="2012">2012<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/2013" title="2013">2013<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/2015" title="2015">2015<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/2016" title="2016">2016<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/600016" title="600016">600016<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/addslashes" title="addslashes">addslashes<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/admin-bar" title="admin-bar">admin-bar<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/aldi" title="aldi">aldi<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/android" title="android">android<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/apache" title="apache">apache<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/api" title="api">api<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/apt-get" title="apt-get">apt-get<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/a%e8%82%a1" title="a股">a股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/bashrc" title="bashrc">bashrc<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/beautifulsoup" title="beautifulsoup">beautifulsoup<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/benchmark" title="benchmark">benchmark<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/blog" title="blog">blog<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/bug" title="bug">bug<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/candlestickchart" title="candlestickchart">candlestickchart<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/candlestickseries" title="candlestickseries">candlestickseries<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/cario-dock" title="cario-dock">cario-dock<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ceo" title="ceo">ceo<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/chrome" title="chrome">chrome<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/chrome%e6%8f%92%e4%bb%b6" title="chrome插件">chrome插件<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ci" title="ci">ci<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/cloundflare" title="cloundflare">cloundflare<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/cmnet" title="cmnet">cmnet<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/cmwap" title="cmwap">cmwap<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/cmwrap" title="cmwrap">cmwrap<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/codeigniter" title="codeigniter">codeigniter<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/content_scripts" title="content_scripts">content_scripts<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/cpi" title="cpi">cpi<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/crawl-delay" title="crawl-delay">crawl-delay<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/curl" title="curl">curl<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/curlfile" title="curlfile">curlfile<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/default_socket_timeout" title="default_socket_timeout">default_socket_timeout<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/digitalocean" title="digitalocean">digitalocean<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/dns" title="dns">dns<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/docker" title="docker">docker<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/drizzle" title="drizzle">drizzle<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/flashbuider" title="flashbuider">flashbuider<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/flex" title="flex">flex<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/gbk" title="gbk">gbk<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/gd" title="gd">gd<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/gist" title="gist">gist<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/git-flow" title="git-flow">git-flow<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/github" title="github">github<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/gitlab" title="gitlab">gitlab<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/go" title="go">go<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/go-chat" title="go-chat">go-chat<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/goagent" title="goagent">goagent<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/golang" title="golang">golang<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/gorouter" title="gorouter">gorouter<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/hash" title="hash">hash<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/helper" title="helper">helper<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/html" title="html">html<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/http" title="http">http<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/httpsqs" title="httpsqs">httpsqs<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/h%e8%82%a1%e6%8b%9b%e8%82%a1%e8%af%b4%e6%98%8e" title="h股招股说明">h股招股说明<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ibm" title="ibm">ibm<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/image-magick" title="image-magick">image-magick<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/init.d" title="init.d">init.d<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/isset" title="isset">isset<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/js" title="js">js<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/json_decode" title="json_decode">json_decode<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/json%e6%95%b0%e6%8d%ae" title="json数据">json数据<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/k-means" title="k-means">k-means<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/libevent" title="libevent">libevent<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/linechart" title="linechart">linechart<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/lineseries" title="lineseries">lineseries<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/list" title="list">list<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/lua" title="lua">lua<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/luajit" title="luajit">luajit<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/luarocks" title="luarocks">luarocks<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/luasocket" title="luasocket">luasocket<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mac" title="mac">mac<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/macbook" title="macbook">macbook<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/map" title="map">map<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mario" title="mario">mario<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/math" title="math">math<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/memcached" title="memcached">memcached<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/michealchen" title="michealchen">michealchen<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mod_php" title="mod_php">mod_php<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/module" title="module">module<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mosh" title="mosh">mosh<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mvc" title="mvc">mvc<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mysql" title="mysql">mysql<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mysql_real_escape_string" title="mysql_real_escape_string">mysql_real_escape_string<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/mysqlnd" title="mysqlnd">mysqlnd<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/nginx" title="nginx">nginx<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ngrok" title="ngrok">ngrok<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/opcache" title="opcache">opcache<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/openresty" title="openresty">openresty<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/path" title="path">path<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/pb" title="pb">pb<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/pdo" title="pdo">pdo<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/phalcon" title="phalcon">phalcon<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/php" title="php">php<sup>18</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/php-fpm" title="php-fpm">php-fpm<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/pmi" title="pmi">pmi<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/post" title="post">post<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/python" title="python">python<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/qq" title="qq">qq<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/redis" title="redis">redis<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/rest" title="rest">rest<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/restful" title="restful">restful<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/robots" title="robots">robots<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/roe" title="roe">roe<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/router" title="router">router<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/sae" title="sae">sae<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/scroll" title="scroll">scroll<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/sdk" title="sdk">sdk<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/server" title="server">server<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/service" title="service">service<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/shadowsocks" title="shadowsocks">shadowsocks<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/socket" title="socket">socket<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/sort" title="sort">sort<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/source" title="source">source<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/sql%e6%b3%a8%e5%85%a5" title="sql注入">sql注入<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ssh" title="ssh">ssh<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ssh-key" title="ssh-key">ssh-key<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/stop" title="stop">stop<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/sublime-text-2" title="sublime-text-2">sublime-text-2<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/sublime-text3" title="sublime-text3">sublime-text3<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/subscribe" title="subscribe">subscribe<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/svn" title="svn">svn<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/swarm" title="swarm">swarm<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/tab" title="tab">tab<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/timer" title="timer">timer<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/tool-bar" title="tool-bar">tool-bar<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/u" title="u">u<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ubuntu" title="ubuntu">ubuntu<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/udp" title="udp">udp<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/ulimit" title="ulimit">ulimit<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/utf-8" title="utf-8">utf-8<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/vagrant" title="vagrant">vagrant<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/view" title="view">view<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/virtualbox" title="virtualbox">virtualbox<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/vps" title="vps">vps<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/websocket" title="websocket">websocket<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/wordpress" title="wordpress">wordpress<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/wordpress-for-android" title="wordpress-for-android">wordpress-for-android<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/xhprof" title="xhprof">xhprof<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/xmlrpc" title="xmlrpc">xmlrpc<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/zendopcache" title="zendopcache">zendopcache<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/zenmate" title="zenmate">zenmate<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/zephir" title="zephir">zephir<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%8a%e4%bc%a0" title="上传">上传<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%8d%e8%89%af%e7%8e%87" title="不良率">不良率<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%93%e6%b3%a8" title="专注">专注<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%9c%e9%98%bf%e9%98%bf%e8%83%b6" title="东阿阿胶">东阿阿胶<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%ad%e5%9b%bd%e4%ba%ba%e5%af%bf" title="中国人寿">中国人寿<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%ad%e5%9b%bd%e9%93%b6%e8%a1%8c" title="中国银行">中国银行<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%ad%e6%8a%a5" title="中报">中报<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%ad%e6%b5%b7%e8%bd%ac%e5%80%ba" title="中海转债">中海转债<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%ad%e8%a1%8c%e8%bd%ac%e5%80%ba" title="中行转债">中行转债<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%ad%e9%ab%98%e7%ab%af%e7%99%bd%e9%85%92" title="中高端白酒">中高端白酒<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%bb%e8%89%b2%e8%b0%83" title="主色调">主色调<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%b8%bd%e6%b1%9f" title="丽江">丽江<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%8b%e4%b8%9a%e9%83%a8" title="事业部">事业部<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%8c%e5%8f%89%e6%a0%91" title="二叉树">二叉树<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%8c%e6%ac%a1%e8%bd%ac%e5%9e%8b" title="二次转型">二次转型<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%8c%e7%bb%b4%e7%a0%81" title="二维码">二维码<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%91%e5%8d%97" title="云南">云南<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%92%e5%8a%a8%e5%b9%b3%e5%8f%b0" title="互动平台">互动平台<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%92%e8%81%94%e7%bd%91" title="互联网">互联网<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%a7%e8%83%bd" title="产能">产能<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%ba%ac%e4%b8%9c" title="京东">京东<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bb%b7%e5%80%bc%e5%88%86%e6%9e%90" title="价值分析">价值分析<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bb%b7%e5%80%bc%e6%8a%95%e8%b5%84" title="价值投资">价值投资<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bb%bb%e5%8a%a1%e9%98%9f%e5%88%97" title="任务队列">任务队列<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bc%8a%e5%88%a9" title="伊利">伊利<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bc%8a%e6%b3%b0b" title="伊泰b">伊泰b<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bc%98%e5%8c%96" title="优化">优化<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bc%a0%e5%8f%82" title="传参">传参<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bc%b0%e5%80%bc" title="估值">估值<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bd%8e%e4%bb%b7%e8%82%a1" title="低价股">低价股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bd%8e%e4%bc%b0" title="低估">低估<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bd%8e%e6%88%90%e6%9c%ac" title="低成本">低成本<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bd%8e%e9%a3%8e%e9%99%a9%e6%8a%95%e8%b5%84" title="低风险投资">低风险投资<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bf%9d%e9%99%a9" title="保险">保险<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e4%bf%ae%e6%ad%a3%e7%ac%a6" title="修正符">修正符<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%8d%e8%b4%b9" title="免费">免费<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%a8%e6%9f%b4%e5%8a%a8%e5%8a%9b" title="全柴动力">全柴动力<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%a8%e7%90%83" title="全球">全球<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%ac%e5%85%b3%e5%85%ac%e5%8f%b8" title="公关公司">公关公司<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%ac%e5%8f%b8" title="公司">公司<sup>6</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%b4%e4%b8%9a%e9%93%b6%e8%a1%8c" title="兴业银行">兴业银行<sup>16</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%bc%e5%ae%b9" title="兼容">兼容<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%85%bc%e5%ae%b9%e6%80%a7" title="兼容性">兼容性<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%86%85%e5%ad%98%e5%8d%a0%e7%94%a8" title="内存占用">内存占用<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%87%80%e8%b5%84%e4%ba%a7%e6%94%b6%e7%9b%8a%e7%8e%87" title="净资产收益率">净资产收益率<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%86%e4%ba%ab" title="分享">分享<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%86%e6%9e%90" title="分析">分析<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%86%e7%ba%a2" title="分红">分红<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%86%e7%ba%a2%e5%86%8d%e6%8a%95%e8%b5%84" title="分红再投资">分红再投资<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%86%e7%ba%a7%e5%9f%ba%e9%87%91" title="分级基金">分级基金<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%9b%e4%b8%9a" title="创业">创业<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%9b%e6%96%b0" title="创新">创新<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%a9%e7%8e%87%e5%8c%96" title="利率化">利率化<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%88%a9%e7%8e%87%e5%b8%82%e5%9c%ba%e5%8c%96" title="利率市场化">利率市场化<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%89%8d%e6%99%af" title="前景">前景<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8a%a0%e8%bd%bd%e5%99%a8" title="加载器">加载器<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8a%a0%e9%80%9f" title="加速">加速<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8c%b9%e6%9f%93%e5%b8%83" title="匹染布">匹染布<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8c%bb%e7%96%97%e4%bf%9d%e9%99%a9" title="医疗保险">医疗保险<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8c%bb%e8%8d%af" title="医药">医药<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8d%8f%e5%8a%a9%e5%bc%80%e5%8f%91" title="协助开发">协助开发<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8e%9f%e5%ad%90%e6%80%a7" title="原子性">原子性<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8f%8c%e6%b1%87%e5%8f%91%e5%b1%95" title="双汇发展">双汇发展<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" title="反向代理">反向代理<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%8f%af%e8%bd%ac%e5%80%ba" title="可转债">可转债<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%90%8c%e4%b8%9a%e4%b8%9a%e5%8a%a1" title="同业业务">同业业务<sup>6</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%90%8c%e4%b8%9a%e8%b4%9f%e5%80%ba" title="同业负债">同业负债<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%90%8c%e4%b8%9a%e8%b5%84%e4%ba%a7" title="同业资产">同业资产<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%91%a8%e8%bd%ac%e5%a4%a9%e6%95%b0" title="周转天数">周转天数<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%93%88%e5%b8%8c%e7%a2%b0%e6%92%9e" title="哈希碰撞">哈希碰撞<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%98%89%e5%ae%9e%e5%a4%9a%e5%88%a9" title="嘉实多利">嘉实多利<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%9b%9e%e5%94%ae%e6%9d%a1%e6%ac%be" title="回售条款">回售条款<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%9b%9e%e8%b4%ad" title="回购">回购<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%9b%a2%e9%98%9f" title="团队">团队<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%9b%bd%e8%af%81%e5%9c%b0%e4%ba%a7" title="国证地产">国证地产<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%9b%be%e7%89%87%e5%ba%93" title="图片库">图片库<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a1%9e%e6%96%af-%e5%8d%a1%e6%8b%89%e6%9b%bc" title="塞斯-卡拉曼">塞斯-卡拉曼<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a2%9e%e9%95%bf" title="增长">增长<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a2%9e%e9%95%bf%e7%8e%87" title="增长率">增长率<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a2%9e%e9%95%bf%e7%8e%87%e9%99%b7%e9%98%b1" title="增长率陷阱">增长率陷阱<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%8d%e5%90%88%e5%a2%9e%e9%95%bf" title="复合增长">复合增长<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%9a%e5%88%a9%e4%bc%98%e5%85%88" title="多利优先">多利优先<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%9a%e5%88%a9%e8%bf%9b%e5%8f%96" title="多利进取">多利进取<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%9a%e7%bb%b4map" title="多维map">多维map<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%9a%e8%af%b4" title="多说">多说<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%a7%e7%90%86" title="大理">大理<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a4%a7%e7%a7%a6%e9%93%81%e8%b7%af" title="大秦铁路">大秦铁路<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%a5%97%e5%88%a9" title="套利">套利<sup>6</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%ad%98%e8%b4%a7" title="存货">存货<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%ae%89%e5%85%a8%e8%be%b9%e9%99%85" title="安全边际">安全边际<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%ae%8f%e8%a7%82%e6%95%b0%e6%8d%ae" title="宏观数据">宏观数据<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%ae%9a%e6%8a%95" title="定投">定投<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%ae%b9%e9%87%8f" title="容量">容量<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b0%8f%e5%be%ae%e4%bc%81%e4%b8%9a" title="小微企业">小微企业<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b0%8f%e5%be%ae%e8%b4%b7%e6%ac%be" title="小微贷款">小微贷款<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b1%80%e9%83%a8%e9%a2%9c%e8%89%b2" title="局部颜色">局部颜色<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b1%95%e6%9c%9b" title="展望">展望<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b4%a9%e6%ba%83" title="崩溃">崩溃<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b7%a5%e4%bd%9c" title="工作">工作<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b7%a5%e8%a1%8c%e8%bd%ac%e5%80%ba" title="工行转债">工行转债<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b7%b4%e8%8f%b2%e7%89%b9" title="巴菲特">巴菲特<sup>7</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b8%82%e5%80%bc" title="市值">市值<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b8%82%e5%9c%ba%e5%8c%96" title="市场化">市场化<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b8%82%e5%9c%ba%e5%8d%a0%e6%9c%89%e7%8e%87" title="市场占有率">市场占有率<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b8%82%e7%9b%88%e7%8e%87" title="市盈率">市盈率<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b8%95%e7%89%b9%e5%a4%9a%e5%b0%94%e8%a5%bf" title="帕特多尔西">帕特多尔西<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b9%b4%e6%8a%a5%e5%88%86%e6%9e%90" title="年报分析">年报分析<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b9%b6%e5%8f%91" title="并发">并发<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%b9%bf%e5%91%8a" title="广告">广告<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%ba%95%e9%83%a8" title="底部">底部<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83" title="开发环境">开发环境<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bc%80%e5%8f%91%e8%80%85" title="开发者">开发者<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bc%a0%e6%98%95%e5%b8%86" title="张昕帆">张昕帆<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bc%a0%e8%a3%95" title="张裕">张裕<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bd%b1%e5%ad%90cfo" title="影子cfo">影子cfo<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bd%bc%e5%be%97.%e6%9e%97%e5%a5%87" title="彼得.林奇">彼得.林奇<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bd%bc%e5%be%97%e6%9e%97%e5%a5%87" title="彼得林奇">彼得林奇<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%be%ae%e4%bf%a1%e8%b0%83%e8%af%95" title="微信调试">微信调试<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%be%ae%e5%8d%9a" title="微博">微博<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e5%bf%83%e7%90%86" title="心理">心理<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%80%bb%e7%bb%93" title="总结">总结<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%81%92%e7%94%9f%e9%93%b6%e8%a1%8c" title="恒生银行">恒生银行<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%84%9f%e5%8f%97" title="感受">感受<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%88%90%e9%95%bf%e8%82%a1" title="成长股">成长股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%88%bf%e5%9c%b0%e4%ba%a7a" title="房地产a">房地产a<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%88%bf%e5%9c%b0%e4%ba%a7b" title="房地产b">房地产b<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%89%8b%e6%9c%ba%e5%8d%9a%e5%ae%a2" title="手机博客">手机博客<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%89%8b%e6%9c%ba%e9%93%b6%e8%a1%8c" title="手机银行">手机银行<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%89%a9%e5%ae%b9" title="扩容">扩容<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%89%bf%e8%af%ba" title="承诺">承诺<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%93%e5%8f%96%e4%bb%b7%e6%a0%bc" title="抓取价格">抓取价格<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e6%9c%ba" title="投机">投机<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84" title="投资">投资<sup>20</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e4%bd%93%e7%b3%bb" title="投资体系">投资体系<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e5%88%86%e6%9e%90" title="投资分析">投资分析<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e6%80%bb%e7%bb%93" title="投资总结">投资总结<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e7%90%86%e5%bf%b5" title="投资理念">投资理念<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e8%80%85" title="投资者">投资者<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%98%e7%ae%97" title="折算">折算<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8a%a4%e5%9f%8e%e6%b2%b3" title="护城河">护城河<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8b%86%e5%88%86%e5%a5%97%e5%88%a9" title="拆分套利">拆分套利<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8b%9b%e5%95%86%e5%b1%80b" title="招商局b">招商局b<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8b%9b%e5%95%86%e9%93%b6%e8%a1%8c" title="招商银行">招商银行<sup>14</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8b%9b%e8%a1%8c" title="招行">招行<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8c%87%e6%95%b0" title="指数">指数<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8c%87%e9%92%88" title="指针">指针<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8e%92%e5%ba%8f" title="排序">排序<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%8e%a8%e8%8d%90" title="推荐">推荐<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%94%b6%e7%9b%8a" title="收益">收益<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%94%b6%e8%b4%ad" title="收购">收购<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%94%b9%e9%80%a0" title="改造">改造<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%94%b9%e9%9d%a9" title="改革">改革<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%94%bb%e5%87%bb" title="攻击">攻击<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%95%88%e7%8e%87%e6%b5%8b%e8%af%95" title="效率测试">效率测试<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" title="数据库">数据库<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%95%b0%e7%bb%84" title="数组">数组<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%96%ad%e5%bc%80" title="断开">断开<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%96%b9%e6%b3%95" title="方法">方法<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%97%85%e6%b8%b8" title="旅游">旅游<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%97%a0%e9%a3%8e%e9%99%a9%e5%a5%97%e5%88%a9" title="无风险套利">无风险套利<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%97%a5%e7%89%88" title="日版">日版<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%98%86%e6%98%8e" title="昆明">昆明<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%9c%aa%e6%9d%a5%e5%8f%91%e5%b1%95" title="未来发展">未来发展<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%9d%8e%e4%bb%81%e6%9d%b0" title="李仁杰">李仁杰<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%9d%ad%e6%b1%bd%e8%bd%aeb" title="杭汽轮b">杭汽轮b<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%a0%b8%e5%bf%83%e7%ab%9e%e4%ba%89%e5%8a%9b" title="核心竞争力">核心竞争力<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%a0%bc%e9%9b%b7%e5%8e%84%e5%a7%86" title="格雷厄姆">格雷厄姆<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%a1%86%e6%9e%b6" title="框架">框架<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%a2%81%e5%86%9b%e5%84%92" title="梁军儒">梁军儒<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%ad%a3%e5%88%99" title="正则">正则<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%af%8f%e5%90%a8%e6%94%b6%e5%85%a5" title="每吨收入">每吨收入<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%af%9b%e5%88%a9" title="毛利">毛利<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b0%91%e7%94%9f%e9%93%b6%e8%a1%8c" title="民生银行">民生银行<sup>9</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b1%87%e4%b8%b0%e6%8e%a7%e8%82%a1" title="汇丰控股">汇丰控股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b2%83%e5%b0%94%e7%89%b9%e6%96%bd%e6%b4%9b%e6%96%af" title="沃尔特施洛斯">沃尔特施洛斯<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b3%b8%e5%b7%9e%e8%80%81%e7%aa%96" title="泸州老窖">泸州老窖<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b4%8b%e6%b2%b3" title="洋河">洋河<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b5%8b%e8%af%95" title="测试">测试<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b5%b7%e5%a4%96%e7%ab%99%e9%95%bf" title="海外站长">海外站长<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b6%88%e8%80%97%e5%86%85%e5%ad%98" title="消耗内存">消耗内存<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b6%88%e8%b4%b9" title="消费">消费<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b7%98%e5%ae%9d-api" title="淘宝-api">淘宝-api<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b7%98%e5%ae%9dapi" title="淘宝api">淘宝api<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%b7%98%e5%ae%9d%e5%ae%a2" title="淘宝客">淘宝客<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%bb%9a%e5%8a%a8" title="滚动">滚动<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e6%bd%9e%e5%ae%89%e7%8e%af%e8%83%bd" title="潞安环能">潞安环能<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%82%92%e8%82%a1" title="炒股">炒股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%86%8a%e7%86%8a" title="熊熊">熊熊<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%87%95%e4%ba%ac%e5%95%a4%e9%85%92" title="燕京啤酒">燕京啤酒<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%88%ac%e8%99%ab" title="爬虫">爬虫<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%89%88%e6%9c%ac" title="版本">版本<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%89%b9%e5%8f%98%e7%94%b5%e5%b7%a5" title="特变电工">特变电工<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%8e%b0%e9%87%91%e6%b5%81" title="现金流">现金流<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%8e%b0%e9%87%91%e9%80%89%e6%8b%a9%e6%9d%83" title="现金选择权">现金选择权<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%90%86%e8%b5%94" title="理赔">理赔<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%94%9f%e6%84%8f%e4%b8%80%e5%8d%a1%e9%80%9a" title="生意一卡通">生意一卡通<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%94%9f%e6%b4%bb" title="生活">生活<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%99%bd%e9%85%92" title="白酒">白酒<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%a6%bb%e7%ba%bf%e5%8f%91%e5%b8%83" title="离线发布">离线发布<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%a7%81%e4%ba%ba%e9%93%b6%e8%a1%8c" title="私人银行">私人银行<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%a9%b7%e6%b8%b8" title="穷游">穷游<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91" title="端口转发">端口转发<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%ae%a1%e7%90%86%e5%8d%9a%e5%ae%a2" title="管理博客">管理博客<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%b1%bb%e5%ba%93" title="类库">类库<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%b2%a4%e7%94%b5%e5%8a%9bb" title="粤电力b">粤电力b<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%bb%86%e5%88%86" title="细分">细分<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%bb%8f%e6%b5%8e" title="经济">经济<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%bc%a9%e5%b0%8f" title="缩小">缩小<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e7%be%8e%e8%82%a1" title="美股">美股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%80%81%e8%82%a1%e6%b0%91" title="老股民">老股民<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%81%94%e4%bf%9d" title="联保">联保<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%81%9a%e7%b1%bb%e7%ae%97%e6%b3%95" title="聚类算法">聚类算法<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%82%a1%e4%b8%9c%e4%ba%a4%e6%b5%81" title="股东交流">股东交流<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%82%a1%e4%b8%9c%e5%a4%a7%e4%bc%9a" title="股东大会">股东大会<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%82%a1%e5%b8%82%e7%9c%9f%e8%a7%84%e5%88%99" title="股市真规则">股市真规则<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%82%a1%e7%a5%a8" title="股票">股票<sup>7</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%82%a1%e7%a5%a8%e5%ba%94%e7%94%a8" title="股票应用">股票应用<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%87%aa%e5%8a%a8%e5%85%b3%e9%97%ad" title="自动关闭">自动关闭<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd" title="自动加载">自动加载<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%89%b2%e7%bb%87%e5%b8%83" title="色织布">色织布<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%8b%8f%e5%ae%81%e7%94%b5%e5%99%a8" title="苏宁电器">苏宁电器<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%8c%85%e5%8f%b0" title="茅台">茅台<sup>3</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%91%a1%e8%90%84%e9%85%92" title="葡萄酒">葡萄酒<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%91%a3%e7%a7%98" title="董秘">董秘<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%93%9d%e7%ad%b9%e8%82%a1" title="蓝筹股">蓝筹股<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%93%9d%e8%89%b2%e5%85%89%e6%a0%87" title="蓝色光标">蓝色光标<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%9c%98%e8%9b%9b" title="蜘蛛">蜘蛛<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%a1%a5%e5%85%a8" title="补全">补全<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%a6%81%e7%ba%a6%e6%94%b6%e8%b4%ad" title="要约收购">要约收购<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%a7%82%e7%82%b9" title="观点">观点<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%a7%86%e5%9b%be" title="视图">视图<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%ae%be%e7%bd%ae" title="设置">设置<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%af%ad%e4%b9%89" title="语义">语义<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%af%bb%e5%86%99%e6%93%8d%e4%bd%9c" title="读写操作">读写操作<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%b4%b5%e5%b7%9e%e8%8c%85%e5%8f%b0" title="贵州茅台">贵州茅台<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%b4%b7%e6%ac%be" title="贷款">贷款<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%b5%a3%e7%b2%a4%e9%ab%98%e9%80%9f" title="赣粤高速">赣粤高速<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%b7%a8%e5%b9%b3%e5%8f%b0" title="跨平台">跨平台<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%b7%af%e7%94%b1" title="路由">路由<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%bd%ac%e5%9e%8b" title="转型">转型<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%be%85%e5%8a%a9%e5%87%bd%e6%95%b0" title="辅助函数">辅助函数<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e8%bf%9e%e6%8e%a5%e9%94%99%e8%af%af" title="连接错误">连接错误<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%80%86%e5%90%91%e6%8a%95%e8%b5%84" title="逆向投资">逆向投资<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%80%9a%e8%ae%af" title="通讯">通讯<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%82%93%e6%99%ae%e9%a1%bf" title="邓普顿">邓普顿<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%83%a8%e7%bd%b2" title="部署">部署<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%85%8d%e7%bd%ae" title="配置">配置<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%87%91%e8%9e%8d" title="金融">金融<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%87%91%e8%9e%8d%e8%84%b1%e5%aa%92" title="金融脱媒">金融脱媒<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%92%9f%e5%85%86%e6%b0%91" title="钟兆民">钟兆民<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%93%b6%e5%8d%8e%e7%a8%b3%e8%bf%9b" title="银华稳进">银华稳进<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%93%b6%e8%a1%8c" title="银行">银行<sup>9</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%93%b6%e8%a1%8c%e5%88%a9%e7%8e%87" title="银行利率">银行利率<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%93%b6%e8%a1%8c%e8%82%a1" title="银行股">银行股<sup>4</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%93%b6%e9%93%b6%e5%b9%b3%e5%8f%b0" title="银银平台">银银平台<sup>5</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%94%99%e6%9d%80" title="错杀">错杀<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%94%99%e8%af%af" title="错误">错误<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%94%99%e8%af%af%e6%8d%95%e6%8d%89" title="错误捕捉">错误捕捉<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%94%ae%e7%9b%98" title="键盘">键盘<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%95%bf%e5%ae%89b" title="长安b">长安b<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%95%bf%e5%ae%89%e6%b1%bd%e8%bd%a6" title="长安汽车">长安汽车<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%98%bf%e8%83%b6" title="阿胶">阿胶<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%98%bf%e8%bf%aa" title="阿迪">阿迪<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%99%88%e7%90%86" title="陈理">陈理<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%99%b7%e9%98%b1" title="陷阱">陷阱<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9a%8f%e6%9c%ba%e6%96%87%e6%9c%ac" title="随机文本">随机文本<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9a%90%e5%bd%a2%e5%86%a0%e5%86%9b" title="隐形冠军">隐形冠军<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9b%86%e7%be%a4" title="集群">集群<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9b%b6%e5%94%ae" title="零售">零售<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9b%b6%e5%94%ae%e4%b8%9a" title="零售业">零售业<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9b%b6%e5%94%ae%e4%b8%9a%e5%8a%a1" title="零售业务">零售业务<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9d%92%e5%b2%9b%e5%95%a4%e9%85%92" title="青岛啤酒">青岛啤酒<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%9d%99%e6%80%81" title="静态">静态<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%a1%b9%e7%9b%ae" title="项目">项目<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%a3%8e%e6%8e%a7" title="风控">风控<sup>2</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%a9%ac%e5%b0%94%e5%8f%af%e5%a4%ab%e9%93%be" title="马尔可夫链">马尔可夫链<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%a9%ac%e8%94%9a%e5%8d%8e" title="马蔚华">马蔚华<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%ab%98%e6%80%a7%e4%bb%b7%e6%af%94" title="高性价比">高性价比<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%ab%98%e6%88%90%e9%95%bf" title="高成长">高成长<sup>1</sup></a></li>
+      
+			<li><a href="http://barbery.me/tags/%e9%b2%81%e6%b3%b0b" title="鲁泰b">鲁泰b<sup>4</sup></a></li>
+      
+		</ul>
+</div>
+
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle">归档</p>
+    <ul class="archive-list">
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2017-01">2017年01月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2016-08">2016年08月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2016-07">2016年07月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2016-04">2016年04月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2016-02">2016年02月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2015-11">2015年11月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2015-09">2015年09月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2015-07">2015年07月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2015-05">2015年05月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2015-04">2015年04月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-12">2014年12月</a><span class="archive-list-count">4</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-11">2014年11月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-10">2014年10月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-08">2014年08月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-07">2014年07月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-06">2014年06月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-05">2014年05月</a><span class="archive-list-count">3</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-04">2014年04月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-03">2014年03月</a><span class="archive-list-count">1</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2014-01">2014年01月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-12">2013年12月</a><span class="archive-list-count">3</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-11">2013年11月</a><span class="archive-list-count">9</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-10">2013年10月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-09">2013年09月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-08">2013年08月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-07">2013年07月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-06">2013年06月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-05">2013年05月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-04">2013年04月</a><span class="archive-list-count">2</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-03">2013年03月</a><span class="archive-list-count">4</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2013-01">2013年01月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-12">2012年12月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-11">2012年11月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-10">2012年10月</a><span class="archive-list-count">3</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-09">2012年09月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-08">2012年08月</a><span class="archive-list-count">8</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-07">2012年07月</a><span class="archive-list-count">14</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-06">2012年06月</a><span class="archive-list-count">9</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-05">2012年05月</a><span class="archive-list-count">11</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-04">2012年04月</a><span class="archive-list-count">20</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-03">2012年03月</a><span class="archive-list-count">7</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-02">2012年02月</a><span class="archive-list-count">3</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2012-01">2012年01月</a><span class="archive-list-count">5</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2011-12">2011年12月</a><span class="archive-list-count">11</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2011-11">2011年11月</a><span class="archive-list-count">13</span>
+      </li>
+      
+      
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="http://barbery.me/post/#2011-03">2011年03月</a><span class="archive-list-count">1</span>
+      </li>
+      
+    </ul>
+
+  </div>
+
+
+  
+
+<div class="tagcloudlist">
+  <p class="asidetitle">标签云</p>
+  <div class="tagcloudlist clearfix">
+    
+    <a href="http://barbery.me/tags/09%e5%bc%a0%e6%b1%9f%e5%80%ba" style="font-size: 12px;">09张江债</a>
+    
+    <a href="http://barbery.me/tags/110017" style="font-size: 12px;">110017</a>
+    
+    <a href="http://barbery.me/tags/113001" style="font-size: 12px;">113001</a>
+    
+    <a href="http://barbery.me/tags/113002" style="font-size: 12px;">113002</a>
+    
+    <a href="http://barbery.me/tags/122963" style="font-size: 12px;">122963</a>
+    
+    <a href="http://barbery.me/tags/150018" style="font-size: 12px;">150018</a>
+    
+    <a href="http://barbery.me/tags/2012" style="font-size: 12px;">2012</a>
+    
+    <a href="http://barbery.me/tags/2013" style="font-size: 12px;">2013</a>
+    
+    <a href="http://barbery.me/tags/2015" style="font-size: 12px;">2015</a>
+    
+    <a href="http://barbery.me/tags/2016" style="font-size: 12px;">2016</a>
+    
+    <a href="http://barbery.me/tags/600016" style="font-size: 12px;">600016</a>
+    
+    <a href="http://barbery.me/tags/addslashes" style="font-size: 12px;">addslashes</a>
+    
+    <a href="http://barbery.me/tags/admin-bar" style="font-size: 12px;">admin-bar</a>
+    
+    <a href="http://barbery.me/tags/aldi" style="font-size: 12px;">aldi</a>
+    
+    <a href="http://barbery.me/tags/android" style="font-size: 12px;">android</a>
+    
+    <a href="http://barbery.me/tags/apache" style="font-size: 12px;">apache</a>
+    
+    <a href="http://barbery.me/tags/api" style="font-size: 12px;">api</a>
+    
+    <a href="http://barbery.me/tags/apt-get" style="font-size: 12px;">apt-get</a>
+    
+    <a href="http://barbery.me/tags/a%e8%82%a1" style="font-size: 12px;">a股</a>
+    
+    <a href="http://barbery.me/tags/bashrc" style="font-size: 12px;">bashrc</a>
+    
+    <a href="http://barbery.me/tags/beautifulsoup" style="font-size: 12px;">beautifulsoup</a>
+    
+    <a href="http://barbery.me/tags/benchmark" style="font-size: 12px;">benchmark</a>
+    
+    <a href="http://barbery.me/tags/blog" style="font-size: 12px;">blog</a>
+    
+    <a href="http://barbery.me/tags/bug" style="font-size: 12px;">bug</a>
+    
+    <a href="http://barbery.me/tags/candlestickchart" style="font-size: 12px;">candlestickchart</a>
+    
+    <a href="http://barbery.me/tags/candlestickseries" style="font-size: 12px;">candlestickseries</a>
+    
+    <a href="http://barbery.me/tags/cario-dock" style="font-size: 12px;">cario-dock</a>
+    
+    <a href="http://barbery.me/tags/ceo" style="font-size: 12px;">ceo</a>
+    
+    <a href="http://barbery.me/tags/chrome" style="font-size: 12px;">chrome</a>
+    
+    <a href="http://barbery.me/tags/chrome%e6%8f%92%e4%bb%b6" style="font-size: 12px;">chrome插件</a>
+    
+    <a href="http://barbery.me/tags/ci" style="font-size: 12px;">ci</a>
+    
+    <a href="http://barbery.me/tags/cloundflare" style="font-size: 12px;">cloundflare</a>
+    
+    <a href="http://barbery.me/tags/cmnet" style="font-size: 12px;">cmnet</a>
+    
+    <a href="http://barbery.me/tags/cmwap" style="font-size: 12px;">cmwap</a>
+    
+    <a href="http://barbery.me/tags/cmwrap" style="font-size: 12px;">cmwrap</a>
+    
+    <a href="http://barbery.me/tags/codeigniter" style="font-size: 12px;">codeigniter</a>
+    
+    <a href="http://barbery.me/tags/content_scripts" style="font-size: 12px;">content_scripts</a>
+    
+    <a href="http://barbery.me/tags/cpi" style="font-size: 12px;">cpi</a>
+    
+    <a href="http://barbery.me/tags/crawl-delay" style="font-size: 12px;">crawl-delay</a>
+    
+    <a href="http://barbery.me/tags/curl" style="font-size: 12px;">curl</a>
+    
+    <a href="http://barbery.me/tags/curlfile" style="font-size: 12px;">curlfile</a>
+    
+    <a href="http://barbery.me/tags/default_socket_timeout" style="font-size: 12px;">default_socket_timeout</a>
+    
+    <a href="http://barbery.me/tags/digitalocean" style="font-size: 12px;">digitalocean</a>
+    
+    <a href="http://barbery.me/tags/dns" style="font-size: 12px;">dns</a>
+    
+    <a href="http://barbery.me/tags/docker" style="font-size: 12px;">docker</a>
+    
+    <a href="http://barbery.me/tags/drizzle" style="font-size: 12px;">drizzle</a>
+    
+    <a href="http://barbery.me/tags/flashbuider" style="font-size: 12px;">flashbuider</a>
+    
+    <a href="http://barbery.me/tags/flex" style="font-size: 12px;">flex</a>
+    
+    <a href="http://barbery.me/tags/gbk" style="font-size: 12px;">gbk</a>
+    
+    <a href="http://barbery.me/tags/gd" style="font-size: 12px;">gd</a>
+    
+    <a href="http://barbery.me/tags/gist" style="font-size: 12px;">gist</a>
+    
+    <a href="http://barbery.me/tags/git-flow" style="font-size: 12px;">git-flow</a>
+    
+    <a href="http://barbery.me/tags/github" style="font-size: 12px;">github</a>
+    
+    <a href="http://barbery.me/tags/gitlab" style="font-size: 12px;">gitlab</a>
+    
+    <a href="http://barbery.me/tags/go" style="font-size: 12px;">go</a>
+    
+    <a href="http://barbery.me/tags/go-chat" style="font-size: 12px;">go-chat</a>
+    
+    <a href="http://barbery.me/tags/goagent" style="font-size: 12px;">goagent</a>
+    
+    <a href="http://barbery.me/tags/golang" style="font-size: 12px;">golang</a>
+    
+    <a href="http://barbery.me/tags/gorouter" style="font-size: 12px;">gorouter</a>
+    
+    <a href="http://barbery.me/tags/hash" style="font-size: 12px;">hash</a>
+    
+    <a href="http://barbery.me/tags/helper" style="font-size: 12px;">helper</a>
+    
+    <a href="http://barbery.me/tags/html" style="font-size: 12px;">html</a>
+    
+    <a href="http://barbery.me/tags/http" style="font-size: 12px;">http</a>
+    
+    <a href="http://barbery.me/tags/httpsqs" style="font-size: 12px;">httpsqs</a>
+    
+    <a href="http://barbery.me/tags/h%e8%82%a1%e6%8b%9b%e8%82%a1%e8%af%b4%e6%98%8e" style="font-size: 12px;">h股招股说明</a>
+    
+    <a href="http://barbery.me/tags/ibm" style="font-size: 12px;">ibm</a>
+    
+    <a href="http://barbery.me/tags/image-magick" style="font-size: 12px;">image-magick</a>
+    
+    <a href="http://barbery.me/tags/init.d" style="font-size: 12px;">init.d</a>
+    
+    <a href="http://barbery.me/tags/isset" style="font-size: 12px;">isset</a>
+    
+    <a href="http://barbery.me/tags/js" style="font-size: 12px;">js</a>
+    
+    <a href="http://barbery.me/tags/json_decode" style="font-size: 12px;">json_decode</a>
+    
+    <a href="http://barbery.me/tags/json%e6%95%b0%e6%8d%ae" style="font-size: 12px;">json数据</a>
+    
+    <a href="http://barbery.me/tags/k-means" style="font-size: 12px;">k-means</a>
+    
+    <a href="http://barbery.me/tags/libevent" style="font-size: 12px;">libevent</a>
+    
+    <a href="http://barbery.me/tags/linechart" style="font-size: 12px;">linechart</a>
+    
+    <a href="http://barbery.me/tags/lineseries" style="font-size: 12px;">lineseries</a>
+    
+    <a href="http://barbery.me/tags/list" style="font-size: 12px;">list</a>
+    
+    <a href="http://barbery.me/tags/lua" style="font-size: 12px;">lua</a>
+    
+    <a href="http://barbery.me/tags/luajit" style="font-size: 12px;">luajit</a>
+    
+    <a href="http://barbery.me/tags/luarocks" style="font-size: 12px;">luarocks</a>
+    
+    <a href="http://barbery.me/tags/luasocket" style="font-size: 12px;">luasocket</a>
+    
+    <a href="http://barbery.me/tags/mac" style="font-size: 12px;">mac</a>
+    
+    <a href="http://barbery.me/tags/macbook" style="font-size: 12px;">macbook</a>
+    
+    <a href="http://barbery.me/tags/map" style="font-size: 12px;">map</a>
+    
+    <a href="http://barbery.me/tags/mario" style="font-size: 12px;">mario</a>
+    
+    <a href="http://barbery.me/tags/math" style="font-size: 12px;">math</a>
+    
+    <a href="http://barbery.me/tags/memcached" style="font-size: 12px;">memcached</a>
+    
+    <a href="http://barbery.me/tags/michealchen" style="font-size: 12px;">michealchen</a>
+    
+    <a href="http://barbery.me/tags/mod_php" style="font-size: 12px;">mod_php</a>
+    
+    <a href="http://barbery.me/tags/module" style="font-size: 12px;">module</a>
+    
+    <a href="http://barbery.me/tags/mosh" style="font-size: 12px;">mosh</a>
+    
+    <a href="http://barbery.me/tags/mvc" style="font-size: 12px;">mvc</a>
+    
+    <a href="http://barbery.me/tags/mysql" style="font-size: 12px;">mysql</a>
+    
+    <a href="http://barbery.me/tags/mysql_real_escape_string" style="font-size: 12px;">mysql_real_escape_string</a>
+    
+    <a href="http://barbery.me/tags/mysqlnd" style="font-size: 12px;">mysqlnd</a>
+    
+    <a href="http://barbery.me/tags/nginx" style="font-size: 12px;">nginx</a>
+    
+    <a href="http://barbery.me/tags/ngrok" style="font-size: 12px;">ngrok</a>
+    
+    <a href="http://barbery.me/tags/opcache" style="font-size: 12px;">opcache</a>
+    
+    <a href="http://barbery.me/tags/openresty" style="font-size: 12px;">openresty</a>
+    
+    <a href="http://barbery.me/tags/path" style="font-size: 12px;">path</a>
+    
+    <a href="http://barbery.me/tags/pb" style="font-size: 12px;">pb</a>
+    
+    <a href="http://barbery.me/tags/pdo" style="font-size: 12px;">pdo</a>
+    
+    <a href="http://barbery.me/tags/phalcon" style="font-size: 12px;">phalcon</a>
+    
+    <a href="http://barbery.me/tags/php" style="font-size: 12px;">php</a>
+    
+    <a href="http://barbery.me/tags/php-fpm" style="font-size: 12px;">php-fpm</a>
+    
+    <a href="http://barbery.me/tags/pmi" style="font-size: 12px;">pmi</a>
+    
+    <a href="http://barbery.me/tags/post" style="font-size: 12px;">post</a>
+    
+    <a href="http://barbery.me/tags/python" style="font-size: 12px;">python</a>
+    
+    <a href="http://barbery.me/tags/qq" style="font-size: 12px;">qq</a>
+    
+    <a href="http://barbery.me/tags/redis" style="font-size: 12px;">redis</a>
+    
+    <a href="http://barbery.me/tags/rest" style="font-size: 12px;">rest</a>
+    
+    <a href="http://barbery.me/tags/restful" style="font-size: 12px;">restful</a>
+    
+    <a href="http://barbery.me/tags/robots" style="font-size: 12px;">robots</a>
+    
+    <a href="http://barbery.me/tags/roe" style="font-size: 12px;">roe</a>
+    
+    <a href="http://barbery.me/tags/router" style="font-size: 12px;">router</a>
+    
+    <a href="http://barbery.me/tags/sae" style="font-size: 12px;">sae</a>
+    
+    <a href="http://barbery.me/tags/scroll" style="font-size: 12px;">scroll</a>
+    
+    <a href="http://barbery.me/tags/sdk" style="font-size: 12px;">sdk</a>
+    
+    <a href="http://barbery.me/tags/server" style="font-size: 12px;">server</a>
+    
+    <a href="http://barbery.me/tags/service" style="font-size: 12px;">service</a>
+    
+    <a href="http://barbery.me/tags/shadowsocks" style="font-size: 12px;">shadowsocks</a>
+    
+    <a href="http://barbery.me/tags/socket" style="font-size: 12px;">socket</a>
+    
+    <a href="http://barbery.me/tags/sort" style="font-size: 12px;">sort</a>
+    
+    <a href="http://barbery.me/tags/source" style="font-size: 12px;">source</a>
+    
+    <a href="http://barbery.me/tags/sql%e6%b3%a8%e5%85%a5" style="font-size: 12px;">sql注入</a>
+    
+    <a href="http://barbery.me/tags/ssh" style="font-size: 12px;">ssh</a>
+    
+    <a href="http://barbery.me/tags/ssh-key" style="font-size: 12px;">ssh-key</a>
+    
+    <a href="http://barbery.me/tags/stop" style="font-size: 12px;">stop</a>
+    
+    <a href="http://barbery.me/tags/sublime-text-2" style="font-size: 12px;">sublime-text-2</a>
+    
+    <a href="http://barbery.me/tags/sublime-text3" style="font-size: 12px;">sublime-text3</a>
+    
+    <a href="http://barbery.me/tags/subscribe" style="font-size: 12px;">subscribe</a>
+    
+    <a href="http://barbery.me/tags/svn" style="font-size: 12px;">svn</a>
+    
+    <a href="http://barbery.me/tags/swarm" style="font-size: 12px;">swarm</a>
+    
+    <a href="http://barbery.me/tags/tab" style="font-size: 12px;">tab</a>
+    
+    <a href="http://barbery.me/tags/timer" style="font-size: 12px;">timer</a>
+    
+    <a href="http://barbery.me/tags/tool-bar" style="font-size: 12px;">tool-bar</a>
+    
+    <a href="http://barbery.me/tags/u" style="font-size: 12px;">u</a>
+    
+    <a href="http://barbery.me/tags/ubuntu" style="font-size: 12px;">ubuntu</a>
+    
+    <a href="http://barbery.me/tags/udp" style="font-size: 12px;">udp</a>
+    
+    <a href="http://barbery.me/tags/ulimit" style="font-size: 12px;">ulimit</a>
+    
+    <a href="http://barbery.me/tags/utf-8" style="font-size: 12px;">utf-8</a>
+    
+    <a href="http://barbery.me/tags/vagrant" style="font-size: 12px;">vagrant</a>
+    
+    <a href="http://barbery.me/tags/view" style="font-size: 12px;">view</a>
+    
+    <a href="http://barbery.me/tags/virtualbox" style="font-size: 12px;">virtualbox</a>
+    
+    <a href="http://barbery.me/tags/vps" style="font-size: 12px;">vps</a>
+    
+    <a href="http://barbery.me/tags/websocket" style="font-size: 12px;">websocket</a>
+    
+    <a href="http://barbery.me/tags/wordpress" style="font-size: 12px;">wordpress</a>
+    
+    <a href="http://barbery.me/tags/wordpress-for-android" style="font-size: 12px;">wordpress-for-android</a>
+    
+    <a href="http://barbery.me/tags/xhprof" style="font-size: 12px;">xhprof</a>
+    
+    <a href="http://barbery.me/tags/xmlrpc" style="font-size: 12px;">xmlrpc</a>
+    
+    <a href="http://barbery.me/tags/zendopcache" style="font-size: 12px;">zendopcache</a>
+    
+    <a href="http://barbery.me/tags/zenmate" style="font-size: 12px;">zenmate</a>
+    
+    <a href="http://barbery.me/tags/zephir" style="font-size: 12px;">zephir</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%8a%e4%bc%a0" style="font-size: 12px;">上传</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%8d%e8%89%af%e7%8e%87" style="font-size: 12px;">不良率</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%93%e6%b3%a8" style="font-size: 12px;">专注</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%9c%e9%98%bf%e9%98%bf%e8%83%b6" style="font-size: 12px;">东阿阿胶</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%ad%e5%9b%bd%e4%ba%ba%e5%af%bf" style="font-size: 12px;">中国人寿</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%ad%e5%9b%bd%e9%93%b6%e8%a1%8c" style="font-size: 12px;">中国银行</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%ad%e6%8a%a5" style="font-size: 12px;">中报</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%ad%e6%b5%b7%e8%bd%ac%e5%80%ba" style="font-size: 12px;">中海转债</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%ad%e8%a1%8c%e8%bd%ac%e5%80%ba" style="font-size: 12px;">中行转债</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%ad%e9%ab%98%e7%ab%af%e7%99%bd%e9%85%92" style="font-size: 12px;">中高端白酒</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%bb%e8%89%b2%e8%b0%83" style="font-size: 12px;">主色调</a>
+    
+    <a href="http://barbery.me/tags/%e4%b8%bd%e6%b1%9f" style="font-size: 12px;">丽江</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%8b%e4%b8%9a%e9%83%a8" style="font-size: 12px;">事业部</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%8c%e5%8f%89%e6%a0%91" style="font-size: 12px;">二叉树</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%8c%e6%ac%a1%e8%bd%ac%e5%9e%8b" style="font-size: 12px;">二次转型</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%8c%e7%bb%b4%e7%a0%81" style="font-size: 12px;">二维码</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%91%e5%8d%97" style="font-size: 12px;">云南</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%92%e5%8a%a8%e5%b9%b3%e5%8f%b0" style="font-size: 12px;">互动平台</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%92%e8%81%94%e7%bd%91" style="font-size: 12px;">互联网</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%a7%e8%83%bd" style="font-size: 12px;">产能</a>
+    
+    <a href="http://barbery.me/tags/%e4%ba%ac%e4%b8%9c" style="font-size: 12px;">京东</a>
+    
+    <a href="http://barbery.me/tags/%e4%bb%b7%e5%80%bc%e5%88%86%e6%9e%90" style="font-size: 12px;">价值分析</a>
+    
+    <a href="http://barbery.me/tags/%e4%bb%b7%e5%80%bc%e6%8a%95%e8%b5%84" style="font-size: 12px;">价值投资</a>
+    
+    <a href="http://barbery.me/tags/%e4%bb%bb%e5%8a%a1%e9%98%9f%e5%88%97" style="font-size: 12px;">任务队列</a>
+    
+    <a href="http://barbery.me/tags/%e4%bc%8a%e5%88%a9" style="font-size: 12px;">伊利</a>
+    
+    <a href="http://barbery.me/tags/%e4%bc%8a%e6%b3%b0b" style="font-size: 12px;">伊泰b</a>
+    
+    <a href="http://barbery.me/tags/%e4%bc%98%e5%8c%96" style="font-size: 12px;">优化</a>
+    
+    <a href="http://barbery.me/tags/%e4%bc%a0%e5%8f%82" style="font-size: 12px;">传参</a>
+    
+    <a href="http://barbery.me/tags/%e4%bc%b0%e5%80%bc" style="font-size: 12px;">估值</a>
+    
+    <a href="http://barbery.me/tags/%e4%bd%8e%e4%bb%b7%e8%82%a1" style="font-size: 12px;">低价股</a>
+    
+    <a href="http://barbery.me/tags/%e4%bd%8e%e4%bc%b0" style="font-size: 12px;">低估</a>
+    
+    <a href="http://barbery.me/tags/%e4%bd%8e%e6%88%90%e6%9c%ac" style="font-size: 12px;">低成本</a>
+    
+    <a href="http://barbery.me/tags/%e4%bd%8e%e9%a3%8e%e9%99%a9%e6%8a%95%e8%b5%84" style="font-size: 12px;">低风险投资</a>
+    
+    <a href="http://barbery.me/tags/%e4%bf%9d%e9%99%a9" style="font-size: 12px;">保险</a>
+    
+    <a href="http://barbery.me/tags/%e4%bf%ae%e6%ad%a3%e7%ac%a6" style="font-size: 12px;">修正符</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%8d%e8%b4%b9" style="font-size: 12px;">免费</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%a8%e6%9f%b4%e5%8a%a8%e5%8a%9b" style="font-size: 12px;">全柴动力</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%a8%e7%90%83" style="font-size: 12px;">全球</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%ac%e5%85%b3%e5%85%ac%e5%8f%b8" style="font-size: 12px;">公关公司</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%ac%e5%8f%b8" style="font-size: 12px;">公司</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%b4%e4%b8%9a%e9%93%b6%e8%a1%8c" style="font-size: 12px;">兴业银行</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%bc%e5%ae%b9" style="font-size: 12px;">兼容</a>
+    
+    <a href="http://barbery.me/tags/%e5%85%bc%e5%ae%b9%e6%80%a7" style="font-size: 12px;">兼容性</a>
+    
+    <a href="http://barbery.me/tags/%e5%86%85%e5%ad%98%e5%8d%a0%e7%94%a8" style="font-size: 12px;">内存占用</a>
+    
+    <a href="http://barbery.me/tags/%e5%87%80%e8%b5%84%e4%ba%a7%e6%94%b6%e7%9b%8a%e7%8e%87" style="font-size: 12px;">净资产收益率</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%86%e4%ba%ab" style="font-size: 12px;">分享</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%86%e6%9e%90" style="font-size: 12px;">分析</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%86%e7%ba%a2" style="font-size: 12px;">分红</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%86%e7%ba%a2%e5%86%8d%e6%8a%95%e8%b5%84" style="font-size: 12px;">分红再投资</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%86%e7%ba%a7%e5%9f%ba%e9%87%91" style="font-size: 12px;">分级基金</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%9b%e4%b8%9a" style="font-size: 12px;">创业</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%9b%e6%96%b0" style="font-size: 12px;">创新</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%a9%e7%8e%87%e5%8c%96" style="font-size: 12px;">利率化</a>
+    
+    <a href="http://barbery.me/tags/%e5%88%a9%e7%8e%87%e5%b8%82%e5%9c%ba%e5%8c%96" style="font-size: 12px;">利率市场化</a>
+    
+    <a href="http://barbery.me/tags/%e5%89%8d%e6%99%af" style="font-size: 12px;">前景</a>
+    
+    <a href="http://barbery.me/tags/%e5%8a%a0%e8%bd%bd%e5%99%a8" style="font-size: 12px;">加载器</a>
+    
+    <a href="http://barbery.me/tags/%e5%8a%a0%e9%80%9f" style="font-size: 12px;">加速</a>
+    
+    <a href="http://barbery.me/tags/%e5%8c%b9%e6%9f%93%e5%b8%83" style="font-size: 12px;">匹染布</a>
+    
+    <a href="http://barbery.me/tags/%e5%8c%bb%e7%96%97%e4%bf%9d%e9%99%a9" style="font-size: 12px;">医疗保险</a>
+    
+    <a href="http://barbery.me/tags/%e5%8c%bb%e8%8d%af" style="font-size: 12px;">医药</a>
+    
+    <a href="http://barbery.me/tags/%e5%8d%8f%e5%8a%a9%e5%bc%80%e5%8f%91" style="font-size: 12px;">协助开发</a>
+    
+    <a href="http://barbery.me/tags/%e5%8e%9f%e5%ad%90%e6%80%a7" style="font-size: 12px;">原子性</a>
+    
+    <a href="http://barbery.me/tags/%e5%8f%8c%e6%b1%87%e5%8f%91%e5%b1%95" style="font-size: 12px;">双汇发展</a>
+    
+    <a href="http://barbery.me/tags/%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" style="font-size: 12px;">反向代理</a>
+    
+    <a href="http://barbery.me/tags/%e5%8f%af%e8%bd%ac%e5%80%ba" style="font-size: 12px;">可转债</a>
+    
+    <a href="http://barbery.me/tags/%e5%90%8c%e4%b8%9a%e4%b8%9a%e5%8a%a1" style="font-size: 12px;">同业业务</a>
+    
+    <a href="http://barbery.me/tags/%e5%90%8c%e4%b8%9a%e8%b4%9f%e5%80%ba" style="font-size: 12px;">同业负债</a>
+    
+    <a href="http://barbery.me/tags/%e5%90%8c%e4%b8%9a%e8%b5%84%e4%ba%a7" style="font-size: 12px;">同业资产</a>
+    
+    <a href="http://barbery.me/tags/%e5%91%a8%e8%bd%ac%e5%a4%a9%e6%95%b0" style="font-size: 12px;">周转天数</a>
+    
+    <a href="http://barbery.me/tags/%e5%93%88%e5%b8%8c%e7%a2%b0%e6%92%9e" style="font-size: 12px;">哈希碰撞</a>
+    
+    <a href="http://barbery.me/tags/%e5%98%89%e5%ae%9e%e5%a4%9a%e5%88%a9" style="font-size: 12px;">嘉实多利</a>
+    
+    <a href="http://barbery.me/tags/%e5%9b%9e%e5%94%ae%e6%9d%a1%e6%ac%be" style="font-size: 12px;">回售条款</a>
+    
+    <a href="http://barbery.me/tags/%e5%9b%9e%e8%b4%ad" style="font-size: 12px;">回购</a>
+    
+    <a href="http://barbery.me/tags/%e5%9b%a2%e9%98%9f" style="font-size: 12px;">团队</a>
+    
+    <a href="http://barbery.me/tags/%e5%9b%bd%e8%af%81%e5%9c%b0%e4%ba%a7" style="font-size: 12px;">国证地产</a>
+    
+    <a href="http://barbery.me/tags/%e5%9b%be%e7%89%87%e5%ba%93" style="font-size: 12px;">图片库</a>
+    
+    <a href="http://barbery.me/tags/%e5%a1%9e%e6%96%af-%e5%8d%a1%e6%8b%89%e6%9b%bc" style="font-size: 12px;">塞斯-卡拉曼</a>
+    
+    <a href="http://barbery.me/tags/%e5%a2%9e%e9%95%bf" style="font-size: 12px;">增长</a>
+    
+    <a href="http://barbery.me/tags/%e5%a2%9e%e9%95%bf%e7%8e%87" style="font-size: 12px;">增长率</a>
+    
+    <a href="http://barbery.me/tags/%e5%a2%9e%e9%95%bf%e7%8e%87%e9%99%b7%e9%98%b1" style="font-size: 12px;">增长率陷阱</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%8d%e5%90%88%e5%a2%9e%e9%95%bf" style="font-size: 12px;">复合增长</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%9a%e5%88%a9%e4%bc%98%e5%85%88" style="font-size: 12px;">多利优先</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%9a%e5%88%a9%e8%bf%9b%e5%8f%96" style="font-size: 12px;">多利进取</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%9a%e7%bb%b4map" style="font-size: 12px;">多维map</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%9a%e8%af%b4" style="font-size: 12px;">多说</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%a7%e7%90%86" style="font-size: 12px;">大理</a>
+    
+    <a href="http://barbery.me/tags/%e5%a4%a7%e7%a7%a6%e9%93%81%e8%b7%af" style="font-size: 12px;">大秦铁路</a>
+    
+    <a href="http://barbery.me/tags/%e5%a5%97%e5%88%a9" style="font-size: 12px;">套利</a>
+    
+    <a href="http://barbery.me/tags/%e5%ad%98%e8%b4%a7" style="font-size: 12px;">存货</a>
+    
+    <a href="http://barbery.me/tags/%e5%ae%89%e5%85%a8%e8%be%b9%e9%99%85" style="font-size: 12px;">安全边际</a>
+    
+    <a href="http://barbery.me/tags/%e5%ae%8f%e8%a7%82%e6%95%b0%e6%8d%ae" style="font-size: 12px;">宏观数据</a>
+    
+    <a href="http://barbery.me/tags/%e5%ae%9a%e6%8a%95" style="font-size: 12px;">定投</a>
+    
+    <a href="http://barbery.me/tags/%e5%ae%b9%e9%87%8f" style="font-size: 12px;">容量</a>
+    
+    <a href="http://barbery.me/tags/%e5%b0%8f%e5%be%ae%e4%bc%81%e4%b8%9a" style="font-size: 12px;">小微企业</a>
+    
+    <a href="http://barbery.me/tags/%e5%b0%8f%e5%be%ae%e8%b4%b7%e6%ac%be" style="font-size: 12px;">小微贷款</a>
+    
+    <a href="http://barbery.me/tags/%e5%b1%80%e9%83%a8%e9%a2%9c%e8%89%b2" style="font-size: 12px;">局部颜色</a>
+    
+    <a href="http://barbery.me/tags/%e5%b1%95%e6%9c%9b" style="font-size: 12px;">展望</a>
+    
+    <a href="http://barbery.me/tags/%e5%b4%a9%e6%ba%83" style="font-size: 12px;">崩溃</a>
+    
+    <a href="http://barbery.me/tags/%e5%b7%a5%e4%bd%9c" style="font-size: 12px;">工作</a>
+    
+    <a href="http://barbery.me/tags/%e5%b7%a5%e8%a1%8c%e8%bd%ac%e5%80%ba" style="font-size: 12px;">工行转债</a>
+    
+    <a href="http://barbery.me/tags/%e5%b7%b4%e8%8f%b2%e7%89%b9" style="font-size: 12px;">巴菲特</a>
+    
+    <a href="http://barbery.me/tags/%e5%b8%82%e5%80%bc" style="font-size: 12px;">市值</a>
+    
+    <a href="http://barbery.me/tags/%e5%b8%82%e5%9c%ba%e5%8c%96" style="font-size: 12px;">市场化</a>
+    
+    <a href="http://barbery.me/tags/%e5%b8%82%e5%9c%ba%e5%8d%a0%e6%9c%89%e7%8e%87" style="font-size: 12px;">市场占有率</a>
+    
+    <a href="http://barbery.me/tags/%e5%b8%82%e7%9b%88%e7%8e%87" style="font-size: 12px;">市盈率</a>
+    
+    <a href="http://barbery.me/tags/%e5%b8%95%e7%89%b9%e5%a4%9a%e5%b0%94%e8%a5%bf" style="font-size: 12px;">帕特多尔西</a>
+    
+    <a href="http://barbery.me/tags/%e5%b9%b4%e6%8a%a5%e5%88%86%e6%9e%90" style="font-size: 12px;">年报分析</a>
+    
+    <a href="http://barbery.me/tags/%e5%b9%b6%e5%8f%91" style="font-size: 12px;">并发</a>
+    
+    <a href="http://barbery.me/tags/%e5%b9%bf%e5%91%8a" style="font-size: 12px;">广告</a>
+    
+    <a href="http://barbery.me/tags/%e5%ba%95%e9%83%a8" style="font-size: 12px;">底部</a>
+    
+    <a href="http://barbery.me/tags/%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83" style="font-size: 12px;">开发环境</a>
+    
+    <a href="http://barbery.me/tags/%e5%bc%80%e5%8f%91%e8%80%85" style="font-size: 12px;">开发者</a>
+    
+    <a href="http://barbery.me/tags/%e5%bc%a0%e6%98%95%e5%b8%86" style="font-size: 12px;">张昕帆</a>
+    
+    <a href="http://barbery.me/tags/%e5%bc%a0%e8%a3%95" style="font-size: 12px;">张裕</a>
+    
+    <a href="http://barbery.me/tags/%e5%bd%b1%e5%ad%90cfo" style="font-size: 12px;">影子cfo</a>
+    
+    <a href="http://barbery.me/tags/%e5%bd%bc%e5%be%97.%e6%9e%97%e5%a5%87" style="font-size: 12px;">彼得.林奇</a>
+    
+    <a href="http://barbery.me/tags/%e5%bd%bc%e5%be%97%e6%9e%97%e5%a5%87" style="font-size: 12px;">彼得林奇</a>
+    
+    <a href="http://barbery.me/tags/%e5%be%ae%e4%bf%a1%e8%b0%83%e8%af%95" style="font-size: 12px;">微信调试</a>
+    
+    <a href="http://barbery.me/tags/%e5%be%ae%e5%8d%9a" style="font-size: 12px;">微博</a>
+    
+    <a href="http://barbery.me/tags/%e5%bf%83%e7%90%86" style="font-size: 12px;">心理</a>
+    
+    <a href="http://barbery.me/tags/%e6%80%bb%e7%bb%93" style="font-size: 12px;">总结</a>
+    
+    <a href="http://barbery.me/tags/%e6%81%92%e7%94%9f%e9%93%b6%e8%a1%8c" style="font-size: 12px;">恒生银行</a>
+    
+    <a href="http://barbery.me/tags/%e6%84%9f%e5%8f%97" style="font-size: 12px;">感受</a>
+    
+    <a href="http://barbery.me/tags/%e6%88%90%e9%95%bf%e8%82%a1" style="font-size: 12px;">成长股</a>
+    
+    <a href="http://barbery.me/tags/%e6%88%bf%e5%9c%b0%e4%ba%a7a" style="font-size: 12px;">房地产a</a>
+    
+    <a href="http://barbery.me/tags/%e6%88%bf%e5%9c%b0%e4%ba%a7b" style="font-size: 12px;">房地产b</a>
+    
+    <a href="http://barbery.me/tags/%e6%89%8b%e6%9c%ba%e5%8d%9a%e5%ae%a2" style="font-size: 12px;">手机博客</a>
+    
+    <a href="http://barbery.me/tags/%e6%89%8b%e6%9c%ba%e9%93%b6%e8%a1%8c" style="font-size: 12px;">手机银行</a>
+    
+    <a href="http://barbery.me/tags/%e6%89%a9%e5%ae%b9" style="font-size: 12px;">扩容</a>
+    
+    <a href="http://barbery.me/tags/%e6%89%bf%e8%af%ba" style="font-size: 12px;">承诺</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%93%e5%8f%96%e4%bb%b7%e6%a0%bc" style="font-size: 12px;">抓取价格</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e6%9c%ba" style="font-size: 12px;">投机</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84" style="font-size: 12px;">投资</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e4%bd%93%e7%b3%bb" style="font-size: 12px;">投资体系</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e5%88%86%e6%9e%90" style="font-size: 12px;">投资分析</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e6%80%bb%e7%bb%93" style="font-size: 12px;">投资总结</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e7%90%86%e5%bf%b5" style="font-size: 12px;">投资理念</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%95%e8%b5%84%e8%80%85" style="font-size: 12px;">投资者</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%98%e7%ae%97" style="font-size: 12px;">折算</a>
+    
+    <a href="http://barbery.me/tags/%e6%8a%a4%e5%9f%8e%e6%b2%b3" style="font-size: 12px;">护城河</a>
+    
+    <a href="http://barbery.me/tags/%e6%8b%86%e5%88%86%e5%a5%97%e5%88%a9" style="font-size: 12px;">拆分套利</a>
+    
+    <a href="http://barbery.me/tags/%e6%8b%9b%e5%95%86%e5%b1%80b" style="font-size: 12px;">招商局b</a>
+    
+    <a href="http://barbery.me/tags/%e6%8b%9b%e5%95%86%e9%93%b6%e8%a1%8c" style="font-size: 12px;">招商银行</a>
+    
+    <a href="http://barbery.me/tags/%e6%8b%9b%e8%a1%8c" style="font-size: 12px;">招行</a>
+    
+    <a href="http://barbery.me/tags/%e6%8c%87%e6%95%b0" style="font-size: 12px;">指数</a>
+    
+    <a href="http://barbery.me/tags/%e6%8c%87%e9%92%88" style="font-size: 12px;">指针</a>
+    
+    <a href="http://barbery.me/tags/%e6%8e%92%e5%ba%8f" style="font-size: 12px;">排序</a>
+    
+    <a href="http://barbery.me/tags/%e6%8e%a8%e8%8d%90" style="font-size: 12px;">推荐</a>
+    
+    <a href="http://barbery.me/tags/%e6%94%b6%e7%9b%8a" style="font-size: 12px;">收益</a>
+    
+    <a href="http://barbery.me/tags/%e6%94%b6%e8%b4%ad" style="font-size: 12px;">收购</a>
+    
+    <a href="http://barbery.me/tags/%e6%94%b9%e9%80%a0" style="font-size: 12px;">改造</a>
+    
+    <a href="http://barbery.me/tags/%e6%94%b9%e9%9d%a9" style="font-size: 12px;">改革</a>
+    
+    <a href="http://barbery.me/tags/%e6%94%bb%e5%87%bb" style="font-size: 12px;">攻击</a>
+    
+    <a href="http://barbery.me/tags/%e6%95%88%e7%8e%87%e6%b5%8b%e8%af%95" style="font-size: 12px;">效率测试</a>
+    
+    <a href="http://barbery.me/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" style="font-size: 12px;">数据库</a>
+    
+    <a href="http://barbery.me/tags/%e6%95%b0%e7%bb%84" style="font-size: 12px;">数组</a>
+    
+    <a href="http://barbery.me/tags/%e6%96%ad%e5%bc%80" style="font-size: 12px;">断开</a>
+    
+    <a href="http://barbery.me/tags/%e6%96%b9%e6%b3%95" style="font-size: 12px;">方法</a>
+    
+    <a href="http://barbery.me/tags/%e6%97%85%e6%b8%b8" style="font-size: 12px;">旅游</a>
+    
+    <a href="http://barbery.me/tags/%e6%97%a0%e9%a3%8e%e9%99%a9%e5%a5%97%e5%88%a9" style="font-size: 12px;">无风险套利</a>
+    
+    <a href="http://barbery.me/tags/%e6%97%a5%e7%89%88" style="font-size: 12px;">日版</a>
+    
+    <a href="http://barbery.me/tags/%e6%98%86%e6%98%8e" style="font-size: 12px;">昆明</a>
+    
+    <a href="http://barbery.me/tags/%e6%9c%aa%e6%9d%a5%e5%8f%91%e5%b1%95" style="font-size: 12px;">未来发展</a>
+    
+    <a href="http://barbery.me/tags/%e6%9d%8e%e4%bb%81%e6%9d%b0" style="font-size: 12px;">李仁杰</a>
+    
+    <a href="http://barbery.me/tags/%e6%9d%ad%e6%b1%bd%e8%bd%aeb" style="font-size: 12px;">杭汽轮b</a>
+    
+    <a href="http://barbery.me/tags/%e6%a0%b8%e5%bf%83%e7%ab%9e%e4%ba%89%e5%8a%9b" style="font-size: 12px;">核心竞争力</a>
+    
+    <a href="http://barbery.me/tags/%e6%a0%bc%e9%9b%b7%e5%8e%84%e5%a7%86" style="font-size: 12px;">格雷厄姆</a>
+    
+    <a href="http://barbery.me/tags/%e6%a1%86%e6%9e%b6" style="font-size: 12px;">框架</a>
+    
+    <a href="http://barbery.me/tags/%e6%a2%81%e5%86%9b%e5%84%92" style="font-size: 12px;">梁军儒</a>
+    
+    <a href="http://barbery.me/tags/%e6%ad%a3%e5%88%99" style="font-size: 12px;">正则</a>
+    
+    <a href="http://barbery.me/tags/%e6%af%8f%e5%90%a8%e6%94%b6%e5%85%a5" style="font-size: 12px;">每吨收入</a>
+    
+    <a href="http://barbery.me/tags/%e6%af%9b%e5%88%a9" style="font-size: 12px;">毛利</a>
+    
+    <a href="http://barbery.me/tags/%e6%b0%91%e7%94%9f%e9%93%b6%e8%a1%8c" style="font-size: 12px;">民生银行</a>
+    
+    <a href="http://barbery.me/tags/%e6%b1%87%e4%b8%b0%e6%8e%a7%e8%82%a1" style="font-size: 12px;">汇丰控股</a>
+    
+    <a href="http://barbery.me/tags/%e6%b2%83%e5%b0%94%e7%89%b9%e6%96%bd%e6%b4%9b%e6%96%af" style="font-size: 12px;">沃尔特施洛斯</a>
+    
+    <a href="http://barbery.me/tags/%e6%b3%b8%e5%b7%9e%e8%80%81%e7%aa%96" style="font-size: 12px;">泸州老窖</a>
+    
+    <a href="http://barbery.me/tags/%e6%b4%8b%e6%b2%b3" style="font-size: 12px;">洋河</a>
+    
+    <a href="http://barbery.me/tags/%e6%b5%8b%e8%af%95" style="font-size: 12px;">测试</a>
+    
+    <a href="http://barbery.me/tags/%e6%b5%b7%e5%a4%96%e7%ab%99%e9%95%bf" style="font-size: 12px;">海外站长</a>
+    
+    <a href="http://barbery.me/tags/%e6%b6%88%e8%80%97%e5%86%85%e5%ad%98" style="font-size: 12px;">消耗内存</a>
+    
+    <a href="http://barbery.me/tags/%e6%b6%88%e8%b4%b9" style="font-size: 12px;">消费</a>
+    
+    <a href="http://barbery.me/tags/%e6%b7%98%e5%ae%9d-api" style="font-size: 12px;">淘宝-api</a>
+    
+    <a href="http://barbery.me/tags/%e6%b7%98%e5%ae%9dapi" style="font-size: 12px;">淘宝api</a>
+    
+    <a href="http://barbery.me/tags/%e6%b7%98%e5%ae%9d%e5%ae%a2" style="font-size: 12px;">淘宝客</a>
+    
+    <a href="http://barbery.me/tags/%e6%bb%9a%e5%8a%a8" style="font-size: 12px;">滚动</a>
+    
+    <a href="http://barbery.me/tags/%e6%bd%9e%e5%ae%89%e7%8e%af%e8%83%bd" style="font-size: 12px;">潞安环能</a>
+    
+    <a href="http://barbery.me/tags/%e7%82%92%e8%82%a1" style="font-size: 12px;">炒股</a>
+    
+    <a href="http://barbery.me/tags/%e7%86%8a%e7%86%8a" style="font-size: 12px;">熊熊</a>
+    
+    <a href="http://barbery.me/tags/%e7%87%95%e4%ba%ac%e5%95%a4%e9%85%92" style="font-size: 12px;">燕京啤酒</a>
+    
+    <a href="http://barbery.me/tags/%e7%88%ac%e8%99%ab" style="font-size: 12px;">爬虫</a>
+    
+    <a href="http://barbery.me/tags/%e7%89%88%e6%9c%ac" style="font-size: 12px;">版本</a>
+    
+    <a href="http://barbery.me/tags/%e7%89%b9%e5%8f%98%e7%94%b5%e5%b7%a5" style="font-size: 12px;">特变电工</a>
+    
+    <a href="http://barbery.me/tags/%e7%8e%b0%e9%87%91%e6%b5%81" style="font-size: 12px;">现金流</a>
+    
+    <a href="http://barbery.me/tags/%e7%8e%b0%e9%87%91%e9%80%89%e6%8b%a9%e6%9d%83" style="font-size: 12px;">现金选择权</a>
+    
+    <a href="http://barbery.me/tags/%e7%90%86%e8%b5%94" style="font-size: 12px;">理赔</a>
+    
+    <a href="http://barbery.me/tags/%e7%94%9f%e6%84%8f%e4%b8%80%e5%8d%a1%e9%80%9a" style="font-size: 12px;">生意一卡通</a>
+    
+    <a href="http://barbery.me/tags/%e7%94%9f%e6%b4%bb" style="font-size: 12px;">生活</a>
+    
+    <a href="http://barbery.me/tags/%e7%99%bd%e9%85%92" style="font-size: 12px;">白酒</a>
+    
+    <a href="http://barbery.me/tags/%e7%a6%bb%e7%ba%bf%e5%8f%91%e5%b8%83" style="font-size: 12px;">离线发布</a>
+    
+    <a href="http://barbery.me/tags/%e7%a7%81%e4%ba%ba%e9%93%b6%e8%a1%8c" style="font-size: 12px;">私人银行</a>
+    
+    <a href="http://barbery.me/tags/%e7%a9%b7%e6%b8%b8" style="font-size: 12px;">穷游</a>
+    
+    <a href="http://barbery.me/tags/%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91" style="font-size: 12px;">端口转发</a>
+    
+    <a href="http://barbery.me/tags/%e7%ae%a1%e7%90%86%e5%8d%9a%e5%ae%a2" style="font-size: 12px;">管理博客</a>
+    
+    <a href="http://barbery.me/tags/%e7%b1%bb%e5%ba%93" style="font-size: 12px;">类库</a>
+    
+    <a href="http://barbery.me/tags/%e7%b2%a4%e7%94%b5%e5%8a%9bb" style="font-size: 12px;">粤电力b</a>
+    
+    <a href="http://barbery.me/tags/%e7%bb%86%e5%88%86" style="font-size: 12px;">细分</a>
+    
+    <a href="http://barbery.me/tags/%e7%bb%8f%e6%b5%8e" style="font-size: 12px;">经济</a>
+    
+    <a href="http://barbery.me/tags/%e7%bc%a9%e5%b0%8f" style="font-size: 12px;">缩小</a>
+    
+    <a href="http://barbery.me/tags/%e7%be%8e%e8%82%a1" style="font-size: 12px;">美股</a>
+    
+    <a href="http://barbery.me/tags/%e8%80%81%e8%82%a1%e6%b0%91" style="font-size: 12px;">老股民</a>
+    
+    <a href="http://barbery.me/tags/%e8%81%94%e4%bf%9d" style="font-size: 12px;">联保</a>
+    
+    <a href="http://barbery.me/tags/%e8%81%9a%e7%b1%bb%e7%ae%97%e6%b3%95" style="font-size: 12px;">聚类算法</a>
+    
+    <a href="http://barbery.me/tags/%e8%82%a1%e4%b8%9c%e4%ba%a4%e6%b5%81" style="font-size: 12px;">股东交流</a>
+    
+    <a href="http://barbery.me/tags/%e8%82%a1%e4%b8%9c%e5%a4%a7%e4%bc%9a" style="font-size: 12px;">股东大会</a>
+    
+    <a href="http://barbery.me/tags/%e8%82%a1%e5%b8%82%e7%9c%9f%e8%a7%84%e5%88%99" style="font-size: 12px;">股市真规则</a>
+    
+    <a href="http://barbery.me/tags/%e8%82%a1%e7%a5%a8" style="font-size: 12px;">股票</a>
+    
+    <a href="http://barbery.me/tags/%e8%82%a1%e7%a5%a8%e5%ba%94%e7%94%a8" style="font-size: 12px;">股票应用</a>
+    
+    <a href="http://barbery.me/tags/%e8%87%aa%e5%8a%a8%e5%85%b3%e9%97%ad" style="font-size: 12px;">自动关闭</a>
+    
+    <a href="http://barbery.me/tags/%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd" style="font-size: 12px;">自动加载</a>
+    
+    <a href="http://barbery.me/tags/%e8%89%b2%e7%bb%87%e5%b8%83" style="font-size: 12px;">色织布</a>
+    
+    <a href="http://barbery.me/tags/%e8%8b%8f%e5%ae%81%e7%94%b5%e5%99%a8" style="font-size: 12px;">苏宁电器</a>
+    
+    <a href="http://barbery.me/tags/%e8%8c%85%e5%8f%b0" style="font-size: 12px;">茅台</a>
+    
+    <a href="http://barbery.me/tags/%e8%91%a1%e8%90%84%e9%85%92" style="font-size: 12px;">葡萄酒</a>
+    
+    <a href="http://barbery.me/tags/%e8%91%a3%e7%a7%98" style="font-size: 12px;">董秘</a>
+    
+    <a href="http://barbery.me/tags/%e8%93%9d%e7%ad%b9%e8%82%a1" style="font-size: 12px;">蓝筹股</a>
+    
+    <a href="http://barbery.me/tags/%e8%93%9d%e8%89%b2%e5%85%89%e6%a0%87" style="font-size: 12px;">蓝色光标</a>
+    
+    <a href="http://barbery.me/tags/%e8%9c%98%e8%9b%9b" style="font-size: 12px;">蜘蛛</a>
+    
+    <a href="http://barbery.me/tags/%e8%a1%a5%e5%85%a8" style="font-size: 12px;">补全</a>
+    
+    <a href="http://barbery.me/tags/%e8%a6%81%e7%ba%a6%e6%94%b6%e8%b4%ad" style="font-size: 12px;">要约收购</a>
+    
+    <a href="http://barbery.me/tags/%e8%a7%82%e7%82%b9" style="font-size: 12px;">观点</a>
+    
+    <a href="http://barbery.me/tags/%e8%a7%86%e5%9b%be" style="font-size: 12px;">视图</a>
+    
+    <a href="http://barbery.me/tags/%e8%ae%be%e7%bd%ae" style="font-size: 12px;">设置</a>
+    
+    <a href="http://barbery.me/tags/%e8%af%ad%e4%b9%89" style="font-size: 12px;">语义</a>
+    
+    <a href="http://barbery.me/tags/%e8%af%bb%e5%86%99%e6%93%8d%e4%bd%9c" style="font-size: 12px;">读写操作</a>
+    
+    <a href="http://barbery.me/tags/%e8%b4%b5%e5%b7%9e%e8%8c%85%e5%8f%b0" style="font-size: 12px;">贵州茅台</a>
+    
+    <a href="http://barbery.me/tags/%e8%b4%b7%e6%ac%be" style="font-size: 12px;">贷款</a>
+    
+    <a href="http://barbery.me/tags/%e8%b5%a3%e7%b2%a4%e9%ab%98%e9%80%9f" style="font-size: 12px;">赣粤高速</a>
+    
+    <a href="http://barbery.me/tags/%e8%b7%a8%e5%b9%b3%e5%8f%b0" style="font-size: 12px;">跨平台</a>
+    
+    <a href="http://barbery.me/tags/%e8%b7%af%e7%94%b1" style="font-size: 12px;">路由</a>
+    
+    <a href="http://barbery.me/tags/%e8%bd%ac%e5%9e%8b" style="font-size: 12px;">转型</a>
+    
+    <a href="http://barbery.me/tags/%e8%be%85%e5%8a%a9%e5%87%bd%e6%95%b0" style="font-size: 12px;">辅助函数</a>
+    
+    <a href="http://barbery.me/tags/%e8%bf%9e%e6%8e%a5%e9%94%99%e8%af%af" style="font-size: 12px;">连接错误</a>
+    
+    <a href="http://barbery.me/tags/%e9%80%86%e5%90%91%e6%8a%95%e8%b5%84" style="font-size: 12px;">逆向投资</a>
+    
+    <a href="http://barbery.me/tags/%e9%80%9a%e8%ae%af" style="font-size: 12px;">通讯</a>
+    
+    <a href="http://barbery.me/tags/%e9%82%93%e6%99%ae%e9%a1%bf" style="font-size: 12px;">邓普顿</a>
+    
+    <a href="http://barbery.me/tags/%e9%83%a8%e7%bd%b2" style="font-size: 12px;">部署</a>
+    
+    <a href="http://barbery.me/tags/%e9%85%8d%e7%bd%ae" style="font-size: 12px;">配置</a>
+    
+    <a href="http://barbery.me/tags/%e9%87%91%e8%9e%8d" style="font-size: 12px;">金融</a>
+    
+    <a href="http://barbery.me/tags/%e9%87%91%e8%9e%8d%e8%84%b1%e5%aa%92" style="font-size: 12px;">金融脱媒</a>
+    
+    <a href="http://barbery.me/tags/%e9%92%9f%e5%85%86%e6%b0%91" style="font-size: 12px;">钟兆民</a>
+    
+    <a href="http://barbery.me/tags/%e9%93%b6%e5%8d%8e%e7%a8%b3%e8%bf%9b" style="font-size: 12px;">银华稳进</a>
+    
+    <a href="http://barbery.me/tags/%e9%93%b6%e8%a1%8c" style="font-size: 12px;">银行</a>
+    
+    <a href="http://barbery.me/tags/%e9%93%b6%e8%a1%8c%e5%88%a9%e7%8e%87" style="font-size: 12px;">银行利率</a>
+    
+    <a href="http://barbery.me/tags/%e9%93%b6%e8%a1%8c%e8%82%a1" style="font-size: 12px;">银行股</a>
+    
+    <a href="http://barbery.me/tags/%e9%93%b6%e9%93%b6%e5%b9%b3%e5%8f%b0" style="font-size: 12px;">银银平台</a>
+    
+    <a href="http://barbery.me/tags/%e9%94%99%e6%9d%80" style="font-size: 12px;">错杀</a>
+    
+    <a href="http://barbery.me/tags/%e9%94%99%e8%af%af" style="font-size: 12px;">错误</a>
+    
+    <a href="http://barbery.me/tags/%e9%94%99%e8%af%af%e6%8d%95%e6%8d%89" style="font-size: 12px;">错误捕捉</a>
+    
+    <a href="http://barbery.me/tags/%e9%94%ae%e7%9b%98" style="font-size: 12px;">键盘</a>
+    
+    <a href="http://barbery.me/tags/%e9%95%bf%e5%ae%89b" style="font-size: 12px;">长安b</a>
+    
+    <a href="http://barbery.me/tags/%e9%95%bf%e5%ae%89%e6%b1%bd%e8%bd%a6" style="font-size: 12px;">长安汽车</a>
+    
+    <a href="http://barbery.me/tags/%e9%98%bf%e8%83%b6" style="font-size: 12px;">阿胶</a>
+    
+    <a href="http://barbery.me/tags/%e9%98%bf%e8%bf%aa" style="font-size: 12px;">阿迪</a>
+    
+    <a href="http://barbery.me/tags/%e9%99%88%e7%90%86" style="font-size: 12px;">陈理</a>
+    
+    <a href="http://barbery.me/tags/%e9%99%b7%e9%98%b1" style="font-size: 12px;">陷阱</a>
+    
+    <a href="http://barbery.me/tags/%e9%9a%8f%e6%9c%ba%e6%96%87%e6%9c%ac" style="font-size: 12px;">随机文本</a>
+    
+    <a href="http://barbery.me/tags/%e9%9a%90%e5%bd%a2%e5%86%a0%e5%86%9b" style="font-size: 12px;">隐形冠军</a>
+    
+    <a href="http://barbery.me/tags/%e9%9b%86%e7%be%a4" style="font-size: 12px;">集群</a>
+    
+    <a href="http://barbery.me/tags/%e9%9b%b6%e5%94%ae" style="font-size: 12px;">零售</a>
+    
+    <a href="http://barbery.me/tags/%e9%9b%b6%e5%94%ae%e4%b8%9a" style="font-size: 12px;">零售业</a>
+    
+    <a href="http://barbery.me/tags/%e9%9b%b6%e5%94%ae%e4%b8%9a%e5%8a%a1" style="font-size: 12px;">零售业务</a>
+    
+    <a href="http://barbery.me/tags/%e9%9d%92%e5%b2%9b%e5%95%a4%e9%85%92" style="font-size: 12px;">青岛啤酒</a>
+    
+    <a href="http://barbery.me/tags/%e9%9d%99%e6%80%81" style="font-size: 12px;">静态</a>
+    
+    <a href="http://barbery.me/tags/%e9%a1%b9%e7%9b%ae" style="font-size: 12px;">项目</a>
+    
+    <a href="http://barbery.me/tags/%e9%a3%8e%e6%8e%a7" style="font-size: 12px;">风控</a>
+    
+    <a href="http://barbery.me/tags/%e9%a9%ac%e5%b0%94%e5%8f%af%e5%a4%ab%e9%93%be" style="font-size: 12px;">马尔可夫链</a>
+    
+    <a href="http://barbery.me/tags/%e9%a9%ac%e8%94%9a%e5%8d%8e" style="font-size: 12px;">马蔚华</a>
+    
+    <a href="http://barbery.me/tags/%e9%ab%98%e6%80%a7%e4%bb%b7%e6%af%94" style="font-size: 12px;">高性价比</a>
+    
+    <a href="http://barbery.me/tags/%e9%ab%98%e6%88%90%e9%95%bf" style="font-size: 12px;">高成长</a>
+    
+    <a href="http://barbery.me/tags/%e9%b2%81%e6%b3%b0b" style="font-size: 12px;">鲁泰b</a>
+    
+  </div>
+</div>
+
+
+
+  
+<div class="rsspart">
+  <a rel="nofollow" href="http://barbery.me/feed.xml" type="application/rss+xml" target="_blank">RSS 订阅</a>
+</div>
+
+
+</aside>
+</div>
+
+  </div>
+  <footer><div id="footer" >
+  
+  
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2017
+    
+    <a href="http://barbery.me/" target="_blank" title="barbery">barbery</a>
+    
+  </p>
+</div>
+</footer>
+  <script src="http://barbery.me/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+done = false;
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http:\/\/barbery.me\/ ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-80280597-1', 'auto');
+  ga('send', 'pageview');
+  $('#messagesbsb').remove();
+</script>
+
+
+
+</body>
+</html>

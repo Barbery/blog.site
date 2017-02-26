@@ -6,106 +6,8 @@
     <description>Recent content in 开发 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 18 Feb 2017 16:34:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Aug 2016 11:02:31 +0800</lastBuildDate>
     <atom:link href="http://barbery.me/categories/%E5%BC%80%E5%8F%91/feed/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>记一次redis被黑事件</title>
-      <link>http://barbery.me/post/2017-02-19-Redis-hacked/</link>
-      <pubDate>Sat, 18 Feb 2017 16:34:55 +0800</pubDate>
-      
-      <guid>http://barbery.me/post/2017-02-19-Redis-hacked/</guid>
-      <description>
-
-&lt;h2 id=&#34;事情的经过&#34;&gt;事情的经过&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法，
-返回是一个false的布尔类型，导致爆出了数据异常。当时深夜被报警叫醒，也没考虑太多，只是简单的做了个判断
-过滤掉错误的数据。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;早上9点，接到反馈，项目A微信授权出错。排查代码没有发现有问题，考虑到之前前端有出现上线时丢失文件的情况，
-重新部署代码，本地测试故障解除。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;早上10点，接到redis队列报警信息（Timed out attempting to find data in the correct node! ）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;早上11点，接到反馈，项目B无法登陆，开始排查是否是redis集群的问题，发现master01节点无法连接，
-slave节点也没有被选举成新的master节点，重启master01节点，服务恢复正常。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;复盘&#34;&gt;复盘&lt;/h2&gt;
-
-&lt;p&gt;事情发生后，一直有个点让我想不明白，流量不大的情况下master的一个节点为什么会挂掉？退一万步来讲，
-即是挂掉，为何slave节点没有“挺身而出”？&lt;/p&gt;
-
-&lt;p&gt;随即我对redis的日志进行排查，希望能得到什么信息，首先就先查看master01这个挂掉的节点日志，0点27分，
-有几条错误日志，这个错误的时间和事发当天0点多的报警时间吻合，而且这个错误的内容直接导致了slave节点失联。&lt;/p&gt;
-
-&lt;p&gt;master01日志&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;17989:M 18 Feb 00:26:49.431 # Failed opening the RDB file root (in server root dir /var/spool/cron) for saving: Permission denied
-17989:M 18 Feb 00:26:49.432 # Failed opening the RDB file root (in server root dir /var/spool/cron) for saving: Permission denied
-17989:M 18 Feb 00:27:49.906 # Disconnecting timedout slave: SLAVE01IP:PORT
-17989:M 18 Feb 00:27:49.906 # Connection with slave SLAVE01IP:PORT lost.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;slave01日志&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;4720:S 18 Feb 00:27:49.908 # Connection with master lost.
-4720:S 18 Feb 00:27:49.908 * Caching the disconnected master state.
-4720:S 18 Feb 00:27:50.144 * Connecting to MASTER MASTER01IP:PORT
-4720:S 18 Feb 00:27:50.144 * MASTER &amp;lt;-&amp;gt; SLAVE sync started
-4720:S 18 Feb 00:27:50.146 * Non blocking connect for SYNC fired the event.
-4720:S 18 Feb 00:27:50.147 * Master replied to PING, replication can continue...
-4720:S 18 Feb 00:27:50.149 * (Non critical) Master does not understand REPLCONF listening-port: -NOAUTH Authentication required.
-4720:S 18 Feb 00:27:50.150 * (Non critical) Master does not understand REPLCONF capa: -NOAUTH Authentication required.
-4720:S 18 Feb 00:27:50.150 * Trying a partial resynchronization (request 005a426e630acfa4a64a082b02bb97cb8a0256ad:3731868328).
-4720:S 18 Feb 00:27:50.151 # Unexpected reply to PSYNC from master: -NOAUTH Authentication required.
-4720:S 18 Feb 00:27:50.151 * Discarding previously cached master state.
-4720:S 18 Feb 00:27:50.151 * Retrying with SYNC...
-4720:S 18 Feb 00:27:50.153 # MASTER aborted replication with an error: NOAUTH Authentication required.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上网一查，原来是被攻击了，攻击者连上了redis，然后利用redis的config set dir的漏洞，尝试去注入恶意执行代码到系统的crontab中执行，
-幸亏我们是使用非root用户启动，攻击者的攻击被系统权限给阻止了。&lt;/p&gt;
-
-&lt;p&gt;redis的这个漏洞应该大家都知道，也包括我们，当初在部署redis集群的时候，就已经把服务器公网IP去掉，只允许应用在内网访问，
-没想到也竟然会出这样的事情，难道是受到阿里云同机房下的其他账户机器的攻击？&lt;/p&gt;
-
-&lt;p&gt;我带着疑问向阿里云提交了工单，回复是:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;您好 内网的默认策略是内网入方向 拒绝所有，出方向允许所有；&lt;/p&gt;
-
-&lt;p&gt;1 如果你是经典网络 您设置入方向允许0.0.0.0 的话 经典网络的内网都可以访问您的服务器了&lt;/p&gt;
-
-&lt;p&gt;2 同一安全组设置内网拒绝0.0.0.0  也是可以通的，请您知晓&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我一直以为阿里云会自动隔离不同账户下的内网网络，防火墙上设置的内网允许我还以为是针对自己的机器的，
-这下就栽了跟头，使用阿里云的其他同学要注意下了，看看自己的redis有没有限制好内网网络的权限了，
-不然的话，很容易被内网下的其他账户的机器攻击。&lt;/p&gt;
-
-&lt;h2 id=&#34;反思&#34;&gt;反思&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;事情本可在影响面没扩大之前得到处理，当天凌晨redis队列突然出现异常时，本应该发现能基础服务的不正常，但是却没引起关注。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;基础服务监控缺失，连redis接点不可用这么严重的事情都没能第一时间获取信息。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;redis安全措施没做好，虽然使用了非root用户启动，恶意代码也没能注入成功，但是明知redis这个高危的漏洞，却还是在防火墙配置上留下了漏洞。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;最后的疑问&#34;&gt;最后的疑问&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;为什么slave和master失联后没能被选举成新的master节点?&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;为什么事发时应用没有捕捉到redis的异常错误？我们在本地尝试复现攻击，一旦save失败，
-整个cluster立即不可用，所有依赖redis服务均会抛出异常，究竟攻击者对redis执行了什么命令，导致了这个情况？&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>分享一个ngrok的免费server</title>
@@ -583,6 +485,33 @@ func main() {
 
 &lt;li&gt;&lt;p&gt;改为储存指针，把map[string]school 改为 map[string]*school，把school的指针存进去，这样go就可以寻址，从而可以修改里面的值&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>说说phalcon怎么连接mysqld.sock</title>
+      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <description>&lt;p&gt;phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phalcon的PDO支持DSN模式的。。。汗~~ 官方文档也没有说明一下。。。&lt;/p&gt;
+
+&lt;p&gt;查了下php官方的PDO是怎么连socket的，折腾了一下，终于搞掂。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$db = new Phalcon\Db\Adapter\Pdo\Mysql([
+    &#39;dsn&#39; =&amp;gt; &#39;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test;charset=utf8;&#39;,
+    &#39;username&#39; =&amp;gt; &#39;root&#39;,
+    &#39;password&#39; =&amp;gt; &#39;****&#39;,
+]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意哦，这个dsn，一定unix_socket放前面，如果你是&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mysql:dbname=test;unix_socket=/var/run/mysqld/mysqld.sock;&amp;nbsp; //错误&lt;/p&gt;
+
+&lt;p&gt;mysql:unix_socket=/var/run/mysqld/mysqld.sock;dbname=test; //正确&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
