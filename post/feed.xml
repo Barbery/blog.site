@@ -6,8 +6,70 @@
     <description>Recent content in Posts on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 19 Feb 2017 16:34:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Mar 2017 21:29:27 +0800</lastBuildDate>
     <atom:link href="http://barbery.me/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PHP高并发下问题总结</title>
+      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
+      <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
+      
+      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
+      <description>
+
+&lt;p&gt;上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。
+这么大的流量突然涌入，真是把我们杀个措手不及，最终还是要把接口往GO迁才能扛下来。其中也暴露出了不少问题。&lt;/p&gt;
+
+&lt;h2 id=&#34;phpredis问题&#34;&gt;phpredis问题&lt;/h2&gt;
+
+&lt;h3 id=&#34;超时问题&#34;&gt;超时问题&lt;/h3&gt;
+
+&lt;p&gt;phpredis应该说是大家非常普遍使用的一个redis client，以往在单机redis下使用情况也非常稳定。但是非常遗憾的是，
+在redis cluster模式下，phpredis非常不稳定，经常会出现超时的异常错误，例如：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;RedisClusterException: Timed out attempting to find data in the correct node!&lt;/p&gt;
+
+&lt;p&gt;ErrorException: RedisCluster::setex(): connect() failed: Connection timed out&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;第一个问题的话，是早期的phpredis的一个BUG，使用新的版本或者使用phpredis的develop分支就可以解决了。
+我们使用了最新的develop分之后，第一个问题就没再出现了，转而是常常出现问题而这种连接超时的情况，
+这个问题暂时不知道如何解决。&lt;/p&gt;
+
+&lt;h3 id=&#34;redis集群负载不均问题&#34;&gt;redis集群负载不均问题&lt;/h3&gt;
+
+&lt;p&gt;使用phpredis还有一个问题是，读取策略的问题，请使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略，
+其他策略例如&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;，或者&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;，都会造成整个集群的负载非常不均衡。
+使用&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;的话会导致redis读写都会发送给redis master机器，导致master和slave负载不均，
+如果使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;虽然读会随机分发给master和slave，但是我们实际看到，slave机器负载和master的差异还是很大。
+目前来看，使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略是最佳的选择，但是同一个节点下的多个slave机器之间还是会存在负载差异。&lt;/p&gt;
+
+&lt;h3 id=&#34;性能损耗问题&#34;&gt;性能损耗问题&lt;/h3&gt;
+
+&lt;p&gt;phpredis在cluster模式下，有个额外的性能损耗问题，就是每次创建连接的时候，都会去获取一次cluster slots, 而由于
+每次获取这个slots都是从seeds里面循环去获取，直至获取到slots信息，所以&lt;code&gt;new RedisCluster(null, $servers)&lt;/code&gt;时，传入的servers中第一个会压力很大，
+在高并发的情况下，频发的短链接创建，会直接导致redis集群负载不均，这也是导致了redis集群负载不均的一个原因。&lt;/p&gt;
+
+&lt;h2 id=&#34;阿里云相关&#34;&gt;阿里云相关&lt;/h2&gt;
+
+&lt;p&gt;连接不稳定&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;坑爹阿里云，内网dns解析非常不稳定，大流量的情况下，连自家的RDS地址都不认了，解决办法：把IP地址写入host，缺点是，主从切换时需要手动更新IP。&lt;/p&gt;
+
+&lt;h2 id=&#34;系统其他&#34;&gt;系统其他&lt;/h2&gt;
+
+&lt;p&gt;增大nf_conntrack_max参数，可以增大服务器的并发数&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sudo sysctl net.nf_conntrack_max=512000&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>记一次redis被黑事件</title>
@@ -628,28 +690,6 @@ skip-external-locking&lt;/p&gt;
 &lt;p&gt;在谈到何时卖出时，邓普顿先生的回答是，等待价格回归价值时卖出，而不是等到价格严重高于价值时卖出，他认为这是赌博而不是投资，或者找到比持有的股票低估50%的股票时卖出换入更低估的股票。书中列举了邓普顿先生清仓日本股市时，东京指数PEG为2.1倍。&lt;/p&gt;
 
 &lt;p&gt;最后，书中谈到债券的问题，在2000年美国互联网泡沫的时候，他建议大家买入债券，理由是，当泡沫破裂，股市大跌会导致经济衰退，政府为了重振紧急，必定会降息，从而导致债券获得高于票面的收益率，此时再卖出债券，待最悲观的时刻到来，买入被严重错杀的“低价股”。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>为gist加速！</title>
-      <link>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
-      <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
-      
-      <guid>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
-      <description>&lt;p&gt;github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。&lt;/p&gt;
-
-&lt;p&gt;不过比较悲剧的是，国内访问gist.github.com貌似被墙了，这样会导致嵌入的代码没办法展示，而大部分的用户都没有具备翻墙环境，so。。。&lt;/p&gt;
-
-&lt;p&gt;最好的办法是，为gist加速，利用nginx做一个反向代理，因为我这是海外的服务器，访问gist没压力，速度很快，对国内速度也不慢，所以非常适合用来对gist加速。。。&lt;/p&gt;
-
-&lt;p&gt;贴下nginx配置（&lt;a href=&#34;https://gist.github.com/Barbery/927ae66c70c581586800&#34;&gt;https://gist.github.com/Barbery/927ae66c70c581586800&lt;/a&gt;）：&lt;/p&gt;
-
-&lt;p&gt;从此，引入gist的时候，只要把前面的host改一下，改为&lt;a href=&#34;http://gist.stutostu.com/xxx/xxxx.js&#34;&gt;http://gist.stutostu.com/xxx/xxxx.js&lt;/a&gt; 就可以了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
 </description>
     </item>
     
