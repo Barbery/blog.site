@@ -6,70 +6,8 @@
     <description>Recent content in Php on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 19 Mar 2017 21:29:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2015 18:28:22 +0000</lastBuildDate>
     <atom:link href="http://barbery.me/tags/php/feed/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>PHP高并发下问题总结</title>
-      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
-      <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
-      
-      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
-      <description>
-
-&lt;p&gt;上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。
-这么大的流量突然涌入，真是把我们杀个措手不及，最终还是要把接口往GO迁才能扛下来。其中也暴露出了不少问题。&lt;/p&gt;
-
-&lt;h2 id=&#34;phpredis问题&#34;&gt;phpredis问题&lt;/h2&gt;
-
-&lt;h3 id=&#34;超时问题&#34;&gt;超时问题&lt;/h3&gt;
-
-&lt;p&gt;phpredis应该说是大家非常普遍使用的一个redis client，以往在单机redis下使用情况也非常稳定。但是非常遗憾的是，
-在redis cluster模式下，phpredis非常不稳定，经常会出现超时的异常错误，例如：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;RedisClusterException: Timed out attempting to find data in the correct node!&lt;/p&gt;
-
-&lt;p&gt;ErrorException: RedisCluster::setex(): connect() failed: Connection timed out&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;第一个问题的话，是早期的phpredis的一个BUG，使用新的版本或者使用phpredis的develop分支就可以解决了。
-我们使用了最新的develop分之后，第一个问题就没再出现了，转而是常常出现问题而这种连接超时的情况，
-这个问题暂时不知道如何解决。&lt;/p&gt;
-
-&lt;h3 id=&#34;redis集群负载不均问题&#34;&gt;redis集群负载不均问题&lt;/h3&gt;
-
-&lt;p&gt;使用phpredis还有一个问题是，读取策略的问题，请使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略，
-其他策略例如&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;，或者&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;，都会造成整个集群的负载非常不均衡。
-使用&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;的话会导致redis读写都会发送给redis master机器，导致master和slave负载不均，
-如果使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;虽然读会随机分发给master和slave，但是我们实际看到，slave机器负载和master的差异还是很大。
-目前来看，使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略是最佳的选择，但是同一个节点下的多个slave机器之间还是会存在负载差异。&lt;/p&gt;
-
-&lt;h3 id=&#34;性能损耗问题&#34;&gt;性能损耗问题&lt;/h3&gt;
-
-&lt;p&gt;phpredis在cluster模式下，有个额外的性能损耗问题，就是每次创建连接的时候，都会去获取一次cluster slots, 而由于
-每次获取这个slots都是从seeds里面循环去获取，直至获取到slots信息，所以&lt;code&gt;new RedisCluster(null, $servers)&lt;/code&gt;时，传入的servers中第一个会压力很大，
-在高并发的情况下，频发的短链接创建，会直接导致redis集群负载不均，这也是导致了redis集群负载不均的一个原因。&lt;/p&gt;
-
-&lt;h2 id=&#34;阿里云相关&#34;&gt;阿里云相关&lt;/h2&gt;
-
-&lt;p&gt;连接不稳定&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;坑爹阿里云，内网dns解析非常不稳定，大流量的情况下，连自家的RDS地址都不认了，解决办法：把IP地址写入host，缺点是，主从切换时需要手动更新IP。&lt;/p&gt;
-
-&lt;h2 id=&#34;系统其他&#34;&gt;系统其他&lt;/h2&gt;
-
-&lt;p&gt;增大nf_conntrack_max参数，可以增大服务器的并发数&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo sysctl net.nf_conntrack_max=512000&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
     
     <item>
       <title>使用sublime text3 打造最佳PHP开发工具</title>
@@ -603,6 +541,149 @@ $content = str_replace($search, &#39;&amp;lt;?php } ?&amp;gt;&#39;, $content);
 &lt;p&gt;具体代码，请点下面的链接，在lesson3的文件夹里&lt;/p&gt;
 
 &lt;p&gt;代码托管在：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;github 欢迎fork&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>学习如何写PHP MVC框架（2）加载器</title>
+      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</link>
+      <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</guid>
+      <description>&lt;p&gt;上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。&lt;/p&gt;
+
+&lt;p&gt;虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。都是通过单例模式加载文件，而且把已加载的文件cache起来，避免重复加载。。。因为在开发业务的过程中，常常需要加载不同的模块，不同的类库等，MVC的loader可以帮助我们实现单例模式，更加符合开发需求。&lt;/p&gt;
+
+&lt;p&gt;下面我们开始动手，利用其原理，做一个简单的loader。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;首先，我们设计的加载器，要满足可以全局使用，无论在controller里还是在model、library里都可以使用。&lt;/p&gt;
+
+&lt;p&gt;其次，加载器要有缓存能力，即相同的文件只加载一次，相同的类只实例化一次。&lt;/p&gt;
+
+&lt;p&gt;最后，要能加载多种文件，model、library、helper。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;先解决第一步，怎么全局使用，最简单的办法就是定义一个全局的function，这样，在后面的不同类库，不同function里都可以调用这个全局function，进行加载文件。&lt;/p&gt;
+
+&lt;p&gt;第二步和第三步，要一起解决，定义一个单例模式的loader类，因为是单例模式，可以保证全局只有一份内容，这样的话，就可以利用数组把这些已加载的内容和对象cache起来，这样就可以避免了重复加载的问题。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;if ( ! function_exists(&#39;load&#39;))
+{
+    function load($name, $type=&#39;model&#39;, $data=array())
+    {
+        static $loader = NULL;
+        if (is_null($loader))
+        {
+            include (ROOT.&#39;/system/core/loader.php&#39;);
+            $loader = Loader::get_instance();
+        }
+
+        return $loader-&amp;gt;$type($name, $data);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面这个，就是我写的一个简单的全局函数 load，这个函数的作用就是为了可以全局调用，然后通过这个load函数，去调用loader类，由loader类负责加载文件，实例化，和缓存对象。。。下面我把loader的代码放出来给大家看看。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+
+class Loader
+{
+    private $_loaded_models = array();
+    private $_loaded_librarys = array();
+    private static $OBJ;
+
+    # 单例模式，不允许new对象
+    private function __construct()
+    {
+
+    }
+
+
+    public static function get_instance()
+    {
+        if (is_null(self::$OBJ))
+        {
+            $class = __CLASS__;
+            self::$OBJ = new $class;
+        }
+
+        return self::$OBJ;
+    }
+
+    public function model($model, $data=array())
+    {
+        $model = strtolower($model);
+
+        # 如果已经加载，则返回对象，避免重复加载
+        if (isset($this-&amp;gt;_loaded_models[$model]))
+        {
+            return $this-&amp;gt;_loaded_models[$model];
+        }
+
+        # 否则加载文件
+        include ROOT.&amp;quot;/application/models/{$model}.php&amp;quot;;
+
+        $class = ucfirst($model);
+        # 实例化对象
+        if (emptyempty($data))
+        {
+            $instance = new $class;
+        }
+        else
+        {
+            $instance = new $class($data);
+        }
+        # 把对象cache起来
+        $this-&amp;gt;_loaded_models[$model] = $instance;
+
+        return $instance;
+    }
+
+
+    public function library($library, $data=array())
+    {
+        $library = strtolower($library);
+
+        # 如果已经加载，则返回对象，避免重复加载
+        if (isset($this-&amp;gt;_loaded_librarys[$library]))
+        {
+            return $this-&amp;gt;_loaded_librarys[$library];
+        }
+
+        # 否则加载文件
+        include ROOT.&amp;quot;/application/librarys/{$library}.php&amp;quot;;
+
+        $class = ucfirst($library);
+        # 实例化对象
+        if (emptyempty($data))
+        {
+            $instance = new $class;
+        }
+        else
+        {
+            $instance = new $class($data);
+        }
+
+        # 把对象cache起来
+        $this-&amp;gt;_loaded_librarys[$library] = $instance;
+
+        return $instance;
+    }
+}
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大家看到了没有，这个loader采用的是单例模式，虽然前面的function的设计已经可以保证不会重复实例化loader这个对象，但是为了真正可以保证全局只有一份loader对象，设计成单例模式是最保险的。。。&lt;/p&gt;
+
+&lt;p&gt;具体的测试例子请看代码。。。我把代码打包上传上来，有需要的就下载回去看看吧。。。下载后，解压，把lesson2文件夹放到你的www目录下，然后访问yourdomain/MVC/lesson2/index.php/index/test&amp;nbsp; 试试看吧。。。&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;这年头得与时俱进，我把代码托管在git上。。。&lt;/p&gt;
+
+&lt;p&gt;fork me ：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;https://github.com/Barbery/mvc.git&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
