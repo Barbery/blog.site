@@ -43,6 +43,11 @@ phpredis在cluster模式下，有个额外的性能损耗问题，就是每次�
 每次获取这个slots都是从seeds里面循环去获取，直至获取到slots信息，所以`new RedisCluster(null, $servers)`时，传入的servers中第一个会压力很大，
 在高并发的情况下，频发的短链接创建，会直接导致redis集群负载不均，这也是导致了redis集群负载不均的一个原因。
 
+--2017年03月21日-- 更新
+我看到develop分支下这个问题已经解决了，phpredis会在循环连接seeds之前打乱传入的servers，所以高流量的情况下，
+建议填写所有的slave的节点IP进去实例化，这样可以避免单一的节点负载过高。cluster slots消耗过多的问题，已提[issure](https://github.com/phpredis/phpredis/issues/1133)给官方，
+答复是会在phpredis 3.2的版本中加入缓存cluster slots的功能。
+
 
 ## 阿里云相关
 
