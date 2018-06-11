@@ -202,10 +202,10 @@
     
     <item>
       <title>go-chat 用go&#43;websocket写的一个html聊天组件</title>
-      <link>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
+      <link>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
+      <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
       <description>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。</description>
     </item>
     
@@ -427,10 +427,10 @@
     
     <item>
       <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
-      <link>http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/</link>
+      <link>http://barbery.me/post/2013-10-03-nginx-php-fpm-socketvsnginx-php-fpm-tcpvsnginx-apache-mod_php/</link>
       <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/</guid>
+      <guid>http://barbery.me/post/2013-10-03-nginx-php-fpm-socketvsnginx-php-fpm-tcpvsnginx-apache-mod_php/</guid>
       <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
     </item>
     
@@ -607,10 +607,10 @@
     
     <item>
       <title>mac下配置nginx&#43;php&#43;mysql小记</title>
-      <link>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</link>
+      <link>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
       <description>额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。 后来使用了大家都推荐的homebrew来安装。。。具体教</description>
     </item>
     
@@ -1660,10 +1660,10 @@
     
     <item>
       <title>巴菲特致股东信最新最全版&#43;推荐投资书单【转】</title>
-      <link>http://barbery.me/post/2011-11-27-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1%E6%9C%80%E6%96%B0%E6%9C%80%E5%85%A8%E7%89%88&#43;%E6%8E%A8%E8%8D%90%E6%8A%95%E8%B5%84%E4%B9%A6%E5%8D%95%E8%BD%AC/</link>
+      <link>http://barbery.me/post/2011-11-27-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1%E6%9C%80%E6%96%B0%E6%9C%80%E5%85%A8%E7%89%88-%E6%8E%A8%E8%8D%90%E6%8A%95%E8%B5%84%E4%B9%A6%E5%8D%95%E8%BD%AC/</link>
       <pubDate>Sun, 27 Nov 2011 00:41:47 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2011-11-27-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1%E6%9C%80%E6%96%B0%E6%9C%80%E5%85%A8%E7%89%88&#43;%E6%8E%A8%E8%8D%90%E6%8A%95%E8%B5%84%E4%B9%A6%E5%8D%95%E8%BD%AC/</guid>
+      <guid>http://barbery.me/post/2011-11-27-%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1%E6%9C%80%E6%96%B0%E6%9C%80%E5%85%A8%E7%89%88-%E6%8E%A8%E8%8D%90%E6%8A%95%E8%B5%84%E4%B9%A6%E5%8D%95%E8%BD%AC/</guid>
       <description>注：推荐书单本人有所修改,包括推荐链接以及新增基本书籍 巴菲特致股东信最全版（1957-2010） 来源：实力资产 http://www.strengthasset.com &amp;nbsp; 1957年巴菲特致股东的信</description>
     </item>
     

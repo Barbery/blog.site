@@ -40,10 +40,10 @@
     
     <item>
       <title>go-chat 用go&#43;websocket写的一个html聊天组件</title>
-      <link>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
+      <link>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
+      <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
       <description>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。</description>
     </item>
     

@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP - Barbery&#39;s Blog</title>
+  <title>go-chat 用go&#43;websocket写的一个html聊天组件 - Barbery&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。">
+  <meta name="description" content="最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go&#43;html5的websocket搞了个聊天组件玩玩。。">
   
-  <meta itemprop="name" content="NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP - Barbery&#39;s Blog">
-  <meta itemprop="description" content="上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。">
+  <meta itemprop="name" content="go-chat 用go&#43;websocket写的一个html聊天组件 - Barbery&#39;s Blog">
+  <meta itemprop="description" content="最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go&#43;html5的websocket搞了个聊天组件玩玩。。">
   <meta itemprop="image" content="http://barbery.me/img/author.jpg">
   
   
@@ -72,7 +72,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/" title="NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP" itemprop="url">NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</a>
+      <a href="http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/" title="go-chat 用go&#43;websocket写的一个html聊天组件" itemprop="url">go-chat 用go&#43;websocket写的一个html聊天组件</a>
   </h1>
   <p class="article-author">By
     
@@ -80,7 +80,7 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2013-10-03 17:02:45 &#43;0000 &#43;0000" itemprop="datePublished">2013年10月03日</time>
+    <time datetime="2014-08-09 16:03:00 &#43;0000 &#43;0000" itemprop="datePublished">2014年08月09日</time>
   </p>
 </header>
 
@@ -88,137 +88,41 @@
     
     
 
-<p>上一篇<a href="http://www.stutostu.com/?p=1225">果然nginx使用socket来与php-fpm通讯是更高效率</a>中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。。。</p>
+<p>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。。</p>
 
-<p>今天把apache给搞点了，正好验证下，究竟是NGINX+PHP-FPM效率好还是NGINX+APACHE+mod_php 效率好。。。</p>
+<p>经过几天的学习，我对go语言的评价是：快速，性能高效，goroutine很好用。go有着做大型项目的基因。。</p>
 
-<p>立即开搞，看ab测试记录。。。</p>
+<h3 id="怎么使用">怎么使用？</h3>
 
-<h2 id="for-1000次累加测试">for 1000次累加测试</h2>
+<p>把下面的代码放到head标签中</p>
 
-<pre><code>barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php
-This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-Benchmarking localhost (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
-Server Software:        ngx_openresty/1.4.2.7
-Server Hostname:        localhost
-Server Port:            80
-Document Path:          /bench/foreach_test.php
-Document Length:        8 bytes
-Concurrency Level:      500
-Time taken for tests:   18.643 seconds
-Complete requests:      10000
-Failed requests:        218
-   (Connect: 0, Receive: 0, Length: 218, Exceptions: 0)
-Write errors:           0
-Non-2xx responses:      218
-Total transferred:      2187686 bytes
-HTML transferred:       117932 bytes
-Requests per second:    536.38 [#/sec] (mean)
-Time per request:       932.173 [ms] (mean)
-Time per request:       1.864 [ms] (mean, across all concurrent requests)
-Transfer rate:          114.59 [Kbytes/sec] received
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    3  42.4      0    1000
-Processing:    48  486 1895.6     99   14013
-Waiting:       30  486 1895.6     99   14013
-Total:         66  489 1899.5    100   14013
-Percentage of the requests served within a certain time (ms)
-  50%    100
-  66%    107
-  75%    113
-  80%    120
-  90%    153
-  95%   1106
-  98%   8848
-  99%  12481
- 100%  14013 (longest request)
+<pre><code class="language-html">&lt;script type=“text/javascript”&gt;
+    window.onload = function() {
+        var js = document.createElement(“script”);
+        js.type = “text/javascript”;
+        js.src = “http://stutostu.qiniudn.com/app.js&quot;;
+        document.getElementsByTagName(“body”)[0].appendChild(js);
+    };
+&lt;/script&gt;
 </code></pre>
 
-<h2 id="mysql-select数据测试">mysql select数据测试</h2>
+<p>更多引入方式，请看：<a href="https://gist.github.com/Barbery/8f36d999193da2a29ab3">https://gist.github.com/Barbery/8f36d999193da2a29ab3</a></p>
 
-<pre><code>barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/mysql_test.php
-This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-Benchmarking localhost (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
-Server Software:        ngx_openresty/1.4.2.7
-Server Hostname:        localhost
-Server Port:            80
-Document Path:          /bench/mysql_test.php
-Document Length:        462 bytes
-Concurrency Level:      500
-Time taken for tests:   14.451 seconds
-Complete requests:      10000
-Failed requests:        229
-   (Connect: 0, Receive: 0, Length: 229, Exceptions: 0)
-Write errors:           0
-Non-2xx responses:      229
-Total transferred:      6644659 bytes
-HTML transferred:       4555880 bytes
-Requests per second:    691.98 [#/sec] (mean)
-Time per request:       722.565 [ms] (mean)
-Time per request:       1.445 [ms] (mean, across all concurrent requests)
-Transfer rate:          449.02 [Kbytes/sec] received
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    1   3.1      0      22
-Processing:    84  600 2459.8    112   14425
-Waiting:       84  600 2459.8    112   14425
-Total:         84  601 2461.9    112   14439
-Percentage of the requests served within a certain time (ms)
-  50%    112
-  66%    119
-  75%    124
-  80%    129
-  90%    147
-  95%   1105
-  98%  14385
-  99%  14390
- 100%  14439 (longest request)
-</code></pre>
+<p>go-chat分为4个频道，分别为：</p>
 
-<hr />
+<ul>
+<li><p>本页面：这个频道是根据用户所在页面的url来建立的，不包括url上的？参数和#参数，即<a href="http://stutostu.com/page1">http://stutostu.com/page1</a> 和 <a href="http://stutostu.com/page1?param1=value1#aa">http://stutostu.com/page1?param1=value1#aa</a> 为同一个页面。使用场景：当你只想和访问这个页面的人交流的时候。</p></li>
 
-<h2 id="总结">总结</h2>
+<li><p>本域名：这个频道是根据用户所在页面的域名来建立的，即<a href="http://www.stutostu.com/page1.html">http://www.stutostu.com/page1.html</a> 和 <a href="http://www.stutostu.com/page2.html">http://www.stutostu.com/page2.html</a> 虽然所在页面不同，但是所在域名均为<a href="http://www.stutostu.com">www.stutostu.com</a> ，都可以通过这个频道跨页面进行聊天。使用场景：想和同一个域名的用户交流的时候。</p></li>
 
-<p>为了更好的对比结果，我做了一个表格，成绩对比如下：</p>
+<li><p>根域名：这个频道是根据用户所在页面的根域名来建立的，即news.stutostu.com和blog.stutostu.com的根域名均为stutostu.com，所以均可通过这个频道进行交流。使用场景：如果你想和这个站的所有人交流的时候</p></li>
 
-<p><img src="http://ww3.sinaimg.cn/large/6915c7dcgw1e983aheg9lj20la07sjsl.jpg" /></p>
+<li><p>世界：这个范围最大。。。无论在什么页面和域名，均可通过这个频道进行交流。使用场景：如果你想和所有使用go-chat的人交流的时候</p></li>
+</ul>
 
-<p>使用NGINX+PHP-FPM+TCP 和 NGINX+APACHE+MOD_PHP的测试结果不相上下。。。这个和网上各位博主测出来的结果相差不大。。。</p>
+<p>注意：目前只能加入和订阅1个频道，例如你加入了世界频道，那么只能和世界频道的人进行交流，无法接收到其他频道发送的消息，也无法发送消息到其他频道。</p>
 
-<p><a href="http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/">http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/</a>这个博主就测出来，在关闭APACHE AllowOverride 可以获得性能上的提升，可以比NGINX+PHP-FPM+TCP高10～15%这样。。。比较可惜的是，该博主没有测使用NGINX+PHP-FPM+SOCKET的模式，也没有使用NIGNX+APACHE做方向代理的模式。。。</p>
-
-<p>最后，这次的测试都在默认配置下进行，不排除NIGNX和APACHE在默认配置上的差异，导致结果悬殊。。但是，即便存在上述可能，NGINX+PHP-FPM+SOCKET的模式比NGINX+APACHE的测试结果高出10倍之多。。。差距如此之大也可以说明，NGINX+PHP-FPM+SOCKET才是王道。。。</p>
-
-<p>如果你有不同的意见，欢迎交流。。。</p>
-
-<p>PHP测试脚本：<a href="https://github.com/Barbery/blog/tree/master/bench">https://github.com/Barbery/blog/tree/master/bench</a></p>
+<p>源码:  <a href="https://github.com/Barbery/blog/tree/master/go-chat">https://github.com/Barbery/blog/tree/master/go-chat</a></p>
 
 	</div>
   <footer class="article-footer clearfix">
@@ -227,13 +131,15 @@ Percentage of the requests served within a certain time (ms)
 <div class="article-tags">
   <span></span>
   
-  <a href="http://barbery.me/tags/apache">APACHE</a>
+  <a href="http://barbery.me/tags/go">go</a>
   
-  <a href="http://barbery.me/tags/mod_php">MOD_PHP</a>
+  <a href="http://barbery.me/tags/go-chat">go-chat</a>
   
-  <a href="http://barbery.me/tags/nginx">nginx</a>
+  <a href="http://barbery.me/tags/golang">golang</a>
   
-  <a href="http://barbery.me/tags/php-fpm">PHP-FPM</a>
+  <a href="http://barbery.me/tags/html">html</a>
+  
+  <a href="http://barbery.me/tags/websocket">websocket</a>
   
 </div>
 
@@ -251,7 +157,7 @@ Percentage of the requests served within a certain time (ms)
 
 
   <div class="article-share" id="share">
-    <div data-url="http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/" data-title="NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP" data-tsina="" class="share clearfix">
+    <div data-url="http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/" data-title="go-chat 用go&#43;websocket写的一个html聊天组件" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>

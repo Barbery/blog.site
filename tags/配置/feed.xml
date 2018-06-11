@@ -40,10 +40,10 @@
     
     <item>
       <title>mac下配置nginx&#43;php&#43;mysql小记</title>
-      <link>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</link>
+      <link>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
       <description>额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。 后来使用了大家都推荐的homebrew来安装。。。具体教</description>
     </item>
     

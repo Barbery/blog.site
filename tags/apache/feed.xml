@@ -13,10 +13,10 @@
     
     <item>
       <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
-      <link>http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/</link>
+      <link>http://barbery.me/post/2013-10-03-nginx-php-fpm-socketvsnginx-php-fpm-tcpvsnginx-apache-mod_php/</link>
       <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/</guid>
+      <guid>http://barbery.me/post/2013-10-03-nginx-php-fpm-socketvsnginx-php-fpm-tcpvsnginx-apache-mod_php/</guid>
       <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
     </item>
     
