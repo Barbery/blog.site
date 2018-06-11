@@ -7,11 +7,11 @@ pygmentsStyle = "default"
 pygmentsUseClasses = true
 RSSUri = "feed.xml"
 Paginate = 10
-disablePathToLower = false
+disablePathToLower = true
 filename_case = 0
 
 [permalinks]
-  post = "/post/:filename"
+  post = "/:section/:filename"
 
 [Author]
   Name = "barbery"
