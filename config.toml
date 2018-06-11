@@ -7,6 +7,7 @@ pygmentsStyle = "default"
 pygmentsUseClasses = true
 RSSUri = "feed.xml"
 Paginate = 10
+disablePathToLower = false
 
 [Author]
   Name = "barbery"
