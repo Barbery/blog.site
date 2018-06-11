@@ -13,10 +13,10 @@
     
     <item>
       <title>学习如何写PHP MVC框架（3） — 视图</title>
-      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
+      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
       <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
+      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
       <description>今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</description>
     </item>
     

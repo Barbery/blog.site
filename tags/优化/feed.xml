@@ -13,10 +13,10 @@
     
     <item>
       <title>强大的XHProf</title>
-      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</link>
+      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</link>
       <pubDate>Mon, 19 Mar 2012 13:30:59 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</guid>
+      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</guid>
       <description>XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</description>
     </item>
     

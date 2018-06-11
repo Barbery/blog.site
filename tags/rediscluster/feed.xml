@@ -13,10 +13,10 @@
     
     <item>
       <title>PHP高并发下问题总结</title>
-      <link>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</link>
+      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
       <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</guid>
+      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
       <description>上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。 这么大的流量突然涌入，真是把我</description>
     </item>
     

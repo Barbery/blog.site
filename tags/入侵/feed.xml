@@ -13,10 +13,10 @@
     
     <item>
       <title>记一次redis被黑事件</title>
-      <link>http://barbery.me/post/2017-02-19-redis-hacked/</link>
+      <link>http://barbery.me/post/2017-02-19-Redis-hacked/</link>
       <pubDate>Sun, 19 Feb 2017 16:34:55 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-02-19-redis-hacked/</guid>
+      <guid>http://barbery.me/post/2017-02-19-Redis-hacked/</guid>
       <description>18号事情的经过 当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法， 返回是一个false的布尔类型，导致</description>
     </item>
     

@@ -13,10 +13,10 @@
     
     <item>
       <title>实现Linechart 一线多色，局部变色问题</title>
-      <link>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 27 Apr 2012 10:44:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
       <description>最近，在做一个股票的指标图。。。需要实现的情况是，当线条向上走时，需要加粗红色显示，而当线条向下时，就变为绿色。。。这里涉及到的就是，一条线</description>
     </item>
     

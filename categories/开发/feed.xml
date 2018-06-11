@@ -22,19 +22,19 @@
     
     <item>
       <title>PHP高并发下问题总结</title>
-      <link>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</link>
+      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
       <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</guid>
+      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
       <description>上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。 这么大的流量突然涌入，真是把我</description>
     </item>
     
     <item>
       <title>记一次redis被黑事件</title>
-      <link>http://barbery.me/post/2017-02-19-redis-hacked/</link>
+      <link>http://barbery.me/post/2017-02-19-Redis-hacked/</link>
       <pubDate>Sun, 19 Feb 2017 16:34:55 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-02-19-redis-hacked/</guid>
+      <guid>http://barbery.me/post/2017-02-19-Redis-hacked/</guid>
       <description>18号事情的经过 当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法， 返回是一个false的布尔类型，导致</description>
     </item>
     
@@ -76,10 +76,10 @@
     
     <item>
       <title>使用sublime text3 打造最佳PHP开发工具</title>
-      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3php%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sat, 18 Jul 2015 18:28:22 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3php%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
       <description>我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配</description>
     </item>
     
@@ -130,10 +130,10 @@
     
     <item>
       <title>goRouter 一个轻量级和高性能的路由</title>
-      <link>http://barbery.me/post/2014-11-16-gorouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-11-16-gorouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
       <description>公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/r</description>
     </item>
     
@@ -202,10 +202,10 @@
     
     <item>
       <title>关于php 5.5 CURLFile上传的问题</title>
-      <link>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5curlfile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 01 May 2014 12:52:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5curlfile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>最近用curl上传文件，发现报错 The usage of the @filename API for file uploading is deprecated. Please use the CURLFile class instead 原来是PHP5.5废弃了@这种模式，只需要把原来的： &amp;lt;?php $data = array( &#39;file&#39; =&amp;gt; &#39;@/PATH/TO/FILE&#39;, //..</description>
     </item>
     
@@ -274,10 +274,10 @@
     
     <item>
       <title>gitlab web hook的没接受到POST数据的一个坑！</title>
-      <link>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0post%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+      <link>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
       <pubDate>Thu, 28 Nov 2013 00:19:51 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0post%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+      <guid>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
       <description>额。。。 在help那里， 明明说好是POST数据给我的， 仲么$_POST收不到？ 额。。。原来要用PHP input流来接收。。 使用 $josn = file_get_contents(&amp;quot;php://input&amp;quot;); 来接受数</description>
     </item>
     
@@ -292,10 +292,10 @@
     
     <item>
       <title>如何通过本地SSH隧道端口转发访问远程mysql服务</title>
-      <link>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0ssh%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
+      <link>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Sat, 23 Nov 2013 15:36:44 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0ssh%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
       <description>注意：以下内容的前提是，你已经配好了SSH KEY登录远程服务器，且禁止了password登录，否则，以下做法很危险。 假设： 远程mysql服务</description>
     </item>
     
@@ -310,10 +310,10 @@
     
     <item>
       <title>PHP的PSR规范[推荐阅读！]</title>
-      <link>http://barbery.me/post/2013-11-13-php%E7%9A%84psr%E8%A7%84%E8%8C%83/</link>
+      <link>http://barbery.me/post/2013-11-13-PHP%E7%9A%84PSR%E8%A7%84%E8%8C%83/</link>
       <pubDate>Wed, 13 Nov 2013 21:31:28 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-11-13-php%E7%9A%84psr%E8%A7%84%E8%8C%83/</guid>
+      <guid>http://barbery.me/post/2013-11-13-PHP%E7%9A%84PSR%E8%A7%84%E8%8C%83/</guid>
       <description>PHP的代码规范问题， 一直受人诟病， 而且PHP框架之多， 各家都有自己的一套命名规范， 这里就导致了PHP程序员在切换框架， 或者接触不同项目时带</description>
     </item>
     
@@ -337,10 +337,10 @@
     
     <item>
       <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
-      <link>http://barbery.me/post/2013-10-03-nginx-php-fpm-socketvsnginx-php-fpm-tcpvsnginx-apache-mod_php/</link>
+      <link>http://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
       <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-10-03-nginx-php-fpm-socketvsnginx-php-fpm-tcpvsnginx-apache-mod_php/</guid>
+      <guid>http://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
       <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
     </item>
     
@@ -364,10 +364,10 @@
     
     <item>
       <title>addslashes, mysql_real_escape_string并不能防止SQL注入!!!</title>
-      <link>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/</link>
+      <link>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Fri, 06 Sep 2013 21:28:32 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/</guid>
+      <guid>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</guid>
       <description>先看代码&amp;hellip; &amp;lt;?php header(&#39;Content-Type: text/html; charset=GBK&#39;); $input = chr(0xbf) . chr(0x27) . &#39; OR username = username; /*&#39;; $value = addslashes($input); $sql = &amp;quot;SELECT * FROM users WHERE username=&#39;{$value}&#39; AND password=&#39;123123&#39;;&amp;quot;; echo $value; echo &#39;&amp;lt;br&amp;gt;&#39;; echo $sql; echo &#39;&amp;lt;br&amp;gt;&#39;; 以上的demo, 输出结果为: 你也许会疑问,</description>
     </item>
     
@@ -463,37 +463,37 @@
     
     <item>
       <title>学习如何写PHP MVC框架（4） — 错误捕捉</title>
-      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
+      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
       <pubDate>Wed, 20 Mar 2013 11:41:16 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
+      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
       <description>前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（3） — 视图</title>
-      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
+      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
       <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
+      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
       <description>今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（2）加载器</title>
-      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
       <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
       <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（1）-- 路由</title>
-      <link>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
+      <link>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Thu, 07 Mar 2013 21:29:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
+      <guid>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
       <description>说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。 第一篇先来简单点的，说说MVC框</description>
     </item>
     
@@ -508,19 +508,19 @@
     
     <item>
       <title>慎用PHP内置的Math函数</title>
-      <link>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</link>
+      <link>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 14 Dec 2012 12:40:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</guid>
+      <guid>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</guid>
       <description>如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</description>
     </item>
     
     <item>
       <title>PHP 图片库效率测试 GD Vs. Image Magick 【译】</title>
-      <link>http://barbery.me/post/2012-12-13-php%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95gdvs.imagemagick%E8%AF%91/</link>
+      <link>http://barbery.me/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E8%AF%91/</link>
       <pubDate>Thu, 13 Dec 2012 09:31:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-12-13-php%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95gdvs.imagemagick%E8%AF%91/</guid>
+      <guid>http://barbery.me/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E8%AF%91/</guid>
       <description>After doing some research, I found plenty of claims that GD is faster than Image Magick. But how much faster? I was on a quest to find out. I took a rather large jpeg image (3504 x 2336 pixels) and converted it to three other popular formats, png, gif, and bitmap. I then wrote a script that resizes each one to 300 x 200 pixels (png shown below) using both</description>
     </item>
     
@@ -535,10 +535,10 @@
     
     <item>
       <title>为你的sublime text 2 配置SVN</title>
-      <link>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn/</link>
+      <link>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</link>
       <pubDate>Wed, 28 Nov 2012 13:26:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn/</guid>
+      <guid>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</guid>
       <description>如题所示，在coding的时候，每次都需要点出去commit是灰常浪费时间和麻烦的事情。。。所以就抱着试试的心态去在package install 里搜索下</description>
     </item>
     
@@ -553,28 +553,28 @@
     
     <item>
       <title>擦~~终于搞定FlashBuider 自动关闭的问题了</title>
-      <link>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9Aflashbuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
+      <link>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
       <pubDate>Sat, 03 Nov 2012 16:36:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9Aflashbuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
+      <guid>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
       <description>FlashBuider 好卡有木有？设计模式自动关闭有木有？代码写着写着，FlashBuider 就自动关闭了有木有？？？？ 擦，这个问题困扰我已久，google许久</description>
     </item>
     
     <item>
       <title>擦，终于搞懂怎么在SAE python上装第三方包了</title>
-      <link>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8saepython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
+      <link>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
       <pubDate>Sat, 27 Oct 2012 14:48:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8saepython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
+      <guid>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
       <description>本来想装个beautifulsoup玩下的，我擦，上网一搜，全部都是打命令行的，什么解释也没有，擦，我就一个window 7系统，搞个毛啊。。</description>
     </item>
     
     <item>
       <title>分享QQ第三方登陆SDK</title>
-      <link>http://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABqq%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86sdk/</link>
+      <link>http://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABQQ%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86SDK/</link>
       <pubDate>Sun, 21 Oct 2012 22:03:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABqq%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86sdk/</guid>
+      <guid>http://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABQQ%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86SDK/</guid>
       <description>主要是考虑到QQ的PHP SDK写的真是太烂了，纯属是普及API知识，而不是到手就可以部署的类库。。反正自己都写了一个了，就拿出来分享下。。 什</description>
     </item>
     
@@ -589,91 +589,91 @@
     
     <item>
       <title>使用CodeIgniter 创建 RESTful 服务 REST API【原创译文】</title>
-      <link>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8codeigniter%E5%88%9B%E5%BB%BArestful%E6%9C%8D%E5%8A%A1restapi%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
+      <link>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
       <pubDate>Sun, 19 Aug 2012 21:59:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8codeigniter%E5%88%9B%E5%BB%BArestful%E6%9C%8D%E5%8A%A1restapi%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
+      <guid>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
       <description>翻译之前，先简单介绍下自己的情况，避免误人子弟。。。本人英语不强（不是谦虚，真是很烂），我只是一个简简单单的CI程序猿。在现在到处都是RES</description>
     </item>
     
     <item>
       <title>终于解决了FLEX CandlestickSeries 变形 缩小的问题</title>
-      <link>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86flexcandlestickseries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 10 Jul 2012 17:25:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86flexcandlestickseries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>虽然，其中的原理我不太清楚。。。但是，还是幸运的解决了这个问题。。。这是个神奇的问题，上网搜索竟然没有人问过这样的问题。。。我擦。。。这是间</description>
     </item>
     
     <item>
       <title>FLEX Timer计时器stop方法停止不了的原因</title>
-      <link>http://barbery.me/post/2012-07-05-flextimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
+      <link>http://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Thu, 05 Jul 2012 15:41:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-05-flextimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
+      <guid>http://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
       <description>今天发生一个奇异的问题，Timer方法，竟然注销不掉，断点调试，发现没什么问题，明明都成功调用了stop() ，但是就是停止不了。。。 经过自己</description>
     </item>
     
     <item>
       <title>利用XMLRPC 离线发布wordpress 文章</title>
-      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8xmlrpc%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
       <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8xmlrpc%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
       <description>还是直接上demo吧～～这样可以让大家更容易理解。。。 &amp;lt;?php include(&amp;quot;xmlrpc.inc&amp;quot;); $GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;; $c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80); $c-&amp;gt;return_type = &#39;phpvals&#39;; $content[&#39;title&#39;]=&amp;quot;标题&amp;qu</description>
     </item>
     
     <item>
       <title>PHP正则表达式使用详解[转]</title>
-      <link>http://barbery.me/post/2012-05-29-php%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</link>
+      <link>http://barbery.me/post/2012-05-29-PHP%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</link>
       <pubDate>Tue, 29 May 2012 23:37:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-05-29-php%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</guid>
+      <guid>http://barbery.me/post/2012-05-29-PHP%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</guid>
       <description>纯属备份！ 操作符 描述 \ 转义符 (), (?:), (?=), [] 圆括号和方括号 *, +, ?, {n}, {n,}, {n,m} 限定符 ^, $, \anymetacharacter 位置和顺序 | “或”操作 全部符号解释 字符 描述 \ 将下一个字符标记为一个</description>
     </item>
     
     <item>
       <title>实现Linechart 一线多色，局部变色问题</title>
-      <link>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 27 Apr 2012 10:44:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
       <description>最近，在做一个股票的指标图。。。需要实现的情况是，当线条向上走时，需要加粗红色显示，而当线条向下时，就变为绿色。。。这里涉及到的就是，一条线</description>
     </item>
     
     <item>
       <title>建议使用Crawl-delay降低爬虫蜘蛛抓取频率</title>
-      <link>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
+      <link>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
       <pubDate>Sat, 14 Apr 2012 09:45:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
+      <guid>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
       <description>如题，当然，谈这个之前，必须说说，蜘蛛爬取你的站是好事，因为只有这样，你的站才能让更多人知道。。。这里之所以说，建议降低抓取频率，是相当服务</description>
     </item>
     
     <item>
       <title>解决淘宝 API 返回的json数据无法用json_decode的问题</title>
-      <link>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9Dapi%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 02 Apr 2012 15:18:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9Dapi%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>如题，这个问题困扰我已久。。。经过自己的多次尝试，和到网上搜索，我已大概猜测到是字符的问题，论坛上的朋友说，PHP的json_decode对</description>
     </item>
     
     <item>
       <title>解决FLEX4 中 LIST控件不会自动滚动到底部的BUG</title>
-      <link>http://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3flex4%E4%B8%ADlist%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84bug/</link>
+      <link>http://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3FLEX4%E4%B8%ADLIST%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84BUG/</link>
       <pubDate>Tue, 20 Mar 2012 11:13:53 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3flex4%E4%B8%ADlist%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84bug/</guid>
+      <guid>http://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3FLEX4%E4%B8%ADLIST%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84BUG/</guid>
       <description>如题，这个问题，我也上网找了很久。。。国内的blog一般都是无解，只能到国外的论坛去转转看看，无意让我看到了一个解决方法。原理是（按照我的理</description>
     </item>
     
     <item>
       <title>强大的XHProf</title>
-      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</link>
+      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</link>
       <pubDate>Mon, 19 Mar 2012 13:30:59 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</guid>
+      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</guid>
       <description>XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</description>
     </item>
     
@@ -688,19 +688,19 @@
     
     <item>
       <title>巧用中转页解决js UTF-8传参到GBK页面问题</title>
-      <link>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsutf-8%E4%BC%A0%E5%8F%82%E5%88%B0gbk%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 18 Feb 2012 20:32:40 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsutf-8%E4%BC%A0%E5%8F%82%E5%88%B0gbk%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</guid>
       <description>这个方法不是我想出来的，是网上一位博主的idea，得益于这个想法，困扰我已久的js UTF-8传参到GBK页面问题也得以解决。我把思路和大家分</description>
     </item>
     
     <item>
       <title>分享淘宝API辅助函数-适用CI框架</title>
-      <link>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9Dapi%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8ci%E6%A1%86%E6%9E%B6/</link>
+      <link>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Fri, 10 Feb 2012 15:10:35 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9Dapi%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8ci%E6%A1%86%E6%9E%B6/</guid>
+      <guid>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</guid>
       <description>最近在重写一个淘宝客的网站，考虑到以后的拓展性，所以把它整合进CI里面了，这就出现个问题了，淘宝的SDK怎么整合进类库呢？仔细阅读淘宝API</description>
     </item>
     
@@ -715,19 +715,19 @@
     
     <item>
       <title>海外站长福音之cloundflare 免费 DNS 加速</title>
-      <link>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9dns%E5%8A%A0%E9%80%9F/</link>
+      <link>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Tue, 20 Dec 2011 21:19:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9dns%E5%8A%A0%E9%80%9F/</guid>
+      <guid>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
       <description>如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是</description>
     </item>
     
     <item>
       <title>Web开发者指南：如何建立并运作一个互联网初创项目【转】</title>
-      <link>http://barbery.me/post/2011-12-10-web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</link>
+      <link>http://barbery.me/post/2011-12-10-Web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</link>
       <pubDate>Sat, 10 Dec 2011 17:53:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2011-12-10-web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</guid>
+      <guid>http://barbery.me/post/2011-12-10-Web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</guid>
       <description>尽管全球经济萎靡不振，但在互联网领域，一轮新的爆发正在兴起。90年代，伴随着互联网的第一次爆发，我们见证了一批巨头的崛起：eBay，Yaho</description>
     </item>
     
