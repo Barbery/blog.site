@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 02 Jan 2017 22:24:44 +0800</lastBuildDate>
-    <atom:link href="http://barbery.me/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>2016年度总结</title>
@@ -15,53 +17,7 @@
       <pubDate>Mon, 02 Jan 2017 22:24:44 +0800</pubDate>
       
       <guid>http://barbery.me/post/2017-01-02-annual-summary/</guid>
-      <description>
-
-&lt;h2 id=&#34;工作&#34;&gt;工作&lt;/h2&gt;
-
-&lt;p&gt;今年4月，我放弃了我梦寐以求的remote工作，被朋友拉入了一家创业公司，又重新回到苦逼的加班日子。
-我的remote生涯只持续了半年，崇尚自由的我，怎么也没想到我自己会这么果断的离开了remote的生活。
-周围的朋友都会问我为什么，答案说出来也有点自我打脸，原因就是工作太清闲了。一天的remote工作，大多数
-情况下，基本上只需要2-4个小时就可以完成了。早上10点懒洋洋起床，简单开下早会，边工作边吃早餐，
-基本上12点左右就可以完成了一天的工作，剩下的时间一直持续到晚上睡觉，都是打游戏or看电影/连续剧中度过。
-我曾经理想的remote状态是，工作之余可以去旅游或者进行我的业余项目，一直到我的业余项目可以支撑起我的生活，
-但是我太高估自己的自制力了，在那种极度自由和极多空余时间的remote工作下，我自己制定的目标也被懒惰一点一点侵蚀。
-以至于后面我一度非常担心这样下去，会不会自己的技术就止步于此，感觉提前步入的退休的生活。。。&lt;/p&gt;
-
-&lt;p&gt;在这样的担心下，我后面也答应了朋友的邀请，加入了现在这家创业公司。说实话，朋友第一次邀请我加入时我是一点也不感兴趣，
-原因在于，我给自己定了一个规矩，不加入那些土老板+传统管理制度的公司，因为我实在无法接受这些“压榨制度”，
-后面朋友一再承诺，老板会放权给他管理我们技术部门，我才加入了他们，负责技术架构以及带我们技术团队。
-和很多创业公司一样，后面半年一直处于疯狂加班上线的状态。朋友的承诺没多久也成一句空谈，打卡，
-要求我尽可能分配多任务给下属，让他们多加班给老板看。这也一度让我深思，深思为什么会这样，
-我真的无法接受这种无意义的作秀。我和朋友的管理方式，有着诸多冲突，真的让我有点不适应，孰对孰错，待明年再来判定。&lt;/p&gt;
-
-&lt;p&gt;今年写了几个lib，但是star都不多，哎，我的100个star的项目何时才能实现。&lt;/p&gt;
-
-&lt;p&gt;人就是这么奇怪，闲的时候想忙一点，忙的时候又想闲一点，今年似乎就是一个这么轮回。&lt;/p&gt;
-
-&lt;p&gt;展望明年，让自己归零，重新学习管理团队，重新上路。&lt;/p&gt;
-
-&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
-
-&lt;p&gt;今年的生活过得太差了，原本和朋友定好今年6月去泰国学潜水，由于工作的原因，没能成行，太遗憾了。
-运动量比之前差了好多个量级，基本都没运动了，公司周围没有运动的地方，之前在唯品会的时候还能跑跑步，
-在这边就只能在公司里走动走动了。&lt;/p&gt;
-
-&lt;p&gt;今年体检的时候，测出了一个绝症&amp;mdash;慢性咽喉炎，上网搜了下，这个病无法根治，我又不抽烟，不知道是广州的空气差了，
-还是我的过敏性鼻炎引起的。今年买了房子，看看明年能不能装修好搬过去住，在小区里起码还可以跑跑步。
-身体是革命的本钱，丢了身体赚再多钱也是徒劳。&lt;/p&gt;
-
-&lt;p&gt;展望明年，多运动，实在不行就买点健身器材丢在公司里；去一次旅游，这次辞职都要去，谁都不能阻止我了；
-如果还能有点闲钱买车就好了；&lt;/p&gt;
-
-&lt;h2 id=&#34;投资&#34;&gt;投资&lt;/h2&gt;
-
-&lt;p&gt;今年的收益不佳，只有5%，基本上都是靠中国核建这个新股的收益支撑的。
-今年后半年开始，发新股的频率越来越快，A股也在快速扩容，真应了那句话，“垃圾股无限供应，蓝筹股就这么几支”，
-未来行情可能就要转向蓝筹了。&lt;/p&gt;
-
-&lt;p&gt;展望明年，上次5000点之后，不知道又要横盘到什么时候了，明年逢高减持，网格交易，继续打新。&lt;/p&gt;
-</description>
+      <description>工作 今年4月，我放弃了我梦寐以求的remote工作，被朋友拉入了一家创业公司，又重新回到苦逼的加班日子。 我的remote生涯只持续了半年，崇</description>
     </item>
     
     <item>
@@ -70,107 +26,7 @@
       <pubDate>Sun, 10 Jul 2016 16:28:38 +0800</pubDate>
       
       <guid>http://barbery.me/post/2016-07-10-%E6%8E%A8%E8%8D%90%E5%87%A0%E4%B8%AA%E4%BF%9D%E9%99%A9/</guid>
-      <description>
-
-&lt;p&gt;今天我们来聊聊保险，保险这个东西，可以说谁都懂，也可以说谁都不懂。
-懂的是，大家都知道保险是个什么东西；不懂的是虽然大家都知道，却很少人真正的去运用保险来保障自己的生活。&lt;/p&gt;
-
-&lt;p&gt;究竟什么是保险？维基百科对保险的定义如下：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;保险，在法律和经济学意义上，是一种风险管理方式，主要用于经济损失的风险。保险被定义为通过缴纳一定的费用，将一个实体潜在损失的风险向一个实体集合的平均转嫁。&lt;/p&gt;
-
-&lt;p&gt;其实通俗地讲，就是一旦加入某个团体，就“一人有难，大家平摊”，是以货币形式平摊的社会风险转嫁机制。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;现在微博，朋友圈各种求助好心人信息不断，一方面说明了疾病/意外带来的风险足矣摧毁正常的家庭，另一方面也说
-明大家对风险管理的忽视。&lt;/p&gt;
-
-&lt;p&gt;还有一点是，大家对保险的不信任，特别是老一辈的亲戚朋友，他们的不信任是基于以前保险销售的忽悠上。
-我爸妈在九几年的时候，被忽悠买了不少『分红』人寿保险，那时候的人也不懂什么保险条款，只是听销售各种忽悠
-在这里提醒大家，要仔细阅读&lt;code&gt;保险合同&lt;/code&gt;，特别是&lt;code&gt;免责条款&lt;/code&gt;，而且最好不要买那些分红险，定期每年交多少，交够XX年那种，
-这些保险绝大多数是不值得购买的，除非你能遇到一个很好的条款的保险。普通人家最好购买一年一保的保险，
-也就是有效期是1年，每年买一次，这类保险在费用上非常划算，所以这里我&lt;code&gt;特别建议大家，购买一年一保的保险&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;以下推荐几个我自己觉得非常不错的保险给大家，这些保险除了我自己有购买，我还建议家人和周围的朋友购买，
-仅供大家参考，如果有更好的保险，欢迎大家推荐给我。。。谢谢~&lt;/p&gt;
-
-&lt;h2 id=&#34;泰康人寿-个人门急诊住院医疗保险&#34;&gt;『泰康人寿』个人门急诊住院医疗保险&lt;/h2&gt;
-
-&lt;p&gt;推荐等级：严重推荐&lt;/p&gt;
-
-&lt;p&gt;购买地址： &lt;a href=&#34;https://baoxian.taobao.com/item.html?id=43439766599&#34;&gt;https://baoxian.taobao.com/item.html?id=43439766599&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;说明：这个保险非常推荐大家购买，如果你们公司没有帮你们购买社保，或者没有商业的补充医疗保险，那么这个将是你的最优选择。
-只要去定点医院看病只要超过100元，符合医保理赔范围的部分都可以申请理赔，无论是意外还是疾病。一年累计赔付3000元，额满即止。
-就拿我自己来说，上次治疗牙齿刷医保卡花了800多块，扣掉100元免赔额和部分自费的药物，最后获得了400多元的理赔。
-理赔非常方便，理赔金额500元以内的话，无需邮寄发票，只要在微信公众号上传下身份证和看病的发票信息就可以了，
-理赔的钱直接打到支付宝里面。&lt;/p&gt;
-
-&lt;h2 id=&#34;太平洋保险-全年综合意外险&#34;&gt;『太平洋保险』全年综合意外险&lt;/h2&gt;
-
-&lt;p&gt;推荐等级：严重推荐&lt;/p&gt;
-
-&lt;p&gt;购买地址： &lt;a href=&#34;https://baoxian.taobao.com/item.htm?id=526471633873&#34;&gt;https://baoxian.taobao.com/item.htm?id=526471633873&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;说明：没什么可说的，这个意外险价格非常实惠，购买3份，也就是90元，可以保障30W身故，3W医疗，150元/天住院津贴。&lt;/p&gt;
-
-&lt;h2 id=&#34;太平洋保险-综合医疗保险&#34;&gt;『太平洋保险』综合医疗保险&lt;/h2&gt;
-
-&lt;p&gt;推荐等级：推荐&lt;/p&gt;
-
-&lt;p&gt;购买地址：&lt;a href=&#34;https://baoxian.taobao.com/item.htm?id=530444329791&#34;&gt;https://baoxian.taobao.com/item.htm?id=530444329791&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;说明：这个保险的费用相对前面推荐那几个，可能稍微贵一点，但是也是非常实用的一个保险，可以说综合了前面2个保险。
-这个保险也可以门诊理赔，而且每年可以赔付的额度高达1W，缺点是每年只能理赔10次，除了这个，还包含有20W的意外保险，重疾保险，
-是一款综合性非常强的保险，不过大家需要注意的是，这个保险只保&lt;code&gt;职业为1-3类的企业在职员工，且参加城镇职工社会基本医疗保险的人员&lt;/code&gt;
-所以购买前请仔细咨询客服看看是否符合购买资格。&lt;/p&gt;
-
-&lt;h2 id=&#34;百年人寿-意外猝死伤害保险&#34;&gt;『百年人寿』意外猝死伤害保险&lt;/h2&gt;
-
-&lt;p&gt;推荐等级：普通推荐&lt;/p&gt;
-
-&lt;p&gt;购买地址：&lt;a href=&#34;https://baoxian.taobao.com/item.htm?id=522212354329&#34;&gt;https://baoxian.taobao.com/item.htm?id=522212354329&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;说明：这个仅对程序猿同行推荐，猝死目前的法定是不算意外也不算疾病的，对于我们这个行业来说，猝死风险还不少，建议还是买个护身。
-20元买不了上当，买不了吃亏。&lt;/p&gt;
-
-&lt;h2 id=&#34;众安保险-高端住院险&#34;&gt;『众安保险』高端住院险&lt;/h2&gt;
-
-&lt;p&gt;推荐等级：推荐&lt;/p&gt;
-
-&lt;p&gt;购买地址： &lt;a href=&#34;https://baoxian.taobao.com/item.html?id=522543831697&#34;&gt;https://baoxian.taobao.com/item.html?id=522543831697&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;说明：这个保险的定位是高端的住院医疗保险，也就是保的是极端的大病，需要花好几十万的治疗费用这种，
-这个保险的最大优势在于，自费的治疗项目也可以理赔，超出1W部分，100%给付，不超过30万/年。
-据我不负责任的了解，大病通常都需要用到进口药物，而进口药物通常价格昂贵，且不在医保范围呢，而这个保险
-恰好可以满足我们的需求。有的朋友可能说1W的免赔额太高了，所以这里推荐结合上面的保险来购买，例如上面推荐的综合医疗保险。&lt;/p&gt;
-
-&lt;h2 id=&#34;汇总&#34;&gt;汇总&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/large/6915c7dcgw1f5oz7go31rj20uy0lxjv7.jpg&#34; alt=&#34;汇总&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;请大家购买时看清楚保险条款，特别是免赔条款&lt;/code&gt;，有什么细节问题可以咨询客服，祝大家平平安安，永不出险。&lt;/p&gt;
-
-&lt;h2 id=&#34;最后解释下保险的一些常见问题&#34;&gt;最后解释下保险的一些常见问题。&lt;/h2&gt;
-
-&lt;h3 id=&#34;保险理赔能不能累加&#34;&gt;保险理赔能不能累加？&lt;/h3&gt;
-
-&lt;p&gt;简单的说，意外保险可以，补贴型的例如住院津贴这类也可以，例如你在A公司买了10W的身故意外险，B公司买了20W，如果不幸意外身故，则可以获得A公司的10W+B公司的20W=一共30W的理赔。
-但是医疗保险就不可以，如果把上面的例子改为是医疗保险，如果发生了20W的住院理赔，你可以找B公司理赔20W，但是不能找A公司理赔了，因为理赔的额度不能超出实际的费用，如果你的理赔是30W，则可以向AB公司一起申请理赔。&lt;/p&gt;
-
-&lt;h3 id=&#34;免赔额&#34;&gt;免赔额？&lt;/h3&gt;
-
-&lt;p&gt;免赔额就是这个额度以内，保险公司不理赔，所以理赔金额=（申请理赔的金额-免赔额）* 理赔比例&lt;/p&gt;
-
-&lt;h3 id=&#34;免赔额抵扣&#34;&gt;免赔额抵扣？&lt;/h3&gt;
-
-&lt;p&gt;这个是非常重要的东西，例如我上面推荐的高端住院险，这个保险的免赔额高达1W元，如果没有一些免赔额低的保险来做补充，
-买这个保险则是非常吃亏的。因为这1W的免赔额是可以和别的保险抵扣的（注意：政府的医保不能抵扣免赔额），
-假如某人不幸得了大病住院消费了20W元，如果此人只是购买了高端住院险，只能理赔20W-1W=19W，还需要自己掏腰包1W元，
-如果他购买的是综合医疗保险+高端住院险这个组合，则可以通过综合医疗住院险来报销1W（或者更多），剩下的部分可以通过高端住院险来报销，
-原因在于前面保险公司报销的部分是可以抵扣后面报销的保险的免赔额的，也就是20W都可以理赔，无需自费一分钱。&lt;/p&gt;
-</description>
+      <description>今天我们来聊聊保险，保险这个东西，可以说谁都懂，也可以说谁都不懂。 懂的是，大家都知道保险是个什么东西；不懂的是虽然大家都知道，却很少人真正的</description>
     </item>
     
     <item>
@@ -179,39 +35,7 @@
       <pubDate>Mon, 15 Feb 2016 17:47:48 +0000</pubDate>
       
       <guid>http://barbery.me/post/2016-02-15-%E8%BF%9F%E5%88%B0%E7%9A%842015%E6%80%BB%E7%BB%93/</guid>
-      <description>
-
-&lt;h2 id=&#34;工作&#34;&gt;工作&lt;/h2&gt;
-
-&lt;p&gt;今年在工作上真是折腾不少，回顾今年，主要做了以下几点值得一谈的事情&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;基本完成了微信活动开发的框架，可以大部分的复用活动逻辑，这个框架的建成，提高了活动开发效率，可以应对公司大促时带来的活动开发的压力。&lt;/li&gt;
-&lt;li&gt;在部门推广vagrant统一团队开发环境，统一我们微信组的开发环境&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;进入8月份后，部门整合，微信组要被拆分成2部分合并到其他组里面去，导致多名同事出走，考虑到晋升的不稳定因素太多，我也决定出走，并于11月从VIP离职。今年在VIP的时光真的很开心，可以说是我目前为止职业生涯中最快乐的一段时光。我记得15年过完春节回来上班不久，我们组的工位就从移动楼2楼搬迁到图书馆的小房间里面，大家在小房间内一起加班，一起开黑，一起吃下午茶，我真的很享受小团队这种感觉。。。&lt;/p&gt;
-
-&lt;p&gt;离开VIP后，我加盟一家remote的小公司。自从看了《rework2》之后，就一直对remote这种工作方式很憧憬，很想尝试一下。距离目前为止，我已从事remote的工作3个月了，刚开始的时候还是挺不适应的，觉得好累，因为没有客观的上下班时间，虽然自己规定了工作时间，但是人就是懒惰，总想着把工作往后推，这就导致了工作时间效率不高，本该休息的时间，却被拿来赶工作，所以感觉就好累，好像创业一样，感觉一直都在上班。。。&lt;/p&gt;
-
-&lt;p&gt;回顾去年的工作总结中的期望，今年没能完成一个100 star的开源项目，所以今年继续继承这个期望，希望能做出些有价值的开源项目。。。&lt;/p&gt;
-
-&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
-
-&lt;p&gt;今年在生活上比较顺利，去了马来西亚和越南旅游，在VIP的时候，常常和同事去跑步，游泳。不过最近加入remote后，有更宅的倾向，所以今年的目标是多运动，多出去外面走走，多社交朋友。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h2 id=&#34;投资&#34;&gt;投资&lt;/h2&gt;
-
-&lt;p&gt;今年上半年，走了一波小牛市，可惜活生生坐了一次过山车，『会买是徒弟，会卖才是师傅』终于体会到这句话的涵义了。&lt;/p&gt;
-
-&lt;p&gt;2015年的投资收益率为25%，虽然不高，但是我对这个收益率还是挺满意的。&lt;/p&gt;
-
-&lt;p&gt;对于明年的期望，策略主要以谨慎为主，被动补仓。&lt;/p&gt;
-</description>
+      <description>工作 今年在工作上真是折腾不少，回顾今年，主要做了以下几点值得一谈的事情 基本完成了微信活动开发的框架，可以大部分的复用活动逻辑，这个框架的建成</description>
     </item>
     
     <item>
@@ -220,120 +44,25 @@
       <pubDate>Wed, 31 Dec 2014 22:25:46 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</guid>
-      <description>
-
-&lt;h2 id=&#34;工作&#34;&gt;工作&lt;/h2&gt;
-
-&lt;p&gt;先说说今年的工作情况吧。。年初激情四射，和几位好朋友，满腔热火，砸锅卖铁去创业，势必把O2O果汁店这个idea给做起来。年中，资金耗完，团队各种困难，股东退出，也没洽谈到融资，各种矛盾不如意，最终只能关掉项目，各种各路。回想这次“创业”，有太多不成熟的地方了，首先低估了营销的重要性和难度，其次O2O不是我们的专长，这种需要结合线下推广的业务，我们无一擅长，纯互联网的项目才是我们的主场。也许，我们应该先开果汁店，成功了再O2O，网络只是销售渠道的一个，而不是本末倒置，先做网络，再卖果汁。&lt;/p&gt;
-
-&lt;p&gt;项目失败后，我也一度失去了奋斗的方向，9月份开始，又重新踏上打工的道路，也顺利拿下了许多offer，经过考虑，最终选择了进入唯品会，一边工作积累技术，一边好好考虑，究竟自己想要什么，我憧憬的未来是怎么样的？&lt;/p&gt;
-
-&lt;p&gt;对于15年的展望，努力工作，多写代码，争取做出一个超100个star的开源项目。&lt;/p&gt;
-
-&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
-
-&lt;p&gt;工作之余，貌似我的生活也太枯燥无味了，平时也不喜欢出去逛，除了有同学/朋友聚会什么的。平时生活的最大乐趣就数去旅游了，每年一度的旅游计划，是属于我自己最盛大的节日了，2014年去了一趟泰国游，现在回想起来，真是爽爆了~。&lt;/p&gt;
-
-&lt;p&gt;自从来了唯品会，偶尔也跟同事跑跑步什么的，坚持运动，健康生活。对于15年的展望，我想说：猿的生命短暂，说不准何时就猝死了，不要浪费自己的时光，也不要只关注自己的工作，多关心朋友、亲人，以后要多点提高自己的生活质量，每天都快乐的活着。&lt;/p&gt;
-
-&lt;p&gt;写完这个计划，我又要开始策划我15年的年度旅游了，哈哈哈，太激动鸟~~&lt;/p&gt;
-
-&lt;h2 id=&#34;投资&#34;&gt;投资&lt;/h2&gt;
-
-&lt;p&gt;最后说说投资吧，真是对不起乡亲父老，今年的上半年都在和朋友创业，除了没收入，没钱继续买股票之前，还要变卖股票，套现一点钱出来维持生活费的开支，以至于后面大涨，我只能感叹再也没有便宜股买了。。。&lt;/p&gt;
-
-&lt;p&gt;今年的总收益率为53%左右，对比上证指数，跑输2%，对比上证50指数，跑输15%。收益竟然还不及我姐姐的账户，我姐姐的账户也是由我操作，风格上和我集中持股不同，比较分散，持有的行业比重最大为银行股，其次为建筑地产，最后为高速铁路，不同行业组合，加上轮涨，反倒成了不错的组合收益。&lt;/p&gt;
-
-&lt;p&gt;自己总结下跑输的原因：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下半年突然风格转为牛市，持仓上非常保守，都是高股息的银行股，并没有持有具有牛市大杀器证券股或者保险股；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;持仓过于集中于一个行业，对于上涨通常都是行业之间轮换的上涨，由于太集中，没办法像其他人那样通过换股操作提高收益率；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;没有融资，没上杠杆；&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;不管怎么样都好，永远不要忘了自己的出发点，融资这样高风险的事情必须谨慎再谨慎，我不是想通过股市发大财，只是希望可以好好理财，赚点小钱。&lt;/p&gt;
-
-&lt;p&gt;对于15年的投资展望，如果继续上涨，就不再追高买入，转为打新和分级套利操作，两股没有相差30%以上的差价，都不考虑换股的事情。&lt;/p&gt;
-</description>
+      <description>工作 先说说今年的工作情况吧。。年初激情四射，和几位好朋友，满腔热火，砸锅卖铁去创业，势必把O2O果汁店这个idea给做起来。年中，资金耗完，</description>
     </item>
     
     <item>
       <title>《邓普顿教你逆向投资》读后感</title>
-      <link>http://barbery.me/post/2014-12-28-%E3%80%8A%E9%82%93%E6%99%AE%E9%A1%BF%E6%95%99%E4%BD%A0%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <link>http://barbery.me/post/2014-12-28-%E9%82%93%E6%99%AE%E9%A1%BF%E6%95%99%E4%BD%A0%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
       <pubDate>Sun, 28 Dec 2014 23:05:52 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-12-28-%E3%80%8A%E9%82%93%E6%99%AE%E9%A1%BF%E6%95%99%E4%BD%A0%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
-      <description>&lt;p&gt;最近股市大涨，人心惶惶~~ 除了叹息便宜的股票一去不复返，还有就是烦恼后续资金怎么买的问题。。。&lt;/p&gt;
-
-&lt;p&gt;周末有空在家，重新读了《邓普顿教你逆向投资》一书，上次阅读此书，已是大学的时候了，再次阅读，让我最近躁动不安的心一下安定了下来。。。&lt;/p&gt;
-
-&lt;p&gt;好记忆不如烂笔头，随便写写，权当是流水账吧~&lt;/p&gt;
-
-&lt;p&gt;这本书的主题思想，简单而言就是一句话：“别人贪婪，我恐惧；别人恐惧，我贪婪”，邓普顿老先生用自身的经历来告诉我们，在极度的悲观的时候坚定买入，买入那些价格和价值严重错误的“低价股”。邓普顿先生的观点和巴菲特、彼得林奇的观点不谋而合，都是通过选择少人关注的冷门股，等待严重低估的价格买入，待高估或者找到下一个更低估的股票时卖出。结合自身的情况，自己过去几年做得还不够好，往往加仓时都是反弹的时候，过多的预测未来的走势，而忽视了往往内心最恐惧的时候，觉得明天还会有更低的价格的时候，往往就是最佳的买点。不要忽视买入成本价的那10%，经过复利的常年累计，最终可以放大到很大的差距。&lt;/p&gt;
-
-&lt;p&gt;除此之外，作者还提到了应该全球化投资，一个好的投资国家，应该是高储蓄率，外贸顺差，赤字少/有盈余，负债低。邓普顿先生，用数据说明了全球国家的股市涨跌轮着大小年，今年指数涨得最好的国家，往往是后面几年涨得最差的，而涨得最差的，往往是后面几年涨得最好的，投资者应该有全球视野，在全球范围内狩猎错杀的“低价股”。&lt;/p&gt;
-
-&lt;p&gt;在谈到何时卖出时，邓普顿先生的回答是，等待价格回归价值时卖出，而不是等到价格严重高于价值时卖出，他认为这是赌博而不是投资，或者找到比持有的股票低估50%的股票时卖出换入更低估的股票。书中列举了邓普顿先生清仓日本股市时，东京指数PEG为2.1倍。&lt;/p&gt;
-
-&lt;p&gt;最后，书中谈到债券的问题，在2000年美国互联网泡沫的时候，他建议大家买入债券，理由是，当泡沫破裂，股市大跌会导致经济衰退，政府为了重振紧急，必定会降息，从而导致债券获得高于票面的收益率，此时再卖出债券，待最悲观的时刻到来，买入被严重错杀的“低价股”。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2014-12-28-%E9%82%93%E6%99%AE%E9%A1%BF%E6%95%99%E4%BD%A0%E9%80%86%E5%90%91%E6%8A%95%E8%B5%84%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <description>最近股市大涨，人心惶惶~~ 除了叹息便宜的股票一去不复返，还有就是烦恼后续资金怎么买的问题。。。 周末有空在家，重新读了《邓普顿教你逆向投资》一</description>
     </item>
     
     <item>
       <title>日版MacBook Pro使用一周感受</title>
-      <link>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</link>
+      <link>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88macbookpro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</link>
       <pubDate>Mon, 01 Dec 2014 14:03:47 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88MacBookPro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</guid>
-      <description>&lt;p&gt;MacBook Pro 上周末到货，至今一周有余，说到日版MacBook，大家都会吐槽键盘什么的，我记得刚开始了解的时候，网上大部分人的意见是不支持买日版的，经过我一周的使用，我想说，没那么夸张啦~~，日版的键盘的符号问题基本上都可以通过改建软件解决，所以这根本不是问题。。&lt;/p&gt;
-
-&lt;p&gt;唯一有个是问题的，就是数字键1左边那个“~”号的按键移到了回车键的左边，然后字母P右边第三个“|”键移到了删除键的左边。。。&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;请看图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4f3yho0j20m70a2dht.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;除了这两个键是物理键位置不同，需要适应外，其他按键都可以通过改建软件进行修正。&lt;/p&gt;
-
-&lt;p&gt;这里我推荐大家使用 &lt;a href=&#34;https://pqrs.org/osx/karabiner/&#34;&gt;karabiner&lt;/a&gt; 这个软件，可以一键把键盘映射成美式键盘，对于我等码农绝对是盲打没压力。。&lt;/p&gt;
-
-&lt;p&gt;我的配置是这样，仅供大家参考哈，后面我会详细说下图中每个选项的意思&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/large/6915c7dcgw1emu4np564qj20ik0hutas.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;解释下上图的配置意思：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Control_L to Command_L 的意思是把左边的control键换成command键，后面的”_L”是指左边，如果是”_R&amp;rdquo;就是右边&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;EISUU to Control_L ，EISUU就是指日版键盘空格键左边那个“英数”键，把它换成Control键&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;KANA to Option_L, KANA是指空格键右边那个键，这里是把它换成Option键&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Yen(￥) to BackSlash() ，Yen(￥)是指delete键左边那个键，这里是指把Yen键换成输入“\”和“|”的按键（就是美式键盘字母P右边第三个键）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;这个选项更吊，直接把日版键盘整体映射成美式键盘，例如日本键盘的shift+数字2是双引号，选了这个之后就变成了美式键盘的“@”，除了我们上面改动的，其他的字符按键都会转成美式键盘按键。。。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;最后，这个改建软件不能修改功能键，例如，control 、command键等，如果你对日版键盘左边的caps和control位置不满，可以通过mac系统偏好-&amp;gt;键盘-&amp;gt;修饰键，互换后的设置如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1emu4rqm024j20bl073dgd.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;结论：日版MacBook，键盘压根都不是问题，如果你是小白用户，没法盲打键盘，我建议你还是用日式键盘，不要用软件改，其实大部分字符都是正常的，只有小部分的符号换了位置而已；如果你是盲打高手，那更不是问题，直接修改映射，盲打无压力。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2014-12-01-%E6%97%A5%E7%89%88macbookpro%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8%E6%84%9F%E5%8F%97/</guid>
+      <description>MacBook Pro 上周末到货，至今一周有余，说到日版MacBook，大家都会吐槽键盘什么的，我记得刚开始了解的时候，网上大部分人的意见是不支持买日版的，经</description>
     </item>
     
     <item>
@@ -342,40 +71,7 @@
       <pubDate>Mon, 30 Jun 2014 22:16:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-06-30-%E5%85%B3%E4%BA%8E%E5%9B%A2%E9%98%9F%E5%8D%8F%E5%8A%A9%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</guid>
-      <description>
-
-&lt;p&gt;关于团队协助开发，遇到比较多的就是两类问题：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;开发环境不统一的问题&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;代码管理问题&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h3 id=&#34;1-开发环境不统一的问题&#34;&gt;1. 开发环境不统一的问题&lt;/h3&gt;
-
-&lt;p&gt;自从在上家公司离职后，就一直在想，怎么才能很好的解决开发环境不统一的问题。。。测试可能在window 下开发，前端可能在mac os下开发，后端可能在ubuntu下，怎么才能跨平台解决不兼容的问题，做到整个团队统一开发环境，再也不怕，“为什么我这里可以，你的机器就报错”这类问题了~~&lt;/p&gt;
-
-&lt;p&gt;经过几个月的实践操作，我发现借助vagrant + virtualbox可以很好的解决这个问题。。。首先vagrant 和 virtual box都是跨平台的产品，可以很好的兼容在不同的系统上安装。。。其次，不改变团队每个员工的现有开发习惯和coding环境，vagrant会挂载一个共享文件夹，开发还是通过原有的开发习惯开发，访问的却是通过端口转发或者ip绑定的方法来直接访问虚拟机里面的服务。。。最后，借助vagrant打包，团队分发，做到团队完全一致的运行环境，甚至还可以把包纳入版本管理，让团队随意切换包的版本。。。&lt;/p&gt;
-
-&lt;p&gt;目前我们的团队统一使用的环境就是ubuntu12.04, web的服务全部跑在ubuntu下，源码放到共享文件夹里面，这样就可以使用本机系统的IDE等开发工具开发，然后跑的却是ubuntu系统里面的服务。。。&lt;/p&gt;
-
-&lt;p&gt;不得不说vagrant真是统一开发环境的神器，想了解vagrant的详细操作，推荐一篇好文：&lt;a href=&#34;http://blog.segmentfault.com/fenbox/1190000000264347&#34; title=&#34;http://blog.segmentfault.com/fenbox/1190000000264347&#34;&gt;http://blog.segmentfault.com/fenbox/1190000000264347&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-代码管理问题&#34;&gt;2. 代码管理问题&lt;/h3&gt;
-
-&lt;p&gt;代码管理问题的话，遇到比较麻烦的就是冲突问题，或者是提交不清晰，导致需要做回滚操作的时候，浪费大量时间去找。。&lt;/p&gt;
-
-&lt;p&gt;这里我暂时认为，使用git flow规范来开发是比较好的一个解决方法。。。&lt;/p&gt;
-
-&lt;p&gt;在日常开发上，提倡团队成员多commit，可以等功能全部完善再push到代码库里面，多commit，对以后查找很有帮助。&lt;/p&gt;
-
-&lt;p&gt;这里推荐一篇文章：&lt;a href=&#34;https://ruby-china.org/topics/15737&#34; target=&#34;_blank&#34;&gt;写出好的 commit message&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>关于团队协助开发，遇到比较多的就是两类问题： 开发环境不统一的问题 代码管理问题 &amp;nbsp; 1. 开发环境不统一的问题 自从在上家公司离职后，就一直在想，怎么才</description>
     </item>
     
     <item>
@@ -384,10 +80,7 @@
       <pubDate>Mon, 16 Jun 2014 19:02:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-06-16-%E7%94%A8shadowsocks%E4%BB%A3%E6%9B%BFgoagent/</guid>
-      <description>&lt;p&gt;无奈近期，google非常不顺畅，最后连goagent也沦陷了~~ 木办法，只好转投shadowsocks的怀抱，之前早有耳闻，但是太懒，goagent用得好好的就懒得换了，这么说还要感谢党给了我这次机会~~~&lt;/p&gt;
-
-&lt;p&gt;shadowsocks有很多个版本，有nodejs，python，go，libenv等等，shadowsocks的安装教程网上搜一大把，这里就不阐述了。。。shadowsocks比goagent稳定很多，速度也快很多，如果你没有服务器搭的话，也可以使用别人公开的资源，下个shadowsocks-gui&amp;nbsp; 里面有public server选，速度也非常不错哦~~~&lt;/p&gt;
-</description>
+      <description>无奈近期，google非常不顺畅，最后连goagent也沦陷了~~ 木办法，只好转投shadowsocks的怀抱，之前早有耳闻，但是太懒，go</description>
     </item>
     
     <item>
@@ -396,82 +89,34 @@
       <pubDate>Sat, 04 Jan 2014 20:56:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-01-04-2013%E5%B9%B4%E6%80%BB%E7%BB%93/</guid>
-      <description>
-
-&lt;p&gt;今年的总结，简单点说，就是各种不如意。。。&lt;/p&gt;
-
-&lt;h1 id=&#34;工作&#34;&gt;工作&lt;/h1&gt;
-
-&lt;p&gt;工作的话，今年真的非常折腾。。。先是过年上来找工作，找了1个多月，再是加入别人一起创业折戟沉沙，现今也只能蜗居在一家小公司之中。。。&lt;/p&gt;
-
-&lt;p&gt;关于第一家公司的失败，我只能说出乎意料又在情理之中。。。出乎意料在于，我们的技术BOSS作为那么有经验的人，况且他做的上一个项目才大获全胜，为何会如此疏于工作。。情理之中在于，如此的管理和交流，想不失败都难。。。你可以想象，没有业务逻辑沟通的开发么？沟通太少，特别是业务逻辑上的沟通更是少得可怜，以至于开发过程只能借鉴同行的一些功能和体验来做，后期更为严重，以至于要猜测，业务上是不是要这样做。。。&lt;/p&gt;
-
-&lt;p&gt;关于第一家公司，我还是非常认同它的，而且公司方面对我们也非常人性化，可以说尽可能提供最好的工作环境。。。我真心觉得成功几率非常大的，真是事与愿违。。。哎，只能说大家保重。。。&lt;/p&gt;
-
-&lt;p&gt;关于现在这家公司，我一直都有个疑问，就是“我为什么要来这家公司？”，每当我的好友问我的时候，我都不知道怎么回答。。。你说我看好他们的业务吗？也不是，和第一家比较，差很多，反正我不是很认同，我觉得比较难做起来。。。你说我看好他们的管理，团队氛围么？也不是，我觉得他们根本不懂互联网的感觉。。。我为什么要来这家公司？现在回想起来的话，我只能说。。。我当时面试的时候，上个项目才刚散伙不久，我就像刚失恋的人遇到的新的恋情那样，鬼使神差的就选择了这家公司。。。&lt;/p&gt;
-
-&lt;p&gt;关于今年的工作情况，我觉得我学到的是，要做leader，是不是做着指手画脚的BOSS，要真心待员工好，你可以给不起高工资，但是你最起码要真心识他为伙伴来看待。。。打工毕竟是打工，要找到自己认可的项目，又可以得到别人赏识的机会实在太少，找不到就只能自己做。。。业余项目也是一个程序员的自我修养。。。&lt;/p&gt;
-
-&lt;p&gt;对于2014年的期待是，把ishgo项目超预期完成，把它做成自己喜欢的产品。。。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h1 id=&#34;投资&#34;&gt;投资&lt;/h1&gt;
-
-&lt;p&gt;投资上，今年可谓损失惨重。。。应该说实行价值投资以来，第一次跑输大市。。。今年沪市和沪深300下跌7个多点，而账户损失为10个多点，跑输大市3个多点。。。今年市场反复无常，拆借利率暴涨，加上民间资金成本高涨，市场固定收益类产品收益高了，自然也就没人玩股票了。。。但是我们这些穷屌丝，木有雄厚的资金也只能玩玩股票了，但是也不用妄自菲薄，要相信物极必反。&lt;/p&gt;
-
-&lt;p&gt;对于2014年投资的期待是，保留现金，做好熊市的准备，只有亏损20%以上才能加仓。。。&lt;/p&gt;
-</description>
+      <description>今年的总结，简单点说，就是各种不如意。。。 工作 工作的话，今年真的非常折腾。。。先是过年上来找工作，找了1个多月，再是加入别人一起创业折戟沉沙</description>
     </item>
     
     <item>
       <title>博客正式搬家到DigitalOcean。。</title>
-      <link>http://barbery.me/post/2013-11-05-%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E6%90%AC%E5%AE%B6%E5%88%B0DigitalOcean%E3%80%82%E3%80%82/</link>
+      <link>http://barbery.me/post/2013-11-05-%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E6%90%AC%E5%AE%B6%E5%88%B0digitalocean/</link>
       <pubDate>Tue, 05 Nov 2013 14:07:03 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-11-05-%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E6%90%AC%E5%AE%B6%E5%88%B0DigitalOcean%E3%80%82%E3%80%82/</guid>
-      <description>&lt;p&gt;没备案的域名，在国内就是个悲剧。。。SAE的日本节点又常常有丢包的情况。。。木办法了，只有继续让我的blog流亡在海外吧～～&lt;/p&gt;
-
-&lt;p&gt;找了一下业界口碑靠谱點的VPS，linode太贵，BUYVM貌似没货，樱花日文无法沟通。。。最后找到&lt;a href=&#34;https://www.digitalocean.com/?refcode=e03153f7d489&#34;&gt;DigitalOcean&lt;/a&gt;，擦，一进去就被它的价格深深吸引住了。。。单核+512M+SSD（20G）=$5，靠，夫复何求啊！！！&lt;/p&gt;
-
-&lt;p&gt;从SAE迁移到VPS上还有个好处，就是好让自己熟悉VPS的运维操作，平时都是关注PHP代码层面，比较少接触服务器的操作，得学习下才行。&lt;/p&gt;
-
-&lt;p&gt;爆发你爱折腾的小宇宙吧，少年！！！&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-11-05-%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E6%90%AC%E5%AE%B6%E5%88%B0digitalocean/</guid>
+      <description>没备案的域名，在国内就是个悲剧。。。SAE的日本节点又常常有丢包的情况。。。木办法了，只有继续让我的blog流亡在海外吧～～ 找了一下业界口碑</description>
     </item>
     
     <item>
       <title>ubuntu下推荐一个类似mac的luncher tool bar - Cario-Dock</title>
-      <link>http://barbery.me/post/2013-09-28-ubuntu%E4%B8%8B%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCmac%E7%9A%84lunchertoolbar-Cario-Dock/</link>
+      <link>http://barbery.me/post/2013-09-28-ubuntu%E4%B8%8B%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCmac%E7%9A%84lunchertoolbar-cario-dock/</link>
       <pubDate>Sat, 28 Sep 2013 13:28:07 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-09-28-ubuntu%E4%B8%8B%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCmac%E7%9A%84lunchertoolbar-Cario-Dock/</guid>
-      <description>&lt;p&gt;习惯了用mac的luncher，现在在ubuntu下，老是习惯移动鼠标到下面去找快捷方法。。。上网找了一下，貌似木有办法把ubuntu的luncher移动到底部， 不过倒意外的给我发现了Cario-Dock这个工具～～ 真的不错。。。&lt;/p&gt;
-
-&lt;p&gt;效果图如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/large/6915c7dcgw1e9252tkxbej21hc0u0n11.jpg&#34; alt=&#34;效果图&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;怎么样。。。 我这里使用起来非常流畅，哈哈～～&lt;/p&gt;
-
-&lt;p&gt;关于安装， 还是建议看官方的教程：&lt;a href=&#34;http://glx-dock.org/ww_page.php?p=By%20distributions&amp;amp;lang=en&#34;&gt;http://glx-dock.org/ww_page.php?p=By%20distributions&amp;amp;lang=en&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;安装完后，会生成一个快捷方式在/usr/share/applications 里面，双击打开就可以启动这个tool bar 了～～&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-09-28-ubuntu%E4%B8%8B%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCmac%E7%9A%84lunchertoolbar-cario-dock/</guid>
+      <description>习惯了用mac的luncher，现在在ubuntu下，老是习惯移动鼠标到下面去找快捷方法。。。上网找了一下，貌似木有办法把ubuntu的lu</description>
     </item>
     
     <item>
       <title>ZenMate - chrome下简单易用的翻墙神器</title>
-      <link>http://barbery.me/post/2013-09-09-ZenMate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</link>
+      <link>http://barbery.me/post/2013-09-09-zenmate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</link>
       <pubDate>Mon, 09 Sep 2013 23:18:20 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-09-09-ZenMate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</guid>
-      <description>&lt;p&gt;哈哈, 这个插件本来作者意图是消除痕迹, 通过连接到ZenMate的代理服务器, 把用户的位置信息给隐藏加密了, 让你浏览网站的时候不暴露你的位置信息…. 没想到, 到了国内就变成了一款翻墙神器… 和goagent相比, 速度上还是不够 goagent快… 但是ZenMate的优点是真正消除痕迹, 用朋友的一句话说:&amp;ldquo;一键变外国人&amp;rdquo;… 朋友用goagent 挂vpn 都不能顺利从google网页中购买nexus4, 介绍其装了ZenMate之后, 就顺利购买成功… 不得不说, ZenMate的加密还是做得不错的~~&lt;/p&gt;
-
-&lt;p&gt;目前只有chrome浏览器的版本~~&lt;/p&gt;
-
-&lt;p&gt;安装地址:&lt;a href=&#34;https://chrome.google.com/webstore/detail/zenmate-for-google-chrome/fdcgdnkidjaadafnichfpabhfomcebme&#34;&gt;https://chrome.google.com/webstore/detail/zenmate-for-google-chrome/fdcgdnkidjaadafnichfpabhfomcebme&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-09-09-zenmate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</guid>
+      <description>哈哈, 这个插件本来作者意图是消除痕迹, 通过连接到ZenMate的代理服务器, 把用户的位置信息给隐藏加密了, 让你浏览网站的时候不暴露你的位置信</description>
     </item>
     
     <item>
@@ -480,94 +125,88 @@
       <pubDate>Mon, 13 May 2013 21:45:20 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</guid>
-      <description>&lt;p&gt;如果你是windows系统，你应该看这篇文章：&lt;a href=&#34;http://www.stutostu.com/966.html&#34;&gt;http://www.stutostu.com/966.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ok，言归正传。。。&lt;/p&gt;
-
-&lt;p&gt;首先，你应该先在你的sublime text2中安装package controll (不懂的话，传送门：&lt;a href=&#34;http://wbond.net/sublime_packages/package_control/installation&#34;&gt;http://wbond.net/sublime_packages/package_control/installation&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;如果你已经安装好了，go head。。。&lt;/p&gt;
-
-&lt;p&gt;按command+shift+P  输入install package   再输入  svn，搜索出来第一位就是svn的，就安装那个。。。&lt;/p&gt;
-
-&lt;p&gt;安装完后，选择 sublime text2 -&amp;gt; Preferences -&amp;gt; Package Settings -&amp;gt; SVN -&amp;gt; Setting - Default     如下图所示。。。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/95934850@N02/9190975011&#34; title=&#34;View &#39;NewImage&#39; on Flickr.com&#34;&gt;&lt;img title=&#34;NewImage&#34; src=&#34;http://farm3.staticflickr.com/2816/9190975011_bc053a0fd1.jpg&#34; alt=&#34;NewImage&#34; width=&#34;500&#34; height=&#34;237&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;在最后去掉注释，或者输入&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;svn_binary_path&amp;rdquo;: &amp;ldquo;/usr/bin/svn&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;然后保存关闭。。。点下左边的文件夹，如果出现下图这样的菜单，就证明可以了。。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/95934850@N02/9193773264&#34; title=&#34;View &#39;NewImage1&#39; on Flickr.com&#34;&gt;&lt;img title=&#34;NewImage1&#34; src=&#34;http://farm3.staticflickr.com/2880/9193773264_8e5e446b0e.jpg&#34; alt=&#34;NewImage1&#34; width=&#34;500&#34; height=&#34;205&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;要是没有的话，那可能是你mac下的svn地址问题，你检查下你svn的路径下是否存在svn的应用，或者你可以用homebrew安装一个  输入brew install svn就可以了。。。路径会在安装完成的时候输出在终端那里。。。。&lt;/p&gt;
-
-&lt;p&gt;最后再说一下，这个sublime text 的svn提交，这个和windows那篇文章的svn提交方式有所不同。。。你选择commit后，会出现下图这样的情况，&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/95934850@N02/9193773808&#34; title=&#34;View &#39;NewImage2&#39; on Flickr.com&#34;&gt;&lt;img title=&#34;NewImage2&#34; src=&#34;http://farm3.staticflickr.com/2814/9193773808_84c9d25bb2.jpg&#34; alt=&#34;NewImage2&#34; width=&#34;500&#34; height=&#34;222&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;第一行的意思是，输入你这次提交的备注信息。。。然后16 17行是这次要提交的内容，红色的M是只内容被修改过了。。那个 [x] 是指被选中提交，默认是全选的，你要是不想提交某一个文件，你把光标移动到指定的行数，按键盘N，里面的x就会消失了，就代表这次提交不提交该文件。。。搞掂好按command+s 保存即可。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-</description>
+      <description>如果你是windows系统，你应该看这篇文章：http://www.stutostu.com/966.html ok，言归正传。。。 首先，你应</description>
     </item>
     
     <item>
       <title>行情总在绝望时诞生 -- 2012投资总结！</title>
-      <link>http://barbery.me/post/2012-12-31-%E8%A1%8C%E6%83%85%E6%80%BB%E5%9C%A8%E7%BB%9D%E6%9C%9B%E6%97%B6%E8%AF%9E%E7%94%9F--2012%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93%EF%BC%81/</link>
+      <link>http://barbery.me/post/2012-12-31-%E8%A1%8C%E6%83%85%E6%80%BB%E5%9C%A8%E7%BB%9D%E6%9C%9B%E6%97%B6%E8%AF%9E%E7%94%9F--2012%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 31 Dec 2012 23:51:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-12-31-%E8%A1%8C%E6%83%85%E6%80%BB%E5%9C%A8%E7%BB%9D%E6%9C%9B%E6%97%B6%E8%AF%9E%E7%94%9F--2012%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93%EF%BC%81/</guid>
-      <description>&lt;p&gt;一切似乎都那么意外，而却又那么的合情合理! 今年行情在各大空头，钻石底等的呼唤下，上证终于跌破2000点，当大家都很绝望，而我也认为，今年可能又是一个没有收获的年份时。。。行情回来了~~&lt;/p&gt;
-
-&lt;p&gt;总结2012年的问题之前，先回答下我2011年总结中自己的一些疑问。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;展望2012：2012，最大的矛盾是，是否应该继续加仓金融股，加仓的理由是，足够便宜，完全看好，有那么个千载难逢的机会，究竟是把握呢，还是避免把所有鸡蛋放在同一个篮子里呢？这个问题，让历史回答吧。。。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;回看当初的问题，现在的我似乎有了答案。。。对于这种，你买入了，下跌，补仓，再下跌，是否还要继续坚持，继续买入的情况，我的看法是：先确认，是否真的懂了这个公司，如果出现黑天鹅最坏的情况会是怎么样，你能力圈内还有其他低估的公司么？真正值得是否买入的唯一的重点是这家公司，而不是股价，被套亏损，这些影响情绪波动的东西，最终只会导致了你的行为变得和市场大众一致。。。&lt;/p&gt;
-
-&lt;p&gt;总结2012，最恐怖的就是这种单边下跌的行情，每次的买入都会被套，而似乎每天行情都会跑出新低。。。连我自己都感觉有点害怕了，或者说抱着侥幸的心理，想着，迟点再买，说不定还能跌很多。。。就是这种心态，导致了我在行情最低迷的那段时间，没有下到重手。。。这也许就是今年最遗憾的事情了。。。&lt;/p&gt;
-
-&lt;p&gt;2012最开心的事情莫过于银行的强势回归。。。这也说明了一点，低估的股票不会永远低估。。。从2010年中买银行以来，银行股都是单边下跌的。。。如果用几个关键字概括的话，那就是“买入，坚持，被嘲笑”。。。&lt;/p&gt;
-
-&lt;p&gt;由于我没有记录年初的情况，所以没法统计今年的业绩情况，幸亏雪球可以统计，不过数据不全，只有我9月多以来的数据。。。不多说，上图~~&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2012/12/eea906fbbb8f.jpg&#34;&gt;&lt;img style=&#34;background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px&#34; title=&#34;未命名&#34; border=&#34;0&#34; alt=&#34;未命名&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2012/12/thumb1.jpg&#34; width=&#34;640&#34; height=&#34;235&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;实话说，对跑赢沪深300 14个点还是有点意外。。。我觉得未来要跑赢沪深300还真的是有点难度。。。不过，按照股神巴菲特同学的说法，只要做到”牛市中等收益，熊市大幅跑赢大盘即可”&lt;/p&gt;
-
-&lt;p&gt;说说对2013年的投资展望。。。4个字，持仓待涨！！！&lt;/p&gt;
-
-&lt;p&gt;未来投资，&lt;strong&gt;优先投资自己&lt;/strong&gt;，在有闲钱的情况下，价格适合的前提下才投资股市了~~&lt;/p&gt;
-
-&lt;p&gt;今年也提出1个疑问，看看明年是否有解。。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;有A,B 两家公司，你是A公司的客户，你觉得A公司的产品服务很好，但是A公司的股票价格一般，属于合理水平。。。B公司，你只是从财务报表上了解到它，而且跟踪了1~2年，也阅读了它的历史年报，觉得B的价格是严重低估，涨了1倍还不算贵的。究竟要如何选择？&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://barbery.me/post/2012-12-31-%E8%A1%8C%E6%83%85%E6%80%BB%E5%9C%A8%E7%BB%9D%E6%9C%9B%E6%97%B6%E8%AF%9E%E7%94%9F--2012%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/</guid>
+      <description>一切似乎都那么意外，而却又那么的合情合理! 今年行情在各大空头，钻石底等的呼唤下，上证终于跌破2000点，当大家都很绝望，而我也认为，今年可能</description>
     </item>
     
     <item>
       <title>苟且偷生还是死得壮烈？ ---【赛德克·巴莱】观后感</title>
-      <link>http://barbery.me/post/2012-06-24-%E8%8B%9F%E4%B8%94%E5%81%B7%E7%94%9F%E8%BF%98%E6%98%AF%E6%AD%BB%E5%BE%97%E5%A3%AE%E7%83%88%EF%BC%9F---%E3%80%90%E8%B5%9B%E5%BE%B7%E5%85%8B%C2%B7%E5%B7%B4%E8%8E%B1%E3%80%91%E8%A7%82%E5%90%8E%E6%84%9F/</link>
+      <link>http://barbery.me/post/2012-06-24-%E8%8B%9F%E4%B8%94%E5%81%B7%E7%94%9F%E8%BF%98%E6%98%AF%E6%AD%BB%E5%BE%97%E5%A3%AE%E7%83%88---%E8%B5%9B%E5%BE%B7%E5%85%8B%E5%B7%B4%E8%8E%B1%E8%A7%82%E5%90%8E%E6%84%9F/</link>
       <pubDate>Sun, 24 Jun 2012 22:58:24 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-06-24-%E8%8B%9F%E4%B8%94%E5%81%B7%E7%94%9F%E8%BF%98%E6%98%AF%E6%AD%BB%E5%BE%97%E5%A3%AE%E7%83%88%EF%BC%9F---%E3%80%90%E8%B5%9B%E5%BE%B7%E5%85%8B%C2%B7%E5%B7%B4%E8%8E%B1%E3%80%91%E8%A7%82%E5%90%8E%E6%84%9F/</guid>
-      <description>&lt;p&gt;额，我对电影本身剧情没什么过人的看法，我只想谈谈看完这部电影后，给我个人的一些想法，或者是我内心的一丝颤抖。。。So，如果你是想了解剧情，这篇文章可能不适合你。。。&lt;/p&gt;
-
-&lt;p&gt;我想谈谈剧情的高潮，当赛德克人准备反抗日本时，那部分剧情给我一个深刻的印象，也让我内心不由为之颤抖。。。我不知道，如果是我，我会如何选择？是苟且偷生，还是像赛德克人那样，哪怕是以卵击石，也要为荣誉，为尊严而活。。。&lt;/p&gt;
-
-&lt;p&gt;究竟如何选择才是最明智的呢？作为一个人，人的本性，肯定倾向于“自救”，为了生存，忍辱负重也只能苟且偷生；如果作为一个有“知识”的人，思想情操上，又无法接受这样的事实，被人奴隶的生活，没自由的生活，和死又有什么区别？谁能谈谈这个问题？这是一个有解的问题吗？还是这根本就是个哲学问题？？？&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2012-06-24-%E8%8B%9F%E4%B8%94%E5%81%B7%E7%94%9F%E8%BF%98%E6%98%AF%E6%AD%BB%E5%BE%97%E5%A3%AE%E7%83%88---%E8%B5%9B%E5%BE%B7%E5%85%8B%E5%B7%B4%E8%8E%B1%E8%A7%82%E5%90%8E%E6%84%9F/</guid>
+      <description>额，我对电影本身剧情没什么过人的看法，我只想谈谈看完这部电影后，给我个人的一些想法，或者是我内心的一丝颤抖。。。So，如果你是想了解剧情，这</description>
+    </item>
+    
+    <item>
+      <title>关于京东抓取价格的问题</title>
+      <link>http://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 31 May 2012 09:32:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>碉堡了吧。。。京东的价格是图片来的。。。所以正常情况的抓取是不行D。。。今天在V2EX看到几位大大说，从分享入手。。。我点了下分享到微博，果</description>
+    </item>
+    
+    <item>
+      <title>关于 K-means 一些笔记备份</title>
+      <link>http://barbery.me/post/2012-05-26-%E5%85%B3%E4%BA%8Ek-means%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Sat, 26 May 2012 12:03:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-05-26-%E5%85%B3%E4%BA%8Ek-means%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0%E5%A4%87%E4%BB%BD/</guid>
+      <description>关于K-means算法，其宗旨是“物以类聚”，利用 皮尔逊相关系数 判断哪个“物”与哪个“类”接近，与分级聚类不同，K-means 还有均值调整，</description>
+    </item>
+    
+    <item>
+      <title>解决cmwrap wap穿越上不了cmnet的问题</title>
+      <link>http://barbery.me/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 03 Apr 2012 19:11:39 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>如题，cmwrap之前一直用的好好的，2个月前不知道干什么了，一直用穿越不了cmwap上cmnet。难得清明有假期宅在家里，就把这个问题解决</description>
+    </item>
+    
+    <item>
+      <title>正式买入鲁泰B、杭汽轮B、招商局B</title>
+      <link>http://barbery.me/post/2012-01-12-%E6%AD%A3%E5%BC%8F%E4%B9%B0%E5%85%A5%E9%B2%81%E6%B3%B0b%E6%9D%AD%E6%B1%BD%E8%BD%AEb%E6%8B%9B%E5%95%86%E5%B1%80b/</link>
+      <pubDate>Thu, 12 Jan 2012 23:31:54 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-01-12-%E6%AD%A3%E5%BC%8F%E4%B9%B0%E5%85%A5%E9%B2%81%E6%B3%B0b%E6%9D%AD%E6%B1%BD%E8%BD%AEb%E6%8B%9B%E5%95%86%E5%B1%80b/</guid>
+      <description>鲁泰B的话，自己也跟踪了1年多，也深深拜读了M大鲁泰系列。买入理由：衣食住行，而且多个周期的历史表明，鲁泰管理层有能力克服棉花价格的周期变化</description>
+    </item>
+    
+    <item>
+      <title>2012年投资展望！</title>
+      <link>http://barbery.me/post/2011-12-31-2012%E5%B9%B4%E6%8A%95%E8%B5%84%E5%B1%95%E6%9C%9B/</link>
+      <pubDate>Sat, 31 Dec 2011 13:24:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2011-12-31-2012%E5%B9%B4%E6%8A%95%E8%B5%84%E5%B1%95%E6%9C%9B/</guid>
+      <description>最近比较忙，简单总结下2011的投资以及展望下2012年的投资计划。 2011年的话，最大的问题是过于多动，常常反复操作，过于儿戏，没有真正了</description>
+    </item>
+    
+    <item>
+      <title>我也谈谈什么是投资</title>
+      <link>http://barbery.me/post/2011-11-21-%E6%88%91%E4%B9%9F%E8%B0%88%E8%B0%88%E4%BB%80%E4%B9%88%E6%98%AF%E6%8A%95%E8%B5%84/</link>
+      <pubDate>Mon, 21 Nov 2011 19:40:06 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2011-11-21-%E6%88%91%E4%B9%9F%E8%B0%88%E8%B0%88%E4%BB%80%E4%B9%88%E6%98%AF%E6%8A%95%E8%B5%84/</guid>
+      <description>作者：偶尔陶醉 原文地址:http://www.stutostu.com/?p=210 &amp;nbsp; 什么是投资，投资在百科里是这样写的 “投资（英文：Inv</description>
+    </item>
+    
+    <item>
+      <title>我的blog成立啦！</title>
+      <link>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</link>
+      <pubDate>Sun, 13 Nov 2011 19:06:53 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</guid>
+      <description>嘻嘻嘻嘻。。。经过一个下午的测试和调试。。。基本完成blog的搭建啦。。。 首先感谢无私奉献的大无畏精神-&amp;mdash;互联网精神，以及各位为</description>
     </item>
     
   </channel>

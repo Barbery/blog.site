@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 06 Aug 2014 10:31:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>go多维map读写操作的问题</title>
@@ -15,74 +17,7 @@
       <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>
-
-&lt;p&gt;因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cannot take the address of xxx
-// or
-cannot assign to xxx&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这会很让人抓狂。。&lt;/p&gt;
-
-&lt;h3 id=&#34;关于cannot-assign-to-xxx错误&#34;&gt;关于cannot assign to xxx错误&lt;/h3&gt;
-
-&lt;p&gt;来看代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import &amp;quot;fmt&amp;quot;
-
-func main() {
-    m := make(map[int][2]int)
-    m[0] = [2]int{1, 3}
-    m[0][1] = 2 //错误
-    fmt.Println(m[0][1])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;打开这里运行: &lt;a href=&#34;http://play.golang.org/p/hMPk_N20XJ&#34;&gt;http://play.golang.org/p/hMPk_N20XJ&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;关于cannot-take-the-address-of-xxx&#34;&gt;关于cannot take the address of xxx&lt;/h3&gt;
-
-&lt;p&gt;这个错误的原因和前面的是一致的，原因都是无法寻址&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import &amp;quot;fmt&amp;quot;
-
-type user struct {
-    name string
-    age  int
-    school map[string]school
-}
-
-type school struct {
-    Teacher string
-    Name string
-}
-
-func main() {
-    s := map[string]school{&amp;quot;primarySchool&amp;quot;:{Teacher:&amp;quot;李老师&amp;quot;, Name:&amp;quot;XX小学&amp;quot;}, &amp;quot;highSchool&amp;quot;:{Teacher:&amp;quot;曹老师&amp;quot;, Name:&amp;quot;XX中学&amp;quot;}}
-    u := user{name:&amp;quot;张三&amp;quot;,age:12,school:s}
-    u.school[&amp;quot;highSchool&amp;quot;].Name = &amp;quot;XX第二中学&amp;quot;//错误
-    fmt.Println(u)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;打开这里运行：&lt;a href=&#34;http://play.golang.org/p/Jpz6ZlASTZ&#34;&gt;http://play.golang.org/p/Jpz6ZlASTZ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;原因出在user 中的 map[string]school  这里， u.school[&amp;ldquo;highSchool&amp;rdquo;] 访问到这里都没有问题，问题在于后面的 “ .Name ” ，因为map[string]school 中储存的school是数值拷贝，当要修改school里面的Name时，就发生了不可寻址的错误。&lt;/p&gt;
-
-&lt;p&gt;正确的做法有：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;重新覆盖，既然无法单独修改里面的某一项，那就全部都替换掉，u.school[&amp;ldquo;highSchool&amp;rdquo;] = school{Teacher:&amp;ldquo;曹老师&amp;rdquo;, Name:&amp;ldquo;XX第二中学&amp;rdquo;}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;改为储存指针，把map[string]school 改为 map[string]*school，把school的指针存进去，这样go就可以寻址，从而可以修改里面的值&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description>因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错 cannot take the address of xxx // or cannot assign to xxx 这会很让人抓狂。</description>
     </item>
     
   </channel>

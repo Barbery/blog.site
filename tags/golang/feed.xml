@@ -7,50 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 21 May 2015 22:43:07 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/golang/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/golang/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>golang有没有必要传递map指针？</title>
-      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</link>
+      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
       <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</guid>
-      <description>&lt;p&gt;好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答是，因为传递指针的好处就是速度快，占用内存少。但是，我隐隐约约记得，GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝。。。&lt;/p&gt;
-
-&lt;p&gt;晚上回来的路上就一直在想这个问题。。。觉得模模糊糊，不太确定。回到家立即写个demo来证明一下，直接贴代码：&lt;/p&gt;
-
-&lt;p&gt;也可以到这里在线运行：&lt;a href=&#34;http://play.golang.org/p/0VHB4e9BJY&#34;&gt;http://play.golang.org/p/0VHB4e9BJY&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;输出结果是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;map[xxx:123 xxx222:xxx xxx333:xxx]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;结果说明了“GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝”同时使用这些引用类型的变量也需要小心副作用，因为一修改，就会影响所有使用这个参数的代码。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
+      <description>好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答</description>
     </item>
     
     <item>
       <title>goRouter 一个轻量级和高性能的路由</title>
-      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <link>http://barbery.me/post/2014-11-16-gorouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
-      <description>&lt;p&gt;公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/routes 这个库的，但是这库对url不能很好的支持，例如要匹配/user/1/userinfo.json这样的url，这个库就没办法支持。&lt;/p&gt;
-
-&lt;p&gt;所以自己就参考drone/routes 写了一个小router，主要是：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;改善了url正则匹配的，使其匹配更多模式，更加可以自由定制&lt;/li&gt;
-&lt;li&gt;提高了匹配时查找的性能，使用路由的前缀和http方法做hashtable查找，路由再多，查找平均也是o(1)的时间复杂度&lt;/ul&gt;
-&amp;nbsp;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如果觉得不错，欢迎star&lt;/p&gt;
-
-&lt;p&gt;源码：&lt;a href=&#34;https://github.com/Barbery/goRouter&#34; title=&#34;https://github.com/Barbery/goRouter&#34;&gt;https://github.com/Barbery/goRouter&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2014-11-16-gorouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <description>公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/r</description>
     </item>
     
     <item>
@@ -59,44 +35,7 @@
       <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
-      <description>
-
-&lt;p&gt;最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。。&lt;/p&gt;
-
-&lt;p&gt;经过几天的学习，我对go语言的评价是：快速，性能高效，goroutine很好用。go有着做大型项目的基因。。&lt;/p&gt;
-
-&lt;h3 id=&#34;怎么使用&#34;&gt;怎么使用？&lt;/h3&gt;
-
-&lt;p&gt;把下面的代码放到head标签中&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=“text/javascript”&amp;gt;
-    window.onload = function() {
-        var js = document.createElement(“script”);
-        js.type = “text/javascript”;
-        js.src = “http://stutostu.qiniudn.com/app.js&amp;quot;;
-        document.getElementsByTagName(“body”)[0].appendChild(js);
-    };
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;更多引入方式，请看：&lt;a href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;https://gist.github.com/Barbery/8f36d999193da2a29ab3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;go-chat分为4个频道，分别为：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;本页面：这个频道是根据用户所在页面的url来建立的，不包括url上的？参数和#参数，即&lt;a href=&#34;http://stutostu.com/page1&#34;&gt;http://stutostu.com/page1&lt;/a&gt; 和 &lt;a href=&#34;http://stutostu.com/page1?param1=value1#aa&#34;&gt;http://stutostu.com/page1?param1=value1#aa&lt;/a&gt; 为同一个页面。使用场景：当你只想和访问这个页面的人交流的时候。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;本域名：这个频道是根据用户所在页面的域名来建立的，即&lt;a href=&#34;http://www.stutostu.com/page1.html&#34;&gt;http://www.stutostu.com/page1.html&lt;/a&gt; 和 &lt;a href=&#34;http://www.stutostu.com/page2.html&#34;&gt;http://www.stutostu.com/page2.html&lt;/a&gt; 虽然所在页面不同，但是所在域名均为&lt;a href=&#34;http://www.stutostu.com&#34;&gt;www.stutostu.com&lt;/a&gt; ，都可以通过这个频道跨页面进行聊天。使用场景：想和同一个域名的用户交流的时候。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;根域名：这个频道是根据用户所在页面的根域名来建立的，即news.stutostu.com和blog.stutostu.com的根域名均为stutostu.com，所以均可通过这个频道进行交流。使用场景：如果你想和这个站的所有人交流的时候&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;世界：这个范围最大。。。无论在什么页面和域名，均可通过这个频道进行交流。使用场景：如果你想和所有使用go-chat的人交流的时候&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;注意：目前只能加入和订阅1个频道，例如你加入了世界频道，那么只能和世界频道的人进行交流，无法接收到其他频道发送的消息，也无法发送消息到其他频道。&lt;/p&gt;
-
-&lt;p&gt;源码:  &lt;a href=&#34;https://github.com/Barbery/blog/tree/master/go-chat&#34;&gt;https://github.com/Barbery/blog/tree/master/go-chat&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。</description>
     </item>
     
     <item>
@@ -105,74 +44,7 @@
       <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>
-
-&lt;p&gt;因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cannot take the address of xxx
-// or
-cannot assign to xxx&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这会很让人抓狂。。&lt;/p&gt;
-
-&lt;h3 id=&#34;关于cannot-assign-to-xxx错误&#34;&gt;关于cannot assign to xxx错误&lt;/h3&gt;
-
-&lt;p&gt;来看代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import &amp;quot;fmt&amp;quot;
-
-func main() {
-    m := make(map[int][2]int)
-    m[0] = [2]int{1, 3}
-    m[0][1] = 2 //错误
-    fmt.Println(m[0][1])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;打开这里运行: &lt;a href=&#34;http://play.golang.org/p/hMPk_N20XJ&#34;&gt;http://play.golang.org/p/hMPk_N20XJ&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;关于cannot-take-the-address-of-xxx&#34;&gt;关于cannot take the address of xxx&lt;/h3&gt;
-
-&lt;p&gt;这个错误的原因和前面的是一致的，原因都是无法寻址&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import &amp;quot;fmt&amp;quot;
-
-type user struct {
-    name string
-    age  int
-    school map[string]school
-}
-
-type school struct {
-    Teacher string
-    Name string
-}
-
-func main() {
-    s := map[string]school{&amp;quot;primarySchool&amp;quot;:{Teacher:&amp;quot;李老师&amp;quot;, Name:&amp;quot;XX小学&amp;quot;}, &amp;quot;highSchool&amp;quot;:{Teacher:&amp;quot;曹老师&amp;quot;, Name:&amp;quot;XX中学&amp;quot;}}
-    u := user{name:&amp;quot;张三&amp;quot;,age:12,school:s}
-    u.school[&amp;quot;highSchool&amp;quot;].Name = &amp;quot;XX第二中学&amp;quot;//错误
-    fmt.Println(u)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;打开这里运行：&lt;a href=&#34;http://play.golang.org/p/Jpz6ZlASTZ&#34;&gt;http://play.golang.org/p/Jpz6ZlASTZ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;原因出在user 中的 map[string]school  这里， u.school[&amp;ldquo;highSchool&amp;rdquo;] 访问到这里都没有问题，问题在于后面的 “ .Name ” ，因为map[string]school 中储存的school是数值拷贝，当要修改school里面的Name时，就发生了不可寻址的错误。&lt;/p&gt;
-
-&lt;p&gt;正确的做法有：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;重新覆盖，既然无法单独修改里面的某一项，那就全部都替换掉，u.school[&amp;ldquo;highSchool&amp;rdquo;] = school{Teacher:&amp;ldquo;曹老师&amp;rdquo;, Name:&amp;ldquo;XX第二中学&amp;rdquo;}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;改为储存指针，把map[string]school 改为 map[string]*school，把school的指针存进去，这样go就可以寻址，从而可以修改里面的值&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description>因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错 cannot take the address of xxx // or cannot assign to xxx 这会很让人抓狂。</description>
     </item>
     
   </channel>

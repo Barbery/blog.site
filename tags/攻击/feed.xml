@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 31 May 2014 15:38:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E6%94%BB%E5%87%BB/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E6%94%BB%E5%87%BB/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>说说hash collision</title>
@@ -15,40 +17,7 @@
       <pubDate>Sat, 31 May 2014 15:38:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</guid>
-      <description>&lt;p&gt;hash collision，也就是平常说的哈希碰撞，其方法就是利用已知的hash算法，生成不均匀的哈希，导致其名为hash table而实际性能却早已退化为单链表。。。因为单链表效率非常低，所以也导致了有人利用这个漏洞进行拒绝服务攻击。。&lt;/p&gt;
-
-&lt;p&gt;一般的编程语言都是采用经典的time33算法，又称为DJBX33A算法，PHP，python，ruby，java等也是采用这个算法（有兴趣的同学可以看看PHP time33的源码：&lt;a href=&#34;https://github.com/php/php-src/blob/master/Zend/zend_hash.h#L269&#34; title=&#34;https://github.com/php/php-src/blob/master/Zend/zend_hash.h#L269&#34;&gt;https://github.com/php/php-src/blob/master/Zend/zend_hash.h#L269&lt;/a&gt;）&lt;/p&gt;
-
-&lt;p&gt;以PHP为例，PHP的array的key值，就是用time33算出来的值与数组的长度进行“&amp;amp;”按位与运算。。利用这个特征，我们可以构造出一组精心设计过的key值，然后post给目标服务器，目标服务器在解析成$_POST数组的时候，就不知不觉的转变为了低性能的单链表，从而达到，占据大量CPU处理时间，卡死服务，达到拒绝服务攻击。。。&lt;/p&gt;
-
-&lt;p&gt;有兴趣的同学可以跑下下面的代码（代码转自&lt;a href=&#34;http://www.laruence.com/2011/12/30/2435.html&#34; title=&#34;http://www.laruence.com/2011/12/30/2435.html&#34;&gt;http://www.laruence.com/2011/12/30/2435.html&lt;/a&gt;）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-$size = pow(2, 16);
-
-$startTime = microtime(true);
-$array = array();
-for ($key = 0, $maxKey = ($size - 1) * $size; $key &amp;lt;= $maxKey; $key += $size) {
-    $array[$key] = 0;
-}
-$endTime = microtime(true);
-echo &#39;插入 &#39;, $size, &#39; 个恶意的元素需要 &#39;, $endTime - $startTime, &#39; 秒&#39;, &amp;quot;\n&amp;quot;;
-
-$startTime = microtime(true);
-$array = array();
-for ($key = 0, $maxKey = $size - 1; $key &amp;lt;= $maxKey; ++$key) {
-    $array[$key] = 0;
-}
-$endTime = microtime(true);
-echo &#39;插入 &#39;, $size, &#39; 个普通元素需要 &#39;, $endTime - $startTime, &#39; 秒&#39;, &amp;quot;\n&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;利用这个情况，我们只要稍加修改，把恶意元素的key储存起来，然后post给目标服务器，就可以达到攻击对方的效果。。。这是个全方位的攻击，只要服务器接收到POST值并进行解析的时候，攻击效果就会触发，导致目标服务器大量的CPU资源被占据，无法正常响应正常的服务请求。。。&lt;/p&gt;
-
-&lt;p&gt;唯一的解决办法就是升级打补丁来解决，PHP ≥ 5.3.9 的版本，在php.ini加入了一个max_input_vars 新的参数来限制最大的解析参数值，不填的情况下默认是1000，也就是默认是限制解析最大是1000个GET/POST/COOKIE的变量。。。&lt;/p&gt;
-
-&lt;p&gt;对于大量部署在PHP5.4以下的版本，我只能说，快升级吧！！！&lt;/p&gt;
-</description>
+      <description>hash collision，也就是平常说的哈希碰撞，其方法就是利用已知的hash算法，生成不均匀的哈希，导致其名为hash table而实际性能却早</description>
     </item>
     
   </channel>

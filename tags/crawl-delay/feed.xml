@@ -7,25 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 14 Apr 2012 09:45:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/crawl-delay/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/crawl-delay/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>建议使用Crawl-delay降低爬虫蜘蛛抓取频率</title>
-      <link>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
+      <link>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
       <pubDate>Sat, 14 Apr 2012 09:45:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
-      <description>&lt;p&gt;如题，当然，谈这个之前，必须说说，蜘蛛爬取你的站是好事，因为只有这样，你的站才能让更多人知道。。。这里之所以说，建议降低抓取频率，是相当服务器以及你的预算而已的，像我的一个sae上的站，每天IP量就1～2个人，主要服务对象是自己的朋友，而蜘蛛每天抓取的频率非常频繁，导致每天都差不多跑了1G的流量。。。真心伤不起，每天都消耗我200豆豆，还不如直接买盛大云主机了，我汗。。。自从限制了蜘蛛抓取频率后，主机速度加快了，豆豆消耗变小了，由每天200个直线下降到可以接受的50个&lt;img style=&#34;border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none&#34; class=&#34;wlEmoticon wlEmoticon-openmouthedsmile&#34; alt=&#34;大笑&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2012/04/wlEmoticon-openmouthedsmile.png&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ok，言归正传。在你的服务器根目录下建一个robots.txt 名字必须是这个，不要乱改了哦～～否则蜘蛛可认不了。。。&lt;/p&gt;
-
-&lt;p&gt;说再多也没用，直接贴上我自己的robots.txt 吧&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;User-agent: *
-Disallow: /admin/
-Crawl-delay:300
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
+      <description>如题，当然，谈这个之前，必须说说，蜘蛛爬取你的站是好事，因为只有这样，你的站才能让更多人知道。。。这里之所以说，建议降低抓取频率，是相当服务</description>
     </item>
     
   </channel>

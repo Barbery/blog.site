@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 31 May 2012 09:32:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>关于京东抓取价格的问题</title>
@@ -15,8 +17,7 @@
       <pubDate>Thu, 31 May 2012 09:32:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;碉堡了吧。。。京东的价格是图片来的。。。所以正常情况的抓取是不行D。。。今天在V2EX看到几位大大说，从分享入手。。。我点了下分享到微博，果然，所有数据都有。。。因为分享那些属于JS，那么这些信息肯定可以从代码中找到。。。查看源码一搜索，果然。。。你要的内容在名为：jdPshowRecommend 的function里面～～&lt;/p&gt;
-</description>
+      <description>碉堡了吧。。。京东的价格是图片来的。。。所以正常情况的抓取是不行D。。。今天在V2EX看到几位大大说，从分享入手。。。我点了下分享到微博，果</description>
     </item>
     
   </channel>

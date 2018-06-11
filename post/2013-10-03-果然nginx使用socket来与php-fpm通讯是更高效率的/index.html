@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
   <meta name="description" content="1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000">
-  <meta name="author" content="barbery">
+  
   <meta itemprop="name" content="果然nginx使用socket来与php-fpm通讯是更高效率的 - Barbery&#39;s Blog">
   <meta itemprop="description" content="1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000">
   <meta itemprop="image" content="http://barbery.me/img/author.jpg">
@@ -76,7 +76,7 @@
   </h1>
   <p class="article-author">By
     
-      <a href="http://barbery.me" title="barbery">barbery</a>
+      <a href="http://barbery.me" title=""></a>
     
   </p>
   <p class="article-time">
@@ -352,27 +352,6 @@ Percentage of the requests served within a certain time (ms)
   
 
 
-<section class="comment">
-<div id="disqus_thread"></div>
-</section>
-<script>
-
-
-var disqus_config = function () {
-this.page.url = "http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/";
-this.page.identifier = "http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/";
-};
-(function() { 
-var d = document, s = d.createElement('script');
-
-s.src = '//barbery.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
 
 </div>
 
@@ -380,9 +359,9 @@ s.setAttribute('data-timestamp', +new Date());
   <footer><div id="footer" >
   
   
-  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2017
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2018
     
-    <a href="http://barbery.me/" target="_blank" title="barbery">barbery</a>
+    <a href="http://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a>
     
   </p>
 </div>
@@ -524,16 +503,6 @@ $(document).ready(function(){
 });
 </script>
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-80280597-1', 'auto');
-  ga('send', 'pageview');
-  $('#messagesbsb').remove();
-</script>
 
 
 

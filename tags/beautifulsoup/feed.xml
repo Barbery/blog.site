@@ -7,44 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 27 Oct 2012 14:48:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/beautifulsoup/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/beautifulsoup/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>擦，终于搞懂怎么在SAE python上装第三方包了</title>
-      <link>http://barbery.me/post/2012-10-27-%E6%93%A6%EF%BC%8C%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
+      <link>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8saepython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
       <pubDate>Sat, 27 Oct 2012 14:48:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-10-27-%E6%93%A6%EF%BC%8C%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
-      <description>&lt;p&gt;本来想装个beautifulsoup玩下的，我擦，上网一搜，全部都是打命令行的，什么解释也没有，擦，我就一个window 7系统，搞个毛啊。。。上google到处搜，换了6~7个关键词，终于，皇天不负有心人，让我在一个介绍如何装djxxx框架的博文中找到答案。。。&lt;/p&gt;
-
-&lt;p&gt;首先，你先把你要安装的包给下回来先，然后在sae python的根目录下 创建一个名为：virtualenv.bundle.zip 的压缩包 把你要安装的包都放到这个压缩包里。。。然后修改index.wsgi 在import后面 添加&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sys
-
-app_root = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(app_root, &#39;virtualenv.bundle.zip&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意sys.path.insert 的位置是在import后 不要放在urls响应后面，否则会提示没这个包。。。&lt;/p&gt;
-
-&lt;p&gt;在使用时，可以参考我的一个demo&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
-import web
-import urllib2
-
-from bs4 import BeautifulSoup          # For processing HTML
-
-app_root = os.path.dirname(__file__)
-templates_root = os.path.join(app_root, &#39;templates&#39;)
-render = web.template.render(templates_root)
-
-class index:
-    def GET(self):
-        soup = BeautifulSoup(urllib2.urlopen(&#39;http://www.sina.com.cn/&#39;).read())
-        return render.bs_test(soup)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8saepython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
+      <description>本来想装个beautifulsoup玩下的，我擦，上网一搜，全部都是打命令行的，什么解释也没有，擦，我就一个window 7系统，搞个毛啊。。</description>
     </item>
     
   </channel>

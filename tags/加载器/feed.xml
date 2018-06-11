@@ -7,149 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 13 Mar 2013 17:33:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E5%8A%A0%E8%BD%BD%E5%99%A8/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E5%8A%A0%E8%BD%BD%E5%99%A8/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>学习如何写PHP MVC框架（2）加载器</title>
-      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</link>
+      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
       <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</guid>
-      <description>&lt;p&gt;上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。&lt;/p&gt;
-
-&lt;p&gt;虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。都是通过单例模式加载文件，而且把已加载的文件cache起来，避免重复加载。。。因为在开发业务的过程中，常常需要加载不同的模块，不同的类库等，MVC的loader可以帮助我们实现单例模式，更加符合开发需求。&lt;/p&gt;
-
-&lt;p&gt;下面我们开始动手，利用其原理，做一个简单的loader。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;首先，我们设计的加载器，要满足可以全局使用，无论在controller里还是在model、library里都可以使用。&lt;/p&gt;
-
-&lt;p&gt;其次，加载器要有缓存能力，即相同的文件只加载一次，相同的类只实例化一次。&lt;/p&gt;
-
-&lt;p&gt;最后，要能加载多种文件，model、library、helper。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;先解决第一步，怎么全局使用，最简单的办法就是定义一个全局的function，这样，在后面的不同类库，不同function里都可以调用这个全局function，进行加载文件。&lt;/p&gt;
-
-&lt;p&gt;第二步和第三步，要一起解决，定义一个单例模式的loader类，因为是单例模式，可以保证全局只有一份内容，这样的话，就可以利用数组把这些已加载的内容和对象cache起来，这样就可以避免了重复加载的问题。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;if ( ! function_exists(&#39;load&#39;))
-{
-    function load($name, $type=&#39;model&#39;, $data=array())
-    {
-        static $loader = NULL;
-        if (is_null($loader))
-        {
-            include (ROOT.&#39;/system/core/loader.php&#39;);
-            $loader = Loader::get_instance();
-        }
-
-        return $loader-&amp;gt;$type($name, $data);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面这个，就是我写的一个简单的全局函数 load，这个函数的作用就是为了可以全局调用，然后通过这个load函数，去调用loader类，由loader类负责加载文件，实例化，和缓存对象。。。下面我把loader的代码放出来给大家看看。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-class Loader
-{
-    private $_loaded_models = array();
-    private $_loaded_librarys = array();
-    private static $OBJ;
-
-    # 单例模式，不允许new对象
-    private function __construct()
-    {
-
-    }
-
-
-    public static function get_instance()
-    {
-        if (is_null(self::$OBJ))
-        {
-            $class = __CLASS__;
-            self::$OBJ = new $class;
-        }
-
-        return self::$OBJ;
-    }
-
-    public function model($model, $data=array())
-    {
-        $model = strtolower($model);
-
-        # 如果已经加载，则返回对象，避免重复加载
-        if (isset($this-&amp;gt;_loaded_models[$model]))
-        {
-            return $this-&amp;gt;_loaded_models[$model];
-        }
-
-        # 否则加载文件
-        include ROOT.&amp;quot;/application/models/{$model}.php&amp;quot;;
-
-        $class = ucfirst($model);
-        # 实例化对象
-        if (emptyempty($data))
-        {
-            $instance = new $class;
-        }
-        else
-        {
-            $instance = new $class($data);
-        }
-        # 把对象cache起来
-        $this-&amp;gt;_loaded_models[$model] = $instance;
-
-        return $instance;
-    }
-
-
-    public function library($library, $data=array())
-    {
-        $library = strtolower($library);
-
-        # 如果已经加载，则返回对象，避免重复加载
-        if (isset($this-&amp;gt;_loaded_librarys[$library]))
-        {
-            return $this-&amp;gt;_loaded_librarys[$library];
-        }
-
-        # 否则加载文件
-        include ROOT.&amp;quot;/application/librarys/{$library}.php&amp;quot;;
-
-        $class = ucfirst($library);
-        # 实例化对象
-        if (emptyempty($data))
-        {
-            $instance = new $class;
-        }
-        else
-        {
-            $instance = new $class($data);
-        }
-
-        # 把对象cache起来
-        $this-&amp;gt;_loaded_librarys[$library] = $instance;
-
-        return $instance;
-    }
-}
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;大家看到了没有，这个loader采用的是单例模式，虽然前面的function的设计已经可以保证不会重复实例化loader这个对象，但是为了真正可以保证全局只有一份loader对象，设计成单例模式是最保险的。。。&lt;/p&gt;
-
-&lt;p&gt;具体的测试例子请看代码。。。我把代码打包上传上来，有需要的就下载回去看看吧。。。下载后，解压，把lesson2文件夹放到你的www目录下，然后访问yourdomain/MVC/lesson2/index.php/index/test&amp;nbsp; 试试看吧。。。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;这年头得与时俱进，我把代码托管在git上。。。&lt;/p&gt;
-
-&lt;p&gt;fork me ：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;https://github.com/Barbery/mvc.git&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
     </item>
     
   </channel>

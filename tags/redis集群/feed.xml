@@ -7,73 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 19 Mar 2017 21:29:27 +0800</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/redis%E9%9B%86%E7%BE%A4/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/redis%E9%9B%86%E7%BE%A4/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PHP高并发下问题总结</title>
-      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
+      <link>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</link>
       <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
-      <description>
-
-&lt;p&gt;上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。
-这么大的流量突然涌入，真是把我们杀个措手不及，最终还是要把接口往GO迁才能扛下来。其中也暴露出了不少问题。&lt;/p&gt;
-
-&lt;h2 id=&#34;phpredis问题&#34;&gt;phpredis问题&lt;/h2&gt;
-
-&lt;h3 id=&#34;超时问题&#34;&gt;超时问题&lt;/h3&gt;
-
-&lt;p&gt;phpredis应该说是大家非常普遍使用的一个redis client，以往在单机redis下使用情况也非常稳定。但是非常遗憾的是，
-在redis cluster模式下，phpredis非常不稳定，经常会出现超时的异常错误，例如：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;RedisClusterException: Timed out attempting to find data in the correct node!&lt;/p&gt;
-
-&lt;p&gt;ErrorException: RedisCluster::setex(): connect() failed: Connection timed out&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;第一个问题的话，是早期的phpredis的一个BUG，使用新的版本或者使用phpredis的develop分支就可以解决了。
-我们使用了最新的develop分之后，第一个问题就没再出现了，转而是常常出现问题而这种连接超时的情况，
-这个问题暂时不知道如何解决。&lt;/p&gt;
-
-&lt;h3 id=&#34;redis集群负载不均问题&#34;&gt;redis集群负载不均问题&lt;/h3&gt;
-
-&lt;p&gt;使用phpredis还有一个问题是，读取策略的问题，请使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略，
-其他策略例如&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;，或者&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;，都会造成整个集群的负载非常不均衡。
-使用&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;的话会导致redis读写都会发送给redis master机器，导致master和slave负载不均，
-如果使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;虽然读会随机分发给master和slave，但是我们实际看到，slave机器负载和master的差异还是很大。
-目前来看，使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略是最佳的选择，但是同一个节点下的多个slave机器之间还是会存在负载差异。&lt;/p&gt;
-
-&lt;h3 id=&#34;性能损耗问题&#34;&gt;性能损耗问题&lt;/h3&gt;
-
-&lt;p&gt;phpredis在cluster模式下，有个额外的性能损耗问题，就是每次创建连接的时候，都会去获取一次cluster slots, 而由于
-每次获取这个slots都是从seeds里面循环去获取，直至获取到slots信息，所以&lt;code&gt;new RedisCluster(null, $servers)&lt;/code&gt;时，传入的servers中第一个会压力很大，
-在高并发的情况下，频发的短链接创建，会直接导致redis集群负载不均，这也是导致了redis集群负载不均的一个原因。&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash;2017年03月21日&amp;ndash; 更新
-我看到develop分支下这个问题已经解决了，phpredis会在循环连接seeds之前打乱传入的servers，所以高流量的情况下，
-建议填写所有的slave的节点IP进去实例化，这样可以避免单一的节点负载过高。cluster slots消耗过多的问题，已提&lt;a href=&#34;https://github.com/phpredis/phpredis/issues/1133&#34;&gt;issure&lt;/a&gt;给官方，
-答复是会在phpredis 3.2的版本中加入缓存cluster slots的功能。&lt;/p&gt;
-
-&lt;h2 id=&#34;阿里云相关&#34;&gt;阿里云相关&lt;/h2&gt;
-
-&lt;p&gt;连接不稳定&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;坑爹阿里云，内网dns解析非常不稳定，大流量的情况下，连自家的RDS地址都不认了，解决办法：把IP地址写入host，缺点是，主从切换时需要手动更新IP。&lt;/p&gt;
-
-&lt;h2 id=&#34;系统其他&#34;&gt;系统其他&lt;/h2&gt;
-
-&lt;p&gt;增大nf_conntrack_max参数，可以增大服务器的并发数&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo sysctl net.nf_conntrack_max=512000&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</guid>
+      <description>上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。 这么大的流量突然涌入，真是把我</description>
     </item>
     
   </channel>

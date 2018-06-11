@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 05 Apr 2014 20:24:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E6%A1%86%E6%9E%B6/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E6%A1%86%E6%9E%B6/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>大爱phalcon啊</title>
@@ -15,479 +17,43 @@
       <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
-      <description>&lt;p&gt;最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设计理念非常优雅，不愧是PHP5.4时代的新框架。。。现在的感觉就像当年PHP5.0时代的时候使用codeigniter，觉得太赞了。。。&lt;/p&gt;
-
-&lt;p&gt;工作之后一直，公司为了快速开发，不得不忍受quick-and-dirty 的thinkPHP。。。只有做自己的项目的时候，才能真正感受到，尼玛啊，这才是真正的「框架」啊！&lt;/p&gt;
-
-&lt;p&gt;phalcon的耦合非常低，作者预留了大量接口和基类，可供用户随意DIY，框架集成测试、ORM等，是一个fullstack高性能框架，这里严重推荐大家使用phalcon！&lt;/p&gt;
-
-&lt;p&gt;作者更是放出了zephir（一个很容易上手写C-extension的东西）相信未来不远，PHP的性能瓶颈将不是问题，不过目前zephir还只是beta版本，bug还比较多，不过我也正式开始关注这个项目，这个项目真能做起来，绝对是全体PHPer的福音!&lt;/p&gt;
-</description>
+      <description>最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（4） — 错误捕捉</title>
-      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%884%EF%BC%89%E2%80%94%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
+      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
       <pubDate>Wed, 20 Mar 2013 11:41:16 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%884%EF%BC%89%E2%80%94%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
-      <description>&lt;p&gt;前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，例如友好的错误输出，安全处理，防止跨域攻击等&lt;/p&gt;
-
-&lt;p&gt;好了，我们一步一步来。。。。这节要说的是错误捕捉。。。其实这个不难，只要理解2个方法就可以做好错误捕捉的程序。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;register_shutdown_function(&#39;functionname&#39;);
-set_error_handler(&#39;functionname&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;第一个方法，是注册一个shutdown的回调函数，当php脚本关闭时调用，当然这个关闭可以是正常的代码执行完毕，也可以是程序抛出致命错误关闭的脚本，那我怎么区分呢？别急，php还有一个方法叫error_get_last() 就像函数名说的那样，获取php最后一个错误信息，这样就可以判断是代码正常执行完毕还是遇到fatal error。。。&lt;/p&gt;
-
-&lt;p&gt;第二个方法，是注册一个error的回调函数，当脚本执行遇到错误时调用。&lt;/p&gt;
-
-&lt;p&gt;这2个方法最大的区别是，第一个是脚本关闭调用，也就是1次访问，只会调用一次(因为发生致命错误脚本就退出执行了)，二第二个方法的触发调用是发生错误的时候，例如访问数组中不存在的index，使用未定义的变量，就是这些warning，notice错误的捕捉。。。如果你想更了解二者的区别，建议访问php官网查看文档说明。。。&lt;/p&gt;
-
-&lt;p&gt;这里我就不贴代码了，有兴趣的同学，可以去github那里下回来慢慢看。。。&lt;/p&gt;
-
-&lt;p&gt;fork me：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34; title=&#34;https://github.com/Barbery/mvc.git&#34;&gt;https://github.com/Barbery/mvc.git&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;我们来看看最终的效果。。。我们来试试访问不存在的controller里的方法试试&lt;/p&gt;
-
-&lt;p&gt;先看看没有错误捕捉的时候：&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t2.qpic.cn/mblogpic/2560f99968ee8c74987e/2000&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再来对比下做了错误捕捉的时候&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/bf757af39c2f7ce667e2/2000&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;除了显示上比较友好外，还防止了文件名和路径的暴漏。。。其实还有一个很重要的功能是，log，记录代码运行的错误信息，对于一个网站管理者而言是非常重要的，可以及时知道网站的bug。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
+      <description>前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（3） — 视图</title>
-      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/</link>
+      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
       <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/</guid>
-      <description>&lt;p&gt;今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。&lt;/p&gt;
-
-&lt;p&gt;对于模板引擎而言，它的原理一般是这样，把模板引擎的语言替换成可执行的语言，然后把变量输出。。。&lt;/p&gt;
-
-&lt;p&gt;因为PHP本身就是一个良好了模板引擎，所以用原生的模板引擎是灰常方便和容易做到的。。。&lt;/p&gt;
-
-&lt;p&gt;index.html&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;&amp;lt;?php echo $title ?&amp;gt;&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;h1&amp;gt;&amp;lt;?php echo $content ?&amp;gt;&amp;lt;/h1&amp;gt;
-
-&amp;lt;?php if( ! empty($arr)) { ?&amp;gt;
-&amp;lt;ul&amp;gt;
-    &amp;lt;?php foreach($arr as $value) { ?&amp;gt;
-    &amp;lt;li&amp;gt;&amp;lt;?php echo $value ?&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;?php } ?&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;?php } ?&amp;gt;
-
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;想上面这样一个html页面，采用的就是原生的php模板引擎，服务器在你include这个页面时，会处理html中的PHP代码。&lt;/p&gt;
-
-&lt;p&gt;你也许会问，要是我想定制模板语言可以吗？答案当然是可以的，像我上面说的，用模板引擎的语言，只需要多做一步，就是把模板引擎的语言替换成标准的PHP语言。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;index_2.html&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;&amp;lt;?php echo $title ?&amp;gt;&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;h1&amp;gt;&amp;lt;?php echo $content ?&amp;gt;&amp;lt;/h1&amp;gt;
-
-&amp;lt;ifexist arr&amp;gt;
-&amp;lt;ul&amp;gt;
-    &amp;lt;for value = arr&amp;gt;
-    &amp;lt;li&amp;gt;&amp;lt;echo value&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;endfor&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;endexist&amp;gt;
-
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看看这个页面，发现和index.html 有什么不同吗，没错，就是在循环那里，我们用的不是标准的php语言，而是，按照自己的喜好，定义了几个模板语言，一个是&lt;ifexist xxx&gt;这个是判断xxx变量是否存在，而且不为空，后面那个&lt;for xx1=xx2&gt;是循环迭代xx2变量，中间的&lt;echo xx&gt; 是输出xx变量&lt;/p&gt;
-
-&lt;p&gt;怎么替换成标准语言呢？这个可以使用正则替换，因为字符串替换无法满足我们需求了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$pattern = array(
-    &#39;/&amp;lt;ifexist\s+(\w+)&amp;gt;/i&#39;,
-    &#39;/&amp;lt;for\s+(\w+)\s=\s(\w+)&amp;gt;/&#39;,
-    &#39;/&amp;lt;echo\s+(\w+)&amp;gt;/&#39;
-);
-
-$replacement = array(
-    &#39;&amp;lt;?php if( ! empty($\\1)){ ?&amp;gt;&#39;,
-    &#39;&amp;lt;?php foreach($\\2 as $\\1){ ?&amp;gt;&#39;,
-    &#39;&amp;lt;?php echo $\\1 ?&amp;gt;&#39;
-);
-
-$content = preg_replace($pattern, $replacement, $content);
-
-$search = array(&#39;&amp;lt;endexist&amp;gt;&#39;, &#39;&amp;lt;endfor&amp;gt;&#39;);
-
-
-$content = str_replace($search, &#39;&amp;lt;?php } ?&amp;gt;&#39;, $content);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;上面的正则就可以帮我们把刚刚定义的标签，转换成标准p hp语言。。。&lt;/p&gt;
-
-&lt;p&gt;转换之后是这样，请看图。&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/f91723ad9e9641cf3804/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;转换之后可以输出了吗？答案是不行的，因为你获取到html文件的内容的时候，php就已经解释了，那时候你还没替换成标准的php语言，所以，你现在输出的话，其中的php代码就没有执行。。。不过我们可以利用 php eval 这个函数，来强制要求执行其中的代码。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$content = eval(&#39;?&amp;gt;&#39;.$content);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意哦，要 ?&amp;gt;.$content 要不，php会把其中的html当成是php代码的执行，这样就会出错了。。。&lt;/p&gt;
-
-&lt;p&gt;刷新一下，ok，已经可以执行了~~~ &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;具体代码，请点下面的链接，在lesson3的文件夹里&lt;/p&gt;
-
-&lt;p&gt;代码托管在：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;github 欢迎fork&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
+      <description>今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（2）加载器</title>
-      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</link>
+      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
       <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</guid>
-      <description>&lt;p&gt;上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。&lt;/p&gt;
-
-&lt;p&gt;虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。都是通过单例模式加载文件，而且把已加载的文件cache起来，避免重复加载。。。因为在开发业务的过程中，常常需要加载不同的模块，不同的类库等，MVC的loader可以帮助我们实现单例模式，更加符合开发需求。&lt;/p&gt;
-
-&lt;p&gt;下面我们开始动手，利用其原理，做一个简单的loader。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;首先，我们设计的加载器，要满足可以全局使用，无论在controller里还是在model、library里都可以使用。&lt;/p&gt;
-
-&lt;p&gt;其次，加载器要有缓存能力，即相同的文件只加载一次，相同的类只实例化一次。&lt;/p&gt;
-
-&lt;p&gt;最后，要能加载多种文件，model、library、helper。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;先解决第一步，怎么全局使用，最简单的办法就是定义一个全局的function，这样，在后面的不同类库，不同function里都可以调用这个全局function，进行加载文件。&lt;/p&gt;
-
-&lt;p&gt;第二步和第三步，要一起解决，定义一个单例模式的loader类，因为是单例模式，可以保证全局只有一份内容，这样的话，就可以利用数组把这些已加载的内容和对象cache起来，这样就可以避免了重复加载的问题。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;if ( ! function_exists(&#39;load&#39;))
-{
-    function load($name, $type=&#39;model&#39;, $data=array())
-    {
-        static $loader = NULL;
-        if (is_null($loader))
-        {
-            include (ROOT.&#39;/system/core/loader.php&#39;);
-            $loader = Loader::get_instance();
-        }
-
-        return $loader-&amp;gt;$type($name, $data);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面这个，就是我写的一个简单的全局函数 load，这个函数的作用就是为了可以全局调用，然后通过这个load函数，去调用loader类，由loader类负责加载文件，实例化，和缓存对象。。。下面我把loader的代码放出来给大家看看。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-class Loader
-{
-    private $_loaded_models = array();
-    private $_loaded_librarys = array();
-    private static $OBJ;
-
-    # 单例模式，不允许new对象
-    private function __construct()
-    {
-
-    }
-
-
-    public static function get_instance()
-    {
-        if (is_null(self::$OBJ))
-        {
-            $class = __CLASS__;
-            self::$OBJ = new $class;
-        }
-
-        return self::$OBJ;
-    }
-
-    public function model($model, $data=array())
-    {
-        $model = strtolower($model);
-
-        # 如果已经加载，则返回对象，避免重复加载
-        if (isset($this-&amp;gt;_loaded_models[$model]))
-        {
-            return $this-&amp;gt;_loaded_models[$model];
-        }
-
-        # 否则加载文件
-        include ROOT.&amp;quot;/application/models/{$model}.php&amp;quot;;
-
-        $class = ucfirst($model);
-        # 实例化对象
-        if (emptyempty($data))
-        {
-            $instance = new $class;
-        }
-        else
-        {
-            $instance = new $class($data);
-        }
-        # 把对象cache起来
-        $this-&amp;gt;_loaded_models[$model] = $instance;
-
-        return $instance;
-    }
-
-
-    public function library($library, $data=array())
-    {
-        $library = strtolower($library);
-
-        # 如果已经加载，则返回对象，避免重复加载
-        if (isset($this-&amp;gt;_loaded_librarys[$library]))
-        {
-            return $this-&amp;gt;_loaded_librarys[$library];
-        }
-
-        # 否则加载文件
-        include ROOT.&amp;quot;/application/librarys/{$library}.php&amp;quot;;
-
-        $class = ucfirst($library);
-        # 实例化对象
-        if (emptyempty($data))
-        {
-            $instance = new $class;
-        }
-        else
-        {
-            $instance = new $class($data);
-        }
-
-        # 把对象cache起来
-        $this-&amp;gt;_loaded_librarys[$library] = $instance;
-
-        return $instance;
-    }
-}
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;大家看到了没有，这个loader采用的是单例模式，虽然前面的function的设计已经可以保证不会重复实例化loader这个对象，但是为了真正可以保证全局只有一份loader对象，设计成单例模式是最保险的。。。&lt;/p&gt;
-
-&lt;p&gt;具体的测试例子请看代码。。。我把代码打包上传上来，有需要的就下载回去看看吧。。。下载后，解压，把lesson2文件夹放到你的www目录下，然后访问yourdomain/MVC/lesson2/index.php/index/test&amp;nbsp; 试试看吧。。。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;这年头得与时俱进，我把代码托管在git上。。。&lt;/p&gt;
-
-&lt;p&gt;fork me ：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;https://github.com/Barbery/mvc.git&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（1）-- 路由</title>
-      <link>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%881%EF%BC%89--%E8%B7%AF%E7%94%B1/</link>
+      <link>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Thu, 07 Mar 2013 21:29:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%881%EF%BC%89--%E8%B7%AF%E7%94%B1/</guid>
-      <description>&lt;p&gt;说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。&lt;/p&gt;
-
-&lt;p&gt;第一篇先来简单点的，说说MVC框架的路由功能。。。&lt;/p&gt;
-
-&lt;p&gt;一般的单入口框架路由都是这样的结构：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;domain/index.php/classname/functionname/var1/var2&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这里的index.php 就被称为入口文件。。。对于服务器而言，你这里访问的就只有index.php 后面调用的controller 和里面的方法，甚至传值都是在框架内部基于PHP层面实现的。&lt;/p&gt;
-
-&lt;p&gt;Talk is cheap, show you the code !!&lt;/p&gt;
-
-&lt;p&gt;首先，先建立好下面的文件结构&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/9140c8ad2d21b21a4490/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们来动手试试，怎么才能访问到controllers里面的文件。。。&lt;/p&gt;
-
-&lt;p&gt;在index.php里面输入以下内容&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;print_r($_SERVER);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后访问 以下地址试试。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;yourdomain/index.php/class/function/var1&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这里作者我是用本地环境的，我访问的地址是localhost/MVC/index.php/class/function/var1&lt;/p&gt;
-
-&lt;p&gt;我贴出最重要的2个变量&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;[REQUEST_URI] =&amp;gt; /MVC/index.php/class/function/var1&lt;/p&gt;
-
-&lt;p&gt;[SCRIPT_NAME] =&amp;gt; /MVC/index.php&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;其实路由最基本的原理就在这里：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;通过这2个变量来提取url地址里的class 和 function，参数等，然后把class include进来，通过PHP的回调函数  call_user_func_array 调用对应的function和传递相应的参数。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;接下来上代码，读代码应该比我写的易懂。哈哈~~&lt;/p&gt;
-
-&lt;p&gt;index.php 的内容如下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-# 定义application路径
-define(&#39;APPPATH&#39;, trim(__DIR__,&#39;/&#39;));
-
-# 获得请求地址
-$root = $_SERVER[&#39;SCRIPT_NAME&#39;];
-$request = $_SERVER[&#39;REQUEST_URI&#39;];
-
-$URI = array();
-
-# 获得index.php 后面的地址
-$url = trim(str_replace($root, &#39;&#39;, $request), &#39;/&#39;);
-
-# 如果为空，则是访问根地址
-if (empty($url))
-{
-    # 默认控制器和默认方法
-    $class = &#39;index&#39;;
-    $func = &#39;welcome&#39;;
-}
-else
-{
-    $URI = explode(&#39;/&#39;, $url);
-
-    # 如果function为空 则默认访问index
-    if (count($URI) &amp;lt; 2)
-    {
-        $class = $URI[0];
-        $func = &#39;index&#39;;
-    }
-    else
-    {
-        $class = $URI[0];
-        $func = $URI[1];
-    }
-}
-
-
-# 把class加载进来
-include(APPPATH . &#39;/&#39; . &#39;application/controllers/&#39; . $class . &#39;.php&#39;);
-
-#实例化
-$obj = new ucfirst($class);
-
-call_user_func_array(
-    # 调用内部function
-    array($obj,$func),
-    # 传递参数
-    array_slice($URI, 2)
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;在application/controllers 里面添加下面2个文件&lt;/p&gt;
-
-&lt;p&gt;index.php   用于作为默认控制器&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-class Index
-{
-
-    function welcome()
-    {
-        echo &#39;I am default controller&#39;;
-    }
-
-}
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;hello.php&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-class Hello
-{
-    public function index()
-    {
-        echo &#39;hello world&#39;;
-    }
-
-    public function name($name)
-    {
-        echo &#39;hello &#39; . $name;
-    }
-}
-
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;测试一下看看，能不能访问了。根据上面的路由结构。我们来试试&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t2.qpic.cn/mblogpic/9fd64907545eeef548fa/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个访问正常，正确调用了hello这个class内部的name方法，然后把参数barbery传递过去了。。。&lt;/p&gt;
-
-&lt;p&gt;再试试不输入function name，看看能不能默认调用index。。&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t2.qpic.cn/mblogpic/815743451a85ca325b86/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;答案也是可以的。。。&lt;/p&gt;
-
-&lt;p&gt;最后一个，访问root地址看看&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t2.qpic.cn/mblogpic/cd465ada7fa0f9c00f4c/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;也正确的映射到了默认控制器上。。。&lt;/p&gt;
-
-&lt;p&gt;ok，一个简单的MVC路由功能就完成了。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
+      <description>说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。 第一篇先来简单点的，说说MVC框</description>
     </item>
     
   </channel>

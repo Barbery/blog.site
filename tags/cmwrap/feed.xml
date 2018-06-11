@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Apr 2012 19:11:39 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/cmwrap/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/cmwrap/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>解决cmwrap wap穿越上不了cmnet的问题</title>
@@ -15,10 +17,7 @@
       <pubDate>Tue, 03 Apr 2012 19:11:39 +0000</pubDate>
       
       <guid>http://barbery.me/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;如题，cmwrap之前一直用的好好的，2个月前不知道干什么了，一直用穿越不了cmwap上cmnet。难得清明有假期宅在家里，就把这个问题解决了。。。&lt;/p&gt;
-
-&lt;p&gt;根本原因是google的dns 8.8.4.4被墙了，所以导致上不了cmnet节点，解决办法是上网找一个中国移动cmnet的dns(我是用移动卡)，建议找与你所在地对应，这样理论上速度会快一点。。由于我是广东这边的，所以我找的是广东的cmnet dns节点，211.137.130.19 这是我正在使用的dns，希望能帮到你吧&lt;/p&gt;
-</description>
+      <description>如题，cmwrap之前一直用的好好的，2个月前不知道干什么了，一直用穿越不了cmwap上cmnet。难得清明有假期宅在家里，就把这个问题解决</description>
     </item>
     
   </channel>

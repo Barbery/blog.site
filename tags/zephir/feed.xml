@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 05 Apr 2014 20:24:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/zephir/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/zephir/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>大爱phalcon啊</title>
@@ -15,14 +17,7 @@
       <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
-      <description>&lt;p&gt;最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设计理念非常优雅，不愧是PHP5.4时代的新框架。。。现在的感觉就像当年PHP5.0时代的时候使用codeigniter，觉得太赞了。。。&lt;/p&gt;
-
-&lt;p&gt;工作之后一直，公司为了快速开发，不得不忍受quick-and-dirty 的thinkPHP。。。只有做自己的项目的时候，才能真正感受到，尼玛啊，这才是真正的「框架」啊！&lt;/p&gt;
-
-&lt;p&gt;phalcon的耦合非常低，作者预留了大量接口和基类，可供用户随意DIY，框架集成测试、ORM等，是一个fullstack高性能框架，这里严重推荐大家使用phalcon！&lt;/p&gt;
-
-&lt;p&gt;作者更是放出了zephir（一个很容易上手写C-extension的东西）相信未来不远，PHP的性能瓶颈将不是问题，不过目前zephir还只是beta版本，bug还比较多，不过我也正式开始关注这个项目，这个项目真能做起来，绝对是全体PHPer的福音!&lt;/p&gt;
-</description>
+      <description>最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设</description>
     </item>
     
   </channel>

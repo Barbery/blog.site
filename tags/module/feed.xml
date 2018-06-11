@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2013 22:02:29 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/module/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/module/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>简单测试下ngx_drizzle_module</title>
@@ -15,41 +17,7 @@
       <pubDate>Wed, 08 May 2013 22:02:29 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
-      <description>
-
-&lt;p&gt;webbench -c 500 -t 30  测试结果&lt;/p&gt;
-
-&lt;h2 id=&#34;tp框架&#34;&gt;TP框架&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Speed=19198 pages/min, 112866 bytes/sec.
-Requests: 6635 susceed, 2964 failed.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h2 id=&#34;原生&#34;&gt;原生&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Speed=16602 pages/min, 89106 bytes/sec.
-Requests: 6027 susceed, 2274 failed.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h2 id=&#34;nginx-with-drizzle&#34;&gt;nginx with drizzle&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Speed=34116 pages/min, 212853 bytes/sec.
-Requests: 14347 susceed, 2711 failed.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;毫无疑问的，nginx drizzle下速度是最快的。。。效果提升1倍。。。不过令人惊讶的是原生php连接速度竟然不够thinkphp框架下链接的效果好。。。这个疑问有待解决。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-</description>
+      <description>webbench -c 500 -t 30 测试结果 TP框架 Speed=19198 pages/min, 112866 bytes/sec. Requests: 6635 susceed, 2964 failed. 原生 Speed=16602 pages/min, 89106 bytes/sec. Requests: 6027 susceed, 2274 failed. nginx with drizzle Speed=34116 pages/min, 212853 bytes/sec. Requests: 14347 susceed, 2711 failed. 毫无疑问的，nginx drizzle下速度是最快的</description>
     </item>
     
   </channel>

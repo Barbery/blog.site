@@ -7,50 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 14 Dec 2012 12:40:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/math/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/math/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>慎用PHP内置的Math函数</title>
-      <link>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</link>
+      <link>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 14 Dec 2012 12:40:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</guid>
-      <description>&lt;p&gt;如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~&lt;/p&gt;
-
-&lt;p&gt;小二！上代码。。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$start = microtime(TRUE);
-for ($i=0; $i &amp;lt; 200000; $i++)
-{
-    $s = 0;
-    for ($j=0; $j &amp;lt; 3; $j++)
-    {
-       $s += ($j+$i+1) * ($j+$i+1);
-    }
-}
-echo microtime(TRUE) - $start;
-# output: 0.33167719841003
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;再对比下用Math函数的代码和结果&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$start = microtime(TRUE);
-for ($i=0; $i &amp;lt; 200000; $i++)
-{
-    $s = 0;
-    for ($j=0; $j &amp;lt; 3; $j++)
-    {
-       $s += pow($j+$i+1, 2);
-    }
-}
-echo microtime(TRUE) - $start;
-# output: 0.87528896331787
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看到木有，效率提升100%丫。。。以前还一直都认为是PHP内置的Math快，真是不测不知道。。像取绝对值abs，最大值max，最小值min 等 效率都不如原生的 if判断来得快~~&lt;/p&gt;
-
-&lt;p&gt;总的来说，php运算的确是很慢~~ 真心不适合做大规模的算法运算~~&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</guid>
+      <description>如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</description>
     </item>
     
   </channel>

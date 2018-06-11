@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 06 Jul 2013 17:55:56 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E6%88%BF%E5%9C%B0%E4%BA%A7a/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E6%88%BF%E5%9C%B0%E4%BA%A7a/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>国证地产行业指数分级存在套利空间</title>
@@ -15,36 +17,16 @@
       <pubDate>Sat, 06 Jul 2013 17:55:56 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-07-06-%E5%9B%BD%E8%AF%81%E5%9C%B0%E4%BA%A7%E8%A1%8C%E4%B8%9A%E6%8C%87%E6%95%B0%E5%88%86%E7%BA%A7%E5%AD%98%E5%9C%A8%E5%A5%97%E5%88%A9%E7%A9%BA%E9%97%B4/</guid>
-      <description>&lt;p&gt;今天看了下, 房地产B的价格是0.992, 房地产A的价格是1.07, 而国证地产的净值才是1元, A:B的份额是1:1, 所以只要申购母基, 然后申请拆分成A,B分级基金卖出实现套利, 套利的空间为(0.992+1.07)/2 - 1 = 0.03, 也就是3%的套利空间….&lt;/p&gt;
-
-&lt;p&gt;别高兴的太早, 后来又查了下, 分拆套利的时间需要T+3日才能抛出, T日申购, T+1日才能申购导致, T+2 日才能申请分拆, T+3 日才能到账卖出….&lt;/p&gt;
-
-&lt;p&gt;具体看这里:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;1、 分级基金场内分拆的套利过程：
-投资者T日在场内申购母基金份额，成交价格是当日基金份额净值；T+1日确认母基金份额到账；T+2日投资者可以在场内申请分拆基金份额；T+3日确认子基金份额，投资者T+3日可以在二级市场卖出子基金份额，实现套利。&lt;/p&gt;
-
-&lt;p&gt;2、 分级基金场内合并的套利过程：
-投资者T日在二级市场按比例买入子基金份额；T+1日可以将子基金份额申请配对交易为场内母基金份额；T+2日母基金份额确认到账，投资者T+2日可以申请赎回基金份额，实现套利。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;由于时间太长, 这个套利的风险也不言而喻….反倒有点赌的成分了….&lt;/p&gt;
-</description>
+      <description>今天看了下, 房地产B的价格是0.992, 房地产A的价格是1.07, 而国证地产的净值才是1元, A:B的份额是1:1, 所以只要申购母基, 然后申请</description>
     </item>
     
     <item>
       <title>最近的操作，房地产A和中行转债。。。记录下</title>
-      <link>http://barbery.me/post/2013-06-02-%E6%9C%80%E8%BF%91%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%88%BF%E5%9C%B0%E4%BA%A7A%E5%92%8C%E4%B8%AD%E8%A1%8C%E8%BD%AC%E5%80%BA%E3%80%82%E3%80%82%E3%80%82%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
+      <link>http://barbery.me/post/2013-06-02-%E6%9C%80%E8%BF%91%E7%9A%84%E6%93%8D%E4%BD%9C%E6%88%BF%E5%9C%B0%E4%BA%A7a%E5%92%8C%E4%B8%AD%E8%A1%8C%E8%BD%AC%E5%80%BA%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
       <pubDate>Sun, 02 Jun 2013 10:34:50 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-06-02-%E6%9C%80%E8%BF%91%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%88%BF%E5%9C%B0%E4%BA%A7A%E5%92%8C%E4%B8%AD%E8%A1%8C%E8%BD%AC%E5%80%BA%E3%80%82%E3%80%82%E3%80%82%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
-      <description>&lt;p&gt;因为这些钱是朋友委托，虽说是闲钱，但是要求不能亏损，而且持有期限也只是1到2年的时间，之后他可能就要取回去了。。。所以思来想去，还是不能买股票给他。。。所以只能帮他买点固定收益类产品。。。&lt;/p&gt;
-
-&lt;p&gt;第一个是，中行转债。。。说到这个，真心郁闷。。。忘记了中行转债转股价下调这个事情了。。。还以为是3块多的转股价，考虑到未来几天就有1%的分红，所以104的买入价格还算可以接受。。。中行每年的股息都能达到5%以上。。。如果遇上行情好，随时由固定收益类产品转成高收益证券。。。&lt;/p&gt;
-
-&lt;p&gt;第二个是，房地产A，话说最近的分级基金A份额的收益真心高。。。房地产A的收益是1年存款定期+4%，而最新发售的那个建信50A更离谱，是1年存款定期+4.5%，真是一山还有一山高。。。不过目前建信50A溢价太多。。。折起来，分红就一般般了。。。反而房地产A的溢价还算可以接受，溢价5%，这么说分红率还在6.5%左右。。。加上目前是降息周期。。。我相信溢价率还会被继续推高。。。爽~&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-06-02-%E6%9C%80%E8%BF%91%E7%9A%84%E6%93%8D%E4%BD%9C%E6%88%BF%E5%9C%B0%E4%BA%A7a%E5%92%8C%E4%B8%AD%E8%A1%8C%E8%BD%AC%E5%80%BA%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
+      <description>因为这些钱是朋友委托，虽说是闲钱，但是要求不能亏损，而且持有期限也只是1到2年的时间，之后他可能就要取回去了。。。所以思来想去，还是不能买股</description>
     </item>
     
   </channel>

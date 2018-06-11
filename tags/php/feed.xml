@@ -7,18 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 18 Jul 2015 18:28:22 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/php/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/php/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>使用sublime text3 打造最佳PHP开发工具</title>
-      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3php%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sat, 18 Jul 2015 18:28:22 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
-      <description>&lt;p&gt;我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配上GIF动画，大家应该能大致看懂，我就懒得翻译了。。。有什么不懂的可以留言。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&#34;&gt;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3php%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <description>我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配</description>
     </item>
     
     <item>
@@ -27,24 +26,7 @@
       <pubDate>Mon, 13 Oct 2014 22:02:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
-      <description>&lt;p&gt;第一个，先说说GO原子性操作的问题，直接上demo（&lt;a href=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34; title=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34;&gt;https://gist.github.com/Barbery/08973672e132d5edfe44&lt;/a&gt;）：&lt;/p&gt;
-
-&lt;p&gt;从结果可以看出，在并发编程下，常规的i++运算是不能保证原子性执行的，i++ 这样的运算会被go编译成 i = i + 1来执行，就是先读取i的值然后再加1，而go没有对share memory的操作，没有做thread safe，所以导致运算过程中读取到的i不是最新的情况，要解决这个问题有：&lt;/p&gt;
-
-&lt;p&gt;1.加锁(可以去掉demo中的注释代码试试)&lt;/p&gt;
-
-&lt;p&gt;2.调用atomic包来保证操作的原子性&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;第二个，就是GO和PHP的不同，GO不但作为一门后端语言，还接管了服务器，可以理解为GO是PHP+NGINX的合体。。。这样性能可以得到非常好的提升，但是也会出现不少问题。。。由于GO是常驻后台运行的，不像PHP那样通过fastcgi协议来访问，这样的区别就导致了GO中的包内/全局变量不会因为每次请求结束而销毁，导致GO的包内/全局变量就像PHP的session那样，如果同时有2个请求进来，任意一个请求改变了包内/全局变量的值都会影响另外一个请求中的值（实际上他们访问的是一个地址中的值，这和PHP很不同）。。。&lt;/p&gt;
-
-&lt;p&gt;目前的解决办法是写成OOP的风格去做，这样做的优点是，代码上比较优雅，让每个线程调用包的时候都new一个struct对象，把全局变量包裹到struct里面，让过期是struct对象交给go的垃圾回收去处理。&lt;/p&gt;
-
-&lt;p&gt;demo：(&lt;a href=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34; title=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34;&gt;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;通过这样，在并发和不同线程的执行中的操作，都不会对其他线程的信息造成污染。&lt;/p&gt;
-</description>
+      <description>第一个，先说说GO原子性操作的问题，直接上demo（https://gist.github.com/Barbery/08973672e132</description>
     </item>
     
     <item>
@@ -53,43 +35,16 @@
       <pubDate>Sat, 05 Jul 2014 14:38:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issue上找找看，发现也有不少朋友遇到这个问题。&lt;/p&gt;
-
-&lt;p&gt;原因处在于，php的redis库使用的subscribe是使用PHP内置的socket，而php.ini默认是设置了socket的超时时间是60秒，所以大家只要找到default_socket_timeout 这个配置项，把时间改长点就可以了。。。这里注意哦，我看了下官方的说明，似乎没有不限时间的选项，也就是不能填0，你如果填0，那么socket就会立即返回失败，而不是你预想中的不设超时。。。所以目前只能暂且填个很大的数，例如 1000000&lt;/p&gt;
-</description>
+      <description>最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issu</description>
     </item>
     
     <item>
       <title>关于php 5.5 CURLFile上传的问题</title>
-      <link>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5curlfile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 01 May 2014 12:52:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;最近用curl上传文件，发现报错&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The usage of the @filename API for file uploading is deprecated. Please use the CURLFile class instead&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;原来是PHP5.5废弃了&lt;code&gt;@&lt;/code&gt;这种模式，只需要把原来的：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-$data = array(
-    &#39;file&#39; =&amp;gt; &#39;@/PATH/TO/FILE&#39;,
-    //....其他字段
-);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;换成&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$data = array(
-    &#39;file&#39; =&amp;gt; new CURLFile(&#39;/PATH/TO/FILE&#39;),
-    //....其他字段
-);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5curlfile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>最近用curl上传文件，发现报错 The usage of the @filename API for file uploading is deprecated. Please use the CURLFile class instead 原来是PHP5.5废弃了@这种模式，只需要把原来的： &amp;lt;?php $data = array( &#39;file&#39; =&amp;gt; &#39;@/PATH/TO/FILE&#39;, //..</description>
     </item>
     
     <item>
@@ -98,51 +53,16 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
       <pubDate>Wed, 01 Jan 2014 23:59:18 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</guid>
-      <description>&lt;p&gt;关于什么是马尔可夫链， 我也说不清楚， 还是看维基百科来得快&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE&#34;&gt;http://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这个是我之前看lua程序设计的时候看到的， 作者用lua来实现， 我觉得好玩， 就拿PHP来玩玩看， 貌似还不错， 其实原理的话， 就是给出一段符合语义的文章作为样本， 然后用程序进行拆分， 统计出什么字或者词组后面跟随哪个字或者词语的概率， 然后利用这个概率来随机生成一段伪随机文本。。。&lt;/p&gt;
-
-&lt;p&gt;变量越多越符合语义，但是却越不能生成随机性; 越少， 越随机，但是越不符合语义。。这里要根据不同的文本和内容来调试决定最佳值。。&lt;/p&gt;
-
-&lt;p&gt;关于这个东西的用处， 我目前可以想到的是， 一是用于SEO中， 随机生成语义文本， 一是用于文字补全中， 即类似联想输入那样， 根据用户的输入联想后面的词语。。。&lt;/p&gt;
-
-&lt;p&gt;我的一些简单测试：&lt;/p&gt;
-
-&lt;p&gt;barbery@barbery:/www$ php say.php 我们&lt;/p&gt;
-
-&lt;p&gt;我们晚上8点半就到了。&lt;/p&gt;
-
-&lt;p&gt;barbery@barbery:/www$ php say.php 我们&lt;/p&gt;
-
-&lt;p&gt;我们叫了青旅住，&lt;/p&gt;
-
-&lt;p&gt;barbery@barbery:/www$ php say.php 我们&lt;/p&gt;
-
-&lt;p&gt;我们从睡梦中叫醒，&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;源码可以看这里：&lt;a href=&#34;https://github.com/Barbery/blog/blob/master/say.php&#34;&gt;https://github.com/Barbery/blog/blob/master/say.php&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>关于什么是马尔可夫链， 我也说不清楚， 还是看维基百科来得快 http://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE 这个是我之前看lua程序设计的时候看到的， 作者用lua来实现， 我觉得好玩， 就拿PH</description>
     </item>
     
     <item>
       <title>gitlab web hook的没接受到POST数据的一个坑！</title>
-      <link>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+      <link>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0post%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
       <pubDate>Thu, 28 Nov 2013 00:19:51 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
-      <description>&lt;p&gt;额。。。 在help那里， 明明说好是POST数据给我的， 仲么$_POST收不到？ 额。。。原来要用PHP input流来接收。。 使用&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$josn = file_get_contents(&amp;quot;php://input&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;来接受数据就可以了。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0post%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+      <description>额。。。 在help那里， 明明说好是POST数据给我的， 仲么$_POST收不到？ 额。。。原来要用PHP input流来接收。。 使用 $josn = file_get_contents(&amp;quot;php://input&amp;quot;); 来接受数</description>
     </item>
     
     <item>
@@ -151,12 +71,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
       <pubDate>Sun, 24 Nov 2013 12:02:47 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
-      <description>&lt;p&gt;mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前&lt;strong&gt;PHP官方推荐使用&lt;/strong&gt;的类库， 使用这个类库操作mysql， 可以支持多种最新的特征功能。 例如， 惰性连接（lazy connection），非阻塞异步查询等等。。装了这个类库， 以后还可以支持通过mysqlnd其他C拓展支持多mysql读写负债平衡（mysqlnd_ms）等的后续类库支持。。。。&lt;/p&gt;
-
-&lt;p&gt;有多少人还不知道这个类库的存在？ 你是不是还在默默使用PHP自带的mysql驱动类库？ 在php5.4之前， 默认的是mysql类库， 5.4之后， 源码编译安装的话， 默认使用mysqlnd类库。。。但是大多数人使用的apt or yum源安装的话是默认使用mysql的， 需要切换到mysqlnd， 还需要通过 apt-get install php5-mysqlnd 安装才行。。&lt;/p&gt;
-
-&lt;p&gt;拓展阅读： &lt;a href=&#34;http://www.php.net/manual/zh/mysqlinfo.library.choosing.php&#34;&gt;http://www.php.net/manual/zh/mysqlinfo.library.choosing.php&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前PHP官方推荐使用的类库， 使用这个类库操作mysql， 可以支持多种最新</description>
     </item>
     
     <item>
@@ -165,25 +80,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
       <pubDate>Tue, 12 Nov 2013 18:05:37 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;本想开启opcache来做code cache， 木想到开了就502错误，googe许久也找不到解决方案，上stackoverflow提问也木有人回答。。。&lt;/p&gt;
-
-&lt;p&gt;如果不加载opcache.so 就一切正常，说明是opcache的内部问题。。。看nginx error.log 和 php5-fpm.log也找不到什么解决方法。。&lt;/p&gt;
-
-&lt;p&gt;我怀疑是版本兼容的问题，我使用的PHP版本是ubuntu apt源默认的版本，也就是php5.3.10-ubuntu ，因为在服务器上和本地2台机器都是这样，一加载opcache访问就报502错误。。。&lt;/p&gt;
-
-&lt;p&gt;中午趁有休息的时间，速度把PHP版本升级到5.5，这样就可以使用内置的opcache（PHP5.5开始默认带zend opcache，而且是默认开启的）。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;add-apt-repository ppa:ondrej/php5
-apt-get update
-apt-get install php5-fpm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;按照上面代码就可以把系统的php版本升级到最新的stable版本，目前是PHP5.5.5。。。&lt;/p&gt;
-
-&lt;p&gt;果然，安装好后，一切正常。。。我看了下PHP官方，PHP5.3的稳定版本是PHP5.3.27，看来真的是APT源默认的版本和opcache 7.0.2不兼容。。。&lt;/p&gt;
-
-&lt;p&gt;ok，至此，问题圆满解决!&lt;/p&gt;
-</description>
+      <description>本想开启opcache来做code cache， 木想到开了就502错误，googe许久也找不到解决方案，上stackoverflow提问也木有</description>
     </item>
     
     <item>
@@ -192,110 +89,16 @@ apt-get install php5-fpm
       <pubDate>Wed, 18 Sep 2013 11:50:03 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</guid>
-      <description>&lt;p&gt;请看代码:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-$a = &#39;asdasdasdasd&#39;;
-var_dump(isset($a[&#39;somekey&#39;]));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上图这个代码, 在php5.3系统中会返回TRUE, 而php5.4会返回false, 我相信大家都会常常用isset来判断数组是否存在某个key.
-这里的原理是, 如果$a是字符串, php5.3中会把&lt;code&gt;somekey&lt;/code&gt;转为int, 也就是0, &lt;code&gt;$a[0]&lt;/code&gt;也就等于字符&amp;rsquo;a&amp;rsquo;, 所以会返回TRUE, 这个问题在php5.4被修复了, 如果$a是字符串, 检测到key不是数字会返回false, 不会再强制转换&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;所以在php5.3系统中, 最好这样判断&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-$a = &#39;asdasdasdasd&#39;;
-var_dump(isset($a[&#39;somekey&#39;]));
-
-if (is_array($a) &amp;amp;&amp;amp; isset($a[&#39;somekey&#39;]))
-    #some code....
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>请看代码: &amp;lt;?php $a = &#39;asdasdasdasd&#39;; var_dump(isset($a[&#39;somekey&#39;])); 上图这个代码, 在php5.3系统中会返回TRUE, 而php5.4会返回false, 我相信大家都会常常用isset来判断数</description>
     </item>
     
     <item>
       <title>addslashes, mysql_real_escape_string并不能防止SQL注入!!!</title>
-      <link>http://barbery.me/post/2013-09-06-addslashes,mysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5%21%21%21/</link>
+      <link>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Fri, 06 Sep 2013 21:28:32 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-09-06-addslashes,mysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5%21%21%21/</guid>
-      <description>
-
-&lt;p&gt;先看代码&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-    header(&#39;Content-Type: text/html; charset=GBK&#39;);
-    $input = chr(0xbf) . chr(0x27) . &#39; OR username = username; /*&#39;;
-    $value = addslashes($input);
-    $sql = &amp;quot;SELECT * FROM users WHERE username=&#39;{$value}&#39; AND password=&#39;123123&#39;;&amp;quot;;
-
-    echo $value;
-    echo &#39;&amp;lt;br&amp;gt;&#39;;
-    echo $sql;
-    echo &#39;&amp;lt;br&amp;gt;&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以上的demo, 输出结果为:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1e8d0o3a0l1j20lu02uq3c.jpg&#34; alt=&#34;输出结果&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;你也许会疑问, 为什么addslashes没有生效~~ 对于一个单引号 &amp;lsquo; 来说, addslashes 是有效果的, 但是这里不是一个实体的单引号字符.. 我们再看回去$value的赋值&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$value = chr(0xbf) . chr(0x27) . &#39; OR username = username /*&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;chr(0xbf) 和 chr(0x27)相连接, 构成一个双字节字符(0xbf27)… 而0xbf27只是一个人为合成的双字节, 不在GBK编码表里, 也就是说不是一个合法的GBK双字节字符… 系统会把这个双字节拆分为2个单字节解析(也就是0xbf和0x27), 而addslashes并不知道它是非法的双字节字符, 单引号的GBK编码就是chr(0x27), 单独使用使addslashes是可以识别的&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;我使用mysql_real_escape_string测试结果也一样, 无法识别这个非法的GBK双字节字符, 虽然无法识别, 但是使用mysql_query sql却没有绕过mysql的内部系统, 执行结果是空行数&amp;hellip;上网搜了一下, 网友说在mysql 5.0的某个版本被修复鸟~~ 但是mysql的更新链接已经失效, 所以也无法追寻是哪个版本后修复了这个问题… 但是手动复制sql进去phpmyadmin下执行 是可以执行的~~ 知道的朋友, 可以交流下!!&lt;/p&gt;
-
-&lt;p&gt;附上测试脚本:&lt;a href=&#34;https://github.com/Barbery/blog/blob/master/sql_inject_test.php&#34;&gt;https://github.com/Barbery/blog/blob/master/sql_inject_test.php&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;关于上面说的, 大家有什么不懂或需要详细了解, 推荐阅读:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://shiflett.org/blog/2006/jan/addslashes-versus-mysql-real-escape-string&#34;&gt;http://shiflett.org/blog/2006/jan/addslashes-versus-mysql-real-escape-string&lt;/a&gt;
-&lt;a href=&#34;http://ilia.ws/archives/103-mysql_real_escape_string-versus-Prepared-Statements.html&#34;&gt;http://ilia.ws/archives/103-mysql_real_escape_string-versus-Prepared-Statements.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
-
-&lt;p&gt;使用PDO的prepare操作&amp;hellip;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Prepared statements are 2 round-trips to the database for a single query.
-As soon as you prepare a query, it&amp;rsquo;s sent to the database with the placeholders you set. So the database engine takes that prepared statement and maps out the query and optimizes it for execution. Then when you call execute() only the values you give are sent to the database, with a reference to that query you just prepared. The database engine drops in the values and runs the query. This is totally immune to SQL injection, because the database engine already knows exactly where the values begin and end (the placeholder marker(s) you set), and therefore never need escaping.
-The reason SQL injection exists in the first place is because the entire query is interpreted upon execution, values and all. So if anything interferes with the quotes surrounding your values, the engine thinks that value has ended earlier than it really should, and thus a security hole is introduced. That problem is avoided entirely with prepared statements by letting the database engine know ahead of time exactly where to put each value you pass to it later on. There is no need for escaping and there is no need to worry.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;简单点说就是, 通过PDO的prepared来预处理, PDO在执行1条SQL语句时会发送2条指令, 1是要执行的SQL指令, 但是没有进行赋值, MYSQL对将要处理的SQL进行优化, 然后PDO再发送1条指令, 这条指令就是上条指令需要用到的变量, MYSQL收到后进行赋值然后执行, 这样就可以消除SQL注入&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;再简单点说就是, 例如SQL为:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT * FROM user WHERE username=&#39;barbery&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;只发送1条指令的情况下, mysql要从这条SQL中提取出barbery, 所以就会存在没转义, 等的注入攻击..&lt;/p&gt;
-
-&lt;p&gt;而如果使用PDO的话, 第一条指令会是这样发送&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT * FROM user WHERE username=?;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后第二条指令再把变量值 barbery发送过去&amp;hellip;MYSQL接受到第一条指令时就使用编译器进行优化(使用什么索引等等), 就把指令的执行内容和范围给确定了, 后面传过来的值是什么, 都不会影响SQL的执行内容&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;这里建议阅读 &lt;a href=&#34;http://zhangxugg-163-com.iteye.com/blog/1835721&#34;&gt;http://zhangxugg-163-com.iteye.com/blog/1835721&lt;/a&gt; 获得更直观的了解~~&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/</guid>
+      <description>先看代码&amp;hellip; &amp;lt;?php header(&#39;Content-Type: text/html; charset=GBK&#39;); $input = chr(0xbf) . chr(0x27) . &#39; OR username = username; /*&#39;; $value = addslashes($input); $sql = &amp;quot;SELECT * FROM users WHERE username=&#39;{$value}&#39; AND password=&#39;123123&#39;;&amp;quot;; echo $value; echo &#39;&amp;lt;br&amp;gt;&#39;; echo $sql; echo &#39;&amp;lt;br&amp;gt;&#39;; 以上的demo, 输出结果为: 你也许会疑问,</description>
     </item>
     
     <item>
@@ -304,76 +107,7 @@ The reason SQL injection exists in the first place is because the entire query i
       <pubDate>Sun, 18 Aug 2013 23:28:13 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;p&gt;php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以这里就说说后者, 其实两者功能上差别不大….&lt;/p&gt;
-
-&lt;p&gt;spl_autoload_register 这个方法正如其名, 注册一个autoload的自动加载函数&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;demo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-spl_autoload_register(&#39;load&#39;);
-function load($className)
-{
-    echo $className,&#39;&amp;lt;br&amp;gt;&#39;;
-    include &amp;quot;{$className}.php&amp;quot;;
-}
-
-$obj2 = new MyClass();
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如上面这个例子这样, 当实例化一个未加载的class的时候(即class_exists(class_name)===false), 会自动运行spl_autoload_register注册的自动加载函数(也就是这里的load), 然后会类名当初参数传递过去&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;比较牛B的是, 这个函数连继承的父类class 或者 接口都能捕捉到….&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-spl_autoload_register(&#39;load&#39;);
-function load($className)
-{
-    echo $className,&#39;&amp;lt;br&amp;gt;&#39;;
-    include &amp;quot;{$className}.php&amp;quot;;
-}
-
-$obj2 = new MyClass();
-
-
-//------------
-
-
-//MyClass.php
-class MyClass extends MyClass2
-{
-
-    function __construct()
-    {
-        parent::__construct();
-        echo &#39; I am class1&#39;;
-    }
-}
-
-
-//-------------
-
-
-//MyClass2.php
-class MyClass2 implements MyClass3
-{
-
-    function __construct()
-    {
-        echo &#39; I am class2&#39;;
-    }
-}
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以上代码运行结果是:
-MyClass
-MyClass2
-MyClass3&lt;/p&gt;
-
-&lt;p&gt;不仅如此, 如果使用命名空间, 也可以正确识别…一些PHP框架的自动加载机制也是基于这个自动加载方法来实现的, 所以一般都会在类命名上下功夫, 例如 APP_Model_User 这样来定位该类的所在目录&amp;hellip;&lt;/p&gt;
-</description>
+      <description>php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以</description>
     </item>
     
     <item>
@@ -382,309 +116,61 @@ MyClass3&lt;/p&gt;
       <pubDate>Tue, 04 Jun 2013 14:57:13 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</guid>
-      <description>&lt;p&gt;直接上代码,  不知道是php5.4版本的问题, 还是本来就这样&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$a[&#39;hello&#39;] = &#39;123&#39;;
-$a[&#39;xx&#39;] = NULL;
-
-var_dump(isset($a[&#39;hello&#39;])); //bool(true)
-
-var_dump(isset($a[&#39;xx&#39;])); //bool(false)
-
-# 应该使用这个来判断
-var_dump(array_key_exists(&#39;xx&#39;, $a)); //bool(true)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>直接上代码, 不知道是php5.4版本的问题, 还是本来就这样&amp;hellip; $a[&#39;hello&#39;] = &#39;123&#39;; $a[&#39;xx&#39;] = NULL; var_dump(isset($a[&#39;hello&#39;])); //bool(true) var_dump(isset($a[&#39;xx&#39;])); //bool(false) # 应该使用这个来判断 var_dump(array_key_exists(&#39;xx&#39;, $a)); //bool(true)</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（4） — 错误捕捉</title>
-      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%884%EF%BC%89%E2%80%94%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
+      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
       <pubDate>Wed, 20 Mar 2013 11:41:16 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%884%EF%BC%89%E2%80%94%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
-      <description>&lt;p&gt;前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，例如友好的错误输出，安全处理，防止跨域攻击等&lt;/p&gt;
-
-&lt;p&gt;好了，我们一步一步来。。。。这节要说的是错误捕捉。。。其实这个不难，只要理解2个方法就可以做好错误捕捉的程序。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;register_shutdown_function(&#39;functionname&#39;);
-set_error_handler(&#39;functionname&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;第一个方法，是注册一个shutdown的回调函数，当php脚本关闭时调用，当然这个关闭可以是正常的代码执行完毕，也可以是程序抛出致命错误关闭的脚本，那我怎么区分呢？别急，php还有一个方法叫error_get_last() 就像函数名说的那样，获取php最后一个错误信息，这样就可以判断是代码正常执行完毕还是遇到fatal error。。。&lt;/p&gt;
-
-&lt;p&gt;第二个方法，是注册一个error的回调函数，当脚本执行遇到错误时调用。&lt;/p&gt;
-
-&lt;p&gt;这2个方法最大的区别是，第一个是脚本关闭调用，也就是1次访问，只会调用一次(因为发生致命错误脚本就退出执行了)，二第二个方法的触发调用是发生错误的时候，例如访问数组中不存在的index，使用未定义的变量，就是这些warning，notice错误的捕捉。。。如果你想更了解二者的区别，建议访问php官网查看文档说明。。。&lt;/p&gt;
-
-&lt;p&gt;这里我就不贴代码了，有兴趣的同学，可以去github那里下回来慢慢看。。。&lt;/p&gt;
-
-&lt;p&gt;fork me：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34; title=&#34;https://github.com/Barbery/mvc.git&#34;&gt;https://github.com/Barbery/mvc.git&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;我们来看看最终的效果。。。我们来试试访问不存在的controller里的方法试试&lt;/p&gt;
-
-&lt;p&gt;先看看没有错误捕捉的时候：&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t2.qpic.cn/mblogpic/2560f99968ee8c74987e/2000&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再来对比下做了错误捕捉的时候&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/bf757af39c2f7ce667e2/2000&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;除了显示上比较友好外，还防止了文件名和路径的暴漏。。。其实还有一个很重要的功能是，log，记录代码运行的错误信息，对于一个网站管理者而言是非常重要的，可以及时知道网站的bug。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
+      <description>前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（3） — 视图</title>
-      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/</link>
+      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
       <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%883%EF%BC%89%E2%80%94%E8%A7%86%E5%9B%BE/</guid>
-      <description>&lt;p&gt;今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。&lt;/p&gt;
-
-&lt;p&gt;对于模板引擎而言，它的原理一般是这样，把模板引擎的语言替换成可执行的语言，然后把变量输出。。。&lt;/p&gt;
-
-&lt;p&gt;因为PHP本身就是一个良好了模板引擎，所以用原生的模板引擎是灰常方便和容易做到的。。。&lt;/p&gt;
-
-&lt;p&gt;index.html&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;&amp;lt;?php echo $title ?&amp;gt;&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;h1&amp;gt;&amp;lt;?php echo $content ?&amp;gt;&amp;lt;/h1&amp;gt;
-
-&amp;lt;?php if( ! empty($arr)) { ?&amp;gt;
-&amp;lt;ul&amp;gt;
-    &amp;lt;?php foreach($arr as $value) { ?&amp;gt;
-    &amp;lt;li&amp;gt;&amp;lt;?php echo $value ?&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;?php } ?&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;?php } ?&amp;gt;
-
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;想上面这样一个html页面，采用的就是原生的php模板引擎，服务器在你include这个页面时，会处理html中的PHP代码。&lt;/p&gt;
-
-&lt;p&gt;你也许会问，要是我想定制模板语言可以吗？答案当然是可以的，像我上面说的，用模板引擎的语言，只需要多做一步，就是把模板引擎的语言替换成标准的PHP语言。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;index_2.html&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;&amp;lt;?php echo $title ?&amp;gt;&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;h1&amp;gt;&amp;lt;?php echo $content ?&amp;gt;&amp;lt;/h1&amp;gt;
-
-&amp;lt;ifexist arr&amp;gt;
-&amp;lt;ul&amp;gt;
-    &amp;lt;for value = arr&amp;gt;
-    &amp;lt;li&amp;gt;&amp;lt;echo value&amp;gt;&amp;lt;/li&amp;gt;
-    &amp;lt;endfor&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;endexist&amp;gt;
-
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看看这个页面，发现和index.html 有什么不同吗，没错，就是在循环那里，我们用的不是标准的php语言，而是，按照自己的喜好，定义了几个模板语言，一个是&lt;ifexist xxx&gt;这个是判断xxx变量是否存在，而且不为空，后面那个&lt;for xx1=xx2&gt;是循环迭代xx2变量，中间的&lt;echo xx&gt; 是输出xx变量&lt;/p&gt;
-
-&lt;p&gt;怎么替换成标准语言呢？这个可以使用正则替换，因为字符串替换无法满足我们需求了。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;$pattern = array(
-    &#39;/&amp;lt;ifexist\s+(\w+)&amp;gt;/i&#39;,
-    &#39;/&amp;lt;for\s+(\w+)\s=\s(\w+)&amp;gt;/&#39;,
-    &#39;/&amp;lt;echo\s+(\w+)&amp;gt;/&#39;
-);
-
-$replacement = array(
-    &#39;&amp;lt;?php if( ! empty($\\1)){ ?&amp;gt;&#39;,
-    &#39;&amp;lt;?php foreach($\\2 as $\\1){ ?&amp;gt;&#39;,
-    &#39;&amp;lt;?php echo $\\1 ?&amp;gt;&#39;
-);
-
-$content = preg_replace($pattern, $replacement, $content);
-
-$search = array(&#39;&amp;lt;endexist&amp;gt;&#39;, &#39;&amp;lt;endfor&amp;gt;&#39;);
-
-
-$content = str_replace($search, &#39;&amp;lt;?php } ?&amp;gt;&#39;, $content);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;上面的正则就可以帮我们把刚刚定义的标签，转换成标准p hp语言。。。&lt;/p&gt;
-
-&lt;p&gt;转换之后是这样，请看图。&lt;/p&gt;
-
-&lt;p&gt;&lt;img title=&#34;&#34; src=&#34;http://t1.qpic.cn/mblogpic/f91723ad9e9641cf3804/460&#34; alt=&#34;&#34; width=&#34;&#34; height=&#34;&#34; border=&#34;0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;转换之后可以输出了吗？答案是不行的，因为你获取到html文件的内容的时候，php就已经解释了，那时候你还没替换成标准的php语言，所以，你现在输出的话，其中的php代码就没有执行。。。不过我们可以利用 php eval 这个函数，来强制要求执行其中的代码。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$content = eval(&#39;?&amp;gt;&#39;.$content);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意哦，要 ?&amp;gt;.$content 要不，php会把其中的html当成是php代码的执行，这样就会出错了。。。&lt;/p&gt;
-
-&lt;p&gt;刷新一下，ok，已经可以执行了~~~ &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;具体代码，请点下面的链接，在lesson3的文件夹里&lt;/p&gt;
-
-&lt;p&gt;代码托管在：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;github 欢迎fork&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
+      <description>今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（2）加载器</title>
-      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</link>
+      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
       <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B6%EF%BC%882%EF%BC%89&amp;/</guid>
-      <description>&lt;p&gt;上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。&lt;/p&gt;
-
-&lt;p&gt;虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。都是通过单例模式加载文件，而且把已加载的文件cache起来，避免重复加载。。。因为在开发业务的过程中，常常需要加载不同的模块，不同的类库等，MVC的loader可以帮助我们实现单例模式，更加符合开发需求。&lt;/p&gt;
-
-&lt;p&gt;下面我们开始动手，利用其原理，做一个简单的loader。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;首先，我们设计的加载器，要满足可以全局使用，无论在controller里还是在model、library里都可以使用。&lt;/p&gt;
-
-&lt;p&gt;其次，加载器要有缓存能力，即相同的文件只加载一次，相同的类只实例化一次。&lt;/p&gt;
-
-&lt;p&gt;最后，要能加载多种文件，model、library、helper。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;先解决第一步，怎么全局使用，最简单的办法就是定义一个全局的function，这样，在后面的不同类库，不同function里都可以调用这个全局function，进行加载文件。&lt;/p&gt;
-
-&lt;p&gt;第二步和第三步，要一起解决，定义一个单例模式的loader类，因为是单例模式，可以保证全局只有一份内容，这样的话，就可以利用数组把这些已加载的内容和对象cache起来，这样就可以避免了重复加载的问题。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;if ( ! function_exists(&#39;load&#39;))
-{
-    function load($name, $type=&#39;model&#39;, $data=array())
-    {
-        static $loader = NULL;
-        if (is_null($loader))
-        {
-            include (ROOT.&#39;/system/core/loader.php&#39;);
-            $loader = Loader::get_instance();
-        }
-
-        return $loader-&amp;gt;$type($name, $data);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面这个，就是我写的一个简单的全局函数 load，这个函数的作用就是为了可以全局调用，然后通过这个load函数，去调用loader类，由loader类负责加载文件，实例化，和缓存对象。。。下面我把loader的代码放出来给大家看看。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-
-class Loader
-{
-    private $_loaded_models = array();
-    private $_loaded_librarys = array();
-    private static $OBJ;
-
-    # 单例模式，不允许new对象
-    private function __construct()
-    {
-
-    }
-
-
-    public static function get_instance()
-    {
-        if (is_null(self::$OBJ))
-        {
-            $class = __CLASS__;
-            self::$OBJ = new $class;
-        }
-
-        return self::$OBJ;
-    }
-
-    public function model($model, $data=array())
-    {
-        $model = strtolower($model);
-
-        # 如果已经加载，则返回对象，避免重复加载
-        if (isset($this-&amp;gt;_loaded_models[$model]))
-        {
-            return $this-&amp;gt;_loaded_models[$model];
-        }
-
-        # 否则加载文件
-        include ROOT.&amp;quot;/application/models/{$model}.php&amp;quot;;
-
-        $class = ucfirst($model);
-        # 实例化对象
-        if (emptyempty($data))
-        {
-            $instance = new $class;
-        }
-        else
-        {
-            $instance = new $class($data);
-        }
-        # 把对象cache起来
-        $this-&amp;gt;_loaded_models[$model] = $instance;
-
-        return $instance;
-    }
-
-
-    public function library($library, $data=array())
-    {
-        $library = strtolower($library);
-
-        # 如果已经加载，则返回对象，避免重复加载
-        if (isset($this-&amp;gt;_loaded_librarys[$library]))
-        {
-            return $this-&amp;gt;_loaded_librarys[$library];
-        }
-
-        # 否则加载文件
-        include ROOT.&amp;quot;/application/librarys/{$library}.php&amp;quot;;
-
-        $class = ucfirst($library);
-        # 实例化对象
-        if (emptyempty($data))
-        {
-            $instance = new $class;
-        }
-        else
-        {
-            $instance = new $class($data);
-        }
-
-        # 把对象cache起来
-        $this-&amp;gt;_loaded_librarys[$library] = $instance;
-
-        return $instance;
-    }
-}
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;大家看到了没有，这个loader采用的是单例模式，虽然前面的function的设计已经可以保证不会重复实例化loader这个对象，但是为了真正可以保证全局只有一份loader对象，设计成单例模式是最保险的。。。&lt;/p&gt;
-
-&lt;p&gt;具体的测试例子请看代码。。。我把代码打包上传上来，有需要的就下载回去看看吧。。。下载后，解压，把lesson2文件夹放到你的www目录下，然后访问yourdomain/MVC/lesson2/index.php/index/test&amp;nbsp; 试试看吧。。。&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;这年头得与时俱进，我把代码托管在git上。。。&lt;/p&gt;
-
-&lt;p&gt;fork me ：&lt;a href=&#34;https://github.com/Barbery/mvc.git&#34;&gt;https://github.com/Barbery/mvc.git&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
+    </item>
+    
+    <item>
+      <title>学习如何写PHP MVC框架（1）-- 路由</title>
+      <link>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Thu, 07 Mar 2013 21:29:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
+      <description>说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。 第一篇先来简单点的，说说MVC框</description>
+    </item>
+    
+    <item>
+      <title>慎用PHP内置的Math函数</title>
+      <link>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 14 Dec 2012 12:40:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</guid>
+      <description>如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</description>
+    </item>
+    
+    <item>
+      <title>强大的XHProf</title>
+      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</link>
+      <pubDate>Mon, 19 Mar 2012 13:30:59 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</guid>
+      <description>XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</description>
     </item>
     
   </channel>

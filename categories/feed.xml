@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/categories/</link>
+    <description>Recent content in Categories on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="http://barbery.me/categories/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>开发</title>
+      <link>http://barbery.me/categories/%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/categories/%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>心情随笔</title>
+      <link>http://barbery.me/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Mon, 02 Jan 2017 22:24:44 +0800</pubDate>
+      
+      <guid>http://barbery.me/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>我的旅途</title>
+      <link>http://barbery.me/categories/%E6%88%91%E7%9A%84%E6%97%85%E9%80%94/</link>
+      <pubDate>Sun, 07 Apr 2013 17:38:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/categories/%E6%88%91%E7%9A%84%E6%97%85%E9%80%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>股票</title>
+      <link>http://barbery.me/categories/%E8%82%A1%E7%A5%A8/</link>
+      <pubDate>Mon, 09 Sep 2013 23:51:20 +0000</pubDate>
+      
+      <guid>http://barbery.me/categories/%E8%82%A1%E7%A5%A8/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

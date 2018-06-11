@@ -7,40 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 13 Nov 2011 19:06:53 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/blog/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>我的blog成立啦！</title>
-      <link>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6%EF%BC%81/</link>
+      <link>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</link>
       <pubDate>Sun, 13 Nov 2011 19:06:53 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6%EF%BC%81/</guid>
-      <description>&lt;p&gt;嘻嘻嘻嘻。。。经过一个下午的测试和调试。。。基本完成blog的搭建啦。。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;         首先感谢无私奉献的大无畏精神-&amp;mdash;互联网精神，以及各位为wordpress默默奉献的同学们。。。我相信，我们这代人都是深受互联网的帮助，深深的感受到互联网开放的重要性，可惜，咱们的XX党还在搞屏蔽，搞什么长城防火墙。。。算鸟，越扯越远了。。。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;还是谈谈这个blog的规划吧。。。本来这个域名是之前我和朋友们一起创业时一个项目用的，可惜，最终没有成功。反正这个域名也给钱了，丢着浪费，还不如开个blog，原离咱们各种“墙”的天朝。。。这个blog我打算变成自己的一个缩影，一个生活的写照或者说是记录人生历程上的点点滴滴。我打算分成几个类别，分别是：心情随笔，推荐评测，金融证券和未分类。这几个类别囊括了我生活中的点点滴滴，不排除以后新增些栏目类别，前提是它们已经成为我生活的一部分。。。&lt;/p&gt;
-
-&lt;p&gt;我希望我的blog能帮到一些人吧，继续发扬互联网的无私奉献精神。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;这个blog的制度中，最重要也是唯一 一条制度，就是诚信！说实话是这个blog的一切基础，如果这个达不到了，或者说真的被跨省了。。。那就只能关blog自保，而不是被恶魔所控制，成为恶魔的傀儡~&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p style=&#34;padding-left: 420px;&#34;&gt;
-  偶尔陶醉
-&lt;/p&gt;
-
-&lt;p style=&#34;padding-left: 420px;&#34;&gt;
-  写于2011年11月13日19:04:15
-&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</guid>
+      <description>嘻嘻嘻嘻。。。经过一个下午的测试和调试。。。基本完成blog的搭建啦。。。 首先感谢无私奉献的大无畏精神-&amp;mdash;互联网精神，以及各位为</description>
     </item>
     
   </channel>

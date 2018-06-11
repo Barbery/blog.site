@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 01 Dec 2013 19:54:06 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/luasocket/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/luasocket/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>说说luasocket http的使用</title>
@@ -15,49 +17,7 @@
       <pubDate>Sun, 01 Dec 2013 19:54:06 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>&lt;p&gt;luasocket包中的socket.http比较简单， 关于它的使用方法，网上内容也比较少， 常用的方法是GET和POST比较多。。。&lt;/p&gt;
-
-&lt;p&gt;GET的话， 可以直接传入URL地址，例如这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;local res, code = http.request(&amp;quot;http://127.0.0.1/&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;返回的2个参数中， res是http body的内容， 也就是请求网页的内容， code是http状态码， 返回200的话就表示正常返回。&lt;/p&gt;
-
-&lt;p&gt;也可以这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;local response_body = {}
-local res, code = http.request({
-  url = &amp;quot;http://127.0.0.1/&amp;quot;,
-  sink = ltn12.sink.table(response_body)
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果传入的是table的话， 就需要用一个容器来接收http body的内容， 也就是sink那个参数&lt;/p&gt;
-
-&lt;p&gt;POST的话就要这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;local response_body = {}
-local post_data = &#39;asd&#39;;
-res, code = http.request{
-  url = &amp;quot;http://127.0.0.1/post.php&amp;quot;,
-  method = &amp;quot;POST&amp;quot;,
-  headers =
-  {
-    [&amp;quot;Content-Type&amp;quot;] = &amp;quot;application/x-www-form-urlencoded&amp;quot;,
-    [&amp;quot;Content-Length&amp;quot;] = #post_data,
-  },
-  source = ltn12.source.string(&#39;data=&#39; .. post_data),
-  sink = ltn12.sink.table(response_body)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里注意记得method传入POST， 因为默认是GET， 然后就是要注意下headers参数， 由一个table组成， key为header， value为header内容， 最后注意的就是source参数， 这里是填入POST的参数， 多个数据的情况用&amp;amp;隔开， 例如&amp;rdquo;data1=a&amp;amp;data2=b&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;POST这里的source和sink参数分别是由ltn2.source和ltn12.sink组成， 除了我举例的string和table， 还有file类型。。。&lt;/p&gt;
-
-&lt;p&gt;想了解更多？ 看看拓展阅读： &lt;a href=&#34;http://w3.impa.br/~diego/software/luasocket/ltn12.html&#34;&gt;http://w3.impa.br/~diego/software/luasocket/ltn12.html&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>luasocket包中的socket.http比较简单， 关于它的使用方法，网上内容也比较少， 常用的方法是GET和POST比较多。。。 GET的</description>
     </item>
     
   </channel>

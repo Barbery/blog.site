@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 30 Nov 2013 17:35:22 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/luarocks/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/luarocks/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>为openresty的luajit安装luarocks</title>
@@ -15,22 +17,7 @@
       <pubDate>Sat, 30 Nov 2013 17:35:22 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://luarocks.org/&#34;&gt;lualocks&lt;/a&gt;是一个包管理器，类似nodejs的npm那样。。。总之装了以后安装第三方包就很方便，路径什么的，人家都帮你搞掂，不用自己每次都要&amp;ndash;prefix。。。&lt;/p&gt;
-
-&lt;p&gt;因为openresty已经装了luajit，所以就不需要装luajit了，下载好&lt;a href=&#34;http://luarocks.org/&#34;&gt;luarocks&lt;/a&gt;，解压，用命令行进入刚刚解压出来的文件夹，输入以下代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo ./configure --with-lua=&amp;quot;/usr/local/openresty/luajit&amp;quot; --lua-suffix=&amp;quot;jit&amp;quot; --with-lua-include=&amp;quot;/usr/local/openresty/luajit/include/luajit-2.0&amp;quot;
-make
-sudo make install
-sudo ln -s /usr/local/openresty/luajit/bin/luajit-2.0.2 /usr/local/bin/luajit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最后一句是把openresty的luajit，软连接到系统路径下，这样想要在命令行下玩luajit就可以随时随地了。。。&lt;/p&gt;
-
-&lt;h4 id=&#34;ok-enjoy-luajit&#34;&gt;ok, enjoy luajit!&lt;/h4&gt;
-</description>
+      <description>lualocks是一个包管理器，类似nodejs的npm那样。。。总之装了以后安装第三方包就很方便，路径什么的，人家都帮你搞掂，不用自己每次</description>
     </item>
     
   </channel>

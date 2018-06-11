@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Apr 2012 19:11:39 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/dns/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/dns/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>解决cmwrap wap穿越上不了cmnet的问题</title>
@@ -15,50 +17,16 @@
       <pubDate>Tue, 03 Apr 2012 19:11:39 +0000</pubDate>
       
       <guid>http://barbery.me/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;如题，cmwrap之前一直用的好好的，2个月前不知道干什么了，一直用穿越不了cmwap上cmnet。难得清明有假期宅在家里，就把这个问题解决了。。。&lt;/p&gt;
-
-&lt;p&gt;根本原因是google的dns 8.8.4.4被墙了，所以导致上不了cmnet节点，解决办法是上网找一个中国移动cmnet的dns(我是用移动卡)，建议找与你所在地对应，这样理论上速度会快一点。。由于我是广东这边的，所以我找的是广东的cmnet dns节点，211.137.130.19 这是我正在使用的dns，希望能帮到你吧&lt;/p&gt;
-</description>
+      <description>如题，cmwrap之前一直用的好好的，2个月前不知道干什么了，一直用穿越不了cmwap上cmnet。难得清明有假期宅在家里，就把这个问题解决</description>
     </item>
     
     <item>
       <title>海外站长福音之cloundflare 免费 DNS 加速</title>
-      <link>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
+      <link>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9dns%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Tue, 20 Dec 2011 21:19:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
-      <description>&lt;p&gt;如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是国外知名的DNS加速器，平时我们被墙就是因为DNS污染的问题，用了DNS加速后大大可以减少被墙的概率，而且，cloundflare还可以免费进行分布式缓存，在全球各节点缓存静态文件进行加速。。总之功能多多，最重要是免费。。。嘎嘎！&lt;/p&gt;
-
-&lt;p&gt;OK，言归正传，首先，先去cloundflare注册个账号先：&lt;a title=&#34;www.cloundflare.com&#34; href=&#34;http://www.cloundflare.com&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34; &gt;www.cloundflare.com&lt;/a&gt; ，注册完后回到首页。&lt;/p&gt;
-
-&lt;p&gt;下面看图：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image12.png&#34;&gt;&lt;img style=&#34;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb12.png&#34; alt=&#34;image&#34; width=&#34;644&#34; height=&#34;377&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;很多人都不知道可以选中文，，，汗，不过也没关系，比较简单，大家都能看的懂。。。。至于怎么添加域名和设置DNS那些我就不啰嗦了，网上教程一大把。。。这里主要说的是教大家添加后，怎么利用cloundflare 加速网站加载速度。。。&lt;/p&gt;
-
-&lt;p&gt;事不宜迟，再你添加完域名，设置好MX记录后，等1~2个小时生效，生效后在首页添加域名的下方有你的域名记录，像我上面那个图，下面就有我stutostu.com的域名，记录的右边有设置，选择第二个。&lt;/p&gt;
-
-&lt;p&gt;如图：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image13.png&#34;&gt;&lt;img style=&#34;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb13.png&#34; alt=&#34;image&#34; width=&#34;299&#34; height=&#34;195&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;点击后，就进入了一个设置的页面。。。这里我建议大家还是选中文，否则多少有些看不懂。。。&lt;/p&gt;
-
-&lt;p&gt;这里cloundflare默认的选项几乎不用改动，很多的选择都是最佳的了，这里我说说默认没选，但是选了更佳的选项。&lt;/p&gt;
-
-&lt;p&gt;第一个要开的是IPV6，虽然是测试版，但是百利而无一害的功能，当然要开启啦。。。如果你的网站多是在校学生浏览，那么开这个功能简直提速几倍，因为教育网的IPV6速度极快。。。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image14.png&#34;&gt;&lt;img style=&#34;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb14.png&#34; alt=&#34;image&#34; width=&#34;644&#34; height=&#34;76&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;第二个要开的是mini功能，自动压缩js，css，html  大大加快传输的速度，你懂的。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image15.png&#34;&gt;&lt;img style=&#34;background-image: none; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&#34; title=&#34;image&#34; src=&#34;http://www.stutostu.com/wp-content/uploads/2011/12/image_thumb15.png&#34; alt=&#34;image&#34; width=&#34;644&#34; height=&#34;76&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;剩下的功能，像防盗链，数据分析那些，都是可开可不开，大家自行把握吧。对我而言，也对大多数海外主机的同志们而言，最大的功能是防止抽风，拒绝电信的DNS污染。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9dns%E5%8A%A0%E9%80%9F/</guid>
+      <description>如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是</description>
     </item>
     
   </channel>

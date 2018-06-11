@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 21 Jun 2013 15:21:24 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/wordpress/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/wordpress/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>说说wordpress页面静态化多说插件和admin bar的问题</title>
@@ -15,22 +17,7 @@
       <pubDate>Fri, 21 Jun 2013 15:21:24 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了….&lt;/p&gt;
-
-&lt;p&gt;要想去掉admin-bar这个简单, 如果你的博客只有你1个人是管理员, 那你可以到用户设置里面把是否显示那个勾去掉就可以了…要是你是多管理员的情况下, 那这样做就不好了, 要每个人都改一下多麻烦… 你可以直接修改wp-include/admin-bar.php 文件  就在第一个函数 _wp_admin_bar_init 直接return false,&lt;/p&gt;
-
-&lt;p&gt;就像这样:
-&lt;img src=&#34;http://ww4.sinaimg.cn/large/6915c7dcjw1e5v0h0dujhj209m0393yj.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;让他初始化失败, 这样就不会加载admin bar了,也不会在页面那里留下20px的空白条….&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;多说自动登陆的话, 这个问题是由于把auth_key 也缓存进去了, 只要把wp-content/plugins/duoshuo/WordPress.php 这个文件的 buildQuery 这个方法里面的关键数组注释掉就可以了…&lt;/p&gt;
-
-&lt;p&gt;就像这样&amp;hellip;
-&lt;img src=&#34;http://ww2.sinaimg.cn/large/6915c7dcjw1e5v0mzy155j20jb06d0th.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了…. 要想去掉admin-bar这</description>
     </item>
     
     <item>
@@ -39,121 +26,16 @@
       <pubDate>Fri, 14 Jun 2013 20:03:25 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
-      <description>&lt;p&gt;因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;优化的重点是放在静态资源的加载速度上, 虽然域名没备案, 走的是日本节点反向代理国内的节点, 但是加载页面的html再慢, 也就2~3s加载完了… 但是其他的静态资源 例如css js 和图片那些, 要是把这些优化好了, 页面加载的速度也就非常可观了&amp;hellip;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;静态资源不要用绑定的域名, 用sae自带的二级域名, 因为这样就不用走海外节点, 加载速度快很多,至少快1倍左右&amp;hellip;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;一些大的类库, 不要用自己服务器加载, 像jquery, boostrap, jquery-ui 等等这些类库 有100k那么大, 应该用一些共用CDN资源来加载, 例如百度这个:&lt;a href=&#34;http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs#jQuery&#34;&gt;http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs#jQuery&lt;/a&gt;  或者 新浪这个:&lt;a href=&#34;http://sae.sina.com.cn/?m=devcenter&amp;amp;catId=147&#34;&gt;http://sae.sina.com.cn/?m=devcenter&amp;amp;catId=147&lt;/a&gt;  都是非常不错的外链资源…. 起码比链接到自己服务器的类库加载速度快1倍以上&amp;hellip;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;图片, 特别是背景图等大图, 可以考虑外链, 你也许会问, 现在哪里有那么好的地方给你外链图片? 嘿,还别说, 还真有一个….就是微博, 当然, 这里我推荐使用 围脖是个好图床: &lt;a href=&#34;http://weibotuchuang.sinaapp.com/bookmark.html&#34;&gt;http://weibotuchuang.sinaapp.com/bookmark.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;打开SAE appconfig的 GZIP压缩 以及 设置好静态资源缓存时间&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;以上都做好了….. 速度就能明显上来了~~&lt;/p&gt;
-</description>
+      <description>因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip; 优化的重点是放在静态资源的加载速度上</description>
     </item>
     
     <item>
       <title>利用XMLRPC 离线发布wordpress 文章</title>
-      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8xmlrpc%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
       <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
-      <description>&lt;p&gt;还是直接上demo吧～～这样可以让大家更容易理解。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-include(&amp;quot;xmlrpc.inc&amp;quot;);
-$GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;;
-$c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80);
-$c-&amp;gt;return_type = &#39;phpvals&#39;;
-$content[&#39;title&#39;]=&amp;quot;标题&amp;quot;; //标题
-$content[&#39;description&#39;]=&amp;quot;正文内容&amp;lt;img src=&#39;upload.jpg&#39; /&amp;gt;打死打伤阿斯顿&amp;quot;; //内容
-$content[&#39;mt_keywords&#39;]=&amp;quot;标签1,标签2&amp;quot;; //标签
-$content[&#39;wp_password&#39;]=&amp;quot;&amp;quot;; //文章密码，输入后显示加密
-$content[&#39;categories&#39;] = array(&amp;quot;老木头&amp;quot;); //分类名
-//如果需要查看是否存在此类，可以调用wp.getCategories来调用
-/*
-wp.getCategory demo
-$x = new xmlrpcmsg( &#39;wp.getCategories&#39; ,
-    array
-    (
-        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
-        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
-        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
-    )
-);
-$r =$c-&amp;gt;send($x);
-print_r($r);
-*/
-//新建分类
-$param = array(
-    &#39;name&#39; =&amp;gt; &#39;偶尔陶醉&#39;,
-    &#39;slug&#39; =&amp;gt; &#39;something&#39;,//别名
-    &#39;parent_id&#39; =&amp;gt; 3,//父类ID，如果填0则为顶级分类，如果填其他分类ID，则为该类的子类
-    &#39;description&#39; =&amp;gt; &#39;偶尔陶醉的分类&#39;
-);
-//调用接口
-$x = new xmlrpcmsg( &#39;wp.newCategory&#39; ,
-    array
-    (
-        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
-        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
-        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
-        php_xmlrpc_encode( $param )
-    )
-);
-$r =$c-&amp;gt;send($x);
-//匹配图片，如果有图片，需要在发表文章前调用上传接口 把图片上传上去
-$pattern = &amp;quot;/&amp;lt;img.+src=(&#39;|\&amp;quot;|)?(.*)(\\1)([\s].*)?&amp;gt;/ismUe&amp;quot;;
-preg_match_all ($pattern,$content[&#39;description&#39;],$matches);
-$img = array(
-    &#39;name&#39;=&amp;gt;$matches[2][0],
-    &#39;type&#39;=&amp;gt;mime_content_type( $matches[2][0] ),
-    &#39;bits&#39;=&amp;gt;base64_encode(file_get_contents($matches[2][0])) //这里注意一定要转为字符串
-);
-//如果你安装我上述的操作进行，记得修改wordpress wp-include/class-wp-xmlrpc-server.php 文件
-//找到4528行 或者 找到 function mw_newMediaObject 把 $bits = $data[&#39;bits&#39;]; 修改成 $bits = base64_decode($data[&#39;bits&#39;]);
-//调用上传接口
-$x = new xmlrpcmsg(
-    &#39;metaWeblog.newMediaObject&#39;,
-    array
-    (
-        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
-        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
-        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
-        php_xmlrpc_encode($img)
-    )
-);
-$c-&amp;gt;return_type = &#39;phpvals&#39;;
-$r =$c-&amp;gt;send($x);
-//把文章中的图片地址替换成上传后的
-$content[&#39;description&#39;] = str_replace( $matches[2][0] ,$r-&amp;gt;val[&#39;url&#39;] an&amp;gt;/* 返回上传后的图片地址 */ , $content[&#39;description&#39;] );
-$x = new xmlrpcmsg(
-    &amp;quot;metaWeblog.newPost&amp;quot;,
-    array(
-        php_xmlrpc_encode(&amp;quot;1&amp;quot;), //BLOG ID 填1就可以了
-        php_xmlrpc_encode(&amp;quot;用户名&amp;quot;),
-        php_xmlrpc_encode(&amp;quot;密码&amp;quot;),
-        php_xmlrpc_encode($content),
-        php_xmlrpc_encode(&amp;quot;1&amp;quot;)
-    )
-); //立即发表
-$r =$c-&amp;gt;send($x);
-if ($r-&amp;gt;errno==&amp;quot;0&amp;quot;)
-    echo &amp;quot;发表成功，文章ID为：&amp;quot;.$r-&amp;gt;val;
-else
-    echo &amp;quot;出错了&amp;quot;;
-
-print_r($r);
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8xmlrpc%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <description>还是直接上demo吧～～这样可以让大家更容易理解。。。 &amp;lt;?php include(&amp;quot;xmlrpc.inc&amp;quot;); $GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;; $c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80); $c-&amp;gt;return_type = &#39;phpvals&#39;; $content[&#39;title&#39;]=&amp;quot;标题&amp;qu</description>
     </item>
     
     <item>
@@ -162,48 +44,16 @@ print_r($r);
       <pubDate>Sun, 22 Jan 2012 10:45:06 +0000</pubDate>
       
       <guid>http://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
-      <description>&lt;p&gt;因为回家过年了，老家又没电脑，一直思索有没有什么手机软件可以管理下博客，或者回复下留言。这不，官方出了个wordpres for android 手机软件，本人使用后感觉不错，分享给大家。&lt;/p&gt;
-
-&lt;p&gt;这软件功能齐全，不愧是官方出的。可以写普通博客，也可以写视频博客。可以管理，编辑文章，回复留言等日常管理功能。。。&lt;/p&gt;
-
-&lt;p&gt;而且，软件的编辑器也不错。我这篇文章就是用这个软件写d。。。&lt;/p&gt;
-
-&lt;p&gt;以后无论回家，外出，甚至是在外听讲座都可以随时写博客，随时管理博客咯，↖(^ω^)↗&lt;/p&gt;
-</description>
+      <description>因为回家过年了，老家又没电脑，一直思索有没有什么手机软件可以管理下博客，或者回复下留言。这不，官方出了个wordpres for android 手机软件，本人使</description>
     </item>
     
     <item>
       <title>我的blog成立啦！</title>
-      <link>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6%EF%BC%81/</link>
+      <link>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</link>
       <pubDate>Sun, 13 Nov 2011 19:06:53 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6%EF%BC%81/</guid>
-      <description>&lt;p&gt;嘻嘻嘻嘻。。。经过一个下午的测试和调试。。。基本完成blog的搭建啦。。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;         首先感谢无私奉献的大无畏精神-&amp;mdash;互联网精神，以及各位为wordpress默默奉献的同学们。。。我相信，我们这代人都是深受互联网的帮助，深深的感受到互联网开放的重要性，可惜，咱们的XX党还在搞屏蔽，搞什么长城防火墙。。。算鸟，越扯越远了。。。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;还是谈谈这个blog的规划吧。。。本来这个域名是之前我和朋友们一起创业时一个项目用的，可惜，最终没有成功。反正这个域名也给钱了，丢着浪费，还不如开个blog，原离咱们各种“墙”的天朝。。。这个blog我打算变成自己的一个缩影，一个生活的写照或者说是记录人生历程上的点点滴滴。我打算分成几个类别，分别是：心情随笔，推荐评测，金融证券和未分类。这几个类别囊括了我生活中的点点滴滴，不排除以后新增些栏目类别，前提是它们已经成为我生活的一部分。。。&lt;/p&gt;
-
-&lt;p&gt;我希望我的blog能帮到一些人吧，继续发扬互联网的无私奉献精神。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;这个blog的制度中，最重要也是唯一 一条制度，就是诚信！说实话是这个blog的一切基础，如果这个达不到了，或者说真的被跨省了。。。那就只能关blog自保，而不是被恶魔所控制，成为恶魔的傀儡~&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p style=&#34;padding-left: 420px;&#34;&gt;
-  偶尔陶醉
-&lt;/p&gt;
-
-&lt;p style=&#34;padding-left: 420px;&#34;&gt;
-  写于2011年11月13日19:04:15
-&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</guid>
+      <description>嘻嘻嘻嘻。。。经过一个下午的测试和调试。。。基本完成blog的搭建啦。。。 首先感谢无私奉献的大无畏精神-&amp;mdash;互联网精神，以及各位为</description>
     </item>
     
   </channel>

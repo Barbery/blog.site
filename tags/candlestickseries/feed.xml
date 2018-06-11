@@ -7,24 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 10 Jul 2012 17:25:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/candlestickseries/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/candlestickseries/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>终于解决了FLEX CandlestickSeries 变形 缩小的问题</title>
-      <link>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86flexcandlestickseries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 10 Jul 2012 17:25:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;虽然，其中的原理我不太清楚。。。但是，还是幸运的解决了这个问题。。。这是个神奇的问题，上网搜索竟然没有人问过这样的问题。。。我擦。。。这是间接说明我太水了么？&lt;/p&gt;
-
-&lt;p&gt;ok吧，言归正传，写出来，希望帮到一些新手。。。&lt;/p&gt;
-
-&lt;p&gt;在 CandlestickChart 中使用 CandlestickSeries 和 LineSeries 应该是股票图常常用到的，就是K线和均线，但是，当你加入lineseries 也就是均线时，你会发现，CandlestickSeries 的K线竟然 缩小了，任你如何设置，任你如何重写renderer 还是不行。。。今日RP爆发，弱弱的试试，把CandlestickChart 改成 LineChart 就解决问题了。。。也就是说，如果你想 CandlestickSeries 和 LineSeries&amp;nbsp; 共存使用，而 CandlestickSeries 又不变形，那么千万别用 CandlestickChart ，用LineChart 就不会出现这个问题了。。。。&amp;ndash;！弱爆了！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;修正一下，应该用columnchart才对，linechart的话会导致最左和最右2个item有一半看不见~&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86flexcandlestickseries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>虽然，其中的原理我不太清楚。。。但是，还是幸运的解决了这个问题。。。这是个神奇的问题，上网搜索竟然没有人问过这样的问题。。。我擦。。。这是间</description>
     </item>
     
   </channel>

@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Dec 2013 00:25:35 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/libevent/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/libevent/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>安装httpsqs问题小记</title>
@@ -15,26 +17,7 @@
       <pubDate>Tue, 03 Dec 2013 00:25:35 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
-      <description>&lt;p&gt;遇到安装libevent-2.0.12-stable 报一大堆错误的话，可能是版本不兼容，去官网：&lt;a href=&#34;http://libevent.org/&#34;&gt;http://libevent.org/&lt;/a&gt; 下载最新stable版本安装即可&lt;/p&gt;
-
-&lt;p&gt;遇到&lt;strong&gt;bzlib.h is required&lt;/strong&gt;的话，需要安装bzlib库&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install libbz2-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;遇到&lt;strong&gt;event.h: No such file or directory&lt;/strong&gt; 的时候需要重新安装libevent库，出现这个错误是因为找不到libevent库的event.h文件，编译时建议不要加&amp;ndash;prefix指定路径，用系统默认路径可以解决这个问题。。&lt;/p&gt;
-
-&lt;p&gt;最后，如果启动遇到&lt;/p&gt;
-
-&lt;p&gt;httpsqs: error while loading shared libraries: libevent-2.0.so.5: cannot open shared object file: No such file or directory&lt;/p&gt;
-
-&lt;p&gt;需要做一个软连接到/usr/lib目录下，如果你是默认路径安装libevent的话，只需要&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/local/lib/libevent-2.0.so.5.1.9 /usr/lib/libevent-2.0.so.5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;即可&lt;/p&gt;
-</description>
+      <description>遇到安装libevent-2.0.12-stable 报一大堆错误的话，可能是版本不兼容，去官网：http://libevent.org/ 下载</description>
     </item>
     
   </channel>

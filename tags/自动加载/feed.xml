@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 18 Aug 2013 23:28:13 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>说说php自动加载类方法</title>
@@ -15,76 +17,7 @@
       <pubDate>Sun, 18 Aug 2013 23:28:13 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;p&gt;php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以这里就说说后者, 其实两者功能上差别不大….&lt;/p&gt;
-
-&lt;p&gt;spl_autoload_register 这个方法正如其名, 注册一个autoload的自动加载函数&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;demo:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-spl_autoload_register(&#39;load&#39;);
-function load($className)
-{
-    echo $className,&#39;&amp;lt;br&amp;gt;&#39;;
-    include &amp;quot;{$className}.php&amp;quot;;
-}
-
-$obj2 = new MyClass();
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如上面这个例子这样, 当实例化一个未加载的class的时候(即class_exists(class_name)===false), 会自动运行spl_autoload_register注册的自动加载函数(也就是这里的load), 然后会类名当初参数传递过去&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;比较牛B的是, 这个函数连继承的父类class 或者 接口都能捕捉到….&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
-spl_autoload_register(&#39;load&#39;);
-function load($className)
-{
-    echo $className,&#39;&amp;lt;br&amp;gt;&#39;;
-    include &amp;quot;{$className}.php&amp;quot;;
-}
-
-$obj2 = new MyClass();
-
-
-//------------
-
-
-//MyClass.php
-class MyClass extends MyClass2
-{
-
-    function __construct()
-    {
-        parent::__construct();
-        echo &#39; I am class1&#39;;
-    }
-}
-
-
-//-------------
-
-
-//MyClass2.php
-class MyClass2 implements MyClass3
-{
-
-    function __construct()
-    {
-        echo &#39; I am class2&#39;;
-    }
-}
-?&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以上代码运行结果是:
-MyClass
-MyClass2
-MyClass3&lt;/p&gt;
-
-&lt;p&gt;不仅如此, 如果使用命名空间, 也可以正确识别…一些PHP框架的自动加载机制也是基于这个自动加载方法来实现的, 所以一般都会在类命名上下功夫, 例如 APP_Model_User 这样来定位该类的所在目录&amp;hellip;&lt;/p&gt;
-</description>
+      <description>php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以</description>
     </item>
     
   </channel>

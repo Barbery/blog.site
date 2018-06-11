@@ -7,20 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 05 Jul 2012 15:41:00 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/timer/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/timer/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>FLEX Timer计时器stop方法停止不了的原因</title>
-      <link>http://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
+      <link>http://barbery.me/post/2012-07-05-flextimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Thu, 05 Jul 2012 15:41:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
-      <description>&lt;p&gt;今天发生一个奇异的问题，Timer方法，竟然注销不掉，断点调试，发现没什么问题，明明都成功调用了stop() ，但是就是停止不了。。。&lt;/p&gt;
-
-&lt;p&gt;经过自己的不断尝试，终于发现了，问题竟然出在，Timer的对象，不能替换，或者说，替换之前一定要注销掉原来的。。。一般出现在ViewStack里面的NavigatorContent里面的Timer事件。。。如果2次载入的NavigatorContent都是相同的，如果你没有在第二次载入之前注销掉Timer，而是在第二次重新new Timer 重新赋值的话，那么就会出现这种问题，就是，旧的Timer没有被完全被新的替换，可能还残留在内存中，所以。。。即使你对新的Timer调用stop() ，对残留在内存中的Timer却毫无作用。。。（PS：这算是BUG么？）&lt;/p&gt;
-
-&lt;p&gt;了解了问题之后，解决就简单了，每次切换ViewStack记得注销掉相应的Timer即可，这样就不会出现这个的问题了。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2012-07-05-flextimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
+      <description>今天发生一个奇异的问题，Timer方法，竟然注销不掉，断点调试，发现没什么问题，明明都成功调用了stop() ，但是就是停止不了。。。 经过自己</description>
     </item>
     
   </channel>

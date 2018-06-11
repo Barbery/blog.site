@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 21 Aug 2016 11:02:31 +0800</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/ngrok/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/ngrok/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>分享一个ngrok的免费server</title>
@@ -15,27 +17,7 @@
       <pubDate>Sun, 21 Aug 2016 11:02:31 +0800</pubDate>
       
       <guid>http://barbery.me/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</guid>
-      <description>&lt;p&gt;ngrok是一个开源的内网穿透的工具，简单点说就是解决外网访问内网的问题，你可以把外网的80端口随意绑定到
-内网的某个端口上，日常开发中多用于调试微信支付或者微信的测试公众号。&lt;/p&gt;
-
-&lt;p&gt;虽说ngrok是开源的，但是还是需要一个server端去做转发，如果自己搞就太麻烦了，这里推荐一个不错的免费ngrok server
-(&lt;a href=&#34;http://www.ngrok.cc/&#34;&gt;http://www.ngrok.cc/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;注册一个账号，登陆进去就可以创建一个穿透的隧道，把需要绑定的信息填写好，就会自动生成一个clientid，
-把客户端下载到本地解压出来，执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./sunny clientid {你的clientid}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;启动完毕后，你会看到有个&lt;a href=&#34;http://127.0.0.1:4040/http/in&#34;&gt;http://127.0.0.1:4040/http/in&lt;/a&gt; 的地址，这个是ngrok的web管理界面，
-可以看到所有的request和response，是不是很方便呐！&lt;/p&gt;
-
-&lt;p&gt;目前ngrok还没能设置以daemon的方式启动，不过我们可以用别的方法来实现在后台运行，只要把ngrok的日志输出重定向一下，
-就可以使用nohup命令来启动，例如这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;nohup ./sunny -log=stdout &amp;gt; /dev/null &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>ngrok是一个开源的内网穿透的工具，简单点说就是解决外网访问内网的问题，你可以把外网的80端口随意绑定到 内网的某个端口上，日常开发中多用于</description>
     </item>
     
   </channel>

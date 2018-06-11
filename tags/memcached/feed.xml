@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2013 16:25:16 +0000</lastBuildDate>
-    <atom:link href="http://barbery.me/tags/memcached/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://barbery.me/tags/memcached/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>mac 下配置memcached小记</title>
@@ -15,42 +17,7 @@
       <pubDate>Wed, 08 May 2013 16:25:16 +0000</pubDate>
       
       <guid>http://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
-      <description>&lt;p&gt;用homebrew安装的话，是很简单的，不过由于自己不懂，走了很多弯路。。。&lt;/p&gt;
-
-&lt;p&gt;简单点说&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;先安装memcached服务，用 brew install memcached 安装&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;安装memcached 的php扩展， 用 brew install php54-memcached （ps:如果你的php版本是5.3.x 那么就是brew install php53-memcached）&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;安装完后，记得要启动memcached服务，就和nginx那样，不启动的话，你在php使用是没办法连得上服务器的。。。&lt;/p&gt;
-
-&lt;p&gt;如果你和我这样，没什么只是用于本地开发，没特别需求的话可以直接启动&lt;/p&gt;
-
-&lt;p&gt;memcached -d 即可&lt;/p&gt;
-
-&lt;p&gt;最后附上 memcached的一些参数说明：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;-d 启动为守护进程&lt;/p&gt;
-
-&lt;p&gt;-m &lt;num&gt; 分配给Memcached使用的内存数量，单位是MB，默认为64MB&lt;/p&gt;
-
-&lt;p&gt;-u &lt;username&gt; 运行Memcached的用户，仅当作为root运行时&lt;/p&gt;
-
-&lt;p&gt;-l &lt;ip\_addr&gt; 监听的服务器IP地址，默认为环境变量INDRR_ANY的值&lt;/p&gt;
-
-&lt;p&gt;-p &lt;num&gt; 设置Memcached监听的端口，最好是1024以上的端口&lt;/p&gt;
-
-&lt;p&gt;-c &lt;num&gt; 设置最大并发连接数，默认为1024&lt;/p&gt;
-
-&lt;p&gt;-P &lt;file&gt; 设置保存Memcached的pid文件，与-d选择同时使用&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>用homebrew安装的话，是很简单的，不过由于自己不懂，走了很多弯路。。。 简单点说 先安装memcached服务，用 brew install memcached 安装 安装memca</description>
     </item>
     
   </channel>

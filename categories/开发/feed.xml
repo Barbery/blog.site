@@ -6,172 +6,36 @@
     <description>Recent content in 开发 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 19 Mar 2017 21:29:27 +0800</lastBuildDate>
-    <atom:link href="http://barbery.me/categories/%E5%BC%80%E5%8F%91/feed/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jun 2018 19:22:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://barbery.me/categories/%E5%BC%80%E5%8F%91/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决go NullTime的问题</title>
+      <link>http://barbery.me/post/2018-06-11-fix-go-null-time/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/post/2018-06-11-fix-go-null-time/</guid>
+      <description>我们经常会使用time.Time的go类型和mysql的datetime类型做关联，经常会遇到这样的报错： incorrect datetime value: &#39;0000-00-00&#39; 也许你查了资料，很多人建议</description>
+    </item>
     
     <item>
       <title>PHP高并发下问题总结</title>
-      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
+      <link>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</link>
       <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
-      <description>
-
-&lt;p&gt;上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。
-这么大的流量突然涌入，真是把我们杀个措手不及，最终还是要把接口往GO迁才能扛下来。其中也暴露出了不少问题。&lt;/p&gt;
-
-&lt;h2 id=&#34;phpredis问题&#34;&gt;phpredis问题&lt;/h2&gt;
-
-&lt;h3 id=&#34;超时问题&#34;&gt;超时问题&lt;/h3&gt;
-
-&lt;p&gt;phpredis应该说是大家非常普遍使用的一个redis client，以往在单机redis下使用情况也非常稳定。但是非常遗憾的是，
-在redis cluster模式下，phpredis非常不稳定，经常会出现超时的异常错误，例如：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;RedisClusterException: Timed out attempting to find data in the correct node!&lt;/p&gt;
-
-&lt;p&gt;ErrorException: RedisCluster::setex(): connect() failed: Connection timed out&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;第一个问题的话，是早期的phpredis的一个BUG，使用新的版本或者使用phpredis的develop分支就可以解决了。
-我们使用了最新的develop分之后，第一个问题就没再出现了，转而是常常出现问题而这种连接超时的情况，
-这个问题暂时不知道如何解决。&lt;/p&gt;
-
-&lt;h3 id=&#34;redis集群负载不均问题&#34;&gt;redis集群负载不均问题&lt;/h3&gt;
-
-&lt;p&gt;使用phpredis还有一个问题是，读取策略的问题，请使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略，
-其他策略例如&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;，或者&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;，都会造成整个集群的负载非常不均衡。
-使用&lt;code&gt;RedisCluster::FAILOVER&lt;/code&gt;的话会导致redis读写都会发送给redis master机器，导致master和slave负载不均，
-如果使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE&lt;/code&gt;虽然读会随机分发给master和slave，但是我们实际看到，slave机器负载和master的差异还是很大。
-目前来看，使用&lt;code&gt;RedisCluster::FAILOVER_DISTRIBUTE_SLAVES&lt;/code&gt;的读取策略是最佳的选择，但是同一个节点下的多个slave机器之间还是会存在负载差异。&lt;/p&gt;
-
-&lt;h3 id=&#34;性能损耗问题&#34;&gt;性能损耗问题&lt;/h3&gt;
-
-&lt;p&gt;phpredis在cluster模式下，有个额外的性能损耗问题，就是每次创建连接的时候，都会去获取一次cluster slots, 而由于
-每次获取这个slots都是从seeds里面循环去获取，直至获取到slots信息，所以&lt;code&gt;new RedisCluster(null, $servers)&lt;/code&gt;时，传入的servers中第一个会压力很大，
-在高并发的情况下，频发的短链接创建，会直接导致redis集群负载不均，这也是导致了redis集群负载不均的一个原因。&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash;2017年03月21日&amp;ndash; 更新
-我看到develop分支下这个问题已经解决了，phpredis会在循环连接seeds之前打乱传入的servers，所以高流量的情况下，
-建议填写所有的slave的节点IP进去实例化，这样可以避免单一的节点负载过高。cluster slots消耗过多的问题，已提&lt;a href=&#34;https://github.com/phpredis/phpredis/issues/1133&#34;&gt;issure&lt;/a&gt;给官方，
-答复是会在phpredis 3.2的版本中加入缓存cluster slots的功能。&lt;/p&gt;
-
-&lt;h2 id=&#34;阿里云相关&#34;&gt;阿里云相关&lt;/h2&gt;
-
-&lt;p&gt;连接不稳定&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;坑爹阿里云，内网dns解析非常不稳定，大流量的情况下，连自家的RDS地址都不认了，解决办法：把IP地址写入host，缺点是，主从切换时需要手动更新IP。&lt;/p&gt;
-
-&lt;h2 id=&#34;系统其他&#34;&gt;系统其他&lt;/h2&gt;
-
-&lt;p&gt;增大nf_conntrack_max参数，可以增大服务器的并发数&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo sysctl net.nf_conntrack_max=512000&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://barbery.me/post/2017-03-19-php-summary-of-high-concurrency-issues/</guid>
+      <description>上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。 这么大的流量突然涌入，真是把我</description>
     </item>
     
     <item>
       <title>记一次redis被黑事件</title>
-      <link>http://barbery.me/post/2017-02-19-Redis-hacked/</link>
+      <link>http://barbery.me/post/2017-02-19-redis-hacked/</link>
       <pubDate>Sun, 19 Feb 2017 16:34:55 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-02-19-Redis-hacked/</guid>
-      <description>
-
-&lt;h2 id=&#34;18号事情的经过&#34;&gt;18号事情的经过&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法，
-返回是一个false的布尔类型，导致爆出了数据异常。当时深夜被报警叫醒，也没考虑太多，只是简单的做了个判断
-过滤掉错误的数据。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;早上9点，接到反馈，项目A微信授权出错。排查代码没有发现有问题，考虑到之前前端有出现上线时丢失文件的情况，
-重新部署代码，本地测试故障解除。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;早上10点，接到redis队列报警信息（Timed out attempting to find data in the correct node! ）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;早上11点，接到反馈，项目B无法登陆，开始排查是否是redis集群的问题，发现master01节点无法连接，
-slave节点也没有被选举成新的master节点，重启master01节点，服务恢复正常。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;复盘&#34;&gt;复盘&lt;/h2&gt;
-
-&lt;p&gt;事情发生后，一直有个点让我想不明白，流量不大的情况下master的一个节点为什么会挂掉？退一万步来讲，
-即是挂掉，为何slave节点没有“挺身而出”？&lt;/p&gt;
-
-&lt;p&gt;随即我对redis的日志进行排查，希望能得到什么信息，首先就先查看master01这个挂掉的节点日志，0点27分，
-有几条错误日志，这个错误的时间和事发当天0点多的报警时间吻合，而且这个错误的内容直接导致了slave节点失联。&lt;/p&gt;
-
-&lt;p&gt;master01日志&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;17989:M 18 Feb 00:26:49.431 # Failed opening the RDB file root (in server root dir /var/spool/cron) for saving: Permission denied
-17989:M 18 Feb 00:26:49.432 # Failed opening the RDB file root (in server root dir /var/spool/cron) for saving: Permission denied
-17989:M 18 Feb 00:27:49.906 # Disconnecting timedout slave: SLAVE01IP:PORT
-17989:M 18 Feb 00:27:49.906 # Connection with slave SLAVE01IP:PORT lost.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;slave01日志&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;4720:S 18 Feb 00:27:49.908 # Connection with master lost.
-4720:S 18 Feb 00:27:49.908 * Caching the disconnected master state.
-4720:S 18 Feb 00:27:50.144 * Connecting to MASTER MASTER01IP:PORT
-4720:S 18 Feb 00:27:50.144 * MASTER &amp;lt;-&amp;gt; SLAVE sync started
-4720:S 18 Feb 00:27:50.146 * Non blocking connect for SYNC fired the event.
-4720:S 18 Feb 00:27:50.147 * Master replied to PING, replication can continue...
-4720:S 18 Feb 00:27:50.149 * (Non critical) Master does not understand REPLCONF listening-port: -NOAUTH Authentication required.
-4720:S 18 Feb 00:27:50.150 * (Non critical) Master does not understand REPLCONF capa: -NOAUTH Authentication required.
-4720:S 18 Feb 00:27:50.150 * Trying a partial resynchronization (request 005a426e630acfa4a64a082b02bb97cb8a0256ad:3731868328).
-4720:S 18 Feb 00:27:50.151 # Unexpected reply to PSYNC from master: -NOAUTH Authentication required.
-4720:S 18 Feb 00:27:50.151 * Discarding previously cached master state.
-4720:S 18 Feb 00:27:50.151 * Retrying with SYNC...
-4720:S 18 Feb 00:27:50.153 # MASTER aborted replication with an error: NOAUTH Authentication required.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上网一查，原来是被攻击了，攻击者连上了redis，然后利用redis的config set dir的漏洞，尝试去注入恶意执行代码到系统的crontab中执行，
-幸亏我们是使用非root用户启动，攻击者的攻击被系统权限给阻止了。&lt;/p&gt;
-
-&lt;p&gt;redis的这个漏洞应该大家都知道，也包括我们，当初在部署redis集群的时候，就已经把服务器公网IP去掉，只允许应用在内网访问，
-没想到也竟然会出这样的事情，难道是受到阿里云同机房下的其他账户机器的攻击？&lt;/p&gt;
-
-&lt;p&gt;我带着疑问向阿里云提交了工单，回复是:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;您好 内网的默认策略是内网入方向 拒绝所有，出方向允许所有；&lt;/p&gt;
-
-&lt;p&gt;1 如果你是经典网络 您设置入方向允许0.0.0.0 的话 经典网络的内网都可以访问您的服务器了&lt;/p&gt;
-
-&lt;p&gt;2 同一安全组设置内网拒绝0.0.0.0  也是可以通的，请您知晓&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我一直以为阿里云会自动隔离不同账户下的内网网络，防火墙上设置的内网允许我还以为是针对自己的机器的，
-这下就栽了跟头，使用阿里云的其他同学要注意下了，看看自己的redis有没有限制好内网网络的权限了，
-不然的话，很容易被内网下的其他账户的机器攻击。&lt;/p&gt;
-
-&lt;h2 id=&#34;反思&#34;&gt;反思&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;事情本可在影响面没扩大之前得到处理，当天凌晨redis队列突然出现异常时，本应该发现能基础服务的不正常，但是却没引起关注。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;基础服务监控缺失，连redis接点不可用这么严重的事情都没能第一时间获取信息。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;redis安全措施没做好，虽然使用了非root用户启动，恶意代码也没能注入成功，但是明知redis这个高危的漏洞，却还是在防火墙配置上留下了漏洞。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;最后的疑问&#34;&gt;最后的疑问&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;为什么slave和master失联后没能被选举成新的master节点?&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;为什么事发时应用没有捕捉到redis的异常错误？我们在本地尝试复现攻击，一旦save失败，
-整个cluster立即不可用，所有依赖redis服务均会抛出异常，究竟攻击者对redis执行了什么命令，导致了这个情况？&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://barbery.me/post/2017-02-19-redis-hacked/</guid>
+      <description>18号事情的经过 当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法， 返回是一个false的布尔类型，导致</description>
     </item>
     
     <item>
@@ -180,27 +44,7 @@ slave节点也没有被选举成新的master节点，重启master01节点，服�
       <pubDate>Sun, 21 Aug 2016 11:02:31 +0800</pubDate>
       
       <guid>http://barbery.me/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</guid>
-      <description>&lt;p&gt;ngrok是一个开源的内网穿透的工具，简单点说就是解决外网访问内网的问题，你可以把外网的80端口随意绑定到
-内网的某个端口上，日常开发中多用于调试微信支付或者微信的测试公众号。&lt;/p&gt;
-
-&lt;p&gt;虽说ngrok是开源的，但是还是需要一个server端去做转发，如果自己搞就太麻烦了，这里推荐一个不错的免费ngrok server
-(&lt;a href=&#34;http://www.ngrok.cc/&#34;&gt;http://www.ngrok.cc/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;注册一个账号，登陆进去就可以创建一个穿透的隧道，把需要绑定的信息填写好，就会自动生成一个clientid，
-把客户端下载到本地解压出来，执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./sunny clientid {你的clientid}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;启动完毕后，你会看到有个&lt;a href=&#34;http://127.0.0.1:4040/http/in&#34;&gt;http://127.0.0.1:4040/http/in&lt;/a&gt; 的地址，这个是ngrok的web管理界面，
-可以看到所有的request和response，是不是很方便呐！&lt;/p&gt;
-
-&lt;p&gt;目前ngrok还没能设置以daemon的方式启动，不过我们可以用别的方法来实现在后台运行，只要把ngrok的日志输出重定向一下，
-就可以使用nohup命令来启动，例如这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;nohup ./sunny -log=stdout &amp;gt; /dev/null &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>ngrok是一个开源的内网穿透的工具，简单点说就是解决外网访问内网的问题，你可以把外网的80端口随意绑定到 内网的某个端口上，日常开发中多用于</description>
     </item>
     
     <item>
@@ -209,38 +53,7 @@ slave节点也没有被选举成新的master节点，重启master01节点，服�
       <pubDate>Wed, 20 Apr 2016 11:18:13 +0000</pubDate>
       
       <guid>http://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;部署比较简单，这点官网文档说的非常详细，这里我就不重复叙述了，大家可以去看看&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/swarm/install-manual/&#34;&gt;https://docs.docker.com/swarm/install-manual/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;说说过程中遇到的问题，也希望后来者可以少踩坑。。。&lt;/p&gt;
-
-&lt;p&gt;首先就是部署前，要把docker engine配置到监听swarm的端口&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo vim /etc/default/docker&lt;/p&gt;
-
-&lt;p&gt;#追加配置到DOCKER_OPTS配置项&lt;/p&gt;
-
-&lt;p&gt;DOCKER_OPTS=&amp;ldquo;-H 0.0.0.0:2375 -H unix:///var/run/docker.sock&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;docker的id冲突时需要删掉key文件，重启service就可以重新生成&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt; rm /etc/docker/key.json&lt;/p&gt;
-
-&lt;p&gt;sudo service docker restart&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;还有一个就是discovery服务的话，consul目前还不支持多个节点ip，所以如果你有多个manage的节点也只能连一个consul的节点。。&lt;/p&gt;
-</description>
+      <description>部署比较简单，这点官网文档说的非常详细，这里我就不重复叙述了，大家可以去看看 https://docs.docker.com/swarm/install-manual/ 说说过程中遇到的问题，也希望后来者可以少踩坑。。。 首先就是部署</description>
     </item>
     
     <item>
@@ -249,36 +62,7 @@ slave节点也没有被选举成新的master节点，重启master01节点，服�
       <pubDate>Thu, 19 Nov 2015 16:39:13 +0000</pubDate>
       
       <guid>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
-      <description>&lt;p&gt;前几天用vagrant+virtualbox+docker 来搭建本地开发环境，由于要导入的SQL太大，virtualbox的容量被挤爆了，而vagrant创建时似乎是不能指定容量大小的，系统默认分配的16G明显不够用。。。上网找了下，有些教程操作过程中报错，没法进行下去，有些教程又很长，看起来很复杂。。。自己折腾了下，其实非常简单。&lt;/p&gt;
-
-&lt;p&gt;首先找到自己box的安装位置，默认应该都是安装在 ~/VirtualBox VMs/default-xxxxxxx/ 下的，打开命令行终端，进入目录下。。。如果你发现你的xxxx.vdi格式的话，那么恭喜你，这个格式扩容很简单，直接执行&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;$&amp;gt; VBoxManage modifyhd xxxx.vdi  &amp;ndash;resize 30000&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;后面30000代表30000MB约等于30G，根据自己的实际需要调整。&lt;/p&gt;
-
-&lt;p&gt;实际上，我们看到的文件格式很大概率是xxxxxx.vmdk，不用怕，也很简单。。。&lt;/p&gt;
-
-&lt;p&gt;首先，先利用virtualbox提供的工具，将其格式转换成vdi。。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;$&amp;gt; VBoxManage clonehd xxxx.vmdk xxxx.vdi &amp;ndash;format=vdi&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;等待一会儿，转换完成后，就会在目录上出现一个xxxx.vdi的文件，这个文件就是克隆自你原来的那个文件，只是把格式换成了vdi，再执行上面我说的扩容的命令，就可以实现这个vdi的容量扩容。&lt;/p&gt;
-
-&lt;p&gt;扩容完成后，打开virtualbox GUI程序（就是点击virtualbox图标运行界面程序），找到你刚刚扩容的那个box，右键设置-&amp;gt;储存，在储存器 IDE Controller那里点击添加磁盘&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/large/6915c7dcgw1ey6dbhb450j207x067mxg.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后选择”选择现有虚拟盘”选项，找到刚刚生成的vdi文件，添加进去，然后点击之前的盘符，点击下方的删除磁盘的ico删掉即可（请先自行备份之前的文件）&lt;/p&gt;
-
-&lt;p&gt;还有一点，就是要保证添加进来的vdi磁盘设置如下所示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/large/6915c7dcgw1ey6dfr4ckfj207x0650t4.jpg&#34; alt=&#34;图片&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>前几天用vagrant+virtualbox+docker 来搭建本地开发环境，由于要导入的SQL太大，virtualbox的容量被挤爆了，而</description>
     </item>
     
     <item>
@@ -287,72 +71,25 @@ slave节点也没有被选举成新的master节点，重启master01节点，服�
       <pubDate>Fri, 25 Sep 2015 09:35:01 +0000</pubDate>
       
       <guid>http://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
-      <description>
-
-&lt;h2 id=&#34;mosh是什么&#34;&gt;mosh是什么&lt;/h2&gt;
-
-&lt;p&gt;最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。&lt;/p&gt;
-
-&lt;p&gt;你可能会问，说了那么多，用mosh究竟有什么好处？&lt;/p&gt;
-
-&lt;p&gt;像我这样，blog搭在国外服务器上，常常需要ssh登陆国外的服务器，然而这速度，你懂的，非常不稳定，在事情做到一半的时候连接断掉了，真的想死有木有。。。mosh是基于UDP协议的，断开后都可以自动重连，重连还是连接回上次的session哦，不是新的session，也就是看起来和没断开过连接一样，像MacBook这样，合起来待机再也不用担心断开连接了。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h2 id=&#34;如何安装&#34;&gt;如何安装&lt;/h2&gt;
-
-&lt;p&gt;好了好了，说说怎么用吧，使用mosh的话，需要装mosh的客户端和mosh的服务端。。。&lt;/p&gt;
-
-&lt;p&gt;服务端的话很简单，直接源安装就好了，ubuntu/debian系列直接&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo apt-get install mosh&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;客户端的话，目前官方还不支持windows，目前只支持linux和mac os，不过有个chrome的mosh插件，windows下安装可以曲线救国&lt;a href=&#34;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&#34;&gt;https://chrome.google.com/webstore/detail/mosh/ooiklbnjmhbcgemelgfhaeaocllobloj&lt;/a&gt;。另外，可以从&lt;a href=&#34;https://mosh.mit.edu/#getting&#34;&gt;https://mosh.mit.edu/#getting&lt;/a&gt; 这里面下载客户端，和查看怎么安装服务端。&lt;/p&gt;
-
-&lt;h2 id=&#34;如何使用&#34;&gt;如何使用 &lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;mosh USERNAME@HOST [&amp;ndash;ssh=&amp;ldquo;ssh -p 2222&amp;rdquo;]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;如果端口非22的话，可以使用后面中括号的参数来指定端口。&lt;/p&gt;
-</description>
+      <description>mosh是什么 最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。 你可能会问，说了</description>
     </item>
     
     <item>
       <title>使用sublime text3 打造最佳PHP开发工具</title>
-      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <link>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3php%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sat, 18 Jul 2015 18:28:22 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
-      <description>&lt;p&gt;我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配上GIF动画，大家应该能大致看懂，我就懒得翻译了。。。有什么不懂的可以留言。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&#34;&gt;https://mattstauffer.co/blog/sublime-text-3-for-php-developers&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3php%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <description>我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配</description>
     </item>
     
     <item>
       <title>golang有没有必要传递map指针？</title>
-      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</link>
+      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
       <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88%EF%BC%9F/</guid>
-      <description>&lt;p&gt;好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答是，因为传递指针的好处就是速度快，占用内存少。但是，我隐隐约约记得，GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝。。。&lt;/p&gt;
-
-&lt;p&gt;晚上回来的路上就一直在想这个问题。。。觉得模模糊糊，不太确定。回到家立即写个demo来证明一下，直接贴代码：&lt;/p&gt;
-
-&lt;p&gt;也可以到这里在线运行：&lt;a href=&#34;http://play.golang.org/p/0VHB4e9BJY&#34;&gt;http://play.golang.org/p/0VHB4e9BJY&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;输出结果是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;map[xxx:123 xxx222:xxx xxx333:xxx]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;结果说明了“GO中的map和slice是天然的引用类型，什么意思？就是无论你怎么赋值，在GO的内部编译执行的时候，都是指针传递，并不会发生实质的内容拷贝”同时使用这些引用类型的变量也需要小心副作用，因为一修改，就会影响所有使用这个参数的代码。。。&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
+      <description>好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答</description>
     </item>
     
     <item>
@@ -361,12 +98,7 @@ slave节点也没有被选举成新的master节点，重启master01节点，服�
       <pubDate>Sun, 17 May 2015 18:34:30 +0000</pubDate>
       
       <guid>http://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
-      <description>&lt;p&gt;额，本来这个PPT是做来在公司内部分享的，但是由于某些原因，可能没法在公司内部分享了。分享上来，权当留个纪念~~~&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.slideshare.net/ssuser773636/vagrant-48243103&#34;&gt;http://www.slideshare.net/ssuser773636/vagrant-48243103&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;需要翻墙才能看到。。。&lt;/p&gt;
-</description>
+      <description>额，本来这个PPT是做来在公司内部分享的，但是由于某些原因，可能没法在公司内部分享了。分享上来，权当留个纪念~~~ http://www.slideshare.net/ssuser773636/vagrant-48243103 需要翻墙才能看到。。。</description>
     </item>
     
     <item>
@@ -375,54 +107,7 @@ slave节点也没有被选举成新的master节点，重启master01节点，服�
       <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
       
       <guid>http://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原来的配置，就直接cp -f过去了，后来发现没法启动。。。幸亏本地还有一份，对比了下，发现my-innodb-heavy-4G.cnf的配置少了一部分内容。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;[mysqld]&lt;/p&gt;
-
-&lt;p&gt;user = mysql
-pid-file = /var/run/mysqld/mysqld.pid
-socket = /var/run/mysqld/mysqld.sock
-port = 3306
-basedir = /usr
-datadir = /var/lib/mysql
-tmpdir = /tmp
-lc-messages-dir = /usr/share/mysql
-skip-external-locking&lt;/p&gt;
-
-&lt;p&gt;bind-address            = 127.0.0.1&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;补上成功启动mysql，但是连接时，发现报错：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;SQLSTATE[42000]: Syntax error or access violation: 1286 Unknown storage engine &amp;lsquo;InnoDB&amp;rsquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;google了下，原来是需要重新做ib_logfile。。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo service mysql stop&lt;/p&gt;
-
-&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile0 /var/lib/mysql/ib_logfile0.bak&lt;/p&gt;
-
-&lt;p&gt;sudo mv /var/lib/mysql/ib_logfile1 /var/lib/mysql/ib_logfile1.bak&lt;/p&gt;
-
-&lt;p&gt;sudo service mysql start&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;稍等10几秒，重做完启动后就一切正常了。。。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;最后吐槽下，这不是官方的配置嘛，为什么尼玛就不能直接拿过来用。。。坑~&lt;/p&gt;
-</description>
+      <description>今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原</description>
     </item>
     
     <item>
@@ -431,20 +116,7 @@ skip-external-locking&lt;/p&gt;
       <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
-      <description>&lt;p&gt;github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。&lt;/p&gt;
-
-&lt;p&gt;不过比较悲剧的是，国内访问gist.github.com貌似被墙了，这样会导致嵌入的代码没办法展示，而大部分的用户都没有具备翻墙环境，so。。。&lt;/p&gt;
-
-&lt;p&gt;最好的办法是，为gist加速，利用nginx做一个反向代理，因为我这是海外的服务器，访问gist没压力，速度很快，对国内速度也不慢，所以非常适合用来对gist加速。。。&lt;/p&gt;
-
-&lt;p&gt;贴下nginx配置（&lt;a href=&#34;https://gist.github.com/Barbery/927ae66c70c581586800&#34;&gt;https://gist.github.com/Barbery/927ae66c70c581586800&lt;/a&gt;）：&lt;/p&gt;
-
-&lt;p&gt;从此，引入gist的时候，只要把前面的host改一下，改为&lt;a href=&#34;http://gist.stutostu.com/xxx/xxxx.js&#34;&gt;http://gist.stutostu.com/xxx/xxxx.js&lt;/a&gt; 就可以了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;已被github封掉ip。。。T_T~&lt;/p&gt;
-</description>
+      <description>github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。 不过比较悲剧的</description>
     </item>
     
     <item>
@@ -453,56 +125,16 @@ skip-external-locking&lt;/p&gt;
       <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
-      <description>&lt;p&gt;用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;sudo vim /etc/my.cnf&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;然后把下面的设置贴进去&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt; 
-[mysqld]
-max_connections = 10&lt;/p&gt;
-
-&lt;p&gt;key_buffer_size = 16K
-max_allowed_packet = 1M
-table_open_cache = 4
-sort_buffer_size = 64K
-read_buffer_size = 256K
-read_rnd_buffer_size = 256K
-net_buffer_length = 2K&lt;/p&gt;
-
-&lt;p&gt;thread_stack = 128K&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;重启mysql，内存占用降到了70M&lt;/p&gt;
-</description>
+      <description>用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。 sudo vim /etc/my.cnf 然后把下面的设置贴进去 [mysqld] max_connections =</description>
     </item>
     
     <item>
       <title>goRouter 一个轻量级和高性能的路由</title>
-      <link>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <link>http://barbery.me/post/2014-11-16-gorouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
-      <description>&lt;p&gt;公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/routes 这个库的，但是这库对url不能很好的支持，例如要匹配/user/1/userinfo.json这样的url，这个库就没办法支持。&lt;/p&gt;
-
-&lt;p&gt;所以自己就参考drone/routes 写了一个小router，主要是：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;改善了url正则匹配的，使其匹配更多模式，更加可以自由定制&lt;/li&gt;
-&lt;li&gt;提高了匹配时查找的性能，使用路由的前缀和http方法做hashtable查找，路由再多，查找平均也是o(1)的时间复杂度&lt;/ul&gt;
-&amp;nbsp;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如果觉得不错，欢迎star&lt;/p&gt;
-
-&lt;p&gt;源码：&lt;a href=&#34;https://github.com/Barbery/goRouter&#34; title=&#34;https://github.com/Barbery/goRouter&#34;&gt;https://github.com/Barbery/goRouter&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://barbery.me/post/2014-11-16-gorouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <description>公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/r</description>
     </item>
     
     <item>
@@ -511,24 +143,7 @@ net_buffer_length = 2K&lt;/p&gt;
       <pubDate>Mon, 13 Oct 2014 22:02:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
-      <description>&lt;p&gt;第一个，先说说GO原子性操作的问题，直接上demo（&lt;a href=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34; title=&#34;https://gist.github.com/Barbery/08973672e132d5edfe44&#34;&gt;https://gist.github.com/Barbery/08973672e132d5edfe44&lt;/a&gt;）：&lt;/p&gt;
-
-&lt;p&gt;从结果可以看出，在并发编程下，常规的i++运算是不能保证原子性执行的，i++ 这样的运算会被go编译成 i = i + 1来执行，就是先读取i的值然后再加1，而go没有对share memory的操作，没有做thread safe，所以导致运算过程中读取到的i不是最新的情况，要解决这个问题有：&lt;/p&gt;
-
-&lt;p&gt;1.加锁(可以去掉demo中的注释代码试试)&lt;/p&gt;
-
-&lt;p&gt;2.调用atomic包来保证操作的原子性&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;第二个，就是GO和PHP的不同，GO不但作为一门后端语言，还接管了服务器，可以理解为GO是PHP+NGINX的合体。。。这样性能可以得到非常好的提升，但是也会出现不少问题。。。由于GO是常驻后台运行的，不像PHP那样通过fastcgi协议来访问，这样的区别就导致了GO中的包内/全局变量不会因为每次请求结束而销毁，导致GO的包内/全局变量就像PHP的session那样，如果同时有2个请求进来，任意一个请求改变了包内/全局变量的值都会影响另外一个请求中的值（实际上他们访问的是一个地址中的值，这和PHP很不同）。。。&lt;/p&gt;
-
-&lt;p&gt;目前的解决办法是写成OOP的风格去做，这样做的优点是，代码上比较优雅，让每个线程调用包的时候都new一个struct对象，把全局变量包裹到struct里面，让过期是struct对象交给go的垃圾回收去处理。&lt;/p&gt;
-
-&lt;p&gt;demo：(&lt;a href=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34; title=&#34;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&#34;&gt;https://gist.github.com/Barbery/173f4f3dcdfbfcc366d4&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;通过这样，在并发和不同线程的执行中的操作，都不会对其他线程的信息造成污染。&lt;/p&gt;
-</description>
+      <description>第一个，先说说GO原子性操作的问题，直接上demo（https://gist.github.com/Barbery/08973672e132</description>
     </item>
     
     <item>
@@ -537,44 +152,583 @@ net_buffer_length = 2K&lt;/p&gt;
       <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
       
       <guid>http://barbery.me/post/2014-08-09-go-chat%E7%94%A8go&#43;websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
-      <description>
-
-&lt;p&gt;最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。。&lt;/p&gt;
-
-&lt;p&gt;经过几天的学习，我对go语言的评价是：快速，性能高效，goroutine很好用。go有着做大型项目的基因。。&lt;/p&gt;
-
-&lt;h3 id=&#34;怎么使用&#34;&gt;怎么使用？&lt;/h3&gt;
-
-&lt;p&gt;把下面的代码放到head标签中&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script type=“text/javascript”&amp;gt;
-    window.onload = function() {
-        var js = document.createElement(“script”);
-        js.type = “text/javascript”;
-        js.src = “http://stutostu.qiniudn.com/app.js&amp;quot;;
-        document.getElementsByTagName(“body”)[0].appendChild(js);
-    };
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;更多引入方式，请看：&lt;a href=&#34;https://gist.github.com/Barbery/8f36d999193da2a29ab3&#34;&gt;https://gist.github.com/Barbery/8f36d999193da2a29ab3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;go-chat分为4个频道，分别为：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;本页面：这个频道是根据用户所在页面的url来建立的，不包括url上的？参数和#参数，即&lt;a href=&#34;http://stutostu.com/page1&#34;&gt;http://stutostu.com/page1&lt;/a&gt; 和 &lt;a href=&#34;http://stutostu.com/page1?param1=value1#aa&#34;&gt;http://stutostu.com/page1?param1=value1#aa&lt;/a&gt; 为同一个页面。使用场景：当你只想和访问这个页面的人交流的时候。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;本域名：这个频道是根据用户所在页面的域名来建立的，即&lt;a href=&#34;http://www.stutostu.com/page1.html&#34;&gt;http://www.stutostu.com/page1.html&lt;/a&gt; 和 &lt;a href=&#34;http://www.stutostu.com/page2.html&#34;&gt;http://www.stutostu.com/page2.html&lt;/a&gt; 虽然所在页面不同，但是所在域名均为&lt;a href=&#34;http://www.stutostu.com&#34;&gt;www.stutostu.com&lt;/a&gt; ，都可以通过这个频道跨页面进行聊天。使用场景：想和同一个域名的用户交流的时候。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;根域名：这个频道是根据用户所在页面的根域名来建立的，即news.stutostu.com和blog.stutostu.com的根域名均为stutostu.com，所以均可通过这个频道进行交流。使用场景：如果你想和这个站的所有人交流的时候&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;世界：这个范围最大。。。无论在什么页面和域名，均可通过这个频道进行交流。使用场景：如果你想和所有使用go-chat的人交流的时候&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;注意：目前只能加入和订阅1个频道，例如你加入了世界频道，那么只能和世界频道的人进行交流，无法接收到其他频道发送的消息，也无法发送消息到其他频道。&lt;/p&gt;
-
-&lt;p&gt;源码:  &lt;a href=&#34;https://github.com/Barbery/blog/tree/master/go-chat&#34;&gt;https://github.com/Barbery/blog/tree/master/go-chat&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。</description>
+    </item>
+    
+    <item>
+      <title>go多维map读写操作的问题</title>
+      <link>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错 cannot take the address of xxx // or cannot assign to xxx 这会很让人抓狂。</description>
+    </item>
+    
+    <item>
+      <title>说说phalcon怎么连接mysqld.sock</title>
+      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <description>phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phal</description>
+    </item>
+    
+    <item>
+      <title>php redis subscribe超时的问题</title>
+      <link>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 05 Jul 2014 14:38:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issu</description>
+    </item>
+    
+    <item>
+      <title>说说hash collision</title>
+      <link>http://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</link>
+      <pubDate>Sat, 31 May 2014 15:38:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</guid>
+      <description>hash collision，也就是平常说的哈希碰撞，其方法就是利用已知的hash算法，生成不均匀的哈希，导致其名为hash table而实际性能却早</description>
+    </item>
+    
+    <item>
+      <title>分享一个js生成二维码的库</title>
+      <link>http://barbery.me/post/2014-05-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAjs%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9A%84%E5%BA%93/</link>
+      <pubDate>Fri, 23 May 2014 20:54:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-05-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAjs%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9A%84%E5%BA%93/</guid>
+      <description>二维码用js生成会比用服务器生成方便很多，只要把window.location.href的值传入，即可生成对应的二维码。。最主要是，这个库可</description>
+    </item>
+    
+    <item>
+      <title>关于php 5.5 CURLFile上传的问题</title>
+      <link>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5curlfile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 01 May 2014 12:52:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5curlfile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>最近用curl上传文件，发现报错 The usage of the @filename API for file uploading is deprecated. Please use the CURLFile class instead 原来是PHP5.5废弃了@这种模式，只需要把原来的： &amp;lt;?php $data = array( &#39;file&#39; =&amp;gt; &#39;@/PATH/TO/FILE&#39;, //..</description>
+    </item>
+    
+    <item>
+      <title>大爱phalcon啊</title>
+      <link>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
+      <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
+      <description>最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设</description>
+    </item>
+    
+    <item>
+      <title>永久设置ubuntu ulimit</title>
+      <link>http://barbery.me/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</link>
+      <pubDate>Sun, 02 Mar 2014 12:20:03 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</guid>
+      <description>之前是ulimit -n 65535那样设置，不过貌似只是当前环境有效果，重启服务器的话，又失效了。。。今天无意找到一个设置的方法，可以永久设置u</description>
+    </item>
+    
+    <item>
+      <title>利用马尔可夫链生成伪随机语义文本</title>
+      <link>http://barbery.me/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</link>
+      <pubDate>Wed, 01 Jan 2014 23:59:18 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</guid>
+      <description>关于什么是马尔可夫链， 我也说不清楚， 还是看维基百科来得快 http://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE 这个是我之前看lua程序设计的时候看到的， 作者用lua来实现， 我觉得好玩， 就拿PH</description>
+    </item>
+    
+    <item>
+      <title>关于httpsqs任务队列的benchmark测试数据</title>
+      <link>http://barbery.me/post/2013-12-04-%E5%85%B3%E4%BA%8Ehttpsqs%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E7%9A%84benchmark%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 04 Dec 2013 17:27:20 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-12-04-%E5%85%B3%E4%BA%8Ehttpsqs%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E7%9A%84benchmark%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/</guid>
+      <description>选择httpsqs的原因是，轻量，高效，整个流程也在掌控之中，所以就没有选择比较成熟的Gearman。。 好了，看数据把： 100k times test about httpsqs | method | ab |</description>
+    </item>
+    
+    <item>
+      <title>安装httpsqs问题小记</title>
+      <link>http://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Tue, 03 Dec 2013 00:25:35 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <description>遇到安装libevent-2.0.12-stable 报一大堆错误的话，可能是版本不兼容，去官网：http://libevent.org/ 下载</description>
+    </item>
+    
+    <item>
+      <title>说说luasocket http的使用</title>
+      <link>http://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 01 Dec 2013 19:54:06 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>luasocket包中的socket.http比较简单， 关于它的使用方法，网上内容也比较少， 常用的方法是GET和POST比较多。。。 GET的</description>
+    </item>
+    
+    <item>
+      <title>为openresty的luajit安装luarocks</title>
+      <link>http://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</link>
+      <pubDate>Sat, 30 Nov 2013 17:35:22 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
+      <description>lualocks是一个包管理器，类似nodejs的npm那样。。。总之装了以后安装第三方包就很方便，路径什么的，人家都帮你搞掂，不用自己每次</description>
+    </item>
+    
+    <item>
+      <title>gitlab web hook的没接受到POST数据的一个坑！</title>
+      <link>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0post%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+      <pubDate>Thu, 28 Nov 2013 00:19:51 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0post%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+      <description>额。。。 在help那里， 明明说好是POST数据给我的， 仲么$_POST收不到？ 额。。。原来要用PHP input流来接收。。 使用 $josn = file_get_contents(&amp;quot;php://input&amp;quot;); 来接受数</description>
+    </item>
+    
+    <item>
+      <title>使用mysqlnd代替mysql</title>
+      <link>http://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
+      <pubDate>Sun, 24 Nov 2013 12:02:47 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
+      <description>mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前PHP官方推荐使用的类库， 使用这个类库操作mysql， 可以支持多种最新</description>
+    </item>
+    
+    <item>
+      <title>如何通过本地SSH隧道端口转发访问远程mysql服务</title>
+      <link>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0ssh%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Sat, 23 Nov 2013 15:36:44 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0ssh%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
+      <description>注意：以下内容的前提是，你已经配好了SSH KEY登录远程服务器，且禁止了password登录，否则，以下做法很危险。 假设： 远程mysql服务</description>
+    </item>
+    
+    <item>
+      <title>分享一个openresty的service脚本</title>
+      <link>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <description>因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty</description>
+    </item>
+    
+    <item>
+      <title>PHP的PSR规范[推荐阅读！]</title>
+      <link>http://barbery.me/post/2013-11-13-php%E7%9A%84psr%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 13 Nov 2013 21:31:28 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-13-php%E7%9A%84psr%E8%A7%84%E8%8C%83/</guid>
+      <description>PHP的代码规范问题， 一直受人诟病， 而且PHP框架之多， 各家都有自己的一套命名规范， 这里就导致了PHP程序员在切换框架， 或者接触不同项目时带</description>
+    </item>
+    
+    <item>
+      <title>开启opcache导致502 bad gateway问题</title>
+      <link>http://barbery.me/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 12 Nov 2013 18:05:37 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</guid>
+      <description>本想开启opcache来做code cache， 木想到开了就502错误，googe许久也找不到解决方案，上stackoverflow提问也木有</description>
+    </item>
+    
+    <item>
+      <title>解决新建的用户apt-get tab不能代码补全的问题</title>
+      <link>http://barbery.me/post/2013-11-10-%E8%A7%A3%E5%86%B3%E6%96%B0%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7apt-gettab%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 10 Nov 2013 16:37:26 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-11-10-%E8%A7%A3%E5%86%B3%E6%96%B0%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7apt-gettab%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>root账户下是木有问题的， 但是为了安全起见， 标准做法都是禁止root用户登录， 然后新建一个用户， 使用SSH key验证的方式登录， 然后再su</description>
+    </item>
+    
+    <item>
+      <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
+      <link>http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/</link>
+      <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-10-03-nginx&#43;php-fpm&#43;socketvsnginx&#43;php-fpm&#43;tcpvsnginx&#43;apache&#43;mod_php/</guid>
+      <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
+    </item>
+    
+    <item>
+      <title>果然nginx使用socket来与php-fpm通讯是更高效率的</title>
+      <link>http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
+      <pubDate>Thu, 03 Oct 2013 00:28:32 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
+      <description>1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000</description>
+    </item>
+    
+    <item>
+      <title>注意isset在版本php5.3和php5.4的兼容</title>
+      <link>http://barbery.me/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</link>
+      <pubDate>Wed, 18 Sep 2013 11:50:03 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</guid>
+      <description>请看代码: &amp;lt;?php $a = &#39;asdasdasdasd&#39;; var_dump(isset($a[&#39;somekey&#39;])); 上图这个代码, 在php5.3系统中会返回TRUE, 而php5.4会返回false, 我相信大家都会常常用isset来判断数</description>
+    </item>
+    
+    <item>
+      <title>addslashes, mysql_real_escape_string并不能防止SQL注入!!!</title>
+      <link>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Fri, 06 Sep 2013 21:28:32 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/</guid>
+      <description>先看代码&amp;hellip; &amp;lt;?php header(&#39;Content-Type: text/html; charset=GBK&#39;); $input = chr(0xbf) . chr(0x27) . &#39; OR username = username; /*&#39;; $value = addslashes($input); $sql = &amp;quot;SELECT * FROM users WHERE username=&#39;{$value}&#39; AND password=&#39;123123&#39;;&amp;quot;; echo $value; echo &#39;&amp;lt;br&amp;gt;&#39;; echo $sql; echo &#39;&amp;lt;br&amp;gt;&#39;; 以上的demo, 输出结果为: 你也许会疑问,</description>
+    </item>
+    
+    <item>
+      <title>关于mac source bashrc引入path路径重启无效的问题小记</title>
+      <link>http://barbery.me/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Fri, 23 Aug 2013 20:08:51 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <description>今天同事的mac上遇到一个疑难杂症, 在bashrc设置好 export path后, source ~/.bashrc 重启后$PATH路径又被还原了…. 捣鼓了好久都不行, 不知道为什么,</description>
+    </item>
+    
+    <item>
+      <title>说说php自动加载类方法</title>
+      <link>http://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sun, 18 Aug 2013 23:28:13 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
+      <description>php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以</description>
+    </item>
+    
+    <item>
+      <title>绕过chrome插件content_scripts不能访问web定义的函数和变量</title>
+      <link>http://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sun, 21 Jul 2013 22:54:19 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</guid>
+      <description>因为插件打算利用jsonp来调用远程服务器上的API接口…而尝试了很多次都发现报错说对象不存在, 查了下文档, 原来是chrome的安全机制限制</description>
+    </item>
+    
+    <item>
+      <title>说说wordpress页面静态化多说插件和admin bar的问题</title>
+      <link>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 21 Jun 2013 15:21:24 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了…. 要想去掉admin-bar这</description>
+    </item>
+    
+    <item>
+      <title>说说sae上加快wordpress加载速度~</title>
+      <link>http://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
+      <pubDate>Fri, 14 Jun 2013 20:03:25 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
+      <description>因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip; 优化的重点是放在静态资源的加载速度上</description>
+    </item>
+    
+    <item>
+      <title>php中慎用isset来判断数组是否存在key</title>
+      <link>http://barbery.me/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</link>
+      <pubDate>Tue, 04 Jun 2013 14:57:13 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</guid>
+      <description>直接上代码, 不知道是php5.4版本的问题, 还是本来就这样&amp;hellip; $a[&#39;hello&#39;] = &#39;123&#39;; $a[&#39;xx&#39;] = NULL; var_dump(isset($a[&#39;hello&#39;])); //bool(true) var_dump(isset($a[&#39;xx&#39;])); //bool(false) # 应该使用这个来判断 var_dump(array_key_exists(&#39;xx&#39;, $a)); //bool(true)</description>
+    </item>
+    
+    <item>
+      <title>用ngx_drizzle时遇到一个坑，记录下。。。</title>
+      <link>http://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
+      <pubDate>Wed, 08 May 2013 22:11:38 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
+      <description>刚刚装好ngx_drizzle的时候，老是连接不上，代码都是安装官方demo来写的，竟然都不行。。。看了文档，报错如下： failed to connect: 23: Access denied for user &amp;lsquo;root&amp;rsquo;@&amp;lsquo;localhost&amp;rsquo; (using</description>
+    </item>
+    
+    <item>
+      <title>简单测试下ngx_drizzle_module</title>
+      <link>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
+      <pubDate>Wed, 08 May 2013 22:02:29 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
+      <description>webbench -c 500 -t 30 测试结果 TP框架 Speed=19198 pages/min, 112866 bytes/sec. Requests: 6635 susceed, 2964 failed. 原生 Speed=16602 pages/min, 89106 bytes/sec. Requests: 6027 susceed, 2274 failed. nginx with drizzle Speed=34116 pages/min, 212853 bytes/sec. Requests: 14347 susceed, 2711 failed. 毫无疑问的，nginx drizzle下速度是最快的</description>
+    </item>
+    
+    <item>
+      <title>mac 下配置memcached小记</title>
+      <link>http://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Wed, 08 May 2013 16:25:16 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
+      <description>用homebrew安装的话，是很简单的，不过由于自己不懂，走了很多弯路。。。 简单点说 先安装memcached服务，用 brew install memcached 安装 安装memca</description>
+    </item>
+    
+    <item>
+      <title>mac下配置nginx&#43;php&#43;mysql小记</title>
+      <link>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx&#43;php&#43;mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <description>额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。 后来使用了大家都推荐的homebrew来安装。。。具体教</description>
+    </item>
+    
+    <item>
+      <title>学习如何写PHP MVC框架（4） — 错误捕捉</title>
+      <link>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
+      <pubDate>Wed, 20 Mar 2013 11:41:16 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
+      <description>前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，</description>
+    </item>
+    
+    <item>
+      <title>学习如何写PHP MVC框架（3） — 视图</title>
+      <link>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
+      <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
+      <description>今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</description>
+    </item>
+    
+    <item>
+      <title>学习如何写PHP MVC框架（2）加载器</title>
+      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+      <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
+    </item>
+    
+    <item>
+      <title>学习如何写PHP MVC框架（1）-- 路由</title>
+      <link>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Thu, 07 Mar 2013 21:29:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99phpmvc%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
+      <description>说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。 第一篇先来简单点的，说说MVC框</description>
+    </item>
+    
+    <item>
+      <title>利用k-means聚类算法识别图片主色调</title>
+      <link>http://barbery.me/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
+      <pubDate>Thu, 10 Jan 2013 16:23:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</guid>
+      <description>识别图片主色调这个，网上貌似有几种方法，不过，最准确，最优雅的解决方案还是利用聚类算法来做。。。 直接上代码。。。。不过，我测试结果表示，用P</description>
+    </item>
+    
+    <item>
+      <title>慎用PHP内置的Math函数</title>
+      <link>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 14 Dec 2012 12:40:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8php%E5%86%85%E7%BD%AE%E7%9A%84math%E5%87%BD%E6%95%B0/</guid>
+      <description>如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</description>
+    </item>
+    
+    <item>
+      <title>PHP 图片库效率测试 GD Vs. Image Magick 【译】</title>
+      <link>http://barbery.me/post/2012-12-13-php%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95gdvs.imagemagick%E8%AF%91/</link>
+      <pubDate>Thu, 13 Dec 2012 09:31:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-12-13-php%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95gdvs.imagemagick%E8%AF%91/</guid>
+      <description>After doing some research, I found plenty of claims that GD is faster than Image Magick. But how much faster? I was on a quest to find out. I took a rather large jpeg image (3504 x 2336 pixels) and converted it to three other popular formats, png, gif, and bitmap. I then wrote a script that resizes each one to 300 x 200 pixels (png shown below) using both</description>
+    </item>
+    
+    <item>
+      <title>记录下二叉树的高度求法</title>
+      <link>http://barbery.me/post/2012-12-08-%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B1%82%E6%B3%95/</link>
+      <pubDate>Sat, 08 Dec 2012 10:24:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-12-08-%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B1%82%E6%B3%95/</guid>
+      <description>如图所示的二叉树。。。 用 a 来表示第几层。。。 a1 = cn （cn / 2^0） a2 = cn/2 （cn / 2^1） a3 = cn/4 （cn / 2^2） 可以看出 节点的最后一层 an = cn /</description>
+    </item>
+    
+    <item>
+      <title>为你的sublime text 2 配置SVN</title>
+      <link>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn/</link>
+      <pubDate>Wed, 28 Nov 2012 13:26:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn/</guid>
+      <description>如题所示，在coding的时候，每次都需要点出去commit是灰常浪费时间和麻烦的事情。。。所以就抱着试试的心态去在package install 里搜索下</description>
+    </item>
+    
+    <item>
+      <title>关于正则表达式中的小写u修正符深刻理解</title>
+      <link>http://barbery.me/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Fri, 16 Nov 2012 22:21:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</guid>
+      <description>&amp;lt;?php $str = &#39;【宏碁E1-471G-53214G50Mnks】宏碁（acer）E1-471G-53214G50Mnks 14英寸笔记本电脑（i5-3</description>
+    </item>
+    
+    <item>
+      <title>擦~~终于搞定FlashBuider 自动关闭的问题了</title>
+      <link>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9Aflashbuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
+      <pubDate>Sat, 03 Nov 2012 16:36:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9Aflashbuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
+      <description>FlashBuider 好卡有木有？设计模式自动关闭有木有？代码写着写着，FlashBuider 就自动关闭了有木有？？？？ 擦，这个问题困扰我已久，google许久</description>
+    </item>
+    
+    <item>
+      <title>擦，终于搞懂怎么在SAE python上装第三方包了</title>
+      <link>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8saepython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
+      <pubDate>Sat, 27 Oct 2012 14:48:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8saepython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
+      <description>本来想装个beautifulsoup玩下的，我擦，上网一搜，全部都是打命令行的，什么解释也没有，擦，我就一个window 7系统，搞个毛啊。。</description>
+    </item>
+    
+    <item>
+      <title>分享QQ第三方登陆SDK</title>
+      <link>http://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABqq%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86sdk/</link>
+      <pubDate>Sun, 21 Oct 2012 22:03:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABqq%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86sdk/</guid>
+      <description>主要是考虑到QQ的PHP SDK写的真是太烂了，纯属是普及API知识，而不是到手就可以部署的类库。。反正自己都写了一个了，就拿出来分享下。。 什</description>
+    </item>
+    
+    <item>
+      <title>flex中慎用百分比布局</title>
+      <link>http://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Wed, 29 Aug 2012 11:09:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</guid>
+      <description>困扰已久我的问题，没想到今天终于给我找出了原因。。。这个问题就是，我做的股票应用里面，因为股票信息更新频繁，会出现部分label内容不显示出</description>
+    </item>
+    
+    <item>
+      <title>使用CodeIgniter 创建 RESTful 服务 REST API【原创译文】</title>
+      <link>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8codeigniter%E5%88%9B%E5%BB%BArestful%E6%9C%8D%E5%8A%A1restapi%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
+      <pubDate>Sun, 19 Aug 2012 21:59:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8codeigniter%E5%88%9B%E5%BB%BArestful%E6%9C%8D%E5%8A%A1restapi%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
+      <description>翻译之前，先简单介绍下自己的情况，避免误人子弟。。。本人英语不强（不是谦虚，真是很烂），我只是一个简简单单的CI程序猿。在现在到处都是RES</description>
+    </item>
+    
+    <item>
+      <title>终于解决了FLEX CandlestickSeries 变形 缩小的问题</title>
+      <link>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86flexcandlestickseries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 10 Jul 2012 17:25:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86flexcandlestickseries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>虽然，其中的原理我不太清楚。。。但是，还是幸运的解决了这个问题。。。这是个神奇的问题，上网搜索竟然没有人问过这样的问题。。。我擦。。。这是间</description>
+    </item>
+    
+    <item>
+      <title>FLEX Timer计时器stop方法停止不了的原因</title>
+      <link>http://barbery.me/post/2012-07-05-flextimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
+      <pubDate>Thu, 05 Jul 2012 15:41:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-07-05-flextimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
+      <description>今天发生一个奇异的问题，Timer方法，竟然注销不掉，断点调试，发现没什么问题，明明都成功调用了stop() ，但是就是停止不了。。。 经过自己</description>
+    </item>
+    
+    <item>
+      <title>利用XMLRPC 离线发布wordpress 文章</title>
+      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8xmlrpc%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8xmlrpc%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <description>还是直接上demo吧～～这样可以让大家更容易理解。。。 &amp;lt;?php include(&amp;quot;xmlrpc.inc&amp;quot;); $GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;; $c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80); $c-&amp;gt;return_type = &#39;phpvals&#39;; $content[&#39;title&#39;]=&amp;quot;标题&amp;qu</description>
+    </item>
+    
+    <item>
+      <title>PHP正则表达式使用详解[转]</title>
+      <link>http://barbery.me/post/2012-05-29-php%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</link>
+      <pubDate>Tue, 29 May 2012 23:37:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-05-29-php%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</guid>
+      <description>纯属备份！ 操作符 描述 \ 转义符 (), (?:), (?=), [] 圆括号和方括号 *, +, ?, {n}, {n,}, {n,m} 限定符 ^, $, \anymetacharacter 位置和顺序 | “或”操作 全部符号解释 字符 描述 \ 将下一个字符标记为一个</description>
+    </item>
+    
+    <item>
+      <title>实现Linechart 一线多色，局部变色问题</title>
+      <link>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 27 Apr 2012 10:44:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <description>最近，在做一个股票的指标图。。。需要实现的情况是，当线条向上走时，需要加粗红色显示，而当线条向下时，就变为绿色。。。这里涉及到的就是，一条线</description>
+    </item>
+    
+    <item>
+      <title>建议使用Crawl-delay降低爬虫蜘蛛抓取频率</title>
+      <link>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
+      <pubDate>Sat, 14 Apr 2012 09:45:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
+      <description>如题，当然，谈这个之前，必须说说，蜘蛛爬取你的站是好事，因为只有这样，你的站才能让更多人知道。。。这里之所以说，建议降低抓取频率，是相当服务</description>
+    </item>
+    
+    <item>
+      <title>解决淘宝 API 返回的json数据无法用json_decode的问题</title>
+      <link>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9Dapi%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 02 Apr 2012 15:18:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9Dapi%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>如题，这个问题困扰我已久。。。经过自己的多次尝试，和到网上搜索，我已大概猜测到是字符的问题，论坛上的朋友说，PHP的json_decode对</description>
+    </item>
+    
+    <item>
+      <title>解决FLEX4 中 LIST控件不会自动滚动到底部的BUG</title>
+      <link>http://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3flex4%E4%B8%ADlist%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84bug/</link>
+      <pubDate>Tue, 20 Mar 2012 11:13:53 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3flex4%E4%B8%ADlist%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84bug/</guid>
+      <description>如题，这个问题，我也上网找了很久。。。国内的blog一般都是无解，只能到国外的论坛去转转看看，无意让我看到了一个解决方法。原理是（按照我的理</description>
+    </item>
+    
+    <item>
+      <title>强大的XHProf</title>
+      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</link>
+      <pubDate>Mon, 19 Mar 2012 13:30:59 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84xhprof/</guid>
+      <description>XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</description>
+    </item>
+    
+    <item>
+      <title>js sort 二维数组排序用法〖转〗</title>
+      <link>http://barbery.me/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E8%BD%AC/</link>
+      <pubDate>Thu, 15 Mar 2012 13:04:33 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E8%BD%AC/</guid>
+      <description>最近在搞js 排序的问题，因为数据库排序太耗资源，如果能转移到客户端去排序，能大大D减少服务器内存消耗。客户端的话，除了js,就是as了，可惜</description>
+    </item>
+    
+    <item>
+      <title>巧用中转页解决js UTF-8传参到GBK页面问题</title>
+      <link>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsutf-8%E4%BC%A0%E5%8F%82%E5%88%B0gbk%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 18 Feb 2012 20:32:40 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsutf-8%E4%BC%A0%E5%8F%82%E5%88%B0gbk%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</guid>
+      <description>这个方法不是我想出来的，是网上一位博主的idea，得益于这个想法，困扰我已久的js UTF-8传参到GBK页面问题也得以解决。我把思路和大家分</description>
+    </item>
+    
+    <item>
+      <title>分享淘宝API辅助函数-适用CI框架</title>
+      <link>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9Dapi%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8ci%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Fri, 10 Feb 2012 15:10:35 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9Dapi%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8ci%E6%A1%86%E6%9E%B6/</guid>
+      <description>最近在重写一个淘宝客的网站，考虑到以后的拓展性，所以把它整合进CI里面了，这就出现个问题了，淘宝的SDK怎么整合进类库呢？仔细阅读淘宝API</description>
+    </item>
+    
+    <item>
+      <title>wordpres for android -- 手机管理wp博客应用软件</title>
+      <link>http://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sun, 22 Jan 2012 10:45:06 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <description>因为回家过年了，老家又没电脑，一直思索有没有什么手机软件可以管理下博客，或者回复下留言。这不，官方出了个wordpres for android 手机软件，本人使</description>
+    </item>
+    
+    <item>
+      <title>海外站长福音之cloundflare 免费 DNS 加速</title>
+      <link>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9dns%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Tue, 20 Dec 2011 21:19:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9dns%E5%8A%A0%E9%80%9F/</guid>
+      <description>如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是</description>
+    </item>
+    
+    <item>
+      <title>Web开发者指南：如何建立并运作一个互联网初创项目【转】</title>
+      <link>http://barbery.me/post/2011-12-10-web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</link>
+      <pubDate>Sat, 10 Dec 2011 17:53:00 +0000</pubDate>
+      
+      <guid>http://barbery.me/post/2011-12-10-web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</guid>
+      <description>尽管全球经济萎靡不振，但在互联网领域，一轮新的爆发正在兴起。90年代，伴随着互联网的第一次爆发，我们见证了一批巨头的崛起：eBay，Yaho</description>
     </item>
     
   </channel>
