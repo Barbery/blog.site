@@ -33,7 +33,7 @@ imgcat YOUR_IMAGE
 
 ### 请看效果图：
 
-![效果图](http://ww1.sinaimg.cn/large/6915c7dcgy1fujs90hjxlj20q80pqad1.jpg)
+![效果图](https://ww1.sinaimg.cn/large/6915c7dcgy1fujs90hjxlj20q80pqad1.jpg)
 
 
 
