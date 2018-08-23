@@ -1,4 +1,4 @@
-baseurl = "http://barbery.me/"
+baseurl = "https://barbery.me/"
 languageCode = "zh-CN"
 Title = "Barbery's Blog"
 HasCJKLanguage = true
