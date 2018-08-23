@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Default_socket_timeout on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/default_socket_timeout/</link>
+    <link>https://barbery.me/tags/default_socket_timeout/</link>
     <description>Recent content in Default_socket_timeout on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 05 Jul 2014 14:38:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/default_socket_timeout/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/default_socket_timeout/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>php redis subscribe超时的问题</title>
-      <link>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 05 Jul 2014 14:38:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issu</description>
     </item>
     

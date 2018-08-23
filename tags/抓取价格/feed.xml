@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>抓取价格 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC/</link>
+    <link>https://barbery.me/tags/%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC/</link>
     <description>Recent content in 抓取价格 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 31 May 2012 09:32:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>关于京东抓取价格的问题</title>
-      <link>http://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 31 May 2012 09:32:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.me/post/2012-05-31-%E5%85%B3%E4%BA%8E%E4%BA%AC%E4%B8%9C%E6%8A%93%E5%8F%96%E4%BB%B7%E6%A0%BC%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>碉堡了吧。。。京东的价格是图片来的。。。所以正常情况的抓取是不行D。。。今天在V2EX看到几位大大说，从分享入手。。。我点了下分享到微博，果</description>
     </item>
     

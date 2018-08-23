@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>内存占用 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+    <link>https://barbery.me/tags/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
     <description>Recent content in 内存占用 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 23 Nov 2014 19:57:27 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>减少mac上mysql的内存占用</title>
-      <link>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <link>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
       <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <guid>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
       <description>用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。 sudo vim /etc/my.cnf 然后把下面的设置贴进去 [mysqld] max_connections =</description>
     </item>
     

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phalcon on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/phalcon/</link>
+    <link>https://barbery.me/tags/phalcon/</link>
     <description>Recent content in Phalcon on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 18 Jul 2014 11:11:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/phalcon/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/phalcon/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说phalcon怎么连接mysqld.sock</title>
-      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <link>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
       <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <guid>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
       <description>phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phal</description>
     </item>
     
     <item>
       <title>大爱phalcon啊</title>
-      <link>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
+      <link>https://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
       <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
+      <guid>https://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
       <description>最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设</description>
     </item>
     

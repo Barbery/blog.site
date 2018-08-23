@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pdo on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/pdo/</link>
+    <link>https://barbery.me/tags/pdo/</link>
     <description>Recent content in Pdo on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 18 Jul 2014 11:11:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/pdo/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/pdo/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说phalcon怎么连接mysqld.sock</title>
-      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <link>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
       <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <guid>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
       <description>phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phal</description>
     </item>
     
     <item>
       <title>addslashes, mysql_real_escape_string并不能防止SQL注入!!!</title>
-      <link>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</link>
+      <link>https://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Fri, 06 Sep 2013 21:28:32 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</guid>
+      <guid>https://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</guid>
       <description>先看代码&amp;hellip; &amp;lt;?php header(&#39;Content-Type: text/html; charset=GBK&#39;); $input = chr(0xbf) . chr(0x27) . &#39; OR username = username; /*&#39;; $value = addslashes($input); $sql = &amp;quot;SELECT * FROM users WHERE username=&#39;{$value}&#39; AND password=&#39;123123&#39;;&amp;quot;; echo $value; echo &#39;&amp;lt;br&amp;gt;&#39;; echo $sql; echo &#39;&amp;lt;br&amp;gt;&#39;; 以上的demo, 输出结果为: 你也许会疑问,</description>
     </item>
     

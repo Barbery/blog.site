@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Restful on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/restful/</link>
+    <link>https://barbery.me/tags/restful/</link>
     <description>Recent content in Restful on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 19 Aug 2012 21:59:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/restful/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/restful/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用CodeIgniter 创建 RESTful 服务 REST API【原创译文】</title>
-      <link>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
+      <link>https://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
       <pubDate>Sun, 19 Aug 2012 21:59:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
+      <guid>https://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
       <description>翻译之前，先简单介绍下自己的情况，避免误人子弟。。。本人英语不强（不是谦虚，真是很烂），我只是一个简简单单的CI程序猿。在现在到处都是RES</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>优化 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E4%BC%98%E5%8C%96/</link>
+    <link>https://barbery.me/tags/%E4%BC%98%E5%8C%96/</link>
     <description>Recent content in 优化 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 19 Mar 2012 13:30:59 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E4%BC%98%E5%8C%96/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E4%BC%98%E5%8C%96/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>强大的XHProf</title>
-      <link>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</link>
+      <link>https://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</link>
       <pubDate>Mon, 19 Mar 2012 13:30:59 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</guid>
+      <guid>https://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</guid>
       <description>XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</description>
     </item>
     

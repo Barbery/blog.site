@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>扩容 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E6%89%A9%E5%AE%B9/</link>
+    <link>https://barbery.me/tags/%E6%89%A9%E5%AE%B9/</link>
     <description>Recent content in 扩容 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Nov 2015 16:39:13 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E6%89%A9%E5%AE%B9/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E6%89%A9%E5%AE%B9/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说怎么给virtualbox扩容</title>
-      <link>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</link>
+      <link>https://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</link>
       <pubDate>Thu, 19 Nov 2015 16:39:13 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
+      <guid>https://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
       <description>前几天用vagrant+virtualbox+docker 来搭建本地开发环境，由于要导入的SQL太大，virtualbox的容量被挤爆了，而</description>
     </item>
     

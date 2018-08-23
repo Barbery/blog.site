@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2016 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/2016/</link>
+    <link>https://barbery.me/tags/2016/</link>
     <description>Recent content in 2016 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 02 Jan 2017 22:24:44 +0800</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/2016/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/2016/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2016年度总结</title>
-      <link>http://barbery.me/post/2017-01-02-annual-summary/</link>
+      <link>https://barbery.me/post/2017-01-02-annual-summary/</link>
       <pubDate>Mon, 02 Jan 2017 22:24:44 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-01-02-annual-summary/</guid>
+      <guid>https://barbery.me/post/2017-01-02-annual-summary/</guid>
       <description>工作 今年4月，我放弃了我梦寐以求的remote工作，被朋友拉入了一家创业公司，又重新回到苦逼的加班日子。 我的remote生涯只持续了半年，崇</description>
     </item>
     

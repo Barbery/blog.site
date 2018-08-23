@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Map on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/map/</link>
+    <link>https://barbery.me/tags/map/</link>
     <description>Recent content in Map on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 21 May 2015 22:43:07 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/map/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/map/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>golang有没有必要传递map指针？</title>
-      <link>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
+      <link>https://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
       <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
+      <guid>https://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
       <description>好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答</description>
     </item>
     
     <item>
       <title>go多维map读写操作的问题</title>
-      <link>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错 cannot take the address of xxx // or cannot assign to xxx 这会很让人抓狂。</description>
     </item>
     

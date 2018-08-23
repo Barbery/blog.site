@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>离线发布 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83/</link>
+    <link>https://barbery.me/tags/%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83/</link>
     <description>Recent content in 离线发布 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Jul 2012 10:14:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>利用XMLRPC 离线发布wordpress 文章</title>
-      <link>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <link>https://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
       <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
       <description>还是直接上demo吧～～这样可以让大家更容易理解。。。 &amp;lt;?php include(&amp;quot;xmlrpc.inc&amp;quot;); $GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;; $c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80); $c-&amp;gt;return_type = &#39;phpvals&#39;; $content[&#39;title&#39;]=&amp;quot;标题&amp;qu</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Service on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/service/</link>
+    <link>https://barbery.me/tags/service/</link>
     <description>Recent content in Service on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 23 Nov 2013 14:48:39 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/service/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/service/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>分享一个openresty的service脚本</title>
-      <link>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <link>https://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
       <description>因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty</description>
     </item>
     

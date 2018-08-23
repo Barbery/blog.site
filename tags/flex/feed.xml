@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flex on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/flex/</link>
+    <link>https://barbery.me/tags/flex/</link>
     <description>Recent content in Flex on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 29 Aug 2012 11:09:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/flex/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/flex/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>flex中慎用百分比布局</title>
-      <link>http://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</link>
+      <link>https://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</link>
       <pubDate>Wed, 29 Aug 2012 11:09:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</guid>
       <description>困扰已久我的问题，没想到今天终于给我找出了原因。。。这个问题就是，我做的股票应用里面，因为股票信息更新频繁，会出现部分label内容不显示出</description>
     </item>
     
     <item>
       <title>终于解决了FLEX CandlestickSeries 变形 缩小的问题</title>
-      <link>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 10 Jul 2012 17:25:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>虽然，其中的原理我不太清楚。。。但是，还是幸运的解决了这个问题。。。这是个神奇的问题，上网搜索竟然没有人问过这样的问题。。。我擦。。。这是间</description>
     </item>
     
     <item>
       <title>FLEX Timer计时器stop方法停止不了的原因</title>
-      <link>http://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
+      <link>https://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Thu, 05 Jul 2012 15:41:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
+      <guid>https://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
       <description>今天发生一个奇异的问题，Timer方法，竟然注销不掉，断点调试，发现没什么问题，明明都成功调用了stop() ，但是就是停止不了。。。 经过自己</description>
     </item>
     
     <item>
       <title>实现Linechart 一线多色，局部变色问题</title>
-      <link>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 27 Apr 2012 10:44:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
       <description>最近，在做一个股票的指标图。。。需要实现的情况是，当线条向上走时，需要加粗红色显示，而当线条向下时，就变为绿色。。。这里涉及到的就是，一条线</description>
     </item>
     

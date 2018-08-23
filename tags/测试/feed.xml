@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>测试 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E6%B5%8B%E8%AF%95/</link>
+    <link>https://barbery.me/tags/%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 测试 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2013 22:02:29 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E6%B5%8B%E8%AF%95/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E6%B5%8B%E8%AF%95/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>简单测试下ngx_drizzle_module</title>
-      <link>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
+      <link>https://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
       <pubDate>Wed, 08 May 2013 22:02:29 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
+      <guid>https://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
       <description>webbench -c 500 -t 30 测试结果 TP框架 Speed=19198 pages/min, 112866 bytes/sec. Requests: 6635 susceed, 2964 failed. 原生 Speed=16602 pages/min, 89106 bytes/sec. Requests: 6027 susceed, 2274 failed. nginx with drizzle Speed=34116 pages/min, 212853 bytes/sec. Requests: 14347 susceed, 2711 failed. 毫无疑问的，nginx drizzle下速度是最快的</description>
     </item>
     

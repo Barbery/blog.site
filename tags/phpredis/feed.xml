@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phpredis on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/phpredis/</link>
+    <link>https://barbery.me/tags/phpredis/</link>
     <description>Recent content in Phpredis on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 19 Mar 2017 21:29:27 +0800</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/phpredis/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/phpredis/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP高并发下问题总结</title>
-      <link>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
+      <link>https://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
       <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
       
-      <guid>http://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
+      <guid>https://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
       <description>上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。 这么大的流量突然涌入，真是把我</description>
     </item>
     

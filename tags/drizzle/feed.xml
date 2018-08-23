@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Drizzle on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/drizzle/</link>
+    <link>https://barbery.me/tags/drizzle/</link>
     <description>Recent content in Drizzle on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2013 22:11:38 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/drizzle/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/drizzle/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用ngx_drizzle时遇到一个坑，记录下。。。</title>
-      <link>http://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
+      <link>https://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
       <pubDate>Wed, 08 May 2013 22:11:38 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
+      <guid>https://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
       <description>刚刚装好ngx_drizzle的时候，老是连接不上，代码都是安装官方demo来写的，竟然都不行。。。看了文档，报错如下： failed to connect: 23: Access denied for user &amp;lsquo;root&amp;rsquo;@&amp;lsquo;localhost&amp;rsquo; (using</description>
     </item>
     
     <item>
       <title>简单测试下ngx_drizzle_module</title>
-      <link>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
+      <link>https://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
       <pubDate>Wed, 08 May 2013 22:02:29 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
+      <guid>https://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
       <description>webbench -c 500 -t 30 测试结果 TP框架 Speed=19198 pages/min, 112866 bytes/sec. Requests: 6635 susceed, 2964 failed. 原生 Speed=16602 pages/min, 89106 bytes/sec. Requests: 6027 susceed, 2274 failed. nginx with drizzle Speed=34116 pages/min, 212853 bytes/sec. Requests: 14347 susceed, 2711 failed. 毫无疑问的，nginx drizzle下速度是最快的</description>
     </item>
     

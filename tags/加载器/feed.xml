@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>加载器 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+    <link>https://barbery.me/tags/%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
     <description>Recent content in 加载器 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 13 Mar 2013 17:33:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E5%8A%A0%E8%BD%BD%E5%99%A8/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E5%8A%A0%E8%BD%BD%E5%99%A8/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>学习如何写PHP MVC框架（2）加载器</title>
-      <link>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+      <link>https://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
       <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <guid>https://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
       <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
     </item>
     

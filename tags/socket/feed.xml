@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Socket on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/socket/</link>
+    <link>https://barbery.me/tags/socket/</link>
     <description>Recent content in Socket on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 18 Jul 2014 11:11:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/socket/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/socket/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说phalcon怎么连接mysqld.sock</title>
-      <link>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <link>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
       <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <guid>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
       <description>phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phal</description>
     </item>
     
     <item>
       <title>说说luasocket http的使用</title>
-      <link>http://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 01 Dec 2013 19:54:06 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>luasocket包中的socket.http比较简单， 关于它的使用方法，网上内容也比较少， 常用的方法是GET和POST比较多。。。 GET的</description>
     </item>
     
     <item>
       <title>果然nginx使用socket来与php-fpm通讯是更高效率的</title>
-      <link>http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
+      <link>https://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
       <pubDate>Thu, 03 Oct 2013 00:28:32 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
+      <guid>https://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
       <description>1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000</description>
     </item>
     

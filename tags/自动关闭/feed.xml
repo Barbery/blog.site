@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>自动关闭 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/</link>
+    <link>https://barbery.me/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/</link>
     <description>Recent content in 自动关闭 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 03 Nov 2012 16:36:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>擦~~终于搞定FlashBuider 自动关闭的问题了</title>
-      <link>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
+      <link>https://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
       <pubDate>Sat, 03 Nov 2012 16:36:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
+      <guid>https://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
       <description>FlashBuider 好卡有木有？设计模式自动关闭有木有？代码写着写着，FlashBuider 就自动关闭了有木有？？？？ 擦，这个问题困扰我已久，google许久</description>
     </item>
     

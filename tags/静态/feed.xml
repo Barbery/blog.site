@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>静态 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E9%9D%99%E6%80%81/</link>
+    <link>https://barbery.me/tags/%E9%9D%99%E6%80%81/</link>
     <description>Recent content in 静态 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 21 Jun 2013 15:21:24 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E9%9D%99%E6%80%81/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E9%9D%99%E6%80%81/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说wordpress页面静态化多说插件和admin bar的问题</title>
-      <link>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 21 Jun 2013 15:21:24 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了…. 要想去掉admin-bar这</description>
     </item>
     

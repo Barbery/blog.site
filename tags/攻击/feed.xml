@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>攻击 on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/%E6%94%BB%E5%87%BB/</link>
+    <link>https://barbery.me/tags/%E6%94%BB%E5%87%BB/</link>
     <description>Recent content in 攻击 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 31 May 2014 15:38:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/%E6%94%BB%E5%87%BB/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/%E6%94%BB%E5%87%BB/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说hash collision</title>
-      <link>http://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</link>
+      <link>https://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</link>
       <pubDate>Sat, 31 May 2014 15:38:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</guid>
+      <guid>https://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</guid>
       <description>hash collision，也就是平常说的哈希碰撞，其方法就是利用已知的hash算法，生成不均匀的哈希，导致其名为hash table而实际性能却早</description>
     </item>
     

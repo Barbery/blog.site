@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zephir on Barbery&#39;s Blog</title>
-    <link>http://barbery.me/tags/zephir/</link>
+    <link>https://barbery.me/tags/zephir/</link>
     <description>Recent content in Zephir on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 05 Apr 2014 20:24:00 +0000</lastBuildDate>
     
-	<atom:link href="http://barbery.me/tags/zephir/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.me/tags/zephir/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>大爱phalcon啊</title>
-      <link>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
+      <link>https://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
       <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
       
-      <guid>http://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
+      <guid>https://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
       <description>最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设</description>
     </item>
     
