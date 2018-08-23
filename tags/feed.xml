@@ -624,6 +624,15 @@
     </item>
     
     <item>
+      <title>Imgcat</title>
+      <link>http://barbery.me/tags/imgcat/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/tags/imgcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Init.d</title>
       <link>http://barbery.me/tags/init.d/</link>
       <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
@@ -638,6 +647,15 @@
       <pubDate>Wed, 18 Sep 2013 11:50:03 +0000</pubDate>
       
       <guid>http://barbery.me/tags/isset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iterm2</title>
+      <link>http://barbery.me/tags/iterm2/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/tags/iterm2/</guid>
       <description></description>
     </item>
     
@@ -761,7 +779,7 @@
     <item>
       <title>Mac</title>
       <link>http://barbery.me/tags/mac/</link>
-      <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
       
       <guid>http://barbery.me/tags/mac/</guid>
       <description></description>
@@ -1430,6 +1448,15 @@
       <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
       
       <guid>http://barbery.me/tags/xmlrpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xquartz</title>
+      <link>http://barbery.me/tags/xquartz/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/tags/xquartz/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imgcat on Barbery&#39;s Blog</title>
+    <link>http://barbery.me/tags/imgcat/</link>
+    <description>Recent content in Imgcat on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 11 Jun 2018 19:22:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://barbery.me/tags/imgcat/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>imgcat--最佳的命令行图片浏览器</title>
+      <link>http://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
+      <description>eog和feh 最近有个场景需要用到命令行去查看图片，google了一圈，尝试了一下eog和feh。 eog和feh差不多，feh在加载速度上会</description>
+    </item>
+    
+  </channel>
+</rss>

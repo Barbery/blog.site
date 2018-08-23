@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>imgcat--最佳的命令行图片浏览器</title>
+      <link>http://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
+      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      
+      <guid>http://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
+      <description>eog和feh 最近有个场景需要用到命令行去查看图片，google了一圈，尝试了一下eog和feh。 eog和feh差不多，feh在加载速度上会</description>
+    </item>
+    
+    <item>
       <title>解决go NullTime的问题</title>
       <link>http://barbery.me/post/2018-06-11-fix-go-null-time/</link>
       <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
