@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</loc>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</loc>
     <lastmod>2018-06-11T19:22:09+08:00</lastmod>
   </url>
@@ -1113,7 +1118,7 @@
   
   <url>
     <loc>https://barbery.me/</loc>
-    <lastmod>2018-06-11T19:22:09+08:00</lastmod>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1132,6 +1137,12 @@
   <url>
     <loc>https://barbery.me/tags/benchmark/</loc>
     <lastmod>2013-12-04T17:27:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/binlog/</loc>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1257,6 +1268,12 @@
   <url>
     <loc>https://barbery.me/tags/datetime/</loc>
     <lastmod>2018-06-11T19:22:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/db/</loc>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1586,13 +1603,19 @@
   
   <url>
     <loc>https://barbery.me/tags/mysql/</loc>
-    <lastmod>2015-04-27T23:30:54+00:00</lastmod>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://barbery.me/tags/mysql_real_escape_string/</loc>
     <lastmod>2013-09-06T21:28:32+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/mysqlbinlog/</loc>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1688,7 +1711,7 @@
   
   <url>
     <loc>https://barbery.me/post/</loc>
-    <lastmod>2018-06-11T19:22:09+08:00</lastmod>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2672,7 +2695,7 @@
   
   <url>
     <loc>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2018-06-11T19:22:09+08:00</lastmod>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2751,6 +2774,12 @@
   <url>
     <loc>https://barbery.me/tags/%E6%81%92%E7%94%9F%E9%93%B6%E8%A1%8C/</loc>
     <lastmod>2012-09-23T21:51:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/%E6%81%A2%E5%A4%8D/</loc>
+    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   

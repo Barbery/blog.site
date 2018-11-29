@@ -6,10 +6,19 @@
     <description>Recent content in 开发 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 11 Jun 2018 19:22:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 18:05:09 +0800</lastBuildDate>
     
 	<atom:link href="https://barbery.me/categories/%E5%BC%80%E5%8F%91/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>记mysqlbinlog数据恢复遇到的问题</title>
+      <link>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</link>
+      <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</guid>
+      <description>事件复盘 事情的原因是，手下一名开发在部署的时候，执行错了错误的脚本，把生产的一个重要的表的数据给清空了。 我得知消息后，登陆数据库确认了数据已</description>
+    </item>
     
     <item>
       <title>imgcat--最佳的命令行图片浏览器</title>

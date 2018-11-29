@@ -210,6 +210,15 @@
     </item>
     
     <item>
+      <title>Binlog</title>
+      <link>https://barbery.me/tags/binlog/</link>
+      <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/binlog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Blog</title>
       <link>https://barbery.me/tags/blog/</link>
       <pubDate>Sun, 13 Nov 2011 19:06:53 +0000</pubDate>
@@ -386,6 +395,15 @@
       <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
       
       <guid>https://barbery.me/tags/datetime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Db</title>
+      <link>https://barbery.me/tags/db/</link>
+      <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/db/</guid>
       <description></description>
     </item>
     
@@ -878,7 +896,7 @@
     <item>
       <title>Mysql</title>
       <link>https://barbery.me/tags/mysql/</link>
-      <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
+      <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
       
       <guid>https://barbery.me/tags/mysql/</guid>
       <description></description>
@@ -890,6 +908,15 @@
       <pubDate>Fri, 06 Sep 2013 21:28:32 +0000</pubDate>
       
       <guid>https://barbery.me/tags/mysql_real_escape_string/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysqlbinlog</title>
+      <link>https://barbery.me/tags/mysqlbinlog/</link>
+      <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/mysqlbinlog/</guid>
       <description></description>
     </item>
     
@@ -2591,6 +2618,15 @@
       <pubDate>Sun, 23 Sep 2012 21:51:00 +0000</pubDate>
       
       <guid>https://barbery.me/tags/%E6%81%92%E7%94%9F%E9%93%B6%E8%A1%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>恢复</title>
+      <link>https://barbery.me/tags/%E6%81%A2%E5%A4%8D/</link>
+      <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/%E6%81%A2%E5%A4%8D/</guid>
       <description></description>
     </item>
     

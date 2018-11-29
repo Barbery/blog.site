@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>记mysqlbinlog数据恢复遇到的问题 - Barbery&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  
+  <meta name="description" content="事件复盘 事情的原因是，手下一名开发在部署的时候，执行错了错误的脚本，把生产的一个重要的表的数据给清空了。 我得知消息后，登陆数据库确认了数据已">
+  
+  <meta itemprop="name" content="记mysqlbinlog数据恢复遇到的问题 - Barbery&#39;s Blog">
+  <meta itemprop="description" content="事件复盘 事情的原因是，手下一名开发在部署的时候，执行错了错误的脚本，把生产的一个重要的表的数据给清空了。 我得知消息后，登陆数据库确认了数据已">
+  <meta itemprop="image" content="https://barbery.me/img/author.jpg">
+  
+  
+  <meta name="twitter:description" content="">
+  
+  <link rel="shortcut icon" href="https://barbery.me/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="https://barbery.me/apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="https://barbery.me/apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://barbery.me/highlight/styles/github.css">
+  <script src="https://barbery.me/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="https://barbery.me/font/hack/css/hack.min.css">
+  <link rel="stylesheet" href="https://barbery.me/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+  
+  <div id="textlogo">
+    <h1 class="site-name"><a href="https://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a></h1>
+    <h2 class="blog-motto">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也</h2>
+  </div>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
+  <div class="social-font clearfix">
+  
+  <a href="http://weibo.com/stutostu" target="_blank" title="weibo"></a>
+  
+  
+  
+  <a href="https://github.com/Barbery" target="_blank" title="github"></a>
+  
+  
+  
+  <a href="https://cn.linkedin.com/in/BarberyXie" target="_blank" title="linkedin"></a>
+  
+</div>
+  <nav class="animated">
+    <ul>
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about">about</a></li>
+      
+      <li><a href="/link">link</a></li>
+      
+      <li>
+        <form class="search" method="get" action="https://www.google.com/search">
+          <div>
+            <input type="text" id="search" name="q" placeholder="search">
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+  <div id="container">
+    <div id="main" class="post" itemscope itemprop="blogPost" style="width:100%;">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/" title="记mysqlbinlog数据恢复遇到的问题" itemprop="url">记mysqlbinlog数据恢复遇到的问题</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://barbery.me" title=""></a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2018-11-28 18:05:09 &#43;0800 CST" itemprop="datePublished">2018年11月28日</time>
+  </p>
+</header>
+
+	<div class="article-content">
+    
+    
+
+<h2 id="事件复盘">事件复盘</h2>
+
+<p>事情的原因是，手下一名开发在部署的时候，执行错了错误的脚本，把生产的一个重要的表的数据给清空了。</p>
+
+<p>我得知消息后，登陆数据库确认了数据已被删除，立即公告停服维护，然后停掉从库同步，然后利用mysqlbinlog查找出删除语句所在的position。</p>
+
+<p>幸亏db有个每日备份的脚本，所以我们只要把db恢复到最近的备份版本，然后只要执行备份时间到刚刚的position之间的sql就可以恢复回到删除前的状态。</p>
+
+<p>利用</p>
+
+<pre><code>mysqlbinlog --start-datetime=&quot;YYYY-mm-dd HH:ii:ss&quot; --stop-position=&quot;xxxxx&quot; &gt; recover.sql
+</code></pre>
+
+<p>就可以把恢复的sql导出来，然后只要执行这个sql就可以了。</p>
+
+<h2 id="gtid的导致恢复数据没有生效的问题">GTID的导致恢复数据没有生效的问题</h2>
+
+<p>本以为就这么结束了，没想到发现虽然执行完了，但是数据却没有写入到db里。查了一圈发现，原来是由于生产的服务器启用了GTID，所以在执行binlog恢复的时候，会自动跳过已经执行过的GTID命令，所以在执行mysqlbinlog时要加上&ndash;skip-gtids=true选项。</p>
+
+<pre><code class="language-sql">mysqlbinlog --skip-gtids=true
+</code></pre>
+
+<h2 id="error-1609-hy000-table-map的问题">ERROR 1609 (HY000): Table_map的问题</h2>
+
+<p>在恢复的过程，有些binlog的内容无法正常解析导入，会提示错误：
+<code>ERROR 1609 (HY000): The BINLOG statement of type Table_map was not preceded by a format description BINLOG statement</code></p>
+
+<p>这个问题还真心奇怪，网上找了一圈，能搜到的文章也寥寥无几，后面同事不停的尝试才发现了一个<code>神奇</code>的解决办法，是的，要用神奇来形容！</p>
+
+<p>我们参考了知乎的一篇文章<a href="https://zhuanlan.zhihu.com/p/24689474">&ldquo;mysqlbinlog工具使用的几个疑惑点和解释&rdquo;</a></p>
+
+<p>里面提到
+&gt;即不管执行多少次同一个BINLOG，都无法成功。除非先执行了Format_description_event：</p>
+
+<pre><code>mysql&gt; BINLOG '                                  &gt; bTXkUw8KAAAAdQAAAHkAAAABAAQANS42LjE5LWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+     &gt; AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXQAEGggAAAAICAgCAAAACgoKGRkADQEe
+     &gt; sjFX
+     &gt; '/*!*/;  //这是一个Format_description_event
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; BINLOG '
+     &gt; kTXkUxMKAAAALQAAAPoDAAAAAEgAAAAAAAEABHRlc3QAAnQzAAEDAAFS1mTW
+     &gt; kTXkUx4KAAAALQAAACcEAAAAAEgAAAAAAAEAAgAB//4BAAAA/gIAAAC52uck
+     &gt; '/*!*/;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+
+<p>就是这个神奇的magic binlog，在执行完</p>
+
+<pre><code>BINLOG 'bTXkUw8KAAAAdQAAAHkAAAABAAQANS42LjE5LWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXQAEGggAAAAICAgCAAAACgoKGRkADQEesjFX'/*!*/;
+</code></pre>
+
+<p>后，再执行之前有问题的table_map的语句居然就可以正常执行了。所以接下来的问题就好办了，所有执行binlog之前都让它先执行这条magic binlog就好了。</p>
+
+<p>利用sed可以完成这个任务。</p>
+
+<pre><code>sed &quot;s/BINLOG/BINLOG 'bTXkUw8KAAAAdQAAAHkAAAABAAQANS42LjE5LWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXQAEGggAAAAICAgCAAAACgoKGRkADQEesjFX'\/\*\!\*\/;\nBINLOG/&quot; NEED_REPLACE.sql &gt; NEW.sql
+</code></pre>
+
+<h2 id="总结">总结</h2>
+
+<ol>
+<li>db的定时备份很重要，如果没有每日的备份，要从0恢复起来，这个过程和遇到问题肯定非常艰辛。</li>
+<li>注意导入过程中的ERROR 1609 (HY000): Table_map的报错，这会导致部分数据没有写入成功，从而丢失了数据。</li>
+<li>干死那个误操作的人。</li>
+</ol>
+
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="https://barbery.me/tags/mysqlbinlog">mysqlbinlog</a>
+  
+  <a href="https://barbery.me/tags/%E6%81%A2%E5%A4%8D">恢复</a>
+  
+  <a href="https://barbery.me/tags/mysql">mysql</a>
+  
+  <a href="https://barbery.me/tags/db">db</a>
+  
+  <a href="https://barbery.me/tags/binlog">binlog</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="https://barbery.me/categories/%E5%BC%80%E5%8F%91">开发</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/" data-title="记mysqlbinlog数据恢复遇到的问题" data-tsina="" class="share clearfix">
+    </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+
+</div>
+
+  </div>
+  <footer><div id="footer" >
+  
+  
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2018
+    
+    <a href="https://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a>
+    
+  </p>
+</div>
+</footer>
+  <script src="https://barbery.me/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+done = false;
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:https:\/\/barbery.me\/ ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+<link rel="stylesheet" href="https://barbery.me/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="https://barbery.me/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
+
+
+
+
+</body>
+</html>
