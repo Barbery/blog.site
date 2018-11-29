@@ -30,11 +30,8 @@ filename_case = 0
   MonthFormat = "2006年01月"
   FancyBox = true
 
-  #[Params.DuoShuo]
-  #  ShortName = "coderzh"
 
-  [Params.Disqus]
-    ShortName = "barbery"
+  DisqusShortName = "Barbery-blog"
 
   [Params.GoogleAnalytics]
     ID = "UA-80280597-1"
