@@ -31,7 +31,7 @@ filename_case = 0
   FancyBox = true
 
 
-  DisqusShortName = "Barbery-blog"
+  DisqusShortName = "barbery"
 
   [Params.GoogleAnalytics]
     ID = "UA-80280597-1"
