@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Error on Barbery&#39;s Blog</title>
+    <link>https://barbery.me/tags/error/</link>
+    <description>Recent content in Error on Barbery&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 Mar 2019 14:59:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://barbery.me/tags/error/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>docker翻车记</title>
+      <link>https://barbery.me/post/2019-03-08-how-to-fix-docker-problems/</link>
+      <pubDate>Fri, 08 Mar 2019 14:59:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/post/2019-03-08-how-to-fix-docker-problems/</guid>
+      <description>Error starting daemon: Error initializing network controller: list bridge addresses failed: no available network 如果你的docker daemon启动不起来，可以试试用dockerd启动，看看打印出来的日志是什么错误，如果是这</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://barbery.me/post/2019-03-08-how-to-fix-docker-problems/</loc>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</loc>
     <lastmod>2018-11-28T18:05:09+08:00</lastmod>
   </url>
@@ -1118,7 +1123,7 @@
   
   <url>
     <loc>https://barbery.me/</loc>
-    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1266,6 +1271,12 @@
   </url>
   
   <url>
+    <loc>https://barbery.me/tags/daemon/</loc>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/tags/datetime/</loc>
     <lastmod>2018-06-11T19:22:09+08:00</lastmod>
     <priority>0</priority>
@@ -1297,13 +1308,19 @@
   
   <url>
     <loc>https://barbery.me/tags/docker/</loc>
-    <lastmod>2016-04-20T11:18:13+00:00</lastmod>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://barbery.me/tags/drizzle/</loc>
     <lastmod>2013-05-08T22:11:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/error/</loc>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1626,6 +1643,12 @@
   </url>
   
   <url>
+    <loc>https://barbery.me/tags/network/</loc>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/tags/nginx/</loc>
     <lastmod>2013-11-23T14:48:39+00:00</lastmod>
     <priority>0</priority>
@@ -1640,6 +1663,12 @@
   <url>
     <loc>https://barbery.me/tags/nulltime/</loc>
     <lastmod>2018-06-11T19:22:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/oci/</loc>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1711,7 +1740,7 @@
   
   <url>
     <loc>https://barbery.me/post/</loc>
-    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2695,7 +2724,7 @@
   
   <url>
     <loc>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2018-11-28T18:05:09+08:00</lastmod>
+    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
