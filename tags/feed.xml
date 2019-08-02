@@ -545,7 +545,7 @@
     <item>
       <title>Go</title>
       <link>https://barbery.me/tags/go/</link>
-      <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
+      <pubDate>Fri, 02 Aug 2019 15:24:09 +0800</pubDate>
       
       <guid>https://barbery.me/tags/go/</guid>
       <description></description>
@@ -584,6 +584,15 @@
       <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
       
       <guid>https://barbery.me/tags/gorouter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Goroutine</title>
+      <link>https://barbery.me/tags/goroutine/</link>
+      <pubDate>Fri, 02 Aug 2019 15:24:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/goroutine/</guid>
       <description></description>
     </item>
     
@@ -1956,6 +1965,15 @@
     </item>
     
     <item>
+      <title>内存泄露</title>
+      <link>https://barbery.me/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</link>
+      <pubDate>Fri, 02 Aug 2019 15:24:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>净资产收益率</title>
       <link>https://barbery.me/tags/%E5%87%80%E8%B5%84%E4%BA%A7%E6%94%B6%E7%9B%8A%E7%8E%87/</link>
       <pubDate>Fri, 21 Sep 2012 00:11:00 +0000</pubDate>
@@ -3140,6 +3158,15 @@
       <pubDate>Mon, 30 Apr 2012 23:29:00 +0000</pubDate>
       
       <guid>https://barbery.me/tags/%E6%B2%83%E5%B0%94%E7%89%B9%E6%96%BD%E6%B4%9B%E6%96%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>泄露</title>
+      <link>https://barbery.me/tags/%E6%B3%84%E9%9C%B2/</link>
+      <pubDate>Fri, 02 Aug 2019 15:24:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/tags/%E6%B3%84%E9%9C%B2/</guid>
       <description></description>
     </item>
     

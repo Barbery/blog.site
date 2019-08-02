@@ -6,10 +6,19 @@
     <description>Recent content on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 08 Mar 2019 14:59:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2019 15:24:09 +0800</lastBuildDate>
     
 	<atom:link href="https://barbery.me/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>记一次goroutine内存泄露</title>
+      <link>https://barbery.me/post/2019-08-02-fix-goroutine-memory-leak/</link>
+      <pubDate>Fri, 02 Aug 2019 15:24:09 +0800</pubDate>
+      
+      <guid>https://barbery.me/post/2019-08-02-fix-goroutine-memory-leak/</guid>
+      <description>最近上线了一版go的代码，发现居然有内存溢出。。。找了好久没发现是什么原因，打开了net/http/pprof到线上收集goroutine的</description>
+    </item>
     
     <item>
       <title>docker翻车记</title>

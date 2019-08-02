@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://barbery.me/post/2019-08-02-fix-goroutine-memory-leak/</loc>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/post/2019-03-08-how-to-fix-docker-problems/</loc>
     <lastmod>2019-03-08T14:59:09+08:00</lastmod>
   </url>
@@ -1123,7 +1128,7 @@
   
   <url>
     <loc>https://barbery.me/</loc>
-    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1374,7 +1379,7 @@
   
   <url>
     <loc>https://barbery.me/tags/go/</loc>
-    <lastmod>2018-06-11T19:22:09+08:00</lastmod>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1399,6 +1404,12 @@
   <url>
     <loc>https://barbery.me/tags/gorouter/</loc>
     <lastmod>2014-11-16T10:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/goroutine/</loc>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1740,7 +1751,7 @@
   
   <url>
     <loc>https://barbery.me/post/</loc>
-    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2327,6 +2338,12 @@
   </url>
   
   <url>
+    <loc>https://barbery.me/tags/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2/</loc>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/tags/%E5%87%80%E8%B5%84%E4%BA%A7%E6%94%B6%E7%9B%8A%E7%8E%87/</loc>
     <lastmod>2012-09-21T00:11:00+00:00</lastmod>
     <priority>0</priority>
@@ -2724,7 +2741,7 @@
   
   <url>
     <loc>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -3133,6 +3150,12 @@
   <url>
     <loc>https://barbery.me/tags/%E6%B2%83%E5%B0%94%E7%89%B9%E6%96%BD%E6%B4%9B%E6%96%AF/</loc>
     <lastmod>2012-04-30T23:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/%E6%B3%84%E9%9C%B2/</loc>
+    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
