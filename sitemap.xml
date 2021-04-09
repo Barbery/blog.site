@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/</loc>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://barbery.me/post/2019-08-02-fix-goroutine-memory-leak/</loc>
     <lastmod>2019-08-02T15:24:09+08:00</lastmod>
   </url>
@@ -1128,7 +1133,7 @@
   
   <url>
     <loc>https://barbery.me/</loc>
-    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1313,7 +1318,13 @@
   
   <url>
     <loc>https://barbery.me/tags/docker/</loc>
-    <lastmod>2019-03-08T14:59:09+08:00</lastmod>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/docker_internal/</loc>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1470,6 +1481,12 @@
   <url>
     <loc>https://barbery.me/tags/init.d/</loc>
     <lastmod>2013-11-23T14:48:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://barbery.me/tags/ip%E5%86%B2%E7%AA%81/</loc>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1751,7 +1768,7 @@
   
   <url>
     <loc>https://barbery.me/post/</loc>
-    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2741,7 +2758,7 @@
   
   <url>
     <loc>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2019-08-02T15:24:09+08:00</lastmod>
+    <lastmod>2021-04-09T17:56:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -3400,14 +3417,14 @@
   </url>
   
   <url>
-    <loc>https://barbery.me/categories/%E8%82%A1%E7%A5%A8/</loc>
-    <lastmod>2013-09-09T23:51:20+00:00</lastmod>
+    <loc>https://barbery.me/tags/%E8%82%A1%E7%A5%A8/</loc>
+    <lastmod>2012-07-09T23:59:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://barbery.me/tags/%E8%82%A1%E7%A5%A8/</loc>
-    <lastmod>2012-07-09T23:59:00+00:00</lastmod>
+    <loc>https://barbery.me/categories/%E8%82%A1%E7%A5%A8/</loc>
+    <lastmod>2013-09-09T23:51:20+00:00</lastmod>
     <priority>0</priority>
   </url>
   

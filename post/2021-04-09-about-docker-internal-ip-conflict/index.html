@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>关于docker internal ip冲突的问题 - Barbery&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+  
+  <meta name="description" content="今天在阿里云上，一台ESC死活连接不了另外一台ESC，VPC的设置和云企业网的设置都没问题，安全组策略也都放行， 就是死活连接不上，无果只能找">
+  
+  <meta itemprop="name" content="关于docker internal ip冲突的问题 - Barbery&#39;s Blog">
+  <meta itemprop="description" content="今天在阿里云上，一台ESC死活连接不了另外一台ESC，VPC的设置和云企业网的设置都没问题，安全组策略也都放行， 就是死活连接不上，无果只能找">
+  <meta itemprop="image" content="https://barbery.me/img/author.jpg">
+  
+  
+  <meta name="twitter:description" content="">
+  
+  <link rel="shortcut icon" href="https://barbery.me/img/favicon.ico"/>
+  <link rel="apple-touch-icon" href="https://barbery.me/apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="https://barbery.me/apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://barbery.me/highlight/styles/github.css">
+  <script src="https://barbery.me/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="https://barbery.me/font/hack/css/hack.min.css">
+  <link rel="stylesheet" href="https://barbery.me/css/style.css">
+  <script data-ad-client="ca-pub-7149935706066429" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+  <header>
+    <div>
+  
+  <div id="textlogo">
+    <h1 class="site-name"><a href="https://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a></h1>
+    <h2 class="blog-motto">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也</h2>
+  </div>
+  <div class="navbar"><a class="navbutton navmobile" href="#" title="menu"></a></div>
+  <div class="social-font clearfix">
+  
+  <a href="http://weibo.com/stutostu" target="_blank" title="weibo"></a>
+  
+  
+  
+  <a href="https://github.com/Barbery" target="_blank" title="github"></a>
+  
+  
+  
+  <a href="https://cn.linkedin.com/in/BarberyXie" target="_blank" title="linkedin"></a>
+  
+</div>
+  <nav class="animated">
+    <ul>
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about">about</a></li>
+      
+      <li><a href="/link">link</a></li>
+      
+      <li>
+        <form class="search" method="get" action="https://www.google.com/search">
+          <div>
+            <input type="text" id="search" name="q" placeholder="search">
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+  <div id="container">
+    <div id="main" class="post" itemscope itemprop="blogPost" style="width:100%;">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/" title="关于docker internal ip冲突的问题" itemprop="url">关于docker internal ip冲突的问题</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://barbery.me" title=""></a>
+    
+  </p>
+  <p class="article-time">
+    <time datetime="2021-04-09 17:56:09 &#43;0800 CST" itemprop="datePublished">2021年04月09日</time>
+  </p>
+</header>
+
+	<div class="article-content">
+    
+    <p>今天在阿里云上，一台ESC死活连接不了另外一台ESC，VPC的设置和云企业网的设置都没问题，安全组策略也都放行，
+就是死活连接不上，无果只能找阿里云客服，阿里云的客服真是出了名的效率低下，沟通了几个小时后，最终才定位到真正的原因。
+原因是另外ESC的brige网络和VPC的网段冲突了，只能想办法把docker-compose自动生成的brige的ip改了。</p>
+
+<p>找了一圈，好像都是教你怎么改docker0的ip，试了下各种配置，都没办法对brige生效。看来只能手动修改了。。。</p>
+
+<pre><code># 先把旧的brige删掉,进入你的目录停掉应用
+docker-compose down
+# 看下docker_internal这个网络的ID是啥
+docker network ls
+# 把 $ID 换成你查到的ID
+docker network rm $ID
+# 手动创建一个docker_internal网络并指定ip
+docker network create --driver=bridge --subnet=172.1.0.0/24 docker_internal
+# 重新启动应用
+docker-compose up -d
+</code></pre>
+
+<p>弄完后，可以ifconfig看一下，是不是br-*这个网络变成了我们指定的网段</p>
+
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="https://barbery.me/tags/docker">docker</a>
+  
+  <a href="https://barbery.me/tags/docker_internal">docker_internal</a>
+  
+  <a href="https://barbery.me/tags/ip%E5%86%B2%E7%AA%81">ip冲突</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="https://barbery.me/categories/%E5%BC%80%E5%8F%91">开发</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/" data-title="关于docker internal ip冲突的问题" data-tsina="" class="share clearfix">
+    </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+<section class="comment">
+<div id="disqus_thread"></div>
+</section>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/";
+this.page.identifier = "https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/";
+};
+(function() { 
+var d = document, s = d.createElement('script');
+
+s.src = '//barbery.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+  </div>
+  <footer><div id="footer" >
+  
+  
+  <p class="copyright">Powered by <a href="http://gohugo.io" target="_blank" title="hugo">hugo</a> and Theme by <a href="https://github.com/coderzh/hugo-pacman-theme" target="_blank" title="hugo-pacman-theme">hugo-pacman-theme</a> © 2021
+    
+    <a href="https://barbery.me/" title="Barbery&#39;s Blog">Barbery&#39;s Blog</a>
+    
+  </p>
+</div>
+</footer>
+  <script src="https://barbery.me/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+done = false;
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:https:\/\/barbery.me\/ ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+<link rel="stylesheet" href="https://barbery.me/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="https://barbery.me/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
+
+
+
+
+</body>
+</html>
