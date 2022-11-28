@@ -1,4 +1,4 @@
-baseurl = "https://barbery.me/"
+baseurl = "https://barbery.github.io/blog.site/"
 languageCode = "zh-CN"
 Title = "Barbery's Blog"
 HasCJKLanguage = true
@@ -17,7 +17,7 @@ filename_case = 0
   Name = "barbery"
 
 [Params]
-  AuthorHomepage = "http://barbery.me"
+  AuthorHomepage = "https://barbery.github.io"
   #BottomIntroduce = "Introduce1 <br/> Introduce2"
   Description = ""
   Subtitle = "夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也"
