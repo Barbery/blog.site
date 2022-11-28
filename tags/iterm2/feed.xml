@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iterm2 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/iterm2/</link>
+    <link>https://barbery.github.io/blog.site/tags/iterm2/</link>
     <description>Recent content in Iterm2 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 11 Jun 2018 19:22:09 +0800</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/iterm2/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/iterm2/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>imgcat--最佳的命令行图片浏览器</title>
-      <link>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
+      <link>https://barbery.github.io/blog.site/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
       <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
       <description>eog和feh 最近有个场景需要用到命令行去查看图片，google了一圈，尝试了一下eog和feh。 eog和feh差不多，feh在加载速度上会</description>
     </item>
     

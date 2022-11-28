@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/wordpress/</link>
+    <link>https://barbery.github.io/blog.site/tags/wordpress/</link>
     <description>Recent content in Wordpress on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 21 Jun 2013 15:21:24 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/wordpress/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/wordpress/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说wordpress页面静态化多说插件和admin bar的问题</title>
-      <link>https://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 21 Jun 2013 15:21:24 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了…. 要想去掉admin-bar这</description>
     </item>
     
     <item>
       <title>说说sae上加快wordpress加载速度~</title>
-      <link>https://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
       <pubDate>Fri, 14 Jun 2013 20:03:25 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
       <description>因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip; 优化的重点是放在静态资源的加载速度上</description>
     </item>
     
     <item>
       <title>利用XMLRPC 离线发布wordpress 文章</title>
-      <link>https://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
       <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
       <description>还是直接上demo吧～～这样可以让大家更容易理解。。。 &amp;lt;?php include(&amp;quot;xmlrpc.inc&amp;quot;); $GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;; $c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80); $c-&amp;gt;return_type = &#39;phpvals&#39;; $content[&#39;title&#39;]=&amp;quot;标题&amp;qu</description>
     </item>
     
     <item>
       <title>wordpres for android -- 手机管理wp博客应用软件</title>
-      <link>https://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Sun, 22 Jan 2012 10:45:06 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
       <description>因为回家过年了，老家又没电脑，一直思索有没有什么手机软件可以管理下博客，或者回复下留言。这不，官方出了个wordpres for android 手机软件，本人使</description>
     </item>
     
     <item>
       <title>我的blog成立啦！</title>
-      <link>https://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</link>
+      <link>https://barbery.github.io/blog.site/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</link>
       <pubDate>Sun, 13 Nov 2011 19:06:53 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2011-11-13-%E6%88%91%E7%9A%84blog%E6%88%90%E7%AB%8B%E5%95%A6/</guid>
       <description>嘻嘻嘻嘻。。。经过一个下午的测试和调试。。。基本完成blog的搭建啦。。。 首先感谢无私奉献的大无畏精神-&amp;mdash;互联网精神，以及各位为</description>
     </item>
     

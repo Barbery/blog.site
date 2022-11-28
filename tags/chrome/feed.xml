@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chrome on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/chrome/</link>
+    <link>https://barbery.github.io/blog.site/tags/chrome/</link>
     <description>Recent content in Chrome on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 09 Sep 2013 23:18:20 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/chrome/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/chrome/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ZenMate - chrome下简单易用的翻墙神器</title>
-      <link>https://barbery.me/post/2013-09-09-ZenMate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-09-09-ZenMate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</link>
       <pubDate>Mon, 09 Sep 2013 23:18:20 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-09-09-ZenMate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-09-09-ZenMate-chrome%E4%B8%8B%E7%AE%80%E5%8D%95%E6%98%93%E7%94%A8%E7%9A%84%E7%BF%BB%E5%A2%99%E7%A5%9E%E5%99%A8/</guid>
       <description>哈哈, 这个插件本来作者意图是消除痕迹, 通过连接到ZenMate的代理服务器, 把用户的位置信息给隐藏加密了, 让你浏览网站的时候不暴露你的位置信</description>
     </item>
     
     <item>
       <title>绕过chrome插件content_scripts不能访问web定义的函数和变量</title>
-      <link>https://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</link>
       <pubDate>Sun, 21 Jul 2013 22:54:19 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</guid>
       <description>因为插件打算利用jsonp来调用远程服务器上的API接口…而尝试了很多次都发现报错说对象不存在, 查了下文档, 原来是chrome的安全机制限制</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>生活 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E7%94%9F%E6%B4%BB/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E7%94%9F%E6%B4%BB/</link>
     <description>Recent content in 生活 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 31 Dec 2014 22:25:46 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E7%94%9F%E6%B4%BB/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E7%94%9F%E6%B4%BB/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>2014年总结</title>
-      <link>https://barbery.me/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 31 Dec 2014 22:25:46 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-12-31-2014%E5%B9%B4%E6%80%BB%E7%BB%93/</guid>
       <description>工作 先说说今年的工作情况吧。。年初激情四射，和几位好朋友，满腔热火，砸锅卖铁去创业，势必把O2O果汁店这个idea给做起来。年中，资金耗完，</description>
     </item>
     

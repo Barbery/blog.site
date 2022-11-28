@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Udp on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/udp/</link>
+    <link>https://barbery.github.io/blog.site/tags/udp/</link>
     <description>Recent content in Udp on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 25 Sep 2015 09:35:01 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/udp/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/udp/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mosh - 妈妈再也不用担心我ssh连接断开了</title>
-      <link>https://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
       <pubDate>Fri, 25 Sep 2015 09:35:01 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
       <description>mosh是什么 最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。 你可能会问，说了</description>
     </item>
     

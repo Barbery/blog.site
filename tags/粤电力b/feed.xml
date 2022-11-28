@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>粤电力b on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E7%B2%A4%E7%94%B5%E5%8A%9Bb/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E7%B2%A4%E7%94%B5%E5%8A%9Bb/</link>
     <description>Recent content in 粤电力b on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 09 Dec 2011 23:05:00 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E7%B2%A4%E7%94%B5%E5%8A%9Bb/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E7%B2%A4%E7%94%B5%E5%8A%9Bb/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>谈谈粤电力B</title>
-      <link>https://barbery.me/post/2011-12-09-%E8%B0%88%E8%B0%88%E7%B2%A4%E7%94%B5%E5%8A%9BB/</link>
+      <link>https://barbery.github.io/blog.site/post/2011-12-09-%E8%B0%88%E8%B0%88%E7%B2%A4%E7%94%B5%E5%8A%9BB/</link>
       <pubDate>Fri, 09 Dec 2011 23:05:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2011-12-09-%E8%B0%88%E8%B0%88%E7%B2%A4%E7%94%B5%E5%8A%9BB/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2011-12-09-%E8%B0%88%E8%B0%88%E7%B2%A4%E7%94%B5%E5%8A%9BB/</guid>
       <description>粤电力B，是在sosme兄中的blog中无意看到的，sosme兄以逆向思维的方式去分析了粤电力B，看后也觉得颇有道理，故也做了下分析，数据收</description>
     </item>
     

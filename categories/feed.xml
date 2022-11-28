@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/categories/</link>
+    <link>https://barbery.github.io/blog.site/categories/</link>
     <description>Recent content in Categories on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://barbery.me/categories/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/categories/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>开发</title>
-      <link>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</link>
+      <link>https://barbery.github.io/blog.site/categories/%E5%BC%80%E5%8F%91/</link>
       <pubDate>Fri, 09 Apr 2021 17:56:09 +0800</pubDate>
       
-      <guid>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</guid>
+      <guid>https://barbery.github.io/blog.site/categories/%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>心情随笔</title>
-      <link>https://barbery.me/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</link>
+      <link>https://barbery.github.io/blog.site/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Mon, 02 Jan 2017 22:24:44 +0800</pubDate>
       
-      <guid>https://barbery.me/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://barbery.github.io/blog.site/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     
     <item>
       <title>我的旅途</title>
-      <link>https://barbery.me/categories/%E6%88%91%E7%9A%84%E6%97%85%E9%80%94/</link>
+      <link>https://barbery.github.io/blog.site/categories/%E6%88%91%E7%9A%84%E6%97%85%E9%80%94/</link>
       <pubDate>Sun, 07 Apr 2013 17:38:00 +0000</pubDate>
       
-      <guid>https://barbery.me/categories/%E6%88%91%E7%9A%84%E6%97%85%E9%80%94/</guid>
+      <guid>https://barbery.github.io/blog.site/categories/%E6%88%91%E7%9A%84%E6%97%85%E9%80%94/</guid>
       <description></description>
     </item>
     
     <item>
       <title>股票</title>
-      <link>https://barbery.me/categories/%E8%82%A1%E7%A5%A8/</link>
+      <link>https://barbery.github.io/blog.site/categories/%E8%82%A1%E7%A5%A8/</link>
       <pubDate>Mon, 09 Sep 2013 23:51:20 +0000</pubDate>
       
-      <guid>https://barbery.me/categories/%E8%82%A1%E7%A5%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/categories/%E8%82%A1%E7%A5%A8/</guid>
       <description></description>
     </item>
     

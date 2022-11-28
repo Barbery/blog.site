@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cmwrap on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/cmwrap/</link>
+    <link>https://barbery.github.io/blog.site/tags/cmwrap/</link>
     <description>Recent content in Cmwrap on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Apr 2012 19:11:39 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/cmwrap/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/cmwrap/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>解决cmwrap wap穿越上不了cmnet的问题</title>
-      <link>https://barbery.me/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 03 Apr 2012 19:11:39 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-04-03-%E8%A7%A3%E5%86%B3cmwrapwap%E7%A9%BF%E8%B6%8A%E4%B8%8A%E4%B8%8D%E4%BA%86cmnet%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>如题，cmwrap之前一直用的好好的，2个月前不知道干什么了，一直用穿越不了cmwap上cmnet。难得清明有假期宅在家里，就把这个问题解决</description>
     </item>
     

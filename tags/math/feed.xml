@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/math/</link>
+    <link>https://barbery.github.io/blog.site/tags/math/</link>
     <description>Recent content in Math on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 14 Dec 2012 12:40:00 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/math/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/math/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>慎用PHP内置的Math函数</title>
-      <link>https://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 14 Dec 2012 12:40:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</guid>
       <description>如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Libevent on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/libevent/</link>
+    <link>https://barbery.github.io/blog.site/tags/libevent/</link>
     <description>Recent content in Libevent on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Dec 2013 00:25:35 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/libevent/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/libevent/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>安装httpsqs问题小记</title>
-      <link>https://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Tue, 03 Dec 2013 00:25:35 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
       <description>遇到安装libevent-2.0.12-stable 报一大堆错误的话，可能是版本不兼容，去官网：http://libevent.org/ 下载</description>
     </item>
     

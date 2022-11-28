@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/mac/</link>
+    <link>https://barbery.github.io/blog.site/tags/mac/</link>
     <description>Recent content in Mac on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 11 Jun 2018 19:22:09 +0800</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/mac/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/mac/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>imgcat--最佳的命令行图片浏览器</title>
-      <link>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
+      <link>https://barbery.github.io/blog.site/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
       <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
       <description>eog和feh 最近有个场景需要用到命令行去查看图片，google了一圈，尝试了一下eog和feh。 eog和feh差不多，feh在加载速度上会</description>
     </item>
     
     <item>
       <title>减少mac上mysql的内存占用</title>
-      <link>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
       <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
       <description>用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。 sudo vim /etc/my.cnf 然后把下面的设置贴进去 [mysqld] max_connections =</description>
     </item>
     
     <item>
       <title>关于mac source bashrc引入path路径重启无效的问题小记</title>
-      <link>https://barbery.me/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Fri, 23 Aug 2013 20:08:51 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
       <description>今天同事的mac上遇到一个疑难杂症, 在bashrc设置好 export path后, source ~/.bashrc 重启后$PATH路径又被还原了…. 捣鼓了好久都不行, 不知道为什么,</description>
     </item>
     
     <item>
       <title>教你怎么在mac下为你的sublime text2 配置svn快捷提交</title>
-      <link>https://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</link>
       <pubDate>Mon, 13 May 2013 21:45:20 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</guid>
       <description>如果你是windows系统，你应该看这篇文章：http://www.stutostu.com/966.html ok，言归正传。。。 首先，你应</description>
     </item>
     
     <item>
       <title>mac 下配置memcached小记</title>
-      <link>https://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Wed, 08 May 2013 16:25:16 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
       <description>用homebrew安装的话，是很简单的，不过由于自己不懂，走了很多弯路。。。 简单点说 先安装memcached服务，用 brew install memcached 安装 安装memca</description>
     </item>
     
     <item>
       <title>mac下配置nginx&#43;php&#43;mysql小记</title>
-      <link>https://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
       <description>额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。 后来使用了大家都推荐的homebrew来安装。。。具体教</description>
     </item>
     

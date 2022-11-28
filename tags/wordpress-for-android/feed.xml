@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress for Android on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/wordpress-for-android/</link>
+    <link>https://barbery.github.io/blog.site/tags/wordpress-for-android/</link>
     <description>Recent content in Wordpress for Android on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 22 Jan 2012 10:45:06 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/wordpress-for-android/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/wordpress-for-android/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>wordpres for android -- 手机管理wp博客应用软件</title>
-      <link>https://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Sun, 22 Jan 2012 10:45:06 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
       <description>因为回家过年了，老家又没电脑，一直思索有没有什么手机软件可以管理下博客，或者回复下留言。这不，官方出了个wordpres for android 手机软件，本人使</description>
     </item>
     

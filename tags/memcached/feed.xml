@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memcached on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/memcached/</link>
+    <link>https://barbery.github.io/blog.site/tags/memcached/</link>
     <description>Recent content in Memcached on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 May 2013 16:25:16 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/memcached/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/memcached/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac 下配置memcached小记</title>
-      <link>https://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Wed, 08 May 2013 16:25:16 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
       <description>用homebrew安装的话，是很简单的，不过由于自己不懂，走了很多弯路。。。 简单点说 先安装memcached服务，用 brew install memcached 安装 安装memca</description>
     </item>
     

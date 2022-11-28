@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Websocket on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/websocket/</link>
+    <link>https://barbery.github.io/blog.site/tags/websocket/</link>
     <description>Recent content in Websocket on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 09 Aug 2014 16:03:00 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/websocket/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/websocket/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>go-chat 用go&#43;websocket写的一个html聊天组件</title>
-      <link>https://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
       <description>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。</description>
     </item>
     

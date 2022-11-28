@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>加速 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E5%8A%A0%E9%80%9F/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E5%8A%A0%E9%80%9F/</link>
     <description>Recent content in 加速 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 17 Dec 2014 22:36:26 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E5%8A%A0%E9%80%9F/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E5%8A%A0%E9%80%9F/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>为gist加速！</title>
-      <link>https://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
       <description>github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。 不过比较悲剧的</description>
     </item>
     
     <item>
       <title>说说sae上加快wordpress加载速度~</title>
-      <link>https://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
       <pubDate>Fri, 14 Jun 2013 20:03:25 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
       <description>因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip; 优化的重点是放在静态资源的加载速度上</description>
     </item>
     
     <item>
       <title>海外站长福音之cloundflare 免费 DNS 加速</title>
-      <link>https://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
+      <link>https://barbery.github.io/blog.site/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Tue, 20 Dec 2011 21:19:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
       <description>如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是</description>
     </item>
     

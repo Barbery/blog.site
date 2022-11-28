@@ -2,777 +2,777 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开发 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/categories/%E5%BC%80%E5%8F%91/</link>
+    <link>https://barbery.github.io/blog.site/categories/%E5%BC%80%E5%8F%91/</link>
     <description>Recent content in 开发 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 09 Apr 2021 17:56:09 +0800</lastBuildDate>
     
-	<atom:link href="https://barbery.me/categories/%E5%BC%80%E5%8F%91/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/categories/%E5%BC%80%E5%8F%91/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>关于docker internal ip冲突的问题</title>
-      <link>https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/</link>
+      <link>https://barbery.github.io/blog.site/post/2021-04-09-about-docker-internal-ip-conflict/</link>
       <pubDate>Fri, 09 Apr 2021 17:56:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2021-04-09-about-docker-internal-ip-conflict/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2021-04-09-about-docker-internal-ip-conflict/</guid>
       <description>今天在阿里云上，一台ESC死活连接不了另外一台ESC，VPC的设置和云企业网的设置都没问题，安全组策略也都放行， 就是死活连接不上，无果只能找</description>
     </item>
     
     <item>
       <title>记一次goroutine内存泄露</title>
-      <link>https://barbery.me/post/2019-08-02-fix-goroutine-memory-leak/</link>
+      <link>https://barbery.github.io/blog.site/post/2019-08-02-fix-goroutine-memory-leak/</link>
       <pubDate>Fri, 02 Aug 2019 15:24:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2019-08-02-fix-goroutine-memory-leak/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2019-08-02-fix-goroutine-memory-leak/</guid>
       <description>最近上线了一版go的代码，发现居然有内存溢出。。。找了好久没发现是什么原因，打开了net/http/pprof到线上收集goroutine的</description>
     </item>
     
     <item>
       <title>docker翻车记</title>
-      <link>https://barbery.me/post/2019-03-08-how-to-fix-docker-problems/</link>
+      <link>https://barbery.github.io/blog.site/post/2019-03-08-how-to-fix-docker-problems/</link>
       <pubDate>Fri, 08 Mar 2019 14:59:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2019-03-08-how-to-fix-docker-problems/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2019-03-08-how-to-fix-docker-problems/</guid>
       <description>Error starting daemon: Error initializing network controller: list bridge addresses failed: no available network 如果你的docker daemon启动不起来，可以试试用dockerd启动，看看打印出来的日志是什么错误，如果是这</description>
     </item>
     
     <item>
       <title>记mysqlbinlog数据恢复遇到的问题</title>
-      <link>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</link>
+      <link>https://barbery.github.io/blog.site/post/2018-11-29-mysqlbinlog-recover-data-problems/</link>
       <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2018-11-29-mysqlbinlog-recover-data-problems/</guid>
       <description>事件复盘 事情的原因是，手下一名开发在部署的时候，执行错了错误的脚本，把生产的一个重要的表的数据给清空了。 我得知消息后，登陆数据库确认了数据已</description>
     </item>
     
     <item>
       <title>imgcat--最佳的命令行图片浏览器</title>
-      <link>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
+      <link>https://barbery.github.io/blog.site/post/2018-08-23-imgcat-best-command-line-image-viewer/</link>
       <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2018-08-23-imgcat-best-command-line-image-viewer/</guid>
       <description>eog和feh 最近有个场景需要用到命令行去查看图片，google了一圈，尝试了一下eog和feh。 eog和feh差不多，feh在加载速度上会</description>
     </item>
     
     <item>
       <title>解决go NullTime的问题</title>
-      <link>https://barbery.me/post/2018-06-11-fix-go-null-time/</link>
+      <link>https://barbery.github.io/blog.site/post/2018-06-11-fix-go-null-time/</link>
       <pubDate>Mon, 11 Jun 2018 19:22:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2018-06-11-fix-go-null-time/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2018-06-11-fix-go-null-time/</guid>
       <description>我们经常会使用time.Time的go类型和mysql的datetime类型做关联，经常会遇到这样的报错： incorrect datetime value: &#39;0000-00-00&#39; 也许你查了资料，很多人建议</description>
     </item>
     
     <item>
       <title>PHP高并发下问题总结</title>
-      <link>https://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
+      <link>https://barbery.github.io/blog.site/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</link>
       <pubDate>Sun, 19 Mar 2017 21:29:27 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2017-03-19-PHP-Summary-of-high-concurrency-issues/</guid>
       <description>上周，我们搞了一个活动，没有预想到活动会那么火爆，最高峰的一天有6千万的PV，一周下来累计接近2.6亿的PV。 这么大的流量突然涌入，真是把我</description>
     </item>
     
     <item>
       <title>记一次redis被黑事件</title>
-      <link>https://barbery.me/post/2017-02-19-Redis-hacked/</link>
+      <link>https://barbery.github.io/blog.site/post/2017-02-19-Redis-hacked/</link>
       <pubDate>Sun, 19 Feb 2017 16:34:55 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2017-02-19-Redis-hacked/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2017-02-19-Redis-hacked/</guid>
       <description>18号事情的经过 当天0点多突然接到洪水般的队列报警信息，本应是返回数组的zrangebyscore方法， 返回是一个false的布尔类型，导致</description>
     </item>
     
     <item>
       <title>分享一个ngrok的免费server</title>
-      <link>https://barbery.me/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</link>
+      <link>https://barbery.github.io/blog.site/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</link>
       <pubDate>Sun, 21 Aug 2016 11:02:31 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2016-08-21-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAngrok%E7%9A%84%E5%85%8D%E8%B4%B9server/</guid>
       <description>ngrok是一个开源的内网穿透的工具，简单点说就是解决外网访问内网的问题，你可以把外网的80端口随意绑定到 内网的某个端口上，日常开发中多用于</description>
     </item>
     
     <item>
       <title>说说用docker-swarm部署集群的一些问题</title>
-      <link>https://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 20 Apr 2016 11:18:13 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2016-04-20-%E8%AF%B4%E8%AF%B4%E7%94%A8docker-swarm%E9%83%A8%E7%BD%B2%E9%9B%86%E7%BE%A4%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
       <description>部署比较简单，这点官网文档说的非常详细，这里我就不重复叙述了，大家可以去看看 https://docs.docker.com/swarm/install-manual/ 说说过程中遇到的问题，也希望后来者可以少踩坑。。。 首先就是部署</description>
     </item>
     
     <item>
       <title>说说怎么给virtualbox扩容</title>
-      <link>https://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</link>
       <pubDate>Thu, 19 Nov 2015 16:39:13 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-11-19-%E8%AF%B4%E8%AF%B4%E6%80%8E%E4%B9%88%E7%BB%99virtualbox%E6%89%A9%E5%AE%B9/</guid>
       <description>前几天用vagrant+virtualbox+docker 来搭建本地开发环境，由于要导入的SQL太大，virtualbox的容量被挤爆了，而</description>
     </item>
     
     <item>
       <title>mosh - 妈妈再也不用担心我ssh连接断开了</title>
-      <link>https://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</link>
       <pubDate>Fri, 25 Sep 2015 09:35:01 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-09-25-mosh-%E5%A6%88%E5%A6%88%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E6%88%91ssh%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E4%BA%86/</guid>
       <description>mosh是什么 最近了解到mosh这个神器，免费开源产品，用来代替ssh连接的，它支持UDP协议的连接，支持SSH key验证。 你可能会问，说了</description>
     </item>
     
     <item>
       <title>使用sublime text3 打造最佳PHP开发工具</title>
-      <link>https://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sat, 18 Jul 2015 18:28:22 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-07-18-%E4%BD%BF%E7%94%A8sublimetext3%E6%89%93%E9%80%A0%E6%9C%80%E4%BD%B3PHP%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
       <description>我就不班门弄虎了，国外有个博主就写得非常不错，我的配置很多都参考这篇文章的，有需要的同学强烈推荐看下，虽然是英文，但是比较浅显易懂，博主还配</description>
     </item>
     
     <item>
       <title>golang有没有必要传递map指针？</title>
-      <link>https://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
       <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
       <description>好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答</description>
     </item>
     
     <item>
       <title>使用vagrnat打造团队跨平台开发环境</title>
-      <link>https://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Sun, 17 May 2015 18:34:30 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>额，本来这个PPT是做来在公司内部分享的，但是由于某些原因，可能没法在公司内部分享了。分享上来，权当留个纪念~~~ http://www.slideshare.net/ssuser773636/vagrant-48243103 需要翻墙才能看到。。。</description>
     </item>
     
     <item>
       <title>修改mysql配置衍生的一系列问题</title>
-      <link>https://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
       <description>今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原</description>
     </item>
     
     <item>
       <title>为gist加速！</title>
-      <link>https://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Wed, 17 Dec 2014 22:36:26 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-12-17-%E4%B8%BAgist%E5%8A%A0%E9%80%9F/</guid>
       <description>github的gist就是最好的代码展示平台，把需要展示的代码写在gist上，然后再用script嵌入博文里是最好不过的。。。 不过比较悲剧的</description>
     </item>
     
     <item>
       <title>减少mac上mysql的内存占用</title>
-      <link>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
       <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
       <description>用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。 sudo vim /etc/my.cnf 然后把下面的设置贴进去 [mysqld] max_connections =</description>
     </item>
     
     <item>
       <title>goRouter 一个轻量级和高性能的路由</title>
-      <link>https://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Sun, 16 Nov 2014 10:22:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-11-16-goRouter%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%92%8C%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1/</guid>
       <description>公司有个go的小项目，主要是对内提供web服务，而go原生的router太弱了，上网搜索了下，本来打算用github.com/drone/r</description>
     </item>
     
     <item>
       <title>说说最近写go的感悟</title>
-      <link>https://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</link>
       <pubDate>Mon, 13 Oct 2014 22:02:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
       <description>第一个，先说说GO原子性操作的问题，直接上demo（https://gist.github.com/Barbery/08973672e132</description>
     </item>
     
     <item>
       <title>go-chat 用go&#43;websocket写的一个html聊天组件</title>
-      <link>https://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sat, 09 Aug 2014 16:03:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-08-09-go-chat%E7%94%A8go-websocket%E5%86%99%E7%9A%84%E4%B8%80%E4%B8%AAhtml%E8%81%8A%E5%A4%A9%E7%BB%84%E4%BB%B6/</guid>
       <description>最近闲着蛋疼，就折腾下go语言。。。据说go的长连接性能异常高效。。。so，我就用go+html5的websocket搞了个聊天组件玩玩。。</description>
     </item>
     
     <item>
       <title>go多维map读写操作的问题</title>
-      <link>https://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 06 Aug 2014 10:31:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-08-06-go%E5%A4%9A%E7%BB%B4map%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>因为go是静态语言，所以。。。在构造和读取多维map的操作的时候就显得木有PHP那么方便鸟，常常报错 cannot take the address of xxx // or cannot assign to xxx 这会很让人抓狂。</description>
     </item>
     
     <item>
       <title>说说phalcon怎么连接mysqld.sock</title>
-      <link>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
       <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
       <description>phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phal</description>
     </item>
     
     <item>
       <title>php redis subscribe超时的问题</title>
-      <link>https://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 05 Jul 2014 14:38:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-07-05-phpredissubscribe%E8%B6%85%E6%97%B6%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>最近发现一个奇怪的情况，就是redis的subscribe运行几十秒后，就会抛出一个RedisException.. 上github的issu</description>
     </item>
     
     <item>
       <title>说说hash collision</title>
-      <link>https://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</link>
       <pubDate>Sat, 31 May 2014 15:38:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-05-31-%E8%AF%B4%E8%AF%B4hashcollision/</guid>
       <description>hash collision，也就是平常说的哈希碰撞，其方法就是利用已知的hash算法，生成不均匀的哈希，导致其名为hash table而实际性能却早</description>
     </item>
     
     <item>
       <title>分享一个js生成二维码的库</title>
-      <link>https://barbery.me/post/2014-05-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAjs%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9A%84%E5%BA%93/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-05-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAjs%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9A%84%E5%BA%93/</link>
       <pubDate>Fri, 23 May 2014 20:54:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-05-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAjs%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9A%84%E5%BA%93/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-05-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAjs%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9A%84%E5%BA%93/</guid>
       <description>二维码用js生成会比用服务器生成方便很多，只要把window.location.href的值传入，即可生成对应的二维码。。最主要是，这个库可</description>
     </item>
     
     <item>
       <title>关于php 5.5 CURLFile上传的问题</title>
-      <link>https://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 01 May 2014 12:52:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-05-01-%E5%85%B3%E4%BA%8Ephp5.5CURLFile%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>最近用curl上传文件，发现报错 The usage of the @filename API for file uploading is deprecated. Please use the CURLFile class instead 原来是PHP5.5废弃了@这种模式，只需要把原来的： &amp;lt;?php $data = array( &#39;file&#39; =&amp;gt; &#39;@/PATH/TO/FILE&#39;, //..</description>
     </item>
     
     <item>
       <title>大爱phalcon啊</title>
-      <link>https://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</link>
       <pubDate>Sat, 05 Apr 2014 20:24:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-04-05-%E5%A4%A7%E7%88%B1phalcon%E5%95%8A/</guid>
       <description>最近在用phalcon开发，发现这个框架的作者真心是牛人一个，这个牛不仅仅是指他用C-extension的方式去实现这个框架，还有就是他的设</description>
     </item>
     
     <item>
       <title>永久设置ubuntu ulimit</title>
-      <link>https://barbery.me/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</link>
       <pubDate>Sun, 02 Mar 2014 12:20:03 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-03-02-%E6%B0%B8%E4%B9%85%E8%AE%BE%E7%BD%AEubuntuulimit/</guid>
       <description>之前是ulimit -n 65535那样设置，不过貌似只是当前环境有效果，重启服务器的话，又失效了。。。今天无意找到一个设置的方法，可以永久设置u</description>
     </item>
     
     <item>
       <title>利用马尔可夫链生成伪随机语义文本</title>
-      <link>https://barbery.me/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</link>
       <pubDate>Wed, 01 Jan 2014 23:59:18 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-01-01-%E5%88%A9%E7%94%A8%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E8%AF%AD%E4%B9%89%E6%96%87%E6%9C%AC/</guid>
       <description>关于什么是马尔可夫链， 我也说不清楚， 还是看维基百科来得快 http://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE 这个是我之前看lua程序设计的时候看到的， 作者用lua来实现， 我觉得好玩， 就拿PH</description>
     </item>
     
     <item>
       <title>关于httpsqs任务队列的benchmark测试数据</title>
-      <link>https://barbery.me/post/2013-12-04-%E5%85%B3%E4%BA%8Ehttpsqs%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E7%9A%84benchmark%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-12-04-%E5%85%B3%E4%BA%8Ehttpsqs%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E7%9A%84benchmark%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Wed, 04 Dec 2013 17:27:20 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-12-04-%E5%85%B3%E4%BA%8Ehttpsqs%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E7%9A%84benchmark%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-12-04-%E5%85%B3%E4%BA%8Ehttpsqs%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E7%9A%84benchmark%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/</guid>
       <description>选择httpsqs的原因是，轻量，高效，整个流程也在掌控之中，所以就没有选择比较成熟的Gearman。。 好了，看数据把： 100k times test about httpsqs | method | ab |</description>
     </item>
     
     <item>
       <title>安装httpsqs问题小记</title>
-      <link>https://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Tue, 03 Dec 2013 00:25:35 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-12-03-%E5%AE%89%E8%A3%85httpsqs%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
       <description>遇到安装libevent-2.0.12-stable 报一大堆错误的话，可能是版本不兼容，去官网：http://libevent.org/ 下载</description>
     </item>
     
     <item>
       <title>说说luasocket http的使用</title>
-      <link>https://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 01 Dec 2013 19:54:06 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>luasocket包中的socket.http比较简单， 关于它的使用方法，网上内容也比较少， 常用的方法是GET和POST比较多。。。 GET的</description>
     </item>
     
     <item>
       <title>为openresty的luajit安装luarocks</title>
-      <link>https://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</link>
       <pubDate>Sat, 30 Nov 2013 17:35:22 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
       <description>lualocks是一个包管理器，类似nodejs的npm那样。。。总之装了以后安装第三方包就很方便，路径什么的，人家都帮你搞掂，不用自己每次</description>
     </item>
     
     <item>
       <title>gitlab web hook的没接受到POST数据的一个坑！</title>
-      <link>https://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
       <pubDate>Thu, 28 Nov 2013 00:19:51 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-28-gitlabwebhook%E7%9A%84%E6%B2%A1%E6%8E%A5%E5%8F%97%E5%88%B0POST%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
       <description>额。。。 在help那里， 明明说好是POST数据给我的， 仲么$_POST收不到？ 额。。。原来要用PHP input流来接收。。 使用 $josn = file_get_contents(&amp;quot;php://input&amp;quot;); 来接受数</description>
     </item>
     
     <item>
       <title>使用mysqlnd代替mysql</title>
-      <link>https://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
       <pubDate>Sun, 24 Nov 2013 12:02:47 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
       <description>mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前PHP官方推荐使用的类库， 使用这个类库操作mysql， 可以支持多种最新</description>
     </item>
     
     <item>
       <title>如何通过本地SSH隧道端口转发访问远程mysql服务</title>
-      <link>https://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Sat, 23 Nov 2013 15:36:44 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
       <description>注意：以下内容的前提是，你已经配好了SSH KEY登录远程服务器，且禁止了password登录，否则，以下做法很危险。 假设： 远程mysql服务</description>
     </item>
     
     <item>
       <title>分享一个openresty的service脚本</title>
-      <link>https://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
       <description>因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty</description>
     </item>
     
     <item>
       <title>PHP的PSR规范[推荐阅读！]</title>
-      <link>https://barbery.me/post/2013-11-13-PHP%E7%9A%84PSR%E8%A7%84%E8%8C%83/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-13-PHP%E7%9A%84PSR%E8%A7%84%E8%8C%83/</link>
       <pubDate>Wed, 13 Nov 2013 21:31:28 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-13-PHP%E7%9A%84PSR%E8%A7%84%E8%8C%83/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-13-PHP%E7%9A%84PSR%E8%A7%84%E8%8C%83/</guid>
       <description>PHP的代码规范问题， 一直受人诟病， 而且PHP框架之多， 各家都有自己的一套命名规范， 这里就导致了PHP程序员在切换框架， 或者接触不同项目时带</description>
     </item>
     
     <item>
       <title>开启opcache导致502 bad gateway问题</title>
-      <link>https://barbery.me/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 12 Nov 2013 18:05:37 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-12-%E5%BC%80%E5%90%AFopcache%E5%AF%BC%E8%87%B4502badgateway%E9%97%AE%E9%A2%98/</guid>
       <description>本想开启opcache来做code cache， 木想到开了就502错误，googe许久也找不到解决方案，上stackoverflow提问也木有</description>
     </item>
     
     <item>
       <title>解决新建的用户apt-get tab不能代码补全的问题</title>
-      <link>https://barbery.me/post/2013-11-10-%E8%A7%A3%E5%86%B3%E6%96%B0%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7apt-gettab%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-10-%E8%A7%A3%E5%86%B3%E6%96%B0%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7apt-gettab%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sun, 10 Nov 2013 16:37:26 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-10-%E8%A7%A3%E5%86%B3%E6%96%B0%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7apt-gettab%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-10-%E8%A7%A3%E5%86%B3%E6%96%B0%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7apt-gettab%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>root账户下是木有问题的， 但是为了安全起见， 标准做法都是禁止root用户登录， 然后新建一个用户， 使用SSH key验证的方式登录， 然后再su</description>
     </item>
     
     <item>
       <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
-      <link>https://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
       <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
       <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
     </item>
     
     <item>
       <title>果然nginx使用socket来与php-fpm通讯是更高效率的</title>
-      <link>https://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
       <pubDate>Thu, 03 Oct 2013 00:28:32 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
       <description>1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000</description>
     </item>
     
     <item>
       <title>注意isset在版本php5.3和php5.4的兼容</title>
-      <link>https://barbery.me/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</link>
       <pubDate>Wed, 18 Sep 2013 11:50:03 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-09-18-%E6%B3%A8%E6%84%8Fisset%E5%9C%A8%E7%89%88%E6%9C%ACphp5.3%E5%92%8Cphp5.4%E7%9A%84%E5%85%BC%E5%AE%B9/</guid>
       <description>请看代码: &amp;lt;?php $a = &#39;asdasdasdasd&#39;; var_dump(isset($a[&#39;somekey&#39;])); 上图这个代码, 在php5.3系统中会返回TRUE, 而php5.4会返回false, 我相信大家都会常常用isset来判断数</description>
     </item>
     
     <item>
       <title>addslashes, mysql_real_escape_string并不能防止SQL注入!!!</title>
-      <link>https://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Fri, 06 Sep 2013 21:28:32 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-09-06-addslashesmysql_real_escape_string%E5%B9%B6%E4%B8%8D%E8%83%BD%E9%98%B2%E6%AD%A2SQL%E6%B3%A8%E5%85%A5/</guid>
       <description>先看代码&amp;hellip; &amp;lt;?php header(&#39;Content-Type: text/html; charset=GBK&#39;); $input = chr(0xbf) . chr(0x27) . &#39; OR username = username; /*&#39;; $value = addslashes($input); $sql = &amp;quot;SELECT * FROM users WHERE username=&#39;{$value}&#39; AND password=&#39;123123&#39;;&amp;quot;; echo $value; echo &#39;&amp;lt;br&amp;gt;&#39;; echo $sql; echo &#39;&amp;lt;br&amp;gt;&#39;; 以上的demo, 输出结果为: 你也许会疑问,</description>
     </item>
     
     <item>
       <title>关于mac source bashrc引入path路径重启无效的问题小记</title>
-      <link>https://barbery.me/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Fri, 23 Aug 2013 20:08:51 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-08-23-%E5%85%B3%E4%BA%8Emacsourcebashrc%E5%BC%95%E5%85%A5path%E8%B7%AF%E5%BE%84%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0/</guid>
       <description>今天同事的mac上遇到一个疑难杂症, 在bashrc设置好 export path后, source ~/.bashrc 重启后$PATH路径又被还原了…. 捣鼓了好久都不行, 不知道为什么,</description>
     </item>
     
     <item>
       <title>说说php自动加载类方法</title>
-      <link>https://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 18 Aug 2013 23:28:13 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
       <description>php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以</description>
     </item>
     
     <item>
       <title>绕过chrome插件content_scripts不能访问web定义的函数和变量</title>
-      <link>https://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</link>
       <pubDate>Sun, 21 Jul 2013 22:54:19 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-07-21-%E7%BB%95%E8%BF%87chrome%E6%8F%92%E4%BB%B6content_scripts%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEweb%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F/</guid>
       <description>因为插件打算利用jsonp来调用远程服务器上的API接口…而尝试了很多次都发现报错说对象不存在, 查了下文档, 原来是chrome的安全机制限制</description>
     </item>
     
     <item>
       <title>说说wordpress页面静态化多说插件和admin bar的问题</title>
-      <link>https://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 21 Jun 2013 15:21:24 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-06-21-%E8%AF%B4%E8%AF%B4wordpress%E9%A1%B5%E9%9D%A2%E9%9D%99%E6%80%81%E5%8C%96%E5%A4%9A%E8%AF%B4%E6%8F%92%E4%BB%B6%E5%92%8Cadminbar%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>由于页面做了memcache缓存, 没想到连登陆后的头部admin-bar 和 多说的auth_key 也缓存进去了…. 要想去掉admin-bar这</description>
     </item>
     
     <item>
       <title>说说sae上加快wordpress加载速度~</title>
-      <link>https://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</link>
       <pubDate>Fri, 14 Jun 2013 20:03:25 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-06-14-%E8%AF%B4%E8%AF%B4sae%E4%B8%8A%E5%8A%A0%E5%BF%ABwordpress%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6~/</guid>
       <description>因为最近和朋友搞了另外一个博客, 而且也优化了一下, 速度提升还是明显的, 在此写下, 权当记录&amp;hellip; 优化的重点是放在静态资源的加载速度上</description>
     </item>
     
     <item>
       <title>php中慎用isset来判断数组是否存在key</title>
-      <link>https://barbery.me/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</link>
       <pubDate>Tue, 04 Jun 2013 14:57:13 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-06-04-php%E4%B8%AD%E6%85%8E%E7%94%A8isset%E6%9D%A5%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8key/</guid>
       <description>直接上代码, 不知道是php5.4版本的问题, 还是本来就这样&amp;hellip; $a[&#39;hello&#39;] = &#39;123&#39;; $a[&#39;xx&#39;] = NULL; var_dump(isset($a[&#39;hello&#39;])); //bool(true) var_dump(isset($a[&#39;xx&#39;])); //bool(false) # 应该使用这个来判断 var_dump(array_key_exists(&#39;xx&#39;, $a)); //bool(true)</description>
     </item>
     
     <item>
       <title>用ngx_drizzle时遇到一个坑，记录下。。。</title>
-      <link>https://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</link>
       <pubDate>Wed, 08 May 2013 22:11:38 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-08-%E7%94%A8ngx_drizzle%E6%97%B6%E9%81%87%E5%88%B0%E4%B8%80%E4%B8%AA%E5%9D%91%E8%AE%B0%E5%BD%95%E4%B8%8B/</guid>
       <description>刚刚装好ngx_drizzle的时候，老是连接不上，代码都是安装官方demo来写的，竟然都不行。。。看了文档，报错如下： failed to connect: 23: Access denied for user &amp;lsquo;root&amp;rsquo;@&amp;lsquo;localhost&amp;rsquo; (using</description>
     </item>
     
     <item>
       <title>简单测试下ngx_drizzle_module</title>
-      <link>https://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</link>
       <pubDate>Wed, 08 May 2013 22:02:29 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-08-%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95%E4%B8%8Bngx_drizzle_module/</guid>
       <description>webbench -c 500 -t 30 测试结果 TP框架 Speed=19198 pages/min, 112866 bytes/sec. Requests: 6635 susceed, 2964 failed. 原生 Speed=16602 pages/min, 89106 bytes/sec. Requests: 6027 susceed, 2274 failed. nginx with drizzle Speed=34116 pages/min, 212853 bytes/sec. Requests: 14347 susceed, 2711 failed. 毫无疑问的，nginx drizzle下速度是最快的</description>
     </item>
     
     <item>
       <title>mac 下配置memcached小记</title>
-      <link>https://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Wed, 08 May 2013 16:25:16 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-08-mac%E4%B8%8B%E9%85%8D%E7%BD%AEmemcached%E5%B0%8F%E8%AE%B0/</guid>
       <description>用homebrew安装的话，是很简单的，不过由于自己不懂，走了很多弯路。。。 简单点说 先安装memcached服务，用 brew install memcached 安装 安装memca</description>
     </item>
     
     <item>
       <title>mac下配置nginx&#43;php&#43;mysql小记</title>
-      <link>https://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
       <description>额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。 后来使用了大家都推荐的homebrew来安装。。。具体教</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（4） — 错误捕捉</title>
-      <link>https://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</link>
       <pubDate>Wed, 20 Mar 2013 11:41:16 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-03-20-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B64%E9%94%99%E8%AF%AF%E6%8D%95%E6%8D%89/</guid>
       <description>前三篇文章已经把MVC的结构原理都简单的进行了说明和演示。。。当然，不是说一个框架就只有那点东西，一个良好的框架所要求的功能还是要很全面的，</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（3） — 视图</title>
-      <link>https://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</link>
       <pubDate>Mon, 18 Mar 2013 15:11:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-03-18-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B63%E8%A7%86%E5%9B%BE/</guid>
       <description>今天来讲讲view，视图。。。没了解之前，你可能觉得模板引擎很神奇，了解了之后你会觉得，原来是如此简单。。。 对于模板引擎而言，它的原理一般是</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（2）加载器</title>
-      <link>https://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
       <pubDate>Wed, 13 Mar 2013 17:33:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-03-13-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B62#8212%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
       <description>上节说了MVC的路由原理，这节我们来说说MVC框架的loader，也称为加载器。 虽然不同的框架，加载器的用法不同，但是其原理都是相通的。。。</description>
     </item>
     
     <item>
       <title>学习如何写PHP MVC框架（1）-- 路由</title>
-      <link>https://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</link>
       <pubDate>Thu, 07 Mar 2013 21:29:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-03-07-%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%86%99PHPMVC%E6%A1%86%E6%9E%B61--%E8%B7%AF%E7%94%B1/</guid>
       <description>说到PHP开发web，自然离不开开发框架，开发框架为我们提供了灵活的开发方式，MVC层分离，业务解耦等。。。 第一篇先来简单点的，说说MVC框</description>
     </item>
     
     <item>
       <title>利用k-means聚类算法识别图片主色调</title>
-      <link>https://barbery.me/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
       <pubDate>Thu, 10 Jan 2013 16:23:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</guid>
       <description>识别图片主色调这个，网上貌似有几种方法，不过，最准确，最优雅的解决方案还是利用聚类算法来做。。。 直接上代码。。。。不过，我测试结果表示，用P</description>
     </item>
     
     <item>
       <title>慎用PHP内置的Math函数</title>
-      <link>https://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 14 Dec 2012 12:40:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-12-14-%E6%85%8E%E7%94%A8PHP%E5%86%85%E7%BD%AE%E7%9A%84Math%E5%87%BD%E6%95%B0/</guid>
       <description>如题所示。。。木有做大规模的运算，还不知道。。。擦，PHP的Math函数运算原来是如此之慢的。。。大家还是麻烦点，手写多几句算鸟~~~ 小二！</description>
     </item>
     
     <item>
       <title>PHP 图片库效率测试 GD Vs. Image Magick 【译】</title>
-      <link>https://barbery.me/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E8%AF%91/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E8%AF%91/</link>
       <pubDate>Thu, 13 Dec 2012 09:31:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E8%AF%91/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-12-13-PHP%E5%9B%BE%E7%89%87%E5%BA%93%E6%95%88%E7%8E%87%E6%B5%8B%E8%AF%95GDVs.ImageMagick%E8%AF%91/</guid>
       <description>After doing some research, I found plenty of claims that GD is faster than Image Magick. But how much faster? I was on a quest to find out. I took a rather large jpeg image (3504 x 2336 pixels) and converted it to three other popular formats, png, gif, and bitmap. I then wrote a script that resizes each one to 300 x 200 pixels (png shown below) using both</description>
     </item>
     
     <item>
       <title>记录下二叉树的高度求法</title>
-      <link>https://barbery.me/post/2012-12-08-%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B1%82%E6%B3%95/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-12-08-%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B1%82%E6%B3%95/</link>
       <pubDate>Sat, 08 Dec 2012 10:24:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-12-08-%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B1%82%E6%B3%95/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-12-08-%E8%AE%B0%E5%BD%95%E4%B8%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B1%82%E6%B3%95/</guid>
       <description>如图所示的二叉树。。。 用 a 来表示第几层。。。 a1 = cn （cn / 2^0） a2 = cn/2 （cn / 2^1） a3 = cn/4 （cn / 2^2） 可以看出 节点的最后一层 an = cn /</description>
     </item>
     
     <item>
       <title>为你的sublime text 2 配置SVN</title>
-      <link>https://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</link>
       <pubDate>Wed, 28 Nov 2012 13:26:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</guid>
       <description>如题所示，在coding的时候，每次都需要点出去commit是灰常浪费时间和麻烦的事情。。。所以就抱着试试的心态去在package install 里搜索下</description>
     </item>
     
     <item>
       <title>关于正则表达式中的小写u修正符深刻理解</title>
-      <link>https://barbery.me/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</link>
       <pubDate>Fri, 16 Nov 2012 22:21:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-11-16-%E5%85%B3%E4%BA%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%86%99u%E4%BF%AE%E6%AD%A3%E7%AC%A6%E6%B7%B1%E5%88%BB%E7%90%86%E8%A7%A3/</guid>
       <description>&amp;lt;?php $str = &#39;【宏碁E1-471G-53214G50Mnks】宏碁（acer）E1-471G-53214G50Mnks 14英寸笔记本电脑（i5-3</description>
     </item>
     
     <item>
       <title>擦~~终于搞定FlashBuider 自动关闭的问题了</title>
-      <link>https://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</link>
       <pubDate>Sat, 03 Nov 2012 16:36:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-11-03-%E6%93%A6~~%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9AFlashBuider%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E7%9A%84%E9%97%AE%E9%A2%98%E4%BA%86/</guid>
       <description>FlashBuider 好卡有木有？设计模式自动关闭有木有？代码写着写着，FlashBuider 就自动关闭了有木有？？？？ 擦，这个问题困扰我已久，google许久</description>
     </item>
     
     <item>
       <title>擦，终于搞懂怎么在SAE python上装第三方包了</title>
-      <link>https://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</link>
       <pubDate>Sat, 27 Oct 2012 14:48:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-10-27-%E6%93%A6%E7%BB%88%E4%BA%8E%E6%90%9E%E6%87%82%E6%80%8E%E4%B9%88%E5%9C%A8SAEpython%E4%B8%8A%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E4%BA%86/</guid>
       <description>本来想装个beautifulsoup玩下的，我擦，上网一搜，全部都是打命令行的，什么解释也没有，擦，我就一个window 7系统，搞个毛啊。。</description>
     </item>
     
     <item>
       <title>分享QQ第三方登陆SDK</title>
-      <link>https://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABQQ%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86SDK/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-10-21-%E5%88%86%E4%BA%ABQQ%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86SDK/</link>
       <pubDate>Sun, 21 Oct 2012 22:03:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-10-21-%E5%88%86%E4%BA%ABQQ%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86SDK/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-10-21-%E5%88%86%E4%BA%ABQQ%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86SDK/</guid>
       <description>主要是考虑到QQ的PHP SDK写的真是太烂了，纯属是普及API知识，而不是到手就可以部署的类库。。反正自己都写了一个了，就拿出来分享下。。 什</description>
     </item>
     
     <item>
       <title>flex中慎用百分比布局</title>
-      <link>https://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</link>
       <pubDate>Wed, 29 Aug 2012 11:09:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-08-29-flex%E4%B8%AD%E6%85%8E%E7%94%A8%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/</guid>
       <description>困扰已久我的问题，没想到今天终于给我找出了原因。。。这个问题就是，我做的股票应用里面，因为股票信息更新频繁，会出现部分label内容不显示出</description>
     </item>
     
     <item>
       <title>使用CodeIgniter 创建 RESTful 服务 REST API【原创译文】</title>
-      <link>https://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</link>
       <pubDate>Sun, 19 Aug 2012 21:59:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-08-19-%E4%BD%BF%E7%94%A8CodeIgniter%E5%88%9B%E5%BB%BARESTful%E6%9C%8D%E5%8A%A1RESTAPI%E5%8E%9F%E5%88%9B%E8%AF%91%E6%96%87/</guid>
       <description>翻译之前，先简单介绍下自己的情况，避免误人子弟。。。本人英语不强（不是谦虚，真是很烂），我只是一个简简单单的CI程序猿。在现在到处都是RES</description>
     </item>
     
     <item>
       <title>终于解决了FLEX CandlestickSeries 变形 缩小的问题</title>
-      <link>https://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 10 Jul 2012 17:25:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-07-10-%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3%E4%BA%86FLEXCandlestickSeries%E5%8F%98%E5%BD%A2%E7%BC%A9%E5%B0%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>虽然，其中的原理我不太清楚。。。但是，还是幸运的解决了这个问题。。。这是个神奇的问题，上网搜索竟然没有人问过这样的问题。。。我擦。。。这是间</description>
     </item>
     
     <item>
       <title>FLEX Timer计时器stop方法停止不了的原因</title>
-      <link>https://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</link>
       <pubDate>Thu, 05 Jul 2012 15:41:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-07-05-FLEXTimer%E8%AE%A1%E6%97%B6%E5%99%A8stop%E6%96%B9%E6%B3%95%E5%81%9C%E6%AD%A2%E4%B8%8D%E4%BA%86%E7%9A%84%E5%8E%9F%E5%9B%A0/</guid>
       <description>今天发生一个奇异的问题，Timer方法，竟然注销不掉，断点调试，发现没什么问题，明明都成功调用了stop() ，但是就是停止不了。。。 经过自己</description>
     </item>
     
     <item>
       <title>利用XMLRPC 离线发布wordpress 文章</title>
-      <link>https://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</link>
       <pubDate>Tue, 03 Jul 2012 10:14:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-07-03-%E5%88%A9%E7%94%A8XMLRPC%E7%A6%BB%E7%BA%BF%E5%8F%91%E5%B8%83wordpress%E6%96%87%E7%AB%A0/</guid>
       <description>还是直接上demo吧～～这样可以让大家更容易理解。。。 &amp;lt;?php include(&amp;quot;xmlrpc.inc&amp;quot;); $GLOBALS[&#39;xmlrpc_internalencoding&#39;] = &#39;UTF-8&#39;; $c = new xmlrpc_client(&amp;quot;/xmlrpc.php&amp;quot;, &amp;quot;stutostu.com&amp;quot;, 80); $c-&amp;gt;return_type = &#39;phpvals&#39;; $content[&#39;title&#39;]=&amp;quot;标题&amp;qu</description>
     </item>
     
     <item>
       <title>PHP正则表达式使用详解[转]</title>
-      <link>https://barbery.me/post/2012-05-29-PHP%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-05-29-PHP%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</link>
       <pubDate>Tue, 29 May 2012 23:37:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-05-29-PHP%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-05-29-PHP%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%E8%BD%AC/</guid>
       <description>纯属备份！ 操作符 描述 \ 转义符 (), (?:), (?=), [] 圆括号和方括号 *, +, ?, {n}, {n,}, {n,m} 限定符 ^, $, \anymetacharacter 位置和顺序 | “或”操作 全部符号解释 字符 描述 \ 将下一个字符标记为一个</description>
     </item>
     
     <item>
       <title>实现Linechart 一线多色，局部变色问题</title>
-      <link>https://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 27 Apr 2012 10:44:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-04-27-%E5%AE%9E%E7%8E%B0Linechart%E4%B8%80%E7%BA%BF%E5%A4%9A%E8%89%B2%E5%B1%80%E9%83%A8%E5%8F%98%E8%89%B2%E9%97%AE%E9%A2%98/</guid>
       <description>最近，在做一个股票的指标图。。。需要实现的情况是，当线条向上走时，需要加粗红色显示，而当线条向下时，就变为绿色。。。这里涉及到的就是，一条线</description>
     </item>
     
     <item>
       <title>建议使用Crawl-delay降低爬虫蜘蛛抓取频率</title>
-      <link>https://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</link>
       <pubDate>Sat, 14 Apr 2012 09:45:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-04-14-%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8Crawl-delay%E9%99%8D%E4%BD%8E%E7%88%AC%E8%99%AB%E8%9C%98%E8%9B%9B%E6%8A%93%E5%8F%96%E9%A2%91%E7%8E%87/</guid>
       <description>如题，当然，谈这个之前，必须说说，蜘蛛爬取你的站是好事，因为只有这样，你的站才能让更多人知道。。。这里之所以说，建议降低抓取频率，是相当服务</description>
     </item>
     
     <item>
       <title>解决淘宝 API 返回的json数据无法用json_decode的问题</title>
-      <link>https://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 02 Apr 2012 15:18:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-04-02-%E8%A7%A3%E5%86%B3%E6%B7%98%E5%AE%9DAPI%E8%BF%94%E5%9B%9E%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%97%A0%E6%B3%95%E7%94%A8json_decode%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>如题，这个问题困扰我已久。。。经过自己的多次尝试，和到网上搜索，我已大概猜测到是字符的问题，论坛上的朋友说，PHP的json_decode对</description>
     </item>
     
     <item>
       <title>解决FLEX4 中 LIST控件不会自动滚动到底部的BUG</title>
-      <link>https://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3FLEX4%E4%B8%ADLIST%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84BUG/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-03-20-%E8%A7%A3%E5%86%B3FLEX4%E4%B8%ADLIST%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84BUG/</link>
       <pubDate>Tue, 20 Mar 2012 11:13:53 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-03-20-%E8%A7%A3%E5%86%B3FLEX4%E4%B8%ADLIST%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84BUG/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-03-20-%E8%A7%A3%E5%86%B3FLEX4%E4%B8%ADLIST%E6%8E%A7%E4%BB%B6%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95%E9%83%A8%E7%9A%84BUG/</guid>
       <description>如题，这个问题，我也上网找了很久。。。国内的blog一般都是无解，只能到国外的论坛去转转看看，无意让我看到了一个解决方法。原理是（按照我的理</description>
     </item>
     
     <item>
       <title>强大的XHProf</title>
-      <link>https://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</link>
       <pubDate>Mon, 19 Mar 2012 13:30:59 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-03-19-%E5%BC%BA%E5%A4%A7%E7%9A%84XHProf/</guid>
       <description>XHProf是facebook开源出来的一个php轻量级的性能分析工具，跟Xdebug类似，但性能开销更低，还可以用在生产环境中，也可以由程</description>
     </item>
     
     <item>
       <title>js sort 二维数组排序用法〖转〗</title>
-      <link>https://barbery.me/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E8%BD%AC/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E8%BD%AC/</link>
       <pubDate>Thu, 15 Mar 2012 13:04:33 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E8%BD%AC/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-03-15-jssort%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%94%A8%E6%B3%95%E8%BD%AC/</guid>
       <description>最近在搞js 排序的问题，因为数据库排序太耗资源，如果能转移到客户端去排序，能大大D减少服务器内存消耗。客户端的话，除了js,就是as了，可惜</description>
     </item>
     
     <item>
       <title>巧用中转页解决js UTF-8传参到GBK页面问题</title>
-      <link>https://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 18 Feb 2012 20:32:40 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-02-18-%E5%B7%A7%E7%94%A8%E4%B8%AD%E8%BD%AC%E9%A1%B5%E8%A7%A3%E5%86%B3jsUTF-8%E4%BC%A0%E5%8F%82%E5%88%B0GBK%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98/</guid>
       <description>这个方法不是我想出来的，是网上一位博主的idea，得益于这个想法，困扰我已久的js UTF-8传参到GBK页面问题也得以解决。我把思路和大家分</description>
     </item>
     
     <item>
       <title>分享淘宝API辅助函数-适用CI框架</title>
-      <link>https://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Fri, 10 Feb 2012 15:10:35 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-02-10-%E5%88%86%E4%BA%AB%E6%B7%98%E5%AE%9DAPI%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0-%E9%80%82%E7%94%A8CI%E6%A1%86%E6%9E%B6/</guid>
       <description>最近在重写一个淘宝客的网站，考虑到以后的拓展性，所以把它整合进CI里面了，这就出现个问题了，淘宝的SDK怎么整合进类库呢？仔细阅读淘宝API</description>
     </item>
     
     <item>
       <title>wordpres for android -- 手机管理wp博客应用软件</title>
-      <link>https://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Sun, 22 Jan 2012 10:45:06 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-01-22-wordpresforandroid--%E6%89%8B%E6%9C%BA%E7%AE%A1%E7%90%86wp%E5%8D%9A%E5%AE%A2%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
       <description>因为回家过年了，老家又没电脑，一直思索有没有什么手机软件可以管理下博客，或者回复下留言。这不，官方出了个wordpres for android 手机软件，本人使</description>
     </item>
     
     <item>
       <title>海外站长福音之cloundflare 免费 DNS 加速</title>
-      <link>https://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
+      <link>https://barbery.github.io/blog.site/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Tue, 20 Dec 2011 21:19:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2011-12-20-%E6%B5%B7%E5%A4%96%E7%AB%99%E9%95%BF%E7%A6%8F%E9%9F%B3%E4%B9%8Bcloundflare%E5%85%8D%E8%B4%B9DNS%E5%8A%A0%E9%80%9F/</guid>
       <description>如果你是用godaddy的主机，或者海外主机，而且常常被墙，抽风等等。。。cloundflare就是你的大救星。。。cloundflare是</description>
     </item>
     
     <item>
       <title>Web开发者指南：如何建立并运作一个互联网初创项目【转】</title>
-      <link>https://barbery.me/post/2011-12-10-Web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</link>
+      <link>https://barbery.github.io/blog.site/post/2011-12-10-Web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</link>
       <pubDate>Sat, 10 Dec 2011 17:53:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2011-12-10-Web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2011-12-10-Web%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E5%B9%B6%E8%BF%90%E4%BD%9C%E4%B8%80%E4%B8%AA%E4%BA%92%E8%81%94%E7%BD%91%E5%88%9D%E5%88%9B%E9%A1%B9%E7%9B%AE%E8%BD%AC/</guid>
       <description>尽管全球经济萎靡不振，但在互联网领域，一轮新的爆发正在兴起。90年代，伴随着互联网的第一次爆发，我们见证了一批巨头的崛起：eBay，Yaho</description>
     </item>
     

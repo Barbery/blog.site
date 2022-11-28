@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>方法 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E6%96%B9%E6%B3%95/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E6%96%B9%E6%B3%95/</link>
     <description>Recent content in 方法 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 18 Aug 2013 23:28:13 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E6%96%B9%E6%B3%95/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E6%96%B9%E6%B3%95/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说php自动加载类方法</title>
-      <link>https://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 18 Aug 2013 23:28:13 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-08-18-%E8%AF%B4%E8%AF%B4php%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
       <description>php的自动加载方法有2种, 分别是__autoload和spl_autoload_register, 前者官方说不推荐使用, 未来可能废除, 所以</description>
     </item>
     

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Svn on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/svn/</link>
+    <link>https://barbery.github.io/blog.site/tags/svn/</link>
     <description>Recent content in Svn on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 13 May 2013 21:45:20 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/svn/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/svn/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>教你怎么在mac下为你的sublime text2 配置svn快捷提交</title>
-      <link>https://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</link>
       <pubDate>Mon, 13 May 2013 21:45:20 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-13-%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E5%9C%A8mac%E4%B8%8B%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AEsvn%E5%BF%AB%E6%8D%B7%E6%8F%90%E4%BA%A4/</guid>
       <description>如果你是windows系统，你应该看这篇文章：http://www.stutostu.com/966.html ok，言归正传。。。 首先，你应</description>
     </item>
     
     <item>
       <title>为你的sublime text 2 配置SVN</title>
-      <link>https://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</link>
+      <link>https://barbery.github.io/blog.site/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</link>
       <pubDate>Wed, 28 Nov 2012 13:26:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2012-11-28-%E4%B8%BA%E4%BD%A0%E7%9A%84sublimetext2%E9%85%8D%E7%BD%AESVN/</guid>
       <description>如题所示，在coding的时候，每次都需要点出去commit是灰常浪费时间和麻烦的事情。。。所以就抱着试试的心态去在package install 里搜索下</description>
     </item>
     

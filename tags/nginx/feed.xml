@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/nginx/</link>
+    <link>https://barbery.github.io/blog.site/tags/nginx/</link>
     <description>Recent content in Nginx on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 23 Nov 2013 14:48:39 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/nginx/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/nginx/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>分享一个openresty的service脚本</title>
-      <link>https://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sat, 23 Nov 2013 14:48:39 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-23-%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AAopenresty%E7%9A%84service%E8%84%9A%E6%9C%AC/</guid>
       <description>因为openresty的nginx位置和官方源安装的位置不同，所以大多数网上找到的nginx service脚本都无法应用于openresty</description>
     </item>
     
     <item>
       <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
-      <link>https://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
       <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
       <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
     </item>
     
     <item>
       <title>果然nginx使用socket来与php-fpm通讯是更高效率的</title>
-      <link>https://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</link>
       <pubDate>Thu, 03 Oct 2013 00:28:32 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-10-03-%E6%9E%9C%E7%84%B6nginx%E4%BD%BF%E7%94%A8socket%E6%9D%A5%E4%B8%8Ephp-fpm%E9%80%9A%E8%AE%AF%E6%98%AF%E6%9B%B4%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84/</guid>
       <description>1000次累加测试 php5-fpm.sock下的测试结果 barbery@xie:~$ ab -c 500 -n 10000 http://localhost/bench/foreach_test.php This is ApacheBench, Version 2.3 &amp;lt;$Revision: 655654 $&amp;gt; Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/ Licensed to The Apache Software Foundation, http://www.apache.org/ Benchmarking localhost (be patient) Completed 1000 requests Completed 2000 requests Completed 3000</description>
     </item>
     
     <item>
       <title>mac下配置nginx&#43;php&#43;mysql小记</title>
-      <link>https://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sat, 04 May 2013 01:05:43 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-05-04-mac%E4%B8%8B%E9%85%8D%E7%BD%AEnginx-php-mysql%E5%B0%8F%E8%AE%B0/</guid>
       <description>额。。。本来以为mac下可以用lnmp一键安装包的，但是使用后才发现，竟然不行。。。 后来使用了大家都推荐的homebrew来安装。。。具体教</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>主色调 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
     <description>Recent content in 主色调 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 10 Jan 2013 16:23:00 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E4%B8%BB%E8%89%B2%E8%B0%83/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E4%B8%BB%E8%89%B2%E8%B0%83/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>利用k-means聚类算法识别图片主色调</title>
-      <link>https://barbery.me/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</link>
       <pubDate>Thu, 10 Jan 2013 16:23:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-01-10-%E5%88%A9%E7%94%A8k-means%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E4%B8%BB%E8%89%B2%E8%B0%83/</guid>
       <description>识别图片主色调这个，网上貌似有几种方法，不过，最准确，最优雅的解决方案还是利用聚类算法来做。。。 直接上代码。。。。不过，我测试结果表示，用P</description>
     </item>
     

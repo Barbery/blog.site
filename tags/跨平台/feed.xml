@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>跨平台 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</link>
     <description>Recent content in 跨平台 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 17 May 2015 18:34:30 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用vagrnat打造团队跨平台开发环境</title>
-      <link>https://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Sun, 17 May 2015 18:34:30 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-05-17-%E4%BD%BF%E7%94%A8vagrnat%E6%89%93%E9%80%A0%E5%9B%A2%E9%98%9F%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>额，本来这个PPT是做来在公司内部分享的，但是由于某些原因，可能没法在公司内部分享了。分享上来，权当留个纪念~~~ http://www.slideshare.net/ssuser773636/vagrant-48243103 需要翻墙才能看到。。。</description>
     </item>
     

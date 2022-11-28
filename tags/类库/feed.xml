@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>类库 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E7%B1%BB%E5%BA%93/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E7%B1%BB%E5%BA%93/</link>
     <description>Recent content in 类库 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 24 Nov 2013 12:02:47 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E7%B1%BB%E5%BA%93/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E7%B1%BB%E5%BA%93/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用mysqlnd代替mysql</title>
-      <link>https://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
       <pubDate>Sun, 24 Nov 2013 12:02:47 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
       <description>mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前PHP官方推荐使用的类库， 使用这个类库操作mysql， 可以支持多种最新</description>
     </item>
     

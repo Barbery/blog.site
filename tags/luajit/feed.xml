@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Luajit on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/luajit/</link>
+    <link>https://barbery.github.io/blog.site/tags/luajit/</link>
     <description>Recent content in Luajit on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 01 Dec 2013 19:54:06 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/luajit/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/luajit/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说luasocket http的使用</title>
-      <link>https://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 01 Dec 2013 19:54:06 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-12-01-%E8%AF%B4%E8%AF%B4luasockethttp%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>luasocket包中的socket.http比较简单， 关于它的使用方法，网上内容也比较少， 常用的方法是GET和POST比较多。。。 GET的</description>
     </item>
     
     <item>
       <title>为openresty的luajit安装luarocks</title>
-      <link>https://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</link>
       <pubDate>Sat, 30 Nov 2013 17:35:22 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-30-%E4%B8%BAopenresty%E7%9A%84luajit%E5%AE%89%E8%A3%85luarocks/</guid>
       <description>lualocks是一个包管理器，类似nodejs的npm那样。。。总之装了以后安装第三方包就很方便，路径什么的，人家都帮你搞掂，不用自己每次</description>
     </item>
     

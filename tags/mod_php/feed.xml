@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mod_php on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/mod_php/</link>
+    <link>https://barbery.github.io/blog.site/tags/mod_php/</link>
     <description>Recent content in Mod_php on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 03 Oct 2013 17:02:45 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/mod_php/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/mod_php/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NGINX&#43;PHP-FPM&#43;SOCKET VS NGINX&#43;PHP-FPM&#43;TCP VS NGINX&#43;APACHE&#43;MOD_PHP</title>
-      <link>https://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</link>
       <pubDate>Thu, 03 Oct 2013 17:02:45 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-10-03-NGINX-PHP-FPM-SOCKETVSNGINX-PHP-FPM-TCPVSNGINX-APACHE-MOD_PHP/</guid>
       <description>上一篇果然nginx使用socket来与php-fpm通讯是更高效率中，测试了nginx 使用TCP与socket与php-fpm通讯的情况。</description>
     </item>
     

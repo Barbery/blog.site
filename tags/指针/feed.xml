@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>指针 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E6%8C%87%E9%92%88/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E6%8C%87%E9%92%88/</link>
     <description>Recent content in 指针 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 21 May 2015 22:43:07 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E6%8C%87%E9%92%88/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E6%8C%87%E9%92%88/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>golang有没有必要传递map指针？</title>
-      <link>https://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</link>
       <pubDate>Thu, 21 May 2015 22:43:07 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-05-21-golang%E6%9C%89%E6%B2%A1%E6%9C%89%E5%BF%85%E8%A6%81%E4%BC%A0%E9%80%92map%E6%8C%87%E9%92%88/</guid>
       <description>好久没写GO了，今天在function中传递map指针的时候，犹豫了一下，是否真的有必要传递map指针？按道理来说，这个问题是毫无疑问的回答</description>
     </item>
     

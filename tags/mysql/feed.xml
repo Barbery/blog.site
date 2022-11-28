@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/mysql/</link>
+    <link>https://barbery.github.io/blog.site/tags/mysql/</link>
     <description>Recent content in Mysql on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 28 Nov 2018 18:05:09 +0800</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/mysql/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/mysql/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>记mysqlbinlog数据恢复遇到的问题</title>
-      <link>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</link>
+      <link>https://barbery.github.io/blog.site/post/2018-11-29-mysqlbinlog-recover-data-problems/</link>
       <pubDate>Wed, 28 Nov 2018 18:05:09 +0800</pubDate>
       
-      <guid>https://barbery.me/post/2018-11-29-mysqlbinlog-recover-data-problems/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2018-11-29-mysqlbinlog-recover-data-problems/</guid>
       <description>事件复盘 事情的原因是，手下一名开发在部署的时候，执行错了错误的脚本，把生产的一个重要的表的数据给清空了。 我得知消息后，登陆数据库确认了数据已</description>
     </item>
     
     <item>
       <title>修改mysql配置衍生的一系列问题</title>
-      <link>https://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
+      <link>https://barbery.github.io/blog.site/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 27 Apr 2015 23:30:54 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2015-04-27-%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE%E8%A1%8D%E7%94%9F%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</guid>
       <description>今天有空，想调优下mysql的参数，又想偷懒，就直接使用官方推荐的my-innodb-heavy-4G.cnf配置。。。傻逼了，没备份一些原</description>
     </item>
     
     <item>
       <title>减少mac上mysql的内存占用</title>
-      <link>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</link>
       <pubDate>Sun, 23 Nov 2014 19:57:27 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-11-23-%E5%87%8F%E5%B0%91mac%E4%B8%8Amysql%E7%9A%84%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8/</guid>
       <description>用brew 安装mysql后，发现内存占用高达400M+，对于平时很少用mysql的我来说，简直是浪费。。。 sudo vim /etc/my.cnf 然后把下面的设置贴进去 [mysqld] max_connections =</description>
     </item>
     
     <item>
       <title>说说phalcon怎么连接mysqld.sock</title>
-      <link>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</link>
       <pubDate>Fri, 18 Jul 2014 11:11:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-07-18-%E8%AF%B4%E8%AF%B4phalcon%E6%80%8E%E4%B9%88%E8%BF%9E%E6%8E%A5mysqld.sock/</guid>
       <description>phalcon官方的demo都是连接tcp的，没有连接unix socket的demo可以看。。看了下phalcon的源码，发现，原来phal</description>
     </item>
     
     <item>
       <title>使用mysqlnd代替mysql</title>
-      <link>https://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</link>
       <pubDate>Sun, 24 Nov 2013 12:02:47 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-24-%E4%BD%BF%E7%94%A8mysqlnd%E4%BB%A3%E6%9B%BFmysql/</guid>
       <description>mysqlnd是PHP的一个由C拓展写的原生mysql驱动类库， 是目前PHP官方推荐使用的类库， 使用这个类库操作mysql， 可以支持多种最新</description>
     </item>
     
     <item>
       <title>如何通过本地SSH隧道端口转发访问远程mysql服务</title>
-      <link>https://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://barbery.github.io/blog.site/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Sat, 23 Nov 2013 15:36:44 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2013-11-23-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%9C%AC%E5%9C%B0SSH%E9%9A%A7%E9%81%93%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8Bmysql%E6%9C%8D%E5%8A%A1/</guid>
       <description>注意：以下内容的前提是，你已经配好了SSH KEY登录远程服务器，且禁止了password登录，否则，以下做法很危险。 假设： 远程mysql服务</description>
     </item>
     

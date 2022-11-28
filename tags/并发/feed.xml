@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>并发 on Barbery&#39;s Blog</title>
-    <link>https://barbery.me/tags/%E5%B9%B6%E5%8F%91/</link>
+    <link>https://barbery.github.io/blog.site/tags/%E5%B9%B6%E5%8F%91/</link>
     <description>Recent content in 并发 on Barbery&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 13 Oct 2014 22:02:00 +0000</lastBuildDate>
     
-	<atom:link href="https://barbery.me/tags/%E5%B9%B6%E5%8F%91/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://barbery.github.io/blog.site/tags/%E5%B9%B6%E5%8F%91/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>说说最近写go的感悟</title>
-      <link>https://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</link>
+      <link>https://barbery.github.io/blog.site/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</link>
       <pubDate>Mon, 13 Oct 2014 22:02:00 +0000</pubDate>
       
-      <guid>https://barbery.me/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
+      <guid>https://barbery.github.io/blog.site/post/2014-10-13-%E8%AF%B4%E8%AF%B4%E6%9C%80%E8%BF%91%E5%86%99go%E7%9A%84%E6%84%9F%E6%82%9F/</guid>
       <description>第一个，先说说GO原子性操作的问题，直接上demo（https://gist.github.com/Barbery/08973672e132</description>
     </item>
     
